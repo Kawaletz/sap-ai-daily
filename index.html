@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP AI Daily - Tägliches KI-Briefing für die SAP-Welt</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background: #1a3a5c;
+            color: white;
+            padding: 60px 20px;
+            text-align: center;
+            border-bottom: 4px solid #e67e22;
+        }
+
+        header h1 {
+            font-size: 3em;
+            margin-bottom: 10px;
+            font-weight: 700;
+            letter-spacing: -1px;
+        }
+
+        header .subtitle {
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            opacity: 0.95;
+            font-weight: 500;
+        }
+
+        header .author {
+            font-size: 0.95em;
+            opacity: 0.85;
+            font-weight: 400;
+        }
+
+        main {
+            max-width: 1000px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .briefing-card {
+            background: white;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 30px;
+            margin-bottom: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .briefing-card:hover {
+            box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+            border-color: #e67e22;
+        }
+
+        .briefing-card .date {
+            display: inline-block;
+            background: #e67e22;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-bottom: 15px;
+        }
+
+        .briefing-card h2 {
+            font-size: 1.8em;
+            margin-bottom: 10px;
+            color: #1a3a5c;
+        }
+
+        .briefing-card .description {
+            color: #666;
+            margin-bottom: 15px;
+            font-size: 1.05em;
+        }
+
+        .briefing-card .link {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #2980b9;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .briefing-card .link:hover {
+            background: #1a5a8c;
+            transform: translateX(2px);
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 60px;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #e67e22;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            header .subtitle {
+                font-size: 1.1em;
+            }
+
+            .briefing-card {
+                padding: 20px;
+            }
+
+            .briefing-card h2 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>SAP AI Daily</h1>
+        <div class="subtitle">Tägliches KI-Briefing für die SAP-Welt</div>
+        <div class="author">Von Daniel Kawaletz, Teamleiter SAP-Entwicklung, OctaVIA AG</div>
+    </header>
+
+    <main>
+        <div class="briefing-card">
+            <span class="date">04. April 2026</span>
+            <h2>KI-Briefing: Agentic AI & ABAP im Fokus</h2>
+            <p class="description">
+                Ein umfassendes Briefing zu den neuesten Entwicklungen im Bereich KI für SAP-Systeme,
+                mit Fokus auf Agentic AI, Joule for Developers, MCP-Server und die praktische Integration
+                von Claude Code und Cline in ABAP-Entwicklungsprozesse.
+            </p>
+            <a href="2026-04-04.html" class="link">Briefing lesen →</a>
+        </div>
+    </main>
+
+    <footer>
+        Automatisch erstellt mit Claude | SAP AI Daily
+    </footer>
+</body>
+</html>
