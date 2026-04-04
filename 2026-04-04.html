@@ -1,0 +1,815 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP AI Daily - 04.04.2026 Briefing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #1a3a5c;
+            color: white;
+            padding: 40px 20px;
+            border-bottom: 4px solid #e67e22;
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        header .date {
+            font-size: 1em;
+            opacity: 0.85;
+            margin-bottom: 15px;
+        }
+
+        header .breadcrumb {
+            margin-top: 15px;
+            opacity: 0.9;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 1fr 250px;
+            gap: 30px;
+        }
+
+        main {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .toc {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+
+        .toc h3 {
+            font-size: 0.95em;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #1a3a5c;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc li {
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+
+        .toc a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: #1a5a8c;
+            padding-left: 5px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid;
+        }
+
+        .section-header.orange {
+            border-color: #e67e22;
+        }
+
+        .section-header.blue {
+            border-color: #3498db;
+        }
+
+        .section-header.purple {
+            border-color: #9b59b6;
+        }
+
+        .section-header.green {
+            border-color: #27ae60;
+        }
+
+        .section-header.red {
+            border-color: #c0392b;
+        }
+
+        .section-header h2 {
+            font-size: 1.8em;
+            margin: 0;
+            font-weight: 700;
+            color: #1a3a5c;
+        }
+
+        .section-color-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .section-header.orange .section-color-indicator {
+            background: #e67e22;
+        }
+
+        .section-header.blue .section-color-indicator {
+            background: #3498db;
+        }
+
+        .section-header.purple .section-color-indicator {
+            background: #9b59b6;
+        }
+
+        .section-header.green .section-color-indicator {
+            background: #27ae60;
+        }
+
+        .section-header.red .section-color-indicator {
+            background: #c0392b;
+        }
+
+        h3 {
+            font-size: 1.35em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            color: #1a3a5c;
+            font-weight: 700;
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #e67e22;
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+
+        strong {
+            font-weight: 700;
+            color: #1a3a5c;
+        }
+
+        a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #1a5a8c;
+            text-decoration: underline;
+        }
+
+        .sources {
+            font-size: 0.85em;
+            color: #888;
+            margin-top: 8px;
+            padding-left: 0;
+        }
+
+        .sources li {
+            padding-left: 0;
+            margin-bottom: 5px;
+        }
+
+        .sources li:before {
+            content: "";
+            display: none;
+        }
+
+        .sources a {
+            color: #888;
+            text-decoration: underline;
+        }
+
+        .sources a:hover {
+            color: #2980b9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #1a3a5c;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 0.95em;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: #f5f5f5;
+        }
+
+        .author-quote {
+            background: #f0f4f8;
+            border-left: 4px solid #2980b9;
+            padding: 20px;
+            margin: 25px 0;
+            border-radius: 4px;
+            font-style: italic;
+            color: #555;
+            line-height: 1.8;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+            margin-top: 60px;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #e67e22;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0 0 0;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #2980b9;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .navigation a:hover {
+            background: #1a5a8c;
+            text-decoration: none;
+        }
+
+        .publication-info {
+            background: #f0f4f8;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .toc {
+                position: relative;
+                top: 0;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.6em;
+            }
+
+            main {
+                padding: 25px;
+            }
+
+            .section-header h2 {
+                font-size: 1.4em;
+            }
+
+            h3 {
+                font-size: 1.15em;
+            }
+
+            .toc h3 {
+                font-size: 0.85em;
+            }
+
+            .toc {
+                margin-bottom: 25px;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="breadcrumb"><a href="index.html">← Zurück zur Übersicht</a></div>
+        <h1>SAP AI Daily Briefing</h1>
+        <div class="date">04. April 2026</div>
+    </header>
+
+    <div class="container">
+        <main>
+            <div class="publication-info">
+                <strong>Dieses Briefing wurde am 04.04.2026 automatisch erstellt.</strong><br>
+                Recherchezeitraum: 01.01.2026 - 04.04.2026
+            </div>
+
+            <!-- SECTION 1: Orange - Hauptfokus -->
+            <section>
+                <div class="section-header orange">
+                    <span class="section-color-indicator"></span>
+                    <h2>Hauptfokus: KI in der klassischen SAP-Welt (On-Premise / ABAP)</h2>
+                </div>
+
+                <h3>Joule for Developers (J4D) - 2026 Roadmap veröffentlicht</h3>
+                <ul>
+                    <li><strong>Agentic AI als Paradigmenwechsel:</strong> Der grösste Wandel 2026 ist der Übergang von einzelnen AI-Skills (Code Explain, Code Complete, Test Generation) zu <strong>vollautonom agierenden AI-Agenten</strong>, die als Collaborator im Entwicklungsprozess fungieren.</li>
+                    <li><strong>ABAP AI für ältere Releases:</strong> Joule for Developers wird rückwirkend für <strong>SAP S/4HANA Cloud Private Edition 2021, 2022, 2023 und 2025</strong> unterstützt.</li>
+                    <li><strong>SAP-ABAP-1 Foundation Model:</strong> Trainiert auf >250 Mio. Zeilen ABAP-Code, >30 Mio. Zeilen CDS-Code. Spezialisierte Modelle: StarCoder2 (Code Completion) und Codestral (Code Understanding).</li>
+                    <li><strong>Kostenlose Nutzung verlängert bis September 2026.</strong></li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/our-2026-roadmap-for-joule-for-developers-abap-ai-capabilities/ba-p/14360358" target="_blank">2026 Roadmap J4D</a></li>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/your-2026-roadmap-to-getting-started-with-abap-ai-and-abap-1/ba-p/14312060" target="_blank">Getting Started ABAP AI</a></li>
+                    </ul>
+                </div>
+
+                <h3>ADT für VS Code - GA in Q2/2026 erwartet</h3>
+                <ul>
+                    <li>SAP arbeitet an einer <strong>ABAP Cloud Extension für VS Code</strong> (GA Q2/2026, April-Juni).</li>
+                    <li>Eingebaute <strong>Agentic AI Assistance</strong> via ABAP MCP Server.</li>
+                    <li>Initialer Scope: ~12+ Objekttypen. <strong>Eclipse bleibt Flagship-IDE</strong>; beide Tools koexistieren.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/abap-development-tools-for-vs-code-everything-you-need-to-know/ba-p/14258129" target="_blank">ADT for VS Code</a></li>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/introducing-the-next-era-of-abap-development/ba-p/14260522" target="_blank">Next Era of ABAP</a></li>
+                    </ul>
+                </div>
+
+                <h3>MCP Server für ABAP - Community und SAP-Initiativen</h3>
+                <ul>
+                    <li><strong>mcp-abap-adt</strong> (Mario Andreschak): Bridge für Cline/Claude Desktop mit WRITE-Support. <a href="https://github.com/mario-andreschak/mcp-abap-adt" target="_blank">GitHub</a></li>
+                    <li><strong>Vibing Steampunk</strong> (Alice Vinogradova): ADT-MCP Bridge für Vibe Coding in ABAP/AMDP. <a href="https://github.com/oisee/vibing-steampunk" target="_blank">GitHub</a></li>
+                    <li><strong>Marian Zeis' MCP Server:</strong> Für GitHub Copilot in Eclipse, inkl. ABAP Docs und DSAG Guidelines. <a href="https://blog.zeis.de/posts/2026-02-04-abap-mcp-server/" target="_blank">Blog</a></li>
+                    <li><strong>SAP offiziell:</strong> Eigener MCP Server für ABAP-Code in H1/2026 geplant. Cursor, Claude Code, Cline und Windsurf als unterstützte Clients. <a href="https://community.sap.com/t5/technology-blog-posts-by-sap/our-2026-roadmap-for-joule-for-developers-abap-ai-capabilities/ba-p/14360358" target="_blank">J4D Roadmap</a> | <a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-build-introduces-new-mcp-servers-to-enable-agentic-development-for/ba-p/14205602" target="_blank">SAP Build MCP Servers</a></li>
+                </ul>
+
+                <h3>Claude Code und Cline für ABAP - Praxisberichte</h3>
+                <ul>
+                    <li><a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/claude-code-via-mcp-poor-man-s-joule-or-a-practical-tool/ba-p/14344261" target="_blank">Claude Code via MCP: Poor man's Joule?</a> - Vergleich mit Joule, alternative Nutzung für Systeme ohne Joule-Zugang.</li>
+                    <li><a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/vibe-coding-in-abap-via-an-mcp-server-with-openai-codex/ba-p/14343846" target="_blank">Vibe Coding in ABAP via MCP mit OpenAI Codex</a> - Node.js-basierte MCP Server.</li>
+                    <li><a href="https://github.com/secondsky/sap-skills" target="_blank">35 Claude Code Skills für SAP</a> (Open Source) - BTP, CAP, Fiori, ABAP, HANA u.v.m.</li>
+                    <li><a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/how-i-teach-claude-code-to-work-my-way/ba-p/14349299" target="_blank">How I teach Claude Code to work my way</a> - Praxisbericht zur Anpassung.</li>
+                </ul>
+
+                <h3>GitHub Copilot + Eclipse</h3>
+                <ul>
+                    <li>Microsoft-Blog: <a href="https://devblogs.microsoft.com/all-things-azure/eclipse-github-copilot-lightspeed-sap-abap-development/" target="_blank">Eclipse + GitHub Copilot = Lightspeed SAP ABAP Development</a></li>
+                </ul>
+
+                <h3>AWS ABAP Accelerator - MCP Server von Amazon</h3>
+                <ul>
+                    <li><strong>ABAP Accelerator</strong> ist ein Enterprise-grade MCP Server von AWS für SAP ABAP-Entwicklung mit Amazon Q Developer und Kiro. <a href="https://aws.amazon.com/blogs/awsforsap/introducing-abap-accelerator-for-ai-assisted-development/" target="_blank">AWS Blog</a></li>
+                    <li>Konvertiert automatisch <strong>Legacy-ECC-ABAP zu S/4HANA-kompatiblem Code</strong>. Führt ATC-Validierungen durch und behebt Findings iterativ. <a href="https://aws.amazon.com/blogs/awsforsap/introducing-abap-accelerator-for-ai-assisted-development/" target="_blank">AWS Blog</a></li>
+                    <li>Generiert RAP-Artefakte (CDS Views, Behavior Definitions, Service Bindings). <a href="https://github.com/aws-solutions-library-samples/guidance-for-deploying-sap-abap-accelerator-for-amazon-q-developer" target="_blank">GitHub</a></li>
+                </ul>
+
+                <h3>Clean Core und AI-gestützte Custom Code Migration</h3>
+                <ul>
+                    <li>CCM als <strong>Flagship-Use-Case 2026:</strong> Transformationsvorschläge, Fit-to-Standard-Analyse, Clean-Core-Empfehlungen. <a href="https://community.sap.com/t5/technology-blog-posts-by-sap/custom-code-migration-to-sap-s-4hana-powered-by-sap-joule-for-developers/ba-p/14329094" target="_blank">CCM Blog</a> | <a href="https://community.sap.com/t5/technology-blog-posts-by-sap/2025-set-the-pace-2026-wins-the-race-abap-ai-with-joule-vs-code-and-ccm/ba-p/14302433" target="_blank">2026 wins the race</a></li>
+                    <li><strong>Kyndryl Agentic AI Clean Field:</strong> Nova-Agents haben >33.000 Zeilen Custom-ABAP in 10 Tagen migriert (statt 6+ Wochen traditionell). <a href="https://www.kyndryl.com/us/en/about-us/news/2026/01/agentic-ai-sap-s4hana-transformation" target="_blank">Kyndryl News</a></li>
+                    <li><strong>SAP Agentic AI in Practice:</strong> Blogserie zum Bau eines SAP Migration Assessment Agents (6 Teile). <a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/sap-agentic-ai-in-practice-building-the-sap-migration-assessment-agent-part/ba-p/14365363" target="_blank">Teil 2</a></li>
+                    <li>Zeis' Benchmark-Kritik: <a href="https://blog.zeis.de/posts/2026-03-05-abap-llm-benchmark-understanding/" target="_blank">SAPs ABAP-1 Loses Every ABAP Benchmark, Even Explaining</a></li>
+                    <li><a href="https://www.techtarget.com/searchsap/news/366629375/AI-tackles-customizations-in-SAP-clean-core-migrations" target="_blank">TechTarget: AI tackles customizations in SAP clean core migrations</a></li>
+                </ul>
+
+                <h3>Weitere Blog-Beiträge, Tutorials und Setup-Guides</h3>
+                <ul>
+                    <li><a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/installing-and-extending-an-abap-mcp-server-by-vibe-coding-with-claude-code/ba-p/14343600" target="_blank">Installing and extending an ABAP MCP Server by vibe-coding with Claude Code</a> - Schritt-für-Schritt mit Google Antigravity</li>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-members/try-vibing-steampunk-to-generate-abap-setting-up-vsp-with-a-cal-instance/ba-p/14341656" target="_blank">Try Vibing Steampunk to generate ABAP</a> - Detaillierter Setup-Guide</li>
+                    <li><a href="https://medium.com/@warren_eiserman/vibe-steam-punk-vsp-for-abap-cloud-mac-claude-2864d601978f" target="_blank">Vibe Steam Punk (VSP) for ABAP Cloud, Mac und Claude</a> - Warren Eiserman auf Medium</li>
+                    <li><a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/bringing-ai-context-to-eclipse-adt-a-local-mcp-setup-guide/ba-p/14300669" target="_blank">Bringing AI Context to Eclipse ADT: A Local MCP Setup Guide</a> - Lokales MCP-Setup für Eclipse</li>
+                    <li><a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/the-step-by-step-tutorial-local-ai-powered-abap-development-in-vs-code/ba-p/14325849" target="_blank">Step-by-Step Tutorial: Local AI-Powered ABAP Development in VS Code</a> - Vollständiges Tutorial</li>
+                    <li><a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/claude-ported-abap-functions-to-new-api/ba-p/14350192" target="_blank">Claude ported ABAP functions to new API</a> - Praxisbericht: Claude portiert ABAP-Funktionen</li>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-members/the-future-of-sap-abap-based-systems-with-ai-why-mcp-servers-matter/ba-p/14328845" target="_blank">The Future of SAP ABAP Based Systems with AI: Why MCP Servers Matter</a></li>
+                    <li><a href="https://community.sap.com/t5/application-development-and-automation-blog-posts/unlocking-the-power-of-ai-assisted-abap-coding-with-vs-code-and-cline/ba-p/13994804" target="_blank">Unlocking the Power of AI-Assisted ABAP Coding with VS Code and Cline</a></li>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/how-to-leverage-the-sap-ai-core-service-to-use-some-powerful-ai-tools-like/ba-p/14227657" target="_blank">How to leverage SAP AI Core for Claude Code, ChatWise etc.</a></li>
+                    <li><a href="https://abapeur.fr/en/vibe-coding-in-abap-whats-new/" target="_blank">Vibe Coding in ABAP, what's new?</a> - Abapeur.fr Übersichtsartikel</li>
+                    <li><a href="https://community.sap.com/t5/application-development-and-automation-blog-posts/experimenting-with-ai-enhanced-abap-development-setup/ba-p/14175111" target="_blank">Experimenting with AI-Enhanced ABAP Development Setup</a></li>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/abap-ai-revolution-accelerates-the-abap-developer-who-built-enterprise-apps/ba-p/14216073" target="_blank">ABAP AI Revolution Accelerates: Enterprise Apps in Minutes</a></li>
+                </ul>
+
+                <h3>ABAP AI SDK - Technische Neuerungen</h3>
+                <ul>
+                    <li>AI SDK erhält <strong>Orchestration, Structured Outputs, Streaming</strong> und breitere Kompatibilität. <a href="https://help.sap.com/docs/abap-ai/generative-ai-in-abap-cloud/abap-ai-sdk-powered-by-intelligent-scenario-lifecycle-management" target="_blank">SAP Help</a></li>
+                    <li><strong>Microsoft AI SDK for SAP ABAP:</strong> Open-Source-Projekt auf GitHub. <a href="https://github.com/microsoft/aisdkforsapabap" target="_blank">GitHub</a></li>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/streaming-llm-output-with-cap-and-websockets/ba-p/14224282" target="_blank">Streaming LLM Output with CAP and WebSockets</a> - Praktisches Tutorial</li>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/from-prompt-to-production-creating-an-mcp-server-for-joule-studio-using-ai/ba-p/14338394" target="_blank">From Prompt to Production: MCP Server für Joule Studio</a> - End-to-End Guide</li>
+                </ul>
+
+                <h3>Joule for Developers - Setup-Anleitungen</h3>
+                <ul>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/setup-joule-4-developers-j4d-for-s4-public-cloud-and-code-using-eclipse/ba-p/14259978" target="_blank">Setup J4D für S/4 Public Cloud mit Eclipse</a></li>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/setup-joule-4-developers-j4d-on-btp-abap-environment-and-code-using-eclipse/ba-p/14259685" target="_blank">Setup J4D auf BTP ABAP Environment mit Eclipse</a></li>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-joule-for-developers-expands-to-private-cloud-accelerating-abap/ba-p/14237958" target="_blank">J4D Expands to Private Cloud: Accelerating ABAP Innovation</a></li>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/overview-and-roadmap-of-sap-joule-for-developers-abap-with-ai-capabilities/ba-p/14310407" target="_blank">Overview and Roadmap of J4D ABAP AI Capabilities</a></li>
+                    <li><strong>ABAP Developer Challenge:</strong> <a href="https://community.sap.com/t5/abap-blog-posts/abap-developer-challenge-joule-for-developers-using-basic-trial/ba-p/14336191" target="_blank">4-wöchige J4D Challenge mit Basic Trial</a> (März 2026)</li>
+                </ul>
+            </section>
+
+            <!-- SECTION 2: Blue - Weitere SAP und KI News -->
+            <section>
+                <div class="section-header blue">
+                    <span class="section-color-indicator"></span>
+                    <h2>Weitere SAP- und KI-Entwicklungs-News</h2>
+                </div>
+
+                <h3>Generative AI Hub - Neue Modelle und Funktionen</h3>
+                <ul>
+                    <li>Neue Modelle: Anthropic Claude 4.5 Sonnet/Haiku, Perplexity Sonar/Sonar Pro, Cohere Command A Reasoning, Gemini 2.5 Flash Lite. <a href="https://community.sap.com/t5/developer-news/sap-developer-news-for-april-2nd-2026/ba-p/14364844" target="_blank">SAP Dev News</a> | <a href="https://help.sap.com/docs/sap-ai-core/sap-ai-core-service-guide/generative-ai-hub-in-sap-ai-core" target="_blank">Gen AI Hub Doku</a></li>
+                    <li><strong>SAP-RPT-1</strong> (small und large) im Gen AI Hub verfügbar. <a href="https://news.sap.com/2026/01/sap-business-ai-release-highlights-q4-2025/" target="_blank">SAP News</a></li>
+                </ul>
+
+                <h3>AI Developer Challenge - April 2026</h3>
+                <ul>
+                    <li>4-wöchige Challenge, Systemzugang ab 6. April. Woche 1-2: Orchestration im Gen AI Hub. Woche 3-4: Code-basierte Agents mit CrewAI. <a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/ai-developer-challenge-april-2026-build-ai-agents-with-generative-ai-hub/ba-p/14327218" target="_blank">Details</a></li>
+                </ul>
+
+                <h3>SAP Sapphire 2026</h3>
+                <ul>
+                    <li>Orlando 11.-13. Mai | Madrid 19.-21. Mai | Virtual Track 12.-13. Mai. Agentic ABAP und Joule Studio im Fokus. <a href="https://community.sap.com/t5/technology-blog-posts-by-sap/joule-for-developers-abap-ai-sapphire-and-asug-2026-sessions/ba-p/14365782" target="_blank">Sessions</a></li>
+                </ul>
+
+                <h3>Joule - Allgemeine Updates</h3>
+                <ul>
+                    <li><strong>Joule Agent Builder</strong> jetzt GA. Neue Innovationen: <strong>Deep Research</strong> und <strong>Action Bar</strong>. Jetzt in 13 Sprachen. <a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-ux-q1-2026-update-part-1-ai-joule-sap-build-work-zone-sap-mobile-start/ba-p/14312110" target="_blank">Q1/2026 Update</a></li>
+                </ul>
+
+                <h3>SAP HANA Cloud - AI-Updates</h3>
+                <ul>
+                    <li>Data und Discovery Agent Procedures (Beta): Knowledge-Graph-basierte Discovery mit AI-Query-Generierung. GenAI-Actions in SQL Console. <a href="https://community.sap.com/t5/developer-news/sap-developer-news-for-april-2nd-2026/ba-p/14364844" target="_blank">Developer News</a></li>
+                </ul>
+
+                <h3>SAP und NVIDIA GTC 2026</h3>
+                <ul>
+                    <li>Hands-on Vibe-Coding mit Joule Studio. <a href="https://news.sap.com/2026/03/how-sap-nvidia-advance-ai-enterprise-transformation/" target="_blank">SAP News</a></li>
+                </ul>
+
+                <h3>Weitere Cloud- und AI-Beiträge</h3>
+                <ul>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/from-prompt-to-production-creating-an-mcp-server-for-joule-studio-using-ai/ba-p/14338394" target="_blank">From Prompt to Production: MCP Server für Joule Studio mit AI Core</a></li>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/streaming-llm-output-with-cap-and-websockets/ba-p/14224282" target="_blank">Streaming LLM Output with CAP and WebSockets</a> - Praktisches Tutorial</li>
+                    <li><a href="https://sap.github.io/ai-sdk/docs/js/orchestration/chat-completion" target="_blank">SAP Cloud SDK for AI: Chat Completion Orchestration</a> - Offizielle Doku</li>
+                    <li><a href="https://news.sap.com/2026/01/ai-in-2026-five-defining-themes/" target="_blank">AI in 2026: Five Defining Themes</a> - SAP News Center</li>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/2025-set-the-pace-2026-wins-the-race-abap-ai-with-joule-vs-code-and-ccm/ba-p/14302433" target="_blank">2025 set the pace, 2026 wins the race: ABAP AI with Joule, VS Code, and CCM</a></li>
+                    <li><strong>Hasso Plattner Founders Award:</strong> <a href="https://news.sap.com/2026/02/hasso-plattner-founders-award-finalists-scaling-innovation/" target="_blank">Finalisten für Scaling Innovation 2026</a></li>
+                </ul>
+            </section>
+
+            <!-- SECTION 3: Purple - Community und Social Media -->
+            <section>
+                <div class="section-header purple">
+                    <span class="section-color-indicator"></span>
+                    <h2>Community und Social Media Radar</h2>
+                </div>
+
+                <h3>Prominente Stimmen und Beiträge</h3>
+                <ul>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/the-agentic-revolution-is-here-and-your-abap-code-is-the-foundation/ba-p/14358726" target="_blank">The Agentic Revolution Is Here - And Your ABAP Code Is the Foundation</a> - SAP positioniert bestehenden ABAP-Code als Fundament der AI-Revolution.</li>
+                    <li><strong>Marian Zeis:</strong> <a href="https://www.linkedin.com/posts/marianzeis_finally-an-mcp-server-for-abap-activity-7425048043432890368-BcJV" target="_blank">ABAP MCP Server LinkedIn-Post</a> (45+ Kommentare). Zusätzlich: <a href="https://blog.zeis.de/posts/2026-02-16-librechat-enterprise-gpt/" target="_blank">Enterprise-Ready SAP AI Agent mit Open Source</a></li>
+                    <li><strong>Alice Vinogradova:</strong> <a href="https://www.linkedin.com/pulse/agentic-abap-why-i-built-bridge-claude-code-alice-vinogradova-mgobe" target="_blank">Agentic ABAP: Why I Built a Bridge for Claude Code</a></li>
+                    <li><strong>Tobias Hofmann:</strong> <a href="https://www.itsfullofstars.de/2026/03/the-choices-sap-customers-have-when-using-ai/" target="_blank">The choices SAP customers have when using AI</a></li>
+                    <li><strong>Karrierediskussion:</strong> <a href="https://community.sap.com/t5/technology-q-a/is-sap-abap-developer-still-a-good-career-option-in-2026-for-someone/qaq-p/14348642" target="_blank">Ist ABAP-Entwickler 2026 noch eine gute Karriereoption?</a> - Tenor: Ja, aber CDS, RAP, Clean Core und BTP-Grundlagen sind Pflicht.</li>
+                    <li><strong>ABAP AI Podcast:</strong> <a href="https://community.sap.com/t5/technology-blog-posts-by-sap/abap-ai-podcast-reflecting-on-2025-and-looking-ahead-to-2026/ba-p/14322098" target="_blank">Reflecting on 2025 and Looking Ahead to 2026</a></li>
+                </ul>
+
+                <h3>DSAG Technologietage 2026 (17.-18. März, Hamburg)</h3>
+                <ul>
+                    <li>Über 3.000 Teilnehmer. Motto: <strong>"Lights on Layers. Clarity-by-Design?"</strong> - Fokus auf AI, Data und Security. <a href="https://dsag.de/presse/dsag-technologietage-2026/" target="_blank">DSAG Pressemitteilung</a></li>
+                    <li>Offizielle ABAP-in-VS-Code Verfügbarkeit wird für H2/2026 erwartet. J4D bisher nur für Private Cloud Kunden. <a href="https://software-heroes.com/blog/dsag-technologietage-und-techxchange-2026" target="_blank">Software Heroes Recap</a></li>
+                    <li><a href="https://www.eubuleus.de/wissen/dsag-technologietage-2026/" target="_blank">DSAG-Technologietage 2026: Zwischen KI-Hype und Praxistauglichkeit</a> - Eubuleus Recap</li>
+                    <li><a href="https://www.exxcellent.de/dsag-technologietage-17-18-marz-2026" target="_blank">DSAG-Technologietage 2026: Von Buzzwords zu Real Talk</a> - eXXcellent solutions Recap</li>
+                    <li><a href="https://e3mag.com/en/dsag-technology-days-2026-ki-data-security-sap-must-deliver/" target="_blank">DSAG Technology Days 2026: AI, data, security - SAP must deliver</a> - E3 Magazine</li>
+                </ul>
+
+                <h3>Weitere Community-Stimmen und Diskussionen</h3>
+                <ul>
+                    <li><a href="https://community.sap.com/t5/technology-q-a/vibe-coding-with-mcp-servers-amp-sap-ai-core-toward-quot-coding-by/qaq-p/14230581" target="_blank">Vibe Coding with MCP Servers: Toward Coding by Conversation</a> - Community Q&A</li>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-members/goodbye-vibe-coding-the-future-of-sap-development-with-ai-low-code/ba-p/14223384" target="_blank">Goodbye Vibe-Coding: The Future of SAP Development with AI + Low-Code</a> - Gegenperspektive</li>
+                    <li><a href="https://github.com/cline/cline/issues/9174" target="_blank">Cline vs Cursor vs Roo Code vs Claude Code - Competitive Landscape 2026</a> - GitHub-Diskussion</li>
+                    <li><a href="https://forum.cursor.com/t/will-cursor-support-sap-abap-in-the-future/3134" target="_blank">Will Cursor support SAP ABAP in the future?</a> - Cursor Community Forum</li>
+                    <li><a href="https://www.asug.com/insights/the-future-of-abap-cloud-integration-fusion-development-and-ai" target="_blank">The Future of ABAP: Cloud Integration, Fusion Development, and AI</a> - ASUG Insights</li>
+                    <li><a href="https://boringenterprisenerds.substack.com/p/73-sap-business-ai-abap-in-2025-cogna" target="_blank">Boring Enterprise Nerds Newsletter: SAP Business AI, ABAP</a> - Substack</li>
+                    <li><a href="https://e3mag.com/en/clean-s-4-intelligence/" target="_blank">Clean S/4 Intelligence</a> - E3 Magazine zu Clean Core und AI</li>
+                    <li><a href="https://blog.perfectwin.ai/sap-automation-tips" target="_blank">2026 SAP Strategy: Automation Tips for 80% Efficiency Gain</a> - PerfecTwin Blog</li>
+                    <li><strong>SAP on Azure Podcast:</strong> <a href="https://www.saponazurepodcast.de/episode202/" target="_blank">Episode 202: Options with Copilot and SAP</a></li>
+                </ul>
+
+                <h3>Stimmen aus den Kommentaren und Diskussionen</h3>
+
+                <h4>k1000 - Vibe-Coding Tagebuch (SAP Community, 27 Kommentare, 5.420 Views)</h4>
+                <p>
+                    <a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/claude-code-via-mcp-poor-man-s-joule-or-a-practical-tool/ba-p/14344261" target="_blank">Claude Code via MCP: Poor man's Joule?</a>
+                </p>
+                <ul>
+                    <li><strong>Vibing-Steampunk ist der beste Community ADT-MCP Server</strong> (meiste GitHub-Stars). Tipp: Mit dem <strong>mcp-sap-docs</strong> Doku-Server von Marian Zeis koppeln, damit Claude vor dem Coden Dokumentation nachschlagen kann.</li>
+                    <li>RAP-Anwendung per Prompt <strong>98% korrekt generiert</strong> (nur 1 manueller Fix). Fiori-App-Generierung ebenfalls erfolgreich.</li>
+                    <li><strong>OpenAI Codex beeindruckt durch Planungsfähigkeit:</strong> "We need to talk about Codex. Wow, this thing can plan!" — Empfehlung: LLM zuerst in Plan-Modus, dann erst Code generieren.</li>
+                    <li>Multi-Agent-Setup mit Claude Code <strong>/agents</strong>-Befehl: Sub-Agents für Codebase-Exploration, Docs-Lookup und Code-Generierung. <a href="https://github.com/secondsky/sap-skills" target="_blank">35 Claude Code Skills für SAP</a> installiert — allein das Lesen war lehrreich.</li>
+                    <li>Luisen empfiehlt: <strong>mcp-sap-docs</strong> testen — <a href="https://github.com/marianfoo/mcp-sap-docs" target="_blank">GitHub</a>. Yerkebulan fragt nach dem besten MCP Server — Antwort: vibing-steampunk.</li>
+                </ul>
+
+                <h4>Marian Zeis - ABAP-LLM Benchmark Analyse</h4>
+                <p>
+                    <a href="https://blog.zeis.de/posts/2026-03-05-abap-llm-benchmark-understanding/" target="_blank">SAPs ABAP-1 Loses Every ABAP Benchmark, Even Explaining</a>
+                </p>
+                <ul>
+                    <li><strong>ABAP-1 verliert gegen alle Frontier-Modelle</strong>, selbst Haiku 4.5 schlägt es im Understanding-Benchmark. ABAP-1 ist kein guter Default für ABAP-Anwendungsfälle.</li>
+                    <li><strong>DeepSeek Reasoner = bestes Preis-Leistungs-Verhältnis</strong> (6x günstiger als Codex, Output 33x günstiger). Gemini 3.1 Flash überraschend stark und günstig.</li>
+                    <li>Fazit: "Nicht noch ein Modell, sondern <strong>bessere Tools und Integration</strong>, damit Frontier-Modelle zuverlässig korrektes ABAP produzieren." MCP Server + abaplint als Schlüssel.</li>
+                </ul>
+
+                <h4>Kritische Stimmen zu Datenschutz und Praxistauglichkeit</h4>
+                <ul>
+                    <li><strong>TMNielsen:</strong> "AI-Zugriff auf Vendor Master Data wäre in den meisten Firmen ein Verstoss gegen Unternehmensrichtlinien und in vielen Ländern illegal."</li>
+                    <li><strong>PrasanthK1:</strong> Firmen erlauben keinen AI-Zugriff auf Produktivsysteme — Halluzinationen können zu grossen Fehlern führen.</li>
+                    <li><strong>signortintin</strong> (18+ Jahre ABAP): Ehrliche Warnung an Berufseinsteiger — "Es ist schwer, als Neuling in SAP reinzukommen, besonders jetzt mit AI."</li>
+                </ul>
+
+                <h4>Tobias Hofmann - Strategische Analyse</h4>
+                <p>
+                    <a href="https://www.itsfullofstars.de/2026/03/the-choices-sap-customers-have-when-using-ai/" target="_blank">The choices SAP customers have when using AI</a>
+                </p>
+                <ul>
+                    <li>"<strong>SAP interessiert sich nicht für AI bei On-Premise-Kunden.</strong>" Partner (AWS, Google, Microsoft) liefern praxistauglichere Lösungen.</li>
+                    <li>Gefahr der <strong>Commodifizierung:</strong> Nutzer interagieren über Microsoft Copilot oder Google Agents — SAP wird zum teuren Backend-Datenspeicher. Empfehlung: Cloud-agnostische Ansätze mit MCP Servern und OData APIs.</li>
+                </ul>
+
+                <h3>Community-Tenor</h3>
+                <p>
+                    Die Ära des Abwartens ist vorbei. ABAP-Entwickler werden ermutigt, jetzt mit MCP-Servern, Claude Code/Cline und Joule zu experimentieren. k1000s Tagebuch zeigt: Es funktioniert bereits praxistauglich. Kritische Stimmen (Zeis, Hofmann) hinterfragen SAP-eigene Modelle und favorisieren Frontier-Modelle mit besserem Tooling. Datenschutz-Bedenken bleiben das grösste Hemmnis in Enterprise-Kontexten. Die DSAG-Technologietage haben gezeigt: Der Hype muss in Praxistauglichkeit münden — SAP muss bei On-Premise-KI liefern.
+                </p>
+            </section>
+
+            <!-- SECTION 4: Green - SAP Learning und Zertifizierungen -->
+            <section>
+                <div class="section-header green">
+                    <span class="section-color-indicator"></span>
+                    <h2>SAP Learning und Zertifizierungen</h2>
+                </div>
+
+                <h3>Neues Zertifizierungsmodell 2026</h3>
+                <ul>
+                    <li>SAP hat das Modell auf <strong>Performance-Based Testing (PBT)</strong> umgestellt: Open-Book, Hands-on, praxisnah. AI-Tools und offizielle Dokumentation dürfen während der Prüfung genutzt werden. <a href="https://community.sap.com/t5/sap-learning-blog-posts/sap-certification-update-practical-exams-roll-out-in-2026/ba-p/14317789" target="_blank">SAP Learning Blog</a> | <a href="https://www.ascendientlearning.com/blog/new-sap-certification-2026" target="_blank">Ascendient Learning</a></li>
+                </ul>
+
+                <h3>Zertifizierungen mit Entwicklungsbezug</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Zertifizierung</th>
+                            <th>ID</th>
+                            <th>Fokus</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Back-End Developer - ABAP Cloud</td>
+                            <td>C_ABAPD</td>
+                            <td>RAP, CDS, Clean Core Extensibility</td>
+                        </tr>
+                        <tr>
+                            <td>SAP Generative AI Developer</td>
+                            <td>C_AIG</td>
+                            <td>AI Core, Prompt Engineering, AI-Agents</td>
+                        </tr>
+                        <tr>
+                            <td>Solution Architect - SAP BTP</td>
+                            <td>P_BTPA</td>
+                            <td>BTP-Architektur, Integration (Professional)</td>
+                        </tr>
+                        <tr>
+                            <td>SAP Build Developer</td>
+                            <td>(neu)</td>
+                            <td>Low-Code/No-Code, SAP Build Apps</td>
+                        </tr>
+                        <tr>
+                            <td>BTP System Administrator</td>
+                            <td>(neu)</td>
+                            <td>BTP-Administration, Security, Services</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Relevante Kurse und Lernressourcen</h3>
+                <ul>
+                    <li><a href="https://learning.sap.com/courses/basic-abap-programming/amplifying-abap-development-with-ai" target="_blank">Amplifying ABAP Development with AI</a> - KI-gestützte ABAP-Entwicklung</li>
+                    <li><a href="https://architecture.learning.sap.com/docs/ref-arch/e5eb3b9b1d/10" target="_blank">Vibe Coding with Cline and SAP AI Core</a> - Referenzarchitektur auf SAP Architecture Center</li>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-members/my-experience-with-sap-generative-ai-developer-exam-c-aig-excellent-hands/ba-p/14313474" target="_blank">My Experience with SAP Generative AI Developer Exam</a> - Erfahrungsbericht C_AIG Prüfung</li>
+                    <li><a href="https://www.ascendientlearning.com/blog/new-sap-certification-2026" target="_blank">Understanding the New SAP Certification Model 2026</a> - Übersichtsartikel</li>
+                    <li><a href="https://community.sap.com/t5/sap-learning-blog-posts/sap-certification-update-practical-exams-roll-out-in-2026/ba-p/14317789" target="_blank">SAP Certification Update: Practical exams roll out in 2026</a> - Offizieller SAP Learning Blog</li>
+                </ul>
+
+                <h3>DSAG Ressourcen</h3>
+                <ul>
+                    <li><a href="https://1dsag.github.io/ABAP-Leitfaden/artificial-intelligence/" target="_blank">DSAG ABAP Leitfaden: Künstliche Intelligenz</a> - Best Practices für KI in ABAP</li>
+                    <li><a href="https://1dsag.github.io/ABAP-Leitfaden/abap/" target="_blank">DSAG ABAP Leitfaden: Moderne ABAP Entwicklung</a> - Aktuelle Entwicklungsrichtlinien</li>
+                </ul>
+            </section>
+
+            <!-- SECTION 5: Red - Video-Tipps -->
+            <section>
+                <div class="section-header red">
+                    <span class="section-color-indicator"></span>
+                    <h2>Video-Tipps: YouTube-Empfehlungen</h2>
+                </div>
+
+                <h3>Offizielle SAP-Kanäle</h3>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=OuUjdFRIMw8" target="_blank">SAP TechEd 2025 Berlin: Agentic AI in ABAP | Next Era of Development with Joule & VS Code</a> — <em>SAP BTP with Muthu</em> (15 Min., 335 Views)</li>
+                    <li><a href="https://www.youtube.com/results?search_query=SAP+MCP+server+ABAP+Claude+Code+Cline+GitHub+Copilot" target="_blank">Developer Demo: MCP AI Agents | VS Code, AI Core & MCP | SAP TechEd 2025</a> — <em>SAP</em> (5:40 Min., 3.5K Views) — Live-Demo: Cline + AI Core + MCP im SAP Dev Stack</li>
+                    <li><a href="https://www.youtube.com/playlist?list=PL6RpkC85SLQDYLiN1BLyGoION0iVn_OYp" target="_blank">ABAP Cloud – Joule for Developers, ABAP AI Capabilities</a> — <em>SAP Developers</em> (Playlist, 20 Videos) — Offizielle Einführungsreihe</li>
+                    <li><a href="https://www.youtube.com/@sapdevs/videos" target="_blank">SAP Developer News</a> — <em>SAP Developers</em> (wöchentlich) — Regelmässige Updates zu ABAP, AI und BTP</li>
+                </ul>
+
+                <h3>Community und Drittanbieter</h3>
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=R7PnBgMYu9o" target="_blank">SAP Generative AI Training | BTP Gen AI HUB | RAG, Joule Studio, Vector & Graph DB</a> — <em>Anubhav Trainings</em> (1:53 Std., 19K Views) — Umfassende Schulung zu SAP Gen AI</li>
+                    <li><strong>Simplifier MCP Create SAP Connector with OpenCode & Claude</strong> — <em>Simplifier</em> (2:30 Min., 981 Views) — Praktische Demo: MCP-basierter SAP-Connector mit Claude</li>
+                    <li><strong>Prompt, Create and Innovate with AI Vibe Coding</strong> — <em>SAP Developers</em> (Livestream, 1.9K Views) — Hands-on Vibe Coding Session</li>
+                    <li>Quellen: <a href="https://www.youtube.com/@sapdevs" target="_blank">@sapdevs</a> | <a href="https://www.youtube.com/@SAPCommunity" target="_blank">@SAPCommunity</a> | YouTube-Suche</li>
+                </ul>
+
+                <h3>Termine und Events</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Datum</th>
+                            <th>Event</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>06. April 2026</td>
+                            <td>Start AI Developer Challenge - Systemzugang</td>
+                        </tr>
+                        <tr>
+                            <td>23. April 2026</td>
+                            <td>ABAP: SAP BTP, ABAP Environment und RAP - Warschau</td>
+                        </tr>
+                        <tr>
+                            <td>Q2/2026</td>
+                            <td>GA: ABAP Development Tools für VS Code</td>
+                        </tr>
+                        <tr>
+                            <td>11.-13. Mai 2026</td>
+                            <td>SAP Sapphire Orlando</td>
+                        </tr>
+                        <tr>
+                            <td>19.-21. Mai 2026</td>
+                            <td>SAP Sapphire Madrid</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <div class="navigation">
+                <a href="index.html">← Zurück zur Übersicht</a>
+            </div>
+        </main>
+
+        <aside class="toc">
+            <h3>Inhaltsverzeichnis</h3>
+            <ul>
+                <li><a href="#hauptfokus">Hauptfokus: ABAP & KI</a></li>
+                <li><a href="#weitere-news">Weitere SAP News</a></li>
+                <li><a href="#community">Community & Radar</a></li>
+                <li><a href="#learning">Learning & Zerts</a></li>
+                <li><a href="#videos">Video-Tipps</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        Dieses Briefing wurde am 04.04.2026 automatisch erstellt. Recherchezeitraum: 01.01.2026 - 04.04.2026 | Automatisch erstellt mit Claude | SAP AI Daily
+    </footer>
+
+    <script>
+        // Add smooth scrolling for ToC
+        document.querySelectorAll('.toc a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
