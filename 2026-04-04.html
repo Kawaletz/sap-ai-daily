@@ -97,6 +97,21 @@
         .toc li {
             margin-bottom: 10px;
             font-size: 0.9em;
+            padding-left: 0;
+        }
+
+        .toc li:before {
+            content: "";
+            display: none;
+        }
+
+        .toc .toc-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 8px;
+            vertical-align: middle;
         }
 
         .toc a {
@@ -783,11 +798,11 @@
         <aside class="toc">
             <h3>Inhaltsverzeichnis</h3>
             <ul>
-                <li><a href="#hauptfokus">ABAP Classic AI</a></li>
-                <li><a href="#weitere-news">SAP Cloud AI</a></li>
-                <li><a href="#community">Community & Social Media</a></li>
-                <li><a href="#learning">Learning & Zertifizierungen</a></li>
-                <li><a href="#videos">Video Resources & Events</a></li>
+                <li><span class="toc-dot" style="background:#e67e22"></span><a href="#hauptfokus">ABAP Classic AI</a></li>
+                <li><span class="toc-dot" style="background:#3498db"></span><a href="#weitere-news">SAP Cloud AI</a></li>
+                <li><span class="toc-dot" style="background:#9b59b6"></span><a href="#community">Community & Social Media</a></li>
+                <li><span class="toc-dot" style="background:#27ae60"></span><a href="#learning">Learning & Zertifizierungen</a></li>
+                <li><span class="toc-dot" style="background:#c0392b"></span><a href="#videos">Video Resources & Events</a></li>
             </ul>
         </aside>
     </div>
