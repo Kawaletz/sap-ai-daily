@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP AI Daily – 7. April 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #1a3a5c;
+            color: white;
+            padding: 40px 20px;
+            border-bottom: 4px solid #e67e22;
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        header .date {
+            font-size: 1em;
+            opacity: 0.85;
+            margin-bottom: 15px;
+        }
+
+        header .breadcrumb {
+            margin-top: 15px;
+            opacity: 0.9;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 1fr 250px;
+            gap: 30px;
+        }
+
+        main {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .toc {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+
+        .toc h3 {
+            font-size: 0.95em;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #1a3a5c;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc li {
+            margin-bottom: 10px;
+            font-size: 0.9em;
+            padding-left: 0;
+        }
+
+        .toc li:before {
+            content: "";
+            display: none;
+        }
+
+        .toc a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: #1a5a8c;
+            padding-left: 5px;
+        }
+
+        .toc .toc-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .publication-info {
+            background: #f0f4f8;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 20px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid;
+        }
+
+        .section-header.orange { border-color: #e67e22; }
+        .section-header.blue { border-color: #3498db; }
+        .section-header.purple { border-color: #9b59b6; }
+        .section-header.green { border-color: #27ae60; }
+        .section-header.red { border-color: #c0392b; }
+
+        .section-header h2 {
+            font-size: 1.8em;
+            margin: 0;
+            font-weight: 700;
+            color: #1a3a5c;
+        }
+
+        .section-color-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .section-header.orange .section-color-indicator { background: #e67e22; }
+        .section-header.blue .section-color-indicator { background: #3498db; }
+        .section-header.purple .section-color-indicator { background: #9b59b6; }
+        .section-header.green .section-color-indicator { background: #27ae60; }
+        .section-header.red .section-color-indicator { background: #c0392b; }
+
+        h3 {
+            font-size: 1.35em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            color: #1a3a5c;
+            font-weight: 700;
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-right: 0.3rem;
+            vertical-align: middle;
+        }
+        .tag.neu { background: #e8f8f5; color: #1abc9c; }
+        .tag.update { background: #fef5e7; color: #e67e22; }
+        .tag.event { background: #f4ecf7; color: #9b59b6; }
+        .tag.tipp { background: #eaf2f8; color: #2980b9; }
+
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        li:before {
+            content: "\2022";
+            position: absolute;
+            left: 0;
+            color: #e67e22;
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+
+        strong {
+            font-weight: 700;
+            color: #1a3a5c;
+        }
+
+        a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #1a5a8c;
+            text-decoration: underline;
+        }
+
+        .sources {
+            font-size: 0.85em;
+            color: #888;
+            margin-top: 8px;
+            padding-left: 0;
+        }
+
+        .sources li {
+            padding-left: 0;
+            margin-bottom: 5px;
+        }
+
+        .sources li:before {
+            content: "";
+            display: none;
+        }
+
+        .sources a {
+            color: #888;
+            text-decoration: underline;
+        }
+
+        .sources a:hover {
+            color: #2980b9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #1a3a5c;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 0.95em;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:hover {
+            background: #f5f5f5;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 25px 20px;
+            margin-top: 60px;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #e67e22;
+            font-weight: 600;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        .navigation {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 30px 0 0 0;
+            padding-top: 20px;
+            border-top: 1px solid #e0e0e0;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .navigation a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #2980b9;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .navigation a:hover {
+            background: #1a5a8c;
+            text-decoration: none;
+        }
+
+        @media (max-width: 1024px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+
+            .toc {
+                position: relative;
+                top: 0;
+                margin-bottom: 30px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 1.6em;
+            }
+
+            main {
+                padding: 25px;
+            }
+
+            .section-header h2 {
+                font-size: 1.4em;
+            }
+
+            h3 {
+                font-size: 1.15em;
+            }
+
+            .toc h3 {
+                font-size: 0.85em;
+            }
+
+            .toc {
+                margin-bottom: 25px;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            th, td {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="breadcrumb"><a href="index.html">&larr; Zurück zur Übersicht</a></div>
+        <h1>SAP AI Daily Briefing</h1>
+        <div class="date">07. April 2026</div>
+    </header>
+
+    <div class="container">
+        <main>
+            <div class="publication-info">
+                <strong>Dieses Briefing wurde am 07.04.2026 automatisch erstellt.</strong><br>
+                Recherchezeitraum: 6.&ndash;7. April 2026 &middot; Nur neue Inhalte seit dem letzten Briefing.
+            </div>
+
+            <!-- SECTION 1: Orange - ABAP Classic AI -->
+            <section id="abap">
+                <div class="section-header orange">
+                    <span class="section-color-indicator"></span>
+                    <h2>ABAP Classic AI</h2>
+                </div>
+
+                <h3><span class="tag neu">Neu</span> MCP Server für SAP ECC &amp; S/4HANA: Unlimited ABAP Add-On</h3>
+                <ul>
+                    <li>Ein neuer Community-Blog-Post beschreibt einen <strong>ABAP Add-On</strong>, der einen MCP Server direkt in SAP ERP-Systeme integriert – und das bereits ab ABAP Release 7.01. Das Besondere: keine separaten OData-Services nötig.</li>
+                    <li>Kernfunktion: Tabellen, Views und CDS Views werden in einer ABAP-Ansicht registriert und vom MCP Server <strong>automatisch als Tools bereitgestellt</strong>. Create-, Update- und Delete-Aktionen erfordern nur je eine ABAP-Klasse.</li>
+                    <li>Verbindung zum MCP Server kann direkt über einen SICF-Node oder via <strong>SAP Cloud Connector</strong> erfolgen – damit ist auch ein sicherer On-Premise-Zugang aus der Cloud möglich.</li>
+                    <li>Die Lösung ist mit <strong>jedem Agentic SDK</strong> kompatibel und eignet sich besonders für Unternehmen, die klassische SAP ECC-Systeme AI-fähig machen wollen, ohne die Clean-Core-Architektur zu gefährden.</li>
+                </ul>
+                <div class="sources">
+                    <ul>
+                        <li>Quelle: <a href="https://community.sap.com/t5/technology-blog-posts-by-members/mcp-server-for-sap-ecc-amp-s-4hana-unlimited-abap-add-on-for-display-create/ba-p/14293485" target="_blank">MCP Server for SAP ECC &amp; S/4HANA: Unlimited ABAP Add-On (SAP Community)</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag neu">Neu</span> GitHub: fr0ster/mcp-abap-adt – CRUD-MCP für On-Premise und BTP ABAP Cloud</h3>
+                <ul>
+                    <li>Das Open-Source-Projekt <strong>fr0ster/mcp-abap-adt</strong> auf GitHub bietet einen MCP Server für <strong>SAP BTP ABAP Cloud und On-Premise ECC/S/4HANA</strong> mit vollem CRUD-Support.</li>
+                    <li>Besonderheiten: JWT/XSUAA-Authentifizierung und Service-Key-Auth – damit ist die Lösung sowohl für Cloud-Szenarien als auch für gesicherte On-Premise-Anbindungen ausgelegt.</li>
+                    <li>Der Server ermöglicht Agents kontrollierten Zugang zu echten ABAP-Repositories über ADT und unterstützt iterative Updates für RAP- und klassische ABAP-Artefakte (Klassen, Interfaces, Function Groups, Programme, DDIC, CDS/View/Service-Artefakte).</li>
+                    <li>Abgebildet werden klassische ADT-Flows – ein praxisnaher Ansatz für AI-gestützte ABAP-Entwicklung ohne proprietäre Abhängigkeiten.</li>
+                </ul>
+                <div class="sources">
+                    <ul>
+                        <li>Quelle: <a href="https://github.com/fr0ster/mcp-abap-adt" target="_blank">GitHub: fr0ster/mcp-abap-adt</a></li>
+                        <li>Referenz: <a href="https://www.pulsemcp.com/servers/mario-andreschak-abap-development-tools" target="_blank">PulseMCP: SAP ABAP Development Tools MCP Server</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 2: Blue - SAP Cloud AI -->
+            <section id="cloud">
+                <div class="section-header blue">
+                    <span class="section-color-indicator"></span>
+                    <h2>SAP Cloud AI</h2>
+                </div>
+
+                <h3><span class="tag neu">Neu</span> SAP übernimmt Reltio: Masterdaten für Agentic AI fit machen</h3>
+                <ul>
+                    <li>SAP hat Ende März die <strong>Übernahme von Reltio</strong> angekündigt – einem führenden Anbieter von Master Data Management (MDM). Ziel: SAP- und Nicht-SAP-Daten für den Einsatz in Agentic-AI-Szenarien fit zu machen.</li>
+                    <li>Reltio bringt eine <strong>cloud-native, AI-native MDM-Plattform</strong> mit, die auf Entity Resolution, kontinuierlicher Datenqualität und einem intelligenten Datengraphen basiert – und so den vollständigen Kontext hinter Kunden, Produkten, Lieferanten und anderen Business-Entitäten sichtbar macht.</li>
+                    <li>Nach dem Closing wird Reltio als Kernkomponente in <strong>SAP Business Data Cloud (SAP BDC)</strong> integriert – der strategischen Datenfundamentschicht für SAPs AI-First-Strategie. Joule Agents sollen damit Zugang zu vertrauenswürdigen, bereinigten Daten aus SAP- und Nicht-SAP-Quellen erhalten.</li>
+                    <li>Zeitplan: Closing erwartet in <strong>Q2 oder Q3 2026</strong>, vorbehaltlich regulatorischer Genehmigungen. Reltio bleibt auch als eigenständige Lösung verfügbar.</li>
+                    <li>Strategische Bedeutung: Die Akquisition unterstreicht, dass für leistungsfähige Agentic AI nicht nur gute Modelle, sondern vor allem <strong>hochwertige, konsistente Stammdaten</strong> entscheidend sind.</li>
+                </ul>
+                <div class="sources">
+                    <ul>
+                        <li><a href="https://news.sap.com/2026/03/sap-to-acquire-reltio/" target="_blank">SAP News: SAP to Acquire Reltio – Make SAP and Non-SAP Data AI-Ready</a></li>
+                        <li><a href="https://www.reltio.com/resources/blog/a-new-chapter-for-reltio/" target="_blank">Reltio Blog: A New Chapter for Reltio</a></li>
+                        <li><a href="https://aimagazine.com/news/why-is-sap-acquiring-master-data-management-company-reltio" target="_blank">AI Magazine: Why is SAP Acquiring Reltio?</a></li>
+                        <li><a href="https://www.theregister.com/2026/03/30/sap_reltio/" target="_blank">The Register: SAP eyes broader data integration with Reltio</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag neu">Neu</span> Hack2Build 2026: Partner-Agenten gehen in die Build-Phase</h3>
+                <ul>
+                    <li>Die zweite Ausgabe von <strong>Hack2Build Custom AI Solutions</strong> (10.–17. März 2026) hat 13 Partner-Teams mit funktionalen Prototypen hervorgebracht – sowohl content-basierte Agents (Agent Builder in Joule Studio) als auch code-basierte Agents (SAP Cloud SDK for AI auf SAP BTP).</li>
+                    <li><strong>Capgemini – Demand-to-Award Agent:</strong> Automatisiert den gesamten Beschaffungszyklus von der Bedarfsaufnahme bis zur Lieferantenbeauftragung. Verarbeitet eingehende Anfragen aus E-Mail und Excel über SAP Build Process Automation und SAP Document AI und erstellt Bestellungen direkt in SAP S/4HANA.</li>
+                    <li><strong>OpenText – Cognitive P2P Advisor:</strong> Orchestrierungs-Agent für die Ausnahmebehandlung von Rechnungen im Procure-to-Pay-Prozess. Verbindet strukturierte Daten aus SAP S/4HANA mit unstrukturierten Dokumenten aus OpenText Core Archive.</li>
+                    <li><strong>DataXstream – Churn Risk Agent:</strong> Analysiert Abwanderungsindikatoren, empfiehlt Next-Best-Actions, ruft Aktionspreise und Materialverfügbarkeit ab und bereitet eine Kundenantwort vor.</li>
+                    <li>Alle teilnehmenden Partner sind jetzt in eine <strong>vierwöchige Build-Phase</strong> übergegangen – mit Support von SAP Product Engineering zur Verfeinerung von Grounding-Strategien, Tool Calling, Human-in-the-Loop-Flows und Kundenvorbereitung.</li>
+                </ul>
+                <div class="sources">
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/agentic-ai-gains-momentum-as-partners-build-content-and-code-based-customer/ba-p/14354661" target="_blank">SAP Community: Agentic AI Gains Momentum as Partners Build Content- and Code-Based Customer-Driven Solutions</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 3: Purple - Community & Social Media -->
+            <section id="community">
+                <div class="section-header purple">
+                    <span class="section-color-indicator"></span>
+                    <h2>Community &amp; Social Media</h2>
+                </div>
+
+                <h3><span class="tag neu">Neu</span> Blog: Die Zukunft der Enterprise AI – MCP Server und Agent-to-Agent Communication</h3>
+                <ul>
+                    <li>Ein neuer Blog-Post aus der SAP Community Bengaluru beleuchtet zwei komplementäre Protokolle, die die Enterprise-AI-Architektur 2026 prägen: <strong>MCP (Model Context Protocol)</strong> für die Kommunikation zwischen AI und Systemen, und <strong>A2A (Agent-to-Agent Protocol)</strong> für die Kommunikation zwischen verschiedenen AI-Agenten.</li>
+                    <li>MCP löst das Problem der Integration: Ein universeller „Übersetzer", der den Bedarf an Custom-Integrations eliminiert. SAP unterstützt MCP seit TechEd 2025 in der gesamten BTP-Plattform, HANA Cloud erhält ab Q1 2026 vollen MCP-Support.</li>
+                    <li>A2A geht einen Schritt weiter: Agents können sich gegenseitig <strong>entdecken, kommunizieren und koordinieren</strong> – was komplexe Multi-Step-Workflows erst ermöglicht. Einige Unternehmen berichten bereits von bis zu 50 % Kosteneinsparungen bei der AI-Infrastruktur durch reduzierte Integrationskomplexität.</li>
+                    <li>Das Fazit des Posts: Die Zukunft der Enterprise AI wird durch die <strong>tiefe Integration von LLMs in bestehende Enterprise-Systeme</strong> getrieben – und MCP zusammen mit A2A liefert dafür die notwendige Standardisierungsgrundlage.</li>
+                </ul>
+                <div class="sources">
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/bengaluru-blog-posts/building-the-future-of-enterprise-ai-mcp-servers-and-agent-to-agent/ba-p/14364704" target="_blank">SAP Community Bengaluru: Building the Future of Enterprise AI – MCP Servers and Agent-to-Agent Communication Revolution</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag update">Update</span> AI Developer Challenge: Woche 2 – Grounding-Modul im Gen AI Hub</h3>
+                <ul>
+                    <li>Die <strong>AI Developer Challenge April 2026</strong> ist in Woche 2 gestartet. Nach dem Einstieg in den Orchestration Service (Woche 1) liegt der Fokus nun auf dem <strong>Grounding-Modul</strong> im Gen AI Hub auf SAP AI Core.</li>
+                    <li>Teilnehmer lernen, wie Retrieval-Augmented Generation (RAG) in SAP-Workflows integriert wird – konkret: Dokumente werden als Kontext in Orchestrierungs-Workflows eingebunden und stehen Agenten als Tool zur Verfügung.</li>
+                    <li>In Woche 3 folgt der nächste Schritt: Kombination von Grounding-Modul und code-basiertem Agent (CrewAI) zu einem vollständigen <strong>Agentic-RAG-Workflow</strong>. Woche 4 baut darauf auf und entwickelt komplexere Multi-Step-Agenten.</li>
+                    <li>Noch nicht angemeldet? Die Challenge läuft bis Ende April – Systemzugang ist kostenlos.</li>
+                </ul>
+                <div class="sources">
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/ai-developer-challenge-april-2026-build-ai-agents-with-generative-ai-hub/ba-p/14327218" target="_blank">AI Developer Challenge April 2026: Build AI Agents with Generative AI Hub (SAP Community)</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 4: Green - Learning & Zertifizierungen -->
+            <section id="learning">
+                <div class="section-header green">
+                    <span class="section-color-indicator"></span>
+                    <h2>Learning &amp; Zertifizierungen</h2>
+                </div>
+
+                <h3><span class="tag neu">Neu</span> SAP Advanced AI Architect Certification: Rollout für Q2 2026 angekündigt</h3>
+                <ul>
+                    <li>SAP hat angekündigt, das Zertifizierungsportfolio im Bereich KI weiter auszubauen: Die <strong>Advanced AI Architect Certification</strong> ist für Q2 2026 geplant – eine Stufe über der bereits verfügbaren SAP Certified Generative AI Developer (C_AIG).</li>
+                    <li>Darüber hinaus sind <strong>industriespezifische AI-Zertifizierungen</strong> in Vorbereitung – unter anderem für die Bereiche Manufacturing, Finance und Retail. Damit reagiert SAP auf den wachsenden Bedarf an fachbereichsübergreifenden AI-Kompetenzen.</li>
+                    <li>Das neue Zertifizierungsformat erlaubt bereits heute den Einsatz von <strong>AI-Tools und offizieller Dokumentation während der Prüfung</strong> (Open Book + AI-enabled Environment) – eine deutliche Abkehr vom klassischen auswendig lernen hin zu angewandten Kompetenzen.</li>
+                    <li>Hintergrund: 65 von 107 SAP-Prüfungen (61 %) sind bereits auf performance-basierte Formate umgestellt; die neuen AI-Zertifizierungen werden von Anfang an in diesem Format angeboten.</li>
+                </ul>
+                <div class="sources">
+                    <ul>
+                        <li><a href="https://theexamquestions.com/blog/sap-ai-machine-learning-certifications-guide" target="_blank">AI and Machine Learning: New SAP Certifications in 2026 – Complete Guide</a></li>
+                        <li><a href="https://learning.sap.com/certifications/sap-certified-associate-sap-generative-ai-developer" target="_blank">SAP Learning: SAP Certified – Generative AI Developer</a></li>
+                        <li><a href="https://learning.sap.com/get-certified/reimagining-certification" target="_blank">SAP Learning: Reimagining Certification in the Age of AI</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag tipp">Tipp</span> SAP AI Masterclass auf Udemy: Umfassender Einstieg</h3>
+                <ul>
+                    <li>Für alle, die sich gezielt auf die Generative AI Developer-Zertifizierung oder praktische SAP-KI-Projekte vorbereiten möchten: Der <strong>SAP AI Masterclass-Kurs auf Udemy</strong> deckt Generative AI, Joule, AI Core und BTP in einem Paket ab.</li>
+                    <li>Nützlich als Ergänzung zu den offiziellen SAP Learning-Inhalten – vor allem für Lernende, die praxisnahe Beispiele und eine strukturierte Kursführung bevorzugen.</li>
+                </ul>
+                <div class="sources">
+                    <ul>
+                        <li><a href="https://www.udemy.com/course/sap-ai-masterclass/" target="_blank">Udemy: SAP AI Masterclass – SAP Generative AI, Joule, AI Core &amp; BTP</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 5: Red - Video Resources & Events -->
+            <section id="videos">
+                <div class="section-header red">
+                    <span class="section-color-indicator"></span>
+                    <h2>Video Resources &amp; Events</h2>
+                </div>
+
+                <h3><span class="tag event">Event</span> SAP CodeJam: ABAP Cloud – Warschau, 23. April 2026</h3>
+                <ul>
+                    <li>Am <strong>23. April 2026 in Warschau, Polen</strong> findet ein SAP CodeJam zum Thema <strong>ABAP Cloud</strong> statt – ein praxisnaher Halbtages-Workshop, der Entwickler mit ABAP Cloud und dem ABAP RESTful Application Programming Model (RAP) vertraut macht.</li>
+                    <li>Inhalte: Erste ABAP-Anwendungen mit ABAP Cloud erstellen, Services via HTTP exponieren und konsumieren, RAP-Grundlagen anwenden.</li>
+                    <li>Zielgruppe: ABAP-Entwickler, die Cloud-Architekturen und Clean-Core-Prinzipien in der Praxis kennenlernen wollen.</li>
+                    <li>Hinweis: Die CodeJam-Plätze sind begrenzt – frühzeitige Anmeldung über die SAP Community Events-Seite empfohlen.</li>
+                </ul>
+                <div class="sources">
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/sap-codejam/sap-codejam-abap-cloud-warsaw-poland/ev-p/14331237" target="_blank">SAP Community: SAP CodeJam ABAP Cloud (Warsaw, Poland)</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag event">Event</span> SAP Sapphire 2026 Virtual: Gratis-Zugang für alle</h3>
+                <ul>
+                    <li>Wer nicht nach Orlando (11.–13. Mai) oder Madrid (19.–21. Mai) reisen kann: SAP Sapphire 2026 bietet ein <strong>kostenloses Virtual-Format</strong> für alle Sessions an.</li>
+                    <li>Besonders empfohlen für SAP-KI-Interessierte: Die Sessions zu <strong>Joule for Developers, ABAP Agentic AI in VS Code (BTP2573)</strong> und dem Überblick zur neuen ABAP-Cloud-Ära (BTP1429) werden live gestreamt und anschließend als Aufzeichnung verfügbar sein.</li>
+                    <li>Registrierung und Sessionkatalog direkt über die offizielle SAP-Events-Seite.</li>
+                </ul>
+                <div class="sources">
+                    <ul>
+                        <li><a href="https://www.sap.com/events/sapphire/virtual.html" target="_blank">SAP Sapphire Virtual 2026 – Registrierung und Sessionkatalog</a></li>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/joule-for-developers-abap-ai-sapphire-and-asug-2026-sessions/ba-p/14365782" target="_blank">Joule for Developers ABAP AI – Sapphire and ASUG 2026 Sessions</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag tipp">Tipp</span> Lernpfad: Cursor + MCP für SAP ERP und S/4HANA On-Premise</h3>
+                <ul>
+                    <li>Ein neuer Praxisbeitrag auf Medium zeigt, wie man mit <strong>Cursor + MCP in unter 5 Minuten eine AI-Anwendung</strong> auf SAP ERP und S/4HANA On-Premise baut – ideal als schneller Einstieg für alle, die den MCP-Ansatz auf klassischen SAP-Systemen ausprobieren wollen.</li>
+                    <li>Der Beitrag ergänzt die Community-Ressourcen zum ABAP MCP Add-On und zeigt, wie sich populäre AI-Coding-Tools direkt mit On-Premise-SAP-Systemen verbinden lassen.</li>
+                </ul>
+                <div class="sources">
+                    <ul>
+                        <li><a href="https://medium.com/@bsiminski/how-to-use-cursor-mcp-to-build-ai-app-in-5-minutes-on-sap-erp-and-s-4hana-on-premise-97ea69b9fc51" target="_blank">Medium: How to use Cursor + MCP to build AI app in 5 minutes on SAP ERP and S/4HANA On-Premise</a></li>
+                    </ul>
+                </div>
+
+                <!-- Events table -->
+                <h3>Terminvorschau: Die nächsten Wochen</h3>
+                <table>
+                    <tr>
+                        <th>Datum</th>
+                        <th>Veranstaltung</th>
+                        <th>Ort</th>
+                    </tr>
+                    <tr>
+                        <td>10. April 2026</td>
+                        <td>SAP CodeJam: CAP &amp; Generative AI Hub</td>
+                        <td>Curitiba, Brasilien</td>
+                    </tr>
+                    <tr>
+                        <td>16. April 2026</td>
+                        <td>SAP CodeJam: Build Code-Based AI Agents</td>
+                        <td>Madrid, Spanien</td>
+                    </tr>
+                    <tr>
+                        <td>23. April 2026</td>
+                        <td>SAP CodeJam: ABAP Cloud</td>
+                        <td>Warschau, Polen</td>
+                    </tr>
+                    <tr>
+                        <td>11.–13. Mai 2026</td>
+                        <td>SAP Sapphire &amp; ASUG Annual Conference</td>
+                        <td>Orlando, USA (+ Virtual)</td>
+                    </tr>
+                    <tr>
+                        <td>19.–21. Mai 2026</td>
+                        <td>SAP Sapphire</td>
+                        <td>Madrid, Spanien</td>
+                    </tr>
+                </table>
+            </section>
+
+            <!-- Navigation -->
+            <div class="navigation">
+                <a href="index.html">&larr; Zurück zur Übersicht</a>
+                <a href="2026-04-06.html">&larr; Vorheriges Briefing (6. April)</a>
+            </div>
+        </main>
+
+        <!-- TOC Sidebar -->
+        <aside class="toc">
+            <h3>Inhaltsverzeichnis</h3>
+            <ul>
+                <li>
+                    <span class="toc-dot" style="background:#e67e22;"></span>
+                    <a href="#abap">ABAP Classic AI</a>
+                </li>
+                <li>
+                    <span class="toc-dot" style="background:#3498db;"></span>
+                    <a href="#cloud">SAP Cloud AI</a>
+                </li>
+                <li>
+                    <span class="toc-dot" style="background:#9b59b6;"></span>
+                    <a href="#community">Community &amp; Social</a>
+                </li>
+                <li>
+                    <span class="toc-dot" style="background:#27ae60;"></span>
+                    <a href="#learning">Learning &amp; Zertifizierungen</a>
+                </li>
+                <li>
+                    <span class="toc-dot" style="background:#c0392b;"></span>
+                    <a href="#videos">Videos &amp; Events</a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        Recherchezeitraum: 6.–7. April 2026 &middot; Automatisch erstellt mit Claude | <a href="index.html">SAP AI Daily</a>
+    </footer>
+
+    <script>
+        // Smooth scrolling for TOC links
+        document.querySelectorAll('.toc a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
