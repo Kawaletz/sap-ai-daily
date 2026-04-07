@@ -400,7 +400,7 @@
     <div class="container">
         <main>
             <div class="publication-info">
-                <strong>Dieses Briefing wurde am 07.04.2026 automatisch erstellt.</strong><br>
+                <strong>Dieses Briefing wurde am 07.04.2026 automatisch erstellt und aktualisiert.</strong><br>
                 Recherchezeitraum: 6.&ndash;7. April 2026 &middot; Nur neue Inhalte seit dem letzten Briefing.
             </div>
 
@@ -435,6 +435,48 @@
                     <ul>
                         <li>Quelle: <a href="https://github.com/fr0ster/mcp-abap-adt" target="_blank">GitHub: fr0ster/mcp-abap-adt</a></li>
                         <li>Referenz: <a href="https://www.pulsemcp.com/servers/mario-andreschak-abap-development-tools" target="_blank">PulseMCP: SAP ABAP Development Tools MCP Server</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag neu">Neu</span> Vibe-Coding-Serie: Claude Code, Google Antigravity &amp; OpenAI Codex für ABAP</h3>
+                <ul>
+                    <li>Eine neue Blog-Serie in der SAP Community zeigt, wie „Vibe Coding" – das Entwickeln durch natürlichsprachliche Konversation mit AI-Agenten – direkt im ABAP-Umfeld funktioniert. Drei Beiträge erschienen innerhalb kurzer Zeit.</li>
+                    <li><strong>Post 1:</strong> Zeigt, wie ein ABAP MCP Server mit Claude Code und Google Antigravity (Google IDE) installiert und live erweitert wird. Claude schlägt dabei eigenständig vor, den zunächst read-only Server um WRITE-Fähigkeiten zu ergänzen – und setzt das unmittelbar um.</li>
+                    <li><strong>Post 2:</strong> Beschreibt denselben Ansatz mit <strong>OpenAI Codex</strong> – der MCP Server wird per Node.js-CLI installiert und durch Konversation mit dem Agenten um Create-/Update-Funktionalität erweitert.</li>
+                    <li><strong>Post 3:</strong> Ein Praxisvergleich: Ist <strong>Claude Code via MCP ein „Poor man's Joule"</strong> oder ein vollwertiges Werkzeug? Der Autor testet Datenanalyse-Use-Cases (z.B. „Wie viele Trips über 10.000 EUR gibt es?") ohne Tool- oder Datenbankangabe – Claude leitet Kontext und Tools selbstständig ab und antwortet korrekt.</li>
+                    <li>Fazit der Serie: Die Kombination aus MCP-Server + externes AI-Coding-Tool ist besonders wertvoll, wo Joule for Developers noch nicht verfügbar ist – und zeigt das enorme Potenzial der vibe-codierten ABAP-Entwicklung.</li>
+                </ul>
+                <div class="sources">
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/installing-and-extending-an-abap-mcp-server-by-vibe-coding-with-claude-code/ba-p/14343600" target="_blank">SAP Community: Installing and extending an ABAP MCP Server by vibe-coding with Claude Code and Google Antigravity</a></li>
+                        <li><a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/vibe-coding-in-abap-via-an-mcp-server-with-openai-codex/ba-p/14343846" target="_blank">SAP Community: Vibe-coding in ABAP via an MCP Server with OpenAI Codex</a></li>
+                        <li><a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/claude-code-via-mcp-poor-man-s-joule-or-a-practical-tool/ba-p/14344261" target="_blank">SAP Community: Claude Code via MCP: Poor man's Joule, or a practical tool?</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag neu">Neu</span> GitHub: secondsky/sap-skills – 35 Production-ready Claude Code Skills für SAP</h3>
+                <ul>
+                    <li>Das Open-Source-Repository <strong>secondsky/sap-skills</strong> bietet 35 produktionsreife <strong>Claude Code Skills für die SAP-Entwicklung</strong> – abgedeckt werden BTP, CAP, Fiori, ABAP, HANA, Analytics Cloud und mehr.</li>
+                    <li>Die Skills laden automatisch, wenn passende SAP-Technologien erkannt werden – z.B. aktiviert „Create a new CAP service" automatisch den <em>sap-cap-capire</em>-Skill, „Deploy to BTP" aktiviert <em>sap-btp-cloud-platform</em>.</li>
+                    <li>Das Repo wurde zuletzt am 2. April 2026 (v2.1.8) aktualisiert und enthält u.a. einen dedizierten Plugin für <strong>SAP AI Core</strong>. Die Skills folgen dem Claude Code Plugin-Pattern und sind für Claude Code CLI und Claude Desktop optimiert.</li>
+                    <li>Ein Fork (<em>Amit-A2Z/sap-skills</em>) zeigt das wachsende Community-Interesse an AI-Coding-Tools speziell für das SAP-Ökosystem.</li>
+                </ul>
+                <div class="sources">
+                    <ul>
+                        <li><a href="https://github.com/secondsky/sap-skills" target="_blank">GitHub: secondsky/sap-skills – Production-ready Claude Code Skills for SAP</a></li>
+                        <li><a href="https://github.com/secondsky/sap-skills/blob/main/CHANGELOG.md" target="_blank">Changelog (v2.1.8, April 2026)</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag neu">Neu</span> Eclipse Plugin: YahorNovik/sap-adt-mcp-server – MCP Server direkt in Eclipse</h3>
+                <ul>
+                    <li>Ein neues GitHub-Projekt bringt den MCP Server <strong>direkt als Eclipse Plugin</strong> – damit läuft der Server innerhalb von Eclipse und gibt Claude Code und anderen AI-Tools vollen Zugang zur ABAP-Codebase: Suchen, Lesen, Schreiben, Testen und Aktivieren von ABAP-Objekten.</li>
+                    <li>Der Ansatz unterscheidet sich von Node.js-basierten MCP-Servern: Der Plugin läuft im gleichen Prozess wie Eclipse/ADT und kann dadurch direkt auf alle ADT-internen APIs zugreifen – ohne separaten Serverprozess oder manuelle Authentifizierungskonfiguration.</li>
+                    <li>Besonders interessant für Entwickler, die weiterhin Eclipse als primäre IDE nutzen und dennoch AI-Coding-Tools via MCP anschließen wollen.</li>
+                </ul>
+                <div class="sources">
+                    <ul>
+                        <li><a href="https://github.com/YahorNovik/sap-adt-mcp-server" target="_blank">GitHub: YahorNovik/sap-adt-mcp-server – Eclipse Plugin MCP Server for Claude Code</a></li>
                     </ul>
                 </div>
             </section>
@@ -476,6 +518,34 @@
                         <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/agentic-ai-gains-momentum-as-partners-build-content-and-code-based-customer/ba-p/14354661" target="_blank">SAP Community: Agentic AI Gains Momentum as Partners Build Content- and Code-Based Customer-Driven Solutions</a></li>
                     </ul>
                 </div>
+
+                <h3><span class="tag neu">Neu</span> Joule Deep Research &amp; Joule Action Bar: Neue Q1-2026-Features im Early Access</h3>
+                <ul>
+                    <li>SAP hat im Rahmen des <strong>SAP UX Q1/2026 Updates</strong> zwei neue Joule-Innovationen im Beta- und Early-Adopter-Programm vorgestellt: <strong>Joule Deep Research</strong> und die <strong>Joule Action Bar</strong>.</li>
+                    <li><strong>Joule Deep Research</strong> kombiniert interne SAP-Daten mit externen Web-Quellen via Perplexity, um bei komplexen Anfragen nicht nur Daten, sondern <em>kontextuell aufbereitete Analysen</em> zu liefern. Das Feature arbeitet zweistufig: Zuerst zeigt Joule dem Nutzer den geplanten Rechercheplan – und wartet auf Bestätigung, bevor es weiterarbeitet. Dies entspricht dem AI-UX-Prinzip „Human in Control".</li>
+                    <li><strong>Joule Action Bar</strong> ist ein intelligentes Browser-Overlay (powered by WalkMe), das AI-Unterstützung kontextabhängig in <em>jedem</em> SAP- und Nicht-SAP-Browser-Anwendung einblendet. Der Agent interpretiert den aktuellen Screen-Kontext und liefert Echtzeit-Empfehlungen – ohne Systemwechsel.</li>
+                    <li>Beide Features sind aktuell im Early Adopter Care (EAC)-Programm verfügbar und werden voraussichtlich in Q2/Q3 2026 allgemein ausgerollt.</li>
+                </ul>
+                <div class="sources">
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-ux-q1-2026-update-part-1-ai-joule-sap-build-work-zone-sap-mobile-start/ba-p/14312110" target="_blank">SAP Community: SAP UX Q1/2026 Update – Part 1: AI, Joule, SAP Build Work Zone, SAP Mobile Start</a></li>
+                        <li><a href="https://discovery-center.cloud.sap/ai-feature/0cbab727-02fe-47d3-9bf1-ff96d6c2ae62/" target="_blank">SAP Discovery Center: Joule Deep Research AI Feature</a></li>
+                        <li><a href="https://medium.com/sap-innovation-hub/sap-joule-action-bar-the-future-of-ai-driven-business-efficiency-d73fa3336936" target="_blank">Medium/SAP Innovation Hub: SAP Joule Action Bar – The Future of AI-Driven Business Efficiency</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag neu">Neu</span> From Prompt to Production: MCP Server für Joule Studio mit SAP AI Core bauen</h3>
+                <ul>
+                    <li>Ein neuer SAP-Community-Blog-Post von Max McPhee (BTP Solution Advisor, SAP) beschreibt, wie er mithilfe von <strong>SAP AI Core-Tools einen vollständigen MCP Server</strong> für Joule Studio von Grund auf gebaut und auf SAP BTP Cloud Foundry deployed hat.</li>
+                    <li>Der gesamte Entwicklungsprozess erfolgte via <strong>Conversation Development mit GenAI-Tools von SAP</strong> – der Post dokumentiert den Weg vom ersten Prompt bis zum produktionsreifen Deployment.</li>
+                    <li>Das Model Context Protocol (MCP), ursprünglich von Anthropic entwickelt, wird hier als Brücke genutzt, um Joule Studio mit externen Datenquellen und Tools zu verbinden. SAP hat MCP frühzeitig adoptiert und bereits mehrere Open-Source-MCP-Server veröffentlicht (u.a. den UI5 MCP Server).</li>
+                    <li>Der Post ist bewusst keine Schritt-für-Schritt-Anleitung, sondern ein Erfahrungsbericht – mit dem Ziel zu zeigen, wie schnell AI-gestützte Entwicklung heute iterieren kann.</li>
+                </ul>
+                <div class="sources">
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/from-prompt-to-production-creating-an-mcp-server-for-joule-studio-using-ai/ba-p/14338394" target="_blank">SAP Community: From Prompt to Production – Creating an MCP Server for Joule Studio Using AI Core</a></li>
+                    </ul>
+                </div>
             </section>
 
             <!-- SECTION 3: Purple - Community & Social Media -->
@@ -510,6 +580,32 @@
                         <li><a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/ai-developer-challenge-april-2026-build-ai-agents-with-generative-ai-hub/ba-p/14327218" target="_blank">AI Developer Challenge April 2026: Build AI Agents with Generative AI Hub (SAP Community)</a></li>
                     </ul>
                 </div>
+
+                <h3><span class="tag neu">Neu</span> Copilot MCP Server: Microsoft Copilot trifft SAP Joule</h3>
+                <ul>
+                    <li>Arvato Systems hat eine <strong>MCP-basierte Integrationsarchitektur</strong> vorgestellt, die Microsoft Copilot (in Teams oder als automatisierter Workflow) mit SAP Joule und weiteren Quellen (SharePoint, Archive) verbindet – alles über einen einheitlichen MCP-Server als Orchestrator.</li>
+                    <li>Kernidee: Statt klassischer „Punkt-zu-Punkt-Integration" agiert ein AI-Agent als Host und steuert mehrere MCP-Server (SAP, SharePoint, Archiv) parallel – der Nutzer merkt davon nichts und erhält eine einheitliche, kontextreiche Antwort.</li>
+                    <li>Vorteil gegenüber klassischen Integrationen: <strong>Kein Data Replication nötig</strong> – MCP gibt dem AI-Agent Echtzeit-Zugang zu verifizierten Quellen. Dadurch steigen Antwortqualität und Faktengenauigkeit erheblich.</li>
+                    <li>Arvato Systems betreibt ein interdisziplinäres Kompetenzteam für SAP Joule × Microsoft 365 Copilot seit früher Phase – der Artikel vom 25. März 2026 zeigt den aktuellen Implementierungsstand.</li>
+                </ul>
+                <div class="sources">
+                    <ul>
+                        <li><a href="https://www.arvato-systems.com/blog/copilot-mcp-server" target="_blank">Arvato Systems: Copilot MCP Server – AI Protocol for Connecting Microsoft Copilot and SAP Joule</a></li>
+                        <li><a href="https://techcommunity.microsoft.com/blog/sap-partnernews/why-customers-win-when-sap-joule-and-microsoft-copilot-work-together/4495661" target="_blank">Microsoft Tech Community: Why Customers Win When SAP Joule and Microsoft Copilot Work Together</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag tipp">Tipp</span> SAP Developer News 2. April 2026: Weekly Highlights</h3>
+                <ul>
+                    <li>Die wöchentliche <strong>SAP Developer News vom 2. April 2026</strong> fasst die wichtigsten Entwickler-Updates zusammen – darunter der Start der AI Developer Challenge (Systemzugang ab 6. April), Details zu den kommenden CodeJams in Curitiba und Warschau sowie Beta-Updates zu SAP HANA Cloud.</li>
+                    <li>Besonders erwähnenswert: SAP HANA Cloud hat Beta-Tests für <strong>„Data and Discovery Agent Procedures"</strong> gestartet – eine Kombination aus Knowledge-Graph-basierter Entdeckung und AI-gesteuerter SQL-Generierung, die komplexe Datenabfragen drastisch vereinfacht.</li>
+                    <li>Die Developer News erscheint wöchentlich als kurzes Video (~5 Minuten) auf dem SAP-Entwicklerkanal und hält alle SAP-Entwickler über neue Features, SDK-Updates und Community-Events auf dem Laufenden.</li>
+                </ul>
+                <div class="sources">
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/developer-news/sap-developer-news-for-april-2nd-2026/ba-p/14364844" target="_blank">SAP Community: SAP Developer News for April 2nd, 2026</a></li>
+                    </ul>
+                </div>
             </section>
 
             <!-- SECTION 4: Green - Learning & Zertifizierungen -->
@@ -542,6 +638,18 @@
                 <div class="sources">
                     <ul>
                         <li><a href="https://www.udemy.com/course/sap-ai-masterclass/" target="_blank">Udemy: SAP AI Masterclass – SAP Generative AI, Joule, AI Core &amp; BTP</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag tipp">Tipp</span> Roadmap: Your 2026 Guide to Getting Started with ABAP AI</h3>
+                <ul>
+                    <li>Ein neuer SAP-Community-Blog-Post liefert eine <strong>strukturierte Orientierung für ABAP-Entwickler</strong>, die 2026 mit AI-gestützter Entwicklung beginnen möchten – mit klarer Einstufung nach System-Release und Kenntnisstand.</li>
+                    <li>Der Post empfiehlt für 90 % der Entwickler als besten Einstiegspunkt <strong>Joule for Developers in ADT für Eclipse</strong> – als schnellsten und mächtigsten Weg, um ABAP AI direkt im vertrauten IDE-Umfeld zu nutzen.</li>
+                    <li>Für Entwickler, die noch keinen Zugang zu Joule haben oder On-Premise-Systeme ohne Cloud-Anbindung betreiben, zeigt der Post alternative Wege: von Claude Code + MCP über GitHub Copilot in Eclipse bis hin zu AI-Tools via VS Code.</li>
+                </ul>
+                <div class="sources">
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/your-2026-roadmap-to-getting-started-with-abap-ai-and-abap-1/ba-p/14312060" target="_blank">SAP Community: Your 2026 Roadmap to Getting Started with ABAP AI and ABAP 1</a></li>
                     </ul>
                 </div>
             </section>
@@ -590,6 +698,18 @@
                     </ul>
                 </div>
 
+                <h3><span class="tag neu">Neu</span> SAP Concur Fusion 2026: Joule AI &amp; Payments-Integrationen vorgestellt</h3>
+                <ul>
+                    <li>Auf der <strong>SAP Concur Fusion 2026</strong> hat SAP neue Joule AI- und Payment-Integrationen für das Travel &amp; Expense-Portfolio enthüllt. Die Ankündigungen zeigen, wie SAP Joule zunehmend über den Developer-Bereich hinaus auch in Business-User-Workflows vordringt.</li>
+                    <li>Besonders relevant: Joule unterstützt Nutzer nun auch bei der <strong>automatischen Kategorisierung und Freigabe von Ausgaben</strong> sowie bei der intelligenten Reisekostenabrechnung – direkt aus dem Concur-Interface heraus, ohne separate SAP-Anmeldung.</li>
+                    <li>Die Integration unterstreicht SAPs Strategie, Joule als <strong>KI-Schicht über das gesamte SAP-Portfolio</strong> auszurollen – von Developer-Tools über HR bis hin zu Finance- und Travel-Workflows.</li>
+                </ul>
+                <div class="sources">
+                    <ul>
+                        <li><a href="https://sapinsider.org/blogs/sap-unveils-joule-ai-and-payments-integrations-at-concur-fusion-2026/" target="_blank">SAPinsider: SAP Unveils Joule AI and Payments Integrations at Concur Fusion 2026</a></li>
+                    </ul>
+                </div>
+
                 <!-- Events table -->
                 <h3>Terminvorschau: Die nächsten Wochen</h3>
                 <table>
@@ -597,6 +717,16 @@
                         <th>Datum</th>
                         <th>Veranstaltung</th>
                         <th>Ort</th>
+                    </tr>
+                    <tr>
+                        <td>8.–9. April 2026</td>
+                        <td>BTP, Data &amp; AI Exploration Workshops</td>
+                        <td>USA (mehrere Städte)</td>
+                    </tr>
+                    <tr>
+                        <td>9. April 2026</td>
+                        <td>Build AI Securely – Workshop</td>
+                        <td>Online/USA</td>
                     </tr>
                     <tr>
                         <td>10. April 2026</td>
