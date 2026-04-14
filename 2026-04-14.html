@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP AI Daily – 14. April 2026</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #1a3a5c;
+            color: white;
+            padding: 40px 20px;
+            border-bottom: 4px solid #e67e22;
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        header .date {
+            font-size: 1em;
+            opacity: 0.85;
+            margin-bottom: 15px;
+        }
+
+        header .breadcrumb {
+            margin-top: 15px;
+            opacity: 0.9;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 1fr 250px;
+            gap: 30px;
+        }
+
+        main {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .toc {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+
+        .toc h3 {
+            font-size: 0.95em;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #1a3a5c;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc li {
+            margin-bottom: 10px;
+            font-size: 0.9em;
+            padding-left: 0;
+        }
+
+        .toc li:before {
+            content: "";
+            display: none;
+        }
+
+        .toc a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: #1a5a8c;
+            padding-left: 5px;
+        }
+
+        .toc .toc-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .publication-info {
+            background: #f0f4f8;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid;
+        }
+
+        .section-header.orange { border-color: #e67e22; }
+        .section-header.blue { border-color: #3498db; }
+        .section-header.purple { border-color: #9b59b6; }
+        .section-header.green { border-color: #27ae60; }
+        .section-header.red { border-color: #c0392b; }
+
+        .section-header h2 {
+            font-size: 1.8em;
+            margin: 0;
+            font-weight: 700;
+            color: #1a3a5c;
+        }
+
+        .section-color-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .section-header.orange .section-color-indicator { background: #e67e22; }
+        .section-header.blue .section-color-indicator { background: #3498db; }
+        .section-header.purple .section-color-indicator { background: #9b59b6; }
+        .section-header.green .section-color-indicator { background: #27ae60; }
+        .section-header.red .section-color-indicator { background: #c0392b; }
+
+        h3 {
+            font-size: 1.35em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            color: #1a3a5c;
+            font-weight: 700;
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-right: 0.3rem;
+            vertical-align: middle;
+        }
+        .tag.neu { background: #e8f8f5; color: #1abc9c; border: 1px solid #1abc9c; }
+        .tag.update { background: #fef5e7; color: #e67e22; border: 1px solid #e67e22; }
+        .tag.event { background: #f5eef8; color: #9b59b6; border: 1px solid #9b59b6; }
+        .tag.tipp { background: #eaf2fb; color: #2980b9; border: 1px solid #2980b9; }
+
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        li:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: #e67e22;
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+
+        strong {
+            font-weight: 700;
+            color: #1a3a5c;
+        }
+
+        a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #1a5a8c;
+            text-decoration: underline;
+        }
+
+        .sources {
+            font-size: 0.85em;
+            color: #888;
+            margin-top: 10px;
+            padding-left: 0;
+        }
+
+        .sources li {
+            padding-left: 0;
+            margin-bottom: 5px;
+        }
+
+        .sources li:before {
+            content: "";
+            display: none;
+        }
+
+        .sources a {
+            color: #888;
+            text-decoration: underline;
+        }
+
+        .sources a:hover {
+            color: #2980b9;
+        }
+
+        .no-news {
+            font-style: italic;
+            color: #999;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+            border-radius: 4px;
+            overflow: hidden;
+        }
+
+        th {
+            background: #1a3a5c;
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 700;
+            font-size: 0.95em;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        tr:last-child td {
+            border-bottom: none;
+        }
+
+        tr:nth-child(even) td {
+            background: #f8f9fa;
+        }
+
+        .nav-footer {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
+            font-size: 0.9em;
+        }
+
+        .nav-footer a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #1a3a5c;
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .nav-footer a:hover {
+            background: #2980b9;
+        }
+
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 30px 20px;
+            margin-top: 20px;
+            font-size: 0.9em;
+        }
+
+        footer a {
+            color: #e67e22;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .toc {
+                display: none;
+            }
+            main {
+                padding: 20px;
+            }
+            header h1 {
+                font-size: 1.7em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div style="max-width: 1200px; margin: 0 auto;">
+            <div class="breadcrumb"><a href="index.html">← Zurück zur Übersicht</a></div>
+            <h1>SAP AI Daily</h1>
+            <div class="date">Dienstag, 14. April 2026</div>
+        </div>
+    </header>
+
+    <div class="container">
+        <main>
+            <div class="publication-info">
+                📅 <strong>Erstellt am:</strong> 14. April 2026 &nbsp;|&nbsp;
+                🔍 <strong>Recherchezeitraum:</strong> 12.–14. April 2026 &nbsp;|&nbsp;
+                📰 <strong>Themen heute:</strong> sap-ai-mcp-servers Verzeichnis aktualisiert, sap-skills v2.1.8 für Claude Code, Joule for Developers 2026 Roadmap (Q2-Vorschau), AI Developer Challenge Week 2 &amp; 3, Hasso-Plattner-Founders-Award-Gewinner, SAP Innovation Award 2026 Gewinner, CodeConnect-Tickets ab 16. April, Live-YouTube-Session heute
+            </div>
+
+            <!-- Section 1: ABAP Classic AI -->
+            <section id="abap-classic">
+                <div class="section-header orange">
+                    <span class="section-color-indicator"></span>
+                    <h2>ABAP Classic AI</h2>
+                </div>
+
+                <h3><span class="tag neu">NEU</span> sap-ai-mcp-servers: Kuratiertes Verzeichnis aller SAP MCP Server (Stand: 14. April 2026)</h3>
+                <ul>
+                    <li>Das GitHub-Repository <strong>marianfoo/sap-ai-mcp-servers</strong> wurde heute auf den neuesten Stand gebracht und listet nun <strong>über 80 SAP-bezogene MCP-Server und AI Skills</strong> mit Star-Counts und letztem Update-Datum.</li>
+                    <li>Top-Einträge nach Popularität: <strong>Vibing Steampunk</strong> (273 Stars, aktualisiert 12. April) – ADT-zu-MCP-Bridge; <strong>MCP SAP Docs</strong> (152 Stars); <strong>SAP Fiori MCP Server</strong> (136 Stars, aktualisiert heute); <strong>SAP Skills for Claude</strong> (209 Stars) – das größte SAP-Skill-Set für Claude Code.</li>
+                    <li>Offizielle SAP MCP Server wurden aktualisiert: <strong>SAP Fiori MCP Server</strong> (heute), <strong>SAP MDK MCP Server</strong> (heute), <strong>UI5 MCP Server</strong> (gestern). SAP treibt die offizielle MCP-Unterstützung aktiv voran.</li>
+                    <li><strong>fr0ster/mcp-abap-adt</strong> – Ein neuer ABAP ADT MCP Server mit vollem CRUD, JWT/XSUAA und Service-Key-Authentifizierung für SAP BTP ABAP Cloud und On-Premise ECC/S/4HANA (aktualisiert 12. April 2026).</li>
+                    <li><span class="tag tipp">TIPP</span> Wer nach dem richtigen Einstiegspunkt sucht: Das Repository kategorisiert nach Offizielle SAP Server, ABAP &amp; ADT, Dokumentation, OData/Gateway, Automatisierung und AI Skills – ein unverzichtbares Lesezeichen für den SAP-AI-Entwickler-Alltag.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li>🔗 <a href="https://github.com/marianfoo/sap-ai-mcp-servers" target="_blank">GitHub: marianfoo/sap-ai-mcp-servers – Komplettes SAP MCP Servers Verzeichnis</a></li>
+                        <li>🔗 <a href="https://github.com/fr0ster/mcp-abap-adt" target="_blank">GitHub: fr0ster/mcp-abap-adt – ABAP ADT MCP Server mit JWT/XSUAA</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag update">UPDATE</span> sap-skills v2.1.8: 35 produktionsreife Claude Code Plugins für SAP</h3>
+                <ul>
+                    <li>Das Repository <strong>secondsky/sap-skills</strong> veröffentlichte Version <strong>v2.1.8</strong> (2. April 2026) mit verbesserten Plugin-Manifest-Strukturen und Description Sanitization – ideal für den Einsatz in Claude Code und ähnlichen AI-Coding-Umgebungen.</li>
+                    <li>Die Sammlung umfasst <strong>35 Skills in 5 Kategorien</strong>: SAP BTP Platform (14 Skills), Core Technologies inkl. ABAP + AI Core + CAP (7), UI Development mit Fiori &amp; SAPUI5 (4), Data &amp; Analytics inkl. HANA ML (5) sowie Tooling (2).</li>
+                    <li>Besonders relevant für ABAP-Entwickler: <strong>ABAP Skill, CDS Views Skill, AI Core Skill</strong> – alle drei sind direkt in den SAP Plugin für Claude Code integriert und aktivieren sich kontextbasiert beim Arbeiten mit den jeweiligen Technologien.</li>
+                    <li>Aktuelle Highlights aus dem Changelog: v2.1.5 brachte SAP Analytics Cloud Scripting MCP-Integration mit 90 Tools; v2.1.4 Fiori Tools MCP-Integration mit semantischer Suche &amp; App-Generierung.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li>🔗 <a href="https://github.com/secondsky/sap-skills" target="_blank">GitHub: secondsky/sap-skills – 35 Claude Code Skills für SAP (v2.1.8)</a></li>
+                        <li>🔗 <a href="https://mcpmarket.com/tools/skills/sap-abap-development" target="_blank">MCP Market: SAP ABAP Development Skill für Claude Code</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 2: SAP Cloud AI -->
+            <section id="sap-cloud-ai">
+                <div class="section-header blue">
+                    <span class="section-color-indicator"></span>
+                    <h2>SAP Cloud AI</h2>
+                </div>
+
+                <h3><span class="tag neu">NEU</span> Joule for Developers 2026 Roadmap: VS Code GA + Agentic AI in Q2</h3>
+                <ul>
+                    <li>SAP hat den <strong>offiziellen 2026 Roadmap-Post für Joule for Developers</strong> veröffentlicht: Das größte Thema ist die Transition von einzelnen AI-Skills hin zu <strong>vollständiger Agentic AI</strong> – Joule agiert nicht mehr nur als Copilot, sondern als autonomer Kollaborateur.</li>
+                    <li><strong>Q2 2026 Highlights:</strong> General Availability von ABAP Cloud-Entwicklung in <strong>Visual Studio Code</strong> (ADT for VS Code); Einführung eines offiziellen <strong>ABAP MCP Servers</strong> direkt von SAP für die Anbindung an AI-Assistenten und Agenten-Frameworks.</li>
+                    <li><strong>Side-by-Side-Architektur:</strong> SAP bringt Joule for Developers auch zu Kunden auf älteren Private-Cloud-Releases – via Side-by-Side-Deployment unabhängig von der zugrundeliegenden S/4HANA-Release-Version.</li>
+                    <li>Die Roadmap beschreibt zudem einen neuen <strong>ABAP Agentic AI Framework</strong>, der bestehende Joule-ABAP-Skills (Code Explain, Complete, Generate) zu einem vernetzten, autonomen Kollaborationssystem verbindet.</li>
+                    <li><span class="tag tipp">TIPP</span> Für Entwickler auf ECC oder älterer S/4HANA Private Cloud: Die Side-by-Side-Architektur bedeutet, dass man nicht auf das nächste Release warten muss – Joule AI-Features werden via BTP seitlich zugeschaltet.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li>🔗 <a href="https://community.sap.com/t5/technology-blog-posts-by-sap/our-2026-roadmap-for-joule-for-developers-abap-ai-capabilities/ba-p/14360358" target="_blank">SAP Community: Our 2026 Roadmap for Joule for Developers ABAP AI Capabilities</a></li>
+                        <li>🔗 <a href="https://community.sap.com/t5/technology-blog-posts-by-sap/your-2026-roadmap-to-getting-started-with-abap-ai-and-abap-1/ba-p/14312060" target="_blank">SAP Community: Your 2026 Roadmap to Getting Started with ABAP AI</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag update">UPDATE</span> AI Developer Challenge: Week 2 (CrewAI) und Week 3 (Agentic RAG) laufen</h3>
+                <ul>
+                    <li>Die <strong>AI Developer Challenge April 2026</strong> läuft auf Hochtouren: <strong>Woche 2</strong> fokussiert auf das Bauen von Code-basierten Agenten mit <strong>CrewAI + Generative AI Hub</strong> – Teilnehmer lernen, Agenten mit Rolle, Ziel und Backstory zu definieren sowie Tasks mit konkreten Outputs zu verknüpfen.</li>
+                    <li><strong>Woche 3</strong> steigert die Komplexität: Der Grounding-Modul des Orchestration Service wird als <strong>Tool an den CrewAI-Agenten übergeben</strong> – das Ergebnis ist ein einfacher Agentic-RAG-Workflow, bei dem der Agent selbst entscheidet, wann er externe Wissensbases abfragt.</li>
+                    <li>Technisch werden Jupyter Notebooks eingesetzt; der Generative AI Hub auf BTP stellt die LLM-Infrastruktur bereit. Die neuen Modelle Claude Haiku 4.5 und Claude Sonnet 4.5 (aus dem letzten Briefing bekannt) sind direkt nutzbar.</li>
+                    <li><span class="tag event">EVENT</span> Die Challenge endet Ende April 2026 – Einreichungen erfolgen wöchentlich im SAP Community Forum.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li>🔗 <a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/ai-developer-challenge-april-2026-build-ai-agents-with-generative-ai-hub/ba-p/14327218" target="_blank">SAP Community: AI Developer Challenge April 2026 – Generative AI Hub</a></li>
+                        <li>🔗 <a href="https://community.sap.com/t5/artificial-intelligence-forum/week-2-building-ai-agents-with-crewai-and-generative-ai-hub/td-p/14371763" target="_blank">SAP Community Forum: Week 2 – Building AI Agents with CrewAI</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 3: Community & Social Media -->
+            <section id="community">
+                <div class="section-header purple">
+                    <span class="section-color-indicator"></span>
+                    <h2>Community &amp; Social Media</h2>
+                </div>
+
+                <h3><span class="tag neu">NEU</span> Hasso-Plattner-Founders-Award 2025: SAP Cognitive Twin Enterprise und Document AI gewinnen</h3>
+                <ul>
+                    <li>SAP hat heute die <strong>Gewinner des Hasso Plattner Founders' Award 2025</strong> bekannt gegeben – die höchste interne Auszeichnung des Unternehmens. Das diesjährige Thema: <strong>Künstliche Intelligenz</strong>.</li>
+                    <li><strong>Emerging Ideas: SAP Cognitive Twin Enterprise (CTE)</strong> – ein KI-getriebenes kognitives Modell des gesamten Unternehmens, das Daten, Planung, Simulation und AI-Agenten in einem governed Decision-and-Execution-Loop verbindet. Organisationen können damit Szenarien testen, Risiken antizipieren und proaktiv handeln – über Finance, Supply Chain, HR und Customer Experience hinweg.</li>
+                    <li><strong>Scaling Innovation: SAP Document AI</strong> – automatisierte intelligente Dokumentenverarbeitung (Rechnungen, POs, Verträge), die bereits von <em>zehntausenden Kunden weltweit</em> zur Verarbeitung von <em>Milliarden von Dokumenten</em> eingesetzt wird. Die Lösung ist tief in SAPs Portfolio integriert und eliminiert komplexe Integrationsarbeit.</li>
+                    <li>Die Jury wertete 254 Einreichungen aus aller Welt und wählte 41 Finalisten aus 9 Ländern – ein Rekord an Beteiligung und geografischer Breite.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li>🔗 <a href="https://news.sap.com/2026/04/hasso-plattner-founders-award-2025-winners-announced/" target="_blank">SAP News: Hasso Plattner Founders' Award 2025 Winners Announced</a></li>
+                        <li>🔗 <a href="https://news.sap.com/2026/02/hasso-plattner-founders-award-finalists-scaling-innovation/" target="_blank">SAP News: Hasso Plattner Founders' Award Finalists – Scaling Innovation</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag neu">NEU</span> SAP Innovation Award 2026: Gewinner in 12 Kategorien – Martur Fompak gewinnt AI Excellence</h3>
+                <ul>
+                    <li>SAP hat heute die <strong>Gewinner der SAP Innovation Awards 2026</strong> bekannt gegeben – 19 Organisationen wurden in 12 Kategorien ausgezeichnet.</li>
+                    <li><strong>AI Excellence</strong> (Einsatz von SAP Business AI zur grundlegenden Verbesserung von Produktivität und Entscheidungsfindung): <strong>Martur Fompak International</strong> – ein führender Hersteller von Fahrzeugsitzkomponenten, der KI tief in seine Geschäftsprozesse integriert hat.</li>
+                    <li>Weitere Gewinner: <strong>Cloud ERP Champion</strong>: PwC &amp; Vedanta Limited | <strong>Customer Experience Innovator</strong>: IBM | <strong>Financial Futurist</strong>: Ministerium für Verteidigung der Ukraine | <strong>Industry Leader</strong>: Nestlé, Prysmian, City of Madrid, Accenture | <strong>Supply Chain Catalyst</strong>: Sasol &amp; Ericsson.</li>
+                    <li>Der Tenor der Awards 2026: Nicht Neuartigkeit, sondern <strong>„From Readiness to Resilience"</strong> – operative Effektivität, Souveränität und Ökosystem-Orchestrierung stehen im Vordergrund.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li>🔗 <a href="https://news.sap.com/2026/04/honoring-2026-sap-innovation-award-winners/" target="_blank">SAP News: Honoring the 2026 SAP Innovation Award Winners</a></li>
+                        <li>🔗 <a href="https://news.sap.com/2026/04/top-innovators-2026-sap-innovation-award-finalists/" target="_blank">SAP News: The Top Innovators of 2026 – SAP Innovation Award Finalists</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 4: Learning & Zertifizierungen -->
+            <section id="learning">
+                <div class="section-header green">
+                    <span class="section-color-indicator"></span>
+                    <h2>Learning &amp; Zertifizierungen</h2>
+                </div>
+
+                <h3><span class="tag update">UPDATE</span> SAP Zertifizierungsmodell 2026: Performance-Based Exams mit KI-Tools erlaubt</h3>
+                <ul>
+                    <li>SAP stellt sein Zertifizierungsmodell grundlegend um: Die neuen <strong>Performance-Based Exams</strong> ersetzen klassische Multiple-Choice-Tests durch praktische, handlungsorientierte Aufgaben – Systeme einrichten, Workflows designen, Code schreiben.</li>
+                    <li><strong>KI-Tools sind im Prüfungsraum ausdrücklich erlaubt</strong> – zusammen mit offizieller SAP-Dokumentation. Dies soll Job-Readiness beweisen statt Auswendiglernen prüfen. Ein wegweisender Schritt in der SAP-Zertifizierungslandschaft.</li>
+                    <li><strong>Geplante neue AI-Zertifizierungen für Q2 2026:</strong> Advanced AI Architect, branchenspezifische AI-Zertifizierungen (Manufacturing, Finance, Retail) sowie ein AI Ethics &amp; Governance Specialist Track.</li>
+                    <li>Bestehende Zertifizierungen bleiben bis zur normalen Erneuerung gültig – keine sofortige Rezertifizierung notwendig. Der Übergang erfolgt schrittweise, die meisten Prüfungen waren bis Mitte Januar 2026 migriert.</li>
+                    <li><span class="tag tipp">TIPP</span> Der <strong>SAP Certified Associate – SAP Generative AI Developer</strong> ist die empfohlene Einstiegszertifizierung für ABAP-/BTP-Entwickler, die ihr AI-Wissen formell nachweisen wollen.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li>🔗 <a href="https://learning.sap.com/get-certified/reimagining-certification" target="_blank">SAP Learning: Reimagining Certification in the Age of AI</a></li>
+                        <li>🔗 <a href="https://theexamquestions.com/blog/sap-ai-machine-learning-certifications-guide" target="_blank">AI and Machine Learning: New SAP Certifications in 2026 – Complete Guide</a></li>
+                        <li>🔗 <a href="https://learning.sap.com/certifications/sap-certified-associate-sap-generative-ai-developer" target="_blank">SAP Learning: SAP Certified Associate – SAP Generative AI Developer</a></li>
+                        <li>🔗 <a href="https://www.ascendientlearning.com/blog/new-sap-certification-2026" target="_blank">Ascendient Learning: Understanding the New SAP Certification Model 2026</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Section 5: Video Resources & Events -->
+            <section id="video-events">
+                <div class="section-header red">
+                    <span class="section-color-indicator"></span>
+                    <h2>Video Resources &amp; Events</h2>
+                </div>
+
+                <h3><span class="tag event">EVENT</span> HEUTE LIVE: SAP BTP AI Best Practices – Von KI-Ambitionen zur Enterprise-Realität (16:00–17:00 CET)</h3>
+                <ul>
+                    <li>Im Rahmen der <strong>„Architect the Future" Live-YouTube-Serie</strong> findet heute, 14. April 2026, von <strong>16:00 bis 17:00 Uhr CET</strong> eine Live-Session statt: <em>„Learn how to move from AI ambition to enterprise reality with SAP BTP AI Best Practices"</em>.</li>
+                    <li>Referenten: <strong>Marco Cigaina</strong> (BTP AI Services CoE, BTP AI Best Practices Project Lead) und <strong>Luis Marques</strong> (BTP AI Services CoE, AI Solution Architect) – zwei der führenden SAP-Experten für KI-Architektur auf BTP.</li>
+                    <li>Die Session adressiert eine der häufigsten Herausforderungen in SAP-Projekten: Wie macht man aus POCs echte produktive KI-Lösungen? Praktische Einblicke in den AI-Entwicklungslebenszyklus, Governance und Patterns für robuste BTP-AI-Lösungen.</li>
+                    <li>Die Aufzeichnung wird danach über denselben Link verfügbar sein – kein Anmeldezwang, direkter YouTube-Zugang.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li>🔗 <a href="https://community.sap.com/t5/technology-blog-posts-by-sap/architect-the-future-live-youtube-series-on-sap-business-technology/ba-p/14308167" target="_blank">SAP Community: Architect the Future – Live YouTube Series on SAP BTP (alle Termine)</a></li>
+                        <li>🔗 <a href="https://github.com/SAP-samples/sap-btp-ai-best-practices" target="_blank">GitHub: SAP-samples/sap-btp-ai-best-practices – Beispielcode &amp; Implementierungen</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag event">EVENT</span> CodeConnect 2026: Tickets ab 16. April kostenlos – UI5con, reCAP, HANA Tech Con</h3>
+                <ul>
+                    <li><strong>Code Connect 2026</strong> (13.–16. Juli 2026, St. Leon-Rot / online) öffnet am <strong>16. April 2026</strong> die Ticketregistrierung – alle Tickets sind <strong>kostenlos</strong>.</li>
+                    <li>Das Event vereint drei Konferenzen: <strong>UI5con</strong> (OpenUI5/SAPUI5-Community), <strong>reCAP</strong> (Cloud Application Programming Model) und <strong>HANA Tech Con</strong> (HANA-Datenbanktechnologie). Parallel finden CodeJams statt: OpenUI5, CAP AI Agents und HANA AI.</li>
+                    <li>Besonders relevant: Der CodeJam <strong>„CAP AI Agents"</strong> – praxisorientierter Hands-on-Workshop zur Entwicklung von KI-Agenten mit dem Cloud Application Programming Model. Ideal für Entwickler, die vom SAP Generative AI Hub in Produktivanwendungen wollen.</li>
+                    <li><span class="tag tipp">TIPP</span> Den Termin 16. April im Kalender vormerken – kostenlose Plätze sind erfahrungsgemäß schnell vergriffen, besonders für die physischen CodeJam-Sessions.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li>🔗 <a href="https://code-connect.dev/" target="_blank">Code Connect 2026 – Offizielle Website (13.–16. Juli, St. Leon-Rot / online)</a></li>
+                        <li>🔗 <a href="https://community.sap.com/t5/technology-blog-posts-by-sap/code-connect-2026-is-coming-mark-your-calendars/ba-p/14307923" target="_blank">SAP Community: Code Connect 2026 is Coming – Mark Your Calendars!</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Event-Tabelle -->
+            <h3 style="margin-top: 30px; color: #1a3a5c;">📅 Upcoming Events – Übersicht</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Datum</th>
+                        <th>Event</th>
+                        <th>Format</th>
+                        <th>Link</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Heute, 16:00 CET</strong></td>
+                        <td>SAP BTP AI Best Practices – Architect the Future (Live YouTube)</td>
+                        <td>Online / YouTube</td>
+                        <td><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/architect-the-future-live-youtube-series-on-sap-business-technology/ba-p/14308167" target="_blank">Zum Event →</a></td>
+                    </tr>
+                    <tr>
+                        <td>16. April 2026</td>
+                        <td>Code Connect 2026 – Ticketverkauf startet (kostenlos)</td>
+                        <td>Online Registrierung</td>
+                        <td><a href="https://code-connect.dev/" target="_blank">Zur Anmeldung →</a></td>
+                    </tr>
+                    <tr>
+                        <td>April 2026 (laufend)</td>
+                        <td>AI Developer Challenge April 2026 – Week 2 (CrewAI) &amp; Week 3 (Agentic RAG)</td>
+                        <td>Online / Jupyter Notebooks</td>
+                        <td><a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/ai-developer-challenge-april-2026-build-ai-agents-with-generative-ai-hub/ba-p/14327218" target="_blank">Zur Challenge →</a></td>
+                    </tr>
+                    <tr>
+                        <td>13.–16. Juli 2026</td>
+                        <td>Code Connect 2026 (UI5con + reCAP + HANA Tech Con + CodeJams)</td>
+                        <td>Hybrid (St. Leon-Rot / online)</td>
+                        <td><a href="https://code-connect.dev/" target="_blank">code-connect.dev →</a></td>
+                    </tr>
+                    <tr>
+                        <td>Mai / Juni 2026</td>
+                        <td>SAP Sapphire 2026 (Orlando &amp; Madrid) – AI Excellence Reception</td>
+                        <td>Hybrid (USA / Spanien)</td>
+                        <td><a href="https://www.sap.com/events/sapphire/virtual.html" target="_blank">Zur Sapphire-Seite →</a></td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="nav-footer">
+                <a href="index.html">← Zurück zur Übersicht</a>
+                <a href="2026-04-13.html">← Vorheriges Briefing (13. April)</a>
+            </div>
+        </main>
+
+        <!-- TOC Sidebar -->
+        <aside class="toc">
+            <h3>Inhalt</h3>
+            <ul>
+                <li>
+                    <span class="toc-dot" style="background: #e67e22;"></span>
+                    <a href="#abap-classic">ABAP Classic AI</a>
+                </li>
+                <li>
+                    <span class="toc-dot" style="background: #3498db;"></span>
+                    <a href="#sap-cloud-ai">SAP Cloud AI</a>
+                </li>
+                <li>
+                    <span class="toc-dot" style="background: #9b59b6;"></span>
+                    <a href="#community">Community &amp; Social</a>
+                </li>
+                <li>
+                    <span class="toc-dot" style="background: #27ae60;"></span>
+                    <a href="#learning">Learning &amp; Zertifizierungen</a>
+                </li>
+                <li>
+                    <span class="toc-dot" style="background: #c0392b;"></span>
+                    <a href="#video-events">Video &amp; Events</a>
+                </li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        <p>🔍 Recherchezeitraum: 12.–14. April 2026 &nbsp;|&nbsp; Automatisch erstellt mit Claude | SAP AI Daily</p>
+        <p style="margin-top: 8px; font-size: 0.85em; opacity: 0.8;">Alle Links führen zu öffentlich zugänglichen Quellen. Kein Anspruch auf Vollständigkeit.</p>
+    </footer>
+
+    <script>
+        // Smooth scrolling for TOC links
+        document.querySelectorAll('.toc a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
