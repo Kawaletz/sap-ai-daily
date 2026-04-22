@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP AI Daily - 22.04.2026 Briefing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: #f8f9fa;
+            color: #333;
+            line-height: 1.7;
+        }
+
+        header {
+            background: #1a3a5c;
+            color: white;
+            padding: 40px 20px;
+            border-bottom: 4px solid #e67e22;
+        }
+
+        header h1 {
+            font-size: 2.2em;
+            margin-bottom: 5px;
+            font-weight: 700;
+        }
+
+        header .date {
+            font-size: 1em;
+            opacity: 0.85;
+            margin-bottom: 15px;
+        }
+
+        header .breadcrumb {
+            margin-top: 15px;
+            opacity: 0.9;
+        }
+
+        header a {
+            color: #fff;
+            text-decoration: none;
+            font-weight: 600;
+        }
+
+        header a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 40px 20px;
+            display: grid;
+            grid-template-columns: 1fr 250px;
+            gap: 30px;
+        }
+
+        main {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+        }
+
+        .toc {
+            background: white;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 20px;
+            height: fit-content;
+        }
+
+        .toc h3 {
+            font-size: 0.95em;
+            font-weight: 700;
+            text-transform: uppercase;
+            color: #1a3a5c;
+            margin-bottom: 15px;
+            letter-spacing: 0.5px;
+        }
+
+        .toc ul {
+            list-style: none;
+        }
+
+        .toc li {
+            margin-bottom: 10px;
+            font-size: 0.9em;
+            padding-left: 0;
+        }
+
+        .toc li:before {
+            content: "";
+            display: none;
+        }
+
+        .toc .toc-dot {
+            display: inline-block;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            margin-right: 8px;
+            vertical-align: middle;
+        }
+
+        .toc a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .toc a:hover {
+            color: #1a5a8c;
+            padding-left: 5px;
+        }
+
+        .publication-info {
+            background: #f0f4f8;
+            border-radius: 4px;
+            padding: 15px;
+            margin-bottom: 30px;
+            font-size: 0.9em;
+            color: #666;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid;
+        }
+
+        .section-header.orange { border-color: #e67e22; }
+        .section-header.blue { border-color: #3498db; }
+        .section-header.purple { border-color: #9b59b6; }
+        .section-header.green { border-color: #27ae60; }
+        .section-header.red { border-color: #c0392b; }
+
+        .section-header h2 {
+            font-size: 1.8em;
+            margin: 0;
+            font-weight: 700;
+            color: #1a3a5c;
+        }
+
+        .section-color-indicator {
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+
+        .section-header.orange .section-color-indicator { background: #e67e22; }
+        .section-header.blue .section-color-indicator { background: #3498db; }
+        .section-header.purple .section-color-indicator { background: #9b59b6; }
+        .section-header.green .section-color-indicator { background: #27ae60; }
+        .section-header.red .section-color-indicator { background: #c0392b; }
+
+        h3 {
+            font-size: 1.35em;
+            margin-top: 25px;
+            margin-bottom: 15px;
+            color: #1a3a5c;
+            font-weight: 700;
+        }
+
+        h3:first-child {
+            margin-top: 0;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 0.15rem 0.5rem;
+            border-radius: 4px;
+            font-size: 0.65rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-right: 0.3rem;
+            vertical-align: middle;
+        }
+
+        .tag.neu { background: #e8f8f5; color: #1abc9c; border: 1px solid #1abc9c; }
+        .tag.update { background: #fef5e7; color: #e67e22; border: 1px solid #e67e22; }
+        .tag.event { background: #f5eef8; color: #9b59b6; border: 1px solid #9b59b6; }
+        .tag.tipp { background: #eaf2fb; color: #2980b9; border: 1px solid #2980b9; }
+
+        ul {
+            list-style: none;
+            margin-bottom: 20px;
+        }
+
+        li {
+            margin-bottom: 12px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.8;
+        }
+
+        li:before {
+            content: "\2022";
+            position: absolute;
+            left: 0;
+            color: #e67e22;
+            font-weight: 700;
+            font-size: 1.2em;
+        }
+
+        strong {
+            font-weight: 700;
+            color: #1a3a5c;
+        }
+
+        a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        a:hover {
+            color: #1a5a8c;
+            text-decoration: underline;
+        }
+
+        .sources {
+            margin-top: 15px;
+            padding: 12px 15px;
+            background: #f8f9fa;
+            border-radius: 4px;
+            font-size: 0.85em;
+            color: #888;
+        }
+
+        .sources strong {
+            color: #888;
+            font-weight: 600;
+        }
+
+        .sources a {
+            color: #aaa;
+            font-weight: 400;
+        }
+
+        .sources a:hover {
+            color: #2980b9;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+            font-size: 0.95em;
+        }
+
+        th {
+            background: #1a3a5c;
+            color: white;
+            padding: 12px 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #eee;
+        }
+
+        tr:hover {
+            background: #f8f9fa;
+        }
+
+        .nav-links {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #eee;
+        }
+
+        .nav-links a {
+            font-weight: 600;
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            color: #999;
+            font-size: 0.85em;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                grid-template-columns: 1fr;
+            }
+            .toc {
+                display: none;
+            }
+            main {
+                padding: 20px;
+            }
+            header h1 {
+                font-size: 1.6em;
+            }
+            .section-header h2 {
+                font-size: 1.4em;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="breadcrumb"><a href="index.html">&larr; Zur&uuml;ck zur &Uuml;bersicht</a></div>
+    <h1>SAP AI Daily Briefing</h1>
+    <div class="date">22. April 2026</div>
+</header>
+
+<div class="container">
+    <main>
+        <div class="publication-info">
+            Dieses Briefing wurde am 22.04.2026 automatisch erstellt. Recherchezeitraum: 21.04.2026 &ndash; 22.04.2026
+        </div>
+
+        <!-- SECTION 1: ABAP Classic AI -->
+        <section id="abap-classic">
+            <div class="section-header orange">
+                <span class="section-color-indicator"></span>
+                <h2>ABAP Classic AI</h2>
+            </div>
+
+            <h3><span class="tag neu">NEU</span> SecurityBridge: Agentic AI Companion f&uuml;r SAP-Security &ndash; Dashboards statt Textboxen</h3>
+            <ul>
+                <li>SecurityBridge stellt die <strong>n&auml;chste Evolution seines AI Companion</strong> vor: Eine vollst&auml;ndig agentische KI-F&auml;higkeit, die nat&uuml;rliche Sprachverarbeitung mit <strong>intelligenter Dashboard-Generierung</strong> kombiniert &ndash; Fragen werden nicht mit Text beantwortet, sondern mit Charts, Tabellen und Risk Maps.</li>
+                <li>Kernunterschied zu herk&ouml;mmlichen Chatbots: Das System <strong>nimmt ein Ziel entgegen, plant Zwischenschritte autonom, f&uuml;hrt Aktionen aus und liefert strukturierte Ergebnisse</strong> &ndash; ein echtes Agentic-AI-System f&uuml;r SAP-Sicherheitsanalysen.</li>
+                <li>Praktisches Beispiel: Die Frage &bdquo;Gib mir eine &Uuml;bersicht unserer SAP-Sicherheitslage&ldquo; f&uuml;hrt dazu, dass der Agent <strong>Daten korreliert, Kontext bewertet und ein visuelles Dashboard</strong> mit sofort umsetzbaren Erkenntnissen erstellt.</li>
+                <li>Hintergrund: Das SecurityBridge Research Lab hat in Q1 2026 bereits <strong>7 SAP Zero-Day-Schwachstellen</strong> offengelegt, darunter Remote Code Execution mit CVSS-Scores bis 9.1.</li>
+            </ul>
+            <div class="sources">
+                <strong>Quellen:</strong>
+                <a href="https://securitybridge.com/blog/why-agentic-ai-for-sap-security-needs-more-than-a-text-box/">SecurityBridge: Why Agentic AI for SAP Security Needs More Than a Text Box</a> |
+                <a href="https://sapinsider.org/securitybridge-to-release-the-first-ai-powered-security-system-for-sap-users/">SAPinsider: SecurityBridge AI-Powered Security System</a>
+            </div>
+
+            <h3><span class="tag update">UPDATE</span> Joule for Developers: Kostenlose Nutzung bis September 2026 verl&auml;ngert</h3>
+            <ul>
+                <li>SAP hat die <strong>kostenlose Promotionsphase f&uuml;r Joule for Developers bis September 2026 (Q3)</strong> verl&auml;ngert &ndash; zuvor war Mai 2026 als Ende kommuniziert worden.</li>
+                <li>Verf&uuml;gbar in <strong>SAP Build Code, SAP Build Process Automation, SAP Build Apps und ABAP Environment</strong> &ndash; mit Code-Generierung, Autovervollst&auml;ndigung, Code-Review, Refactoring und Unit-Test-Generierung.</li>
+                <li>Laut SAP Business AI Q1 2026 Release Highlights: <strong>20 % weniger Zeitaufwand</strong> beim Schreiben von ABAP/Java-Code, <strong>25 % Reduktion</strong> beim Testen und <strong>4,4 % schnellere Time-to-Value</strong>.</li>
+                <li><span class="tag tipp">TIPP</span> Nach Ende der kostenlosen Phase greift das neue <strong>AI-Units-Consumption-Modell</strong>. Wer Joule for Developers noch nicht ausprobiert hat, sollte die verl&auml;ngerte Phase nutzen &ndash; eine g&uuml;ltige SAP Build- oder ABAP-Lizenz ist Voraussetzung.</li>
+            </ul>
+            <div class="sources">
+                <strong>Quellen:</strong>
+                <a href="https://community.sap.com/t5/technology-blog-posts-by-sap/unlock-sap-joule-for-developers-claim-your-free-access-today/ba-p/14183158">SAP Community: Unlock SAP Joule for Developers &ndash; Claim Your Free Access</a> |
+                <a href="https://news.sap.com/2026/04/sap-business-ai-release-highlights-q1-2026/">SAP News: Business AI Release Highlights Q1 2026</a>
+            </div>
+        </section>
+
+        <!-- SECTION 2: SAP Cloud AI -->
+        <section id="sap-cloud">
+            <div class="section-header blue">
+                <span class="section-color-indicator"></span>
+                <h2>SAP Cloud AI</h2>
+            </div>
+
+            <h3><span class="tag neu">NEU</span> Hannover Messe Tag 3: SAP enth&uuml;llt 7 neue KI-Agenten f&uuml;r Manufacturing &amp; Logistik</h3>
+            <ul>
+                <li>ERP Today berichtet &uuml;ber die konkreten <strong>Agenten-Ank&uuml;ndigungen</strong> auf der Hannover Messe: SAP pr&auml;sentiert insgesamt <strong>7 neue Agentic-AI-Agenten</strong> f&uuml;r vier operative Dom&auml;nen &ndash; das bisher umfangreichste Agent-Release im Manufacturing-Bereich.</li>
+                <li><strong>Fertigung (Q2 2026 GA):</strong> Production Master Data Agent und Production Planning &amp; Operations Agent &ndash; automatisieren Stammdatenpflege und Produktionsplanung inkl. Material-, Kapazit&auml;ts- und Scheduling-Validierung.</li>
+                <li><strong>Service &amp; Wartung:</strong> Field Service Dispatcher Agent (Q2), Alert Processing Agent und Asset Health Agent (beide Q3 2026) &ndash; intelligente Einsatzplanung, proaktive Warnungsverarbeitung und vorausschauende Anlagenwartung.</li>
+                <li><strong>Logistik (Q2 2026 GA):</strong> Material Reservation Agent und Outbound Task Orchestration Agent &ndash; automatisierte Materialreservierung und Versandprozess-Steuerung.</li>
+                <li>Strategische Botschaft: Der Wechsel von <strong>&bdquo;AI als Analyse-Tool&ldquo; zu &bdquo;AI als Execution Layer&ldquo;</strong> &ndash; KI direkt in transaktionale Workflows eingebettet, genau dort, wo manuelle &Uuml;bergaben bisher Verz&ouml;gerungen verursachen.</li>
+            </ul>
+            <div class="sources">
+                <strong>Quellen:</strong>
+                <a href="https://erp.today/sap-at-hannover-messe-2026-new-ai-agents-push-erp-execution-closer-to-the-edge-of-operations/">ERP Today: SAP at Hannover Messe 2026 &ndash; New AI Agents Push ERP Execution Closer to the Edge</a> |
+                <a href="https://news.sap.com/2026/04/sap-at-hannover-messe-2026-agentic-ai-resilient-manufacturing/">SAP News: SAP at Hannover Messe 2026</a>
+            </div>
+
+            <h3><span class="tag neu">NEU</span> SAP &times; Uhlmann: PacXplorer &ndash; KI-gest&uuml;tzte Ersatzteilprozesse live auf der Hannover Messe</h3>
+            <ul>
+                <li>SAP und der Maschinenbauer <strong>Uhlmann</strong> zeigen auf der Hannover Messe den <strong>PacXplorer</strong> &ndash; eine Verpackungsmaschine als Industrie-Demonstrator, die Digital Twins, Condition Monitoring und SAP Business AI in einem Live-System verbindet.</li>
+                <li>Praxisbeispiel: Ein <strong>KI-gest&uuml;tzter Workflow f&uuml;r Ersatzteile</strong> automatisiert den Prozess von der Anfrage &uuml;ber die Angebotsgenierung bis zur Bestellung &ndash; gebaut im Rahmen von <strong>Factory-X</strong>, einem staatlich gef&ouml;rderten Leuchtturmprojekt.</li>
+                <li>Dominik Metzger (President SAP Supply Chain Management): <em>&bdquo;Die Industrie besch&auml;ftigt sich weniger mit Kostenoptimierung als mit Entscheidungsfindung unter Unsicherheit.&ldquo;</em></li>
+                <li>Kernbotschaft: <strong>Resilienz entsteht nicht durch Lagerpuffer</strong>, sondern durch schnellere, besser vernetzte Entscheidungen &uuml;ber gesamte Wertsch&ouml;pfungsketten hinweg.</li>
+            </ul>
+            <div class="sources">
+                <strong>Quellen:</strong>
+                <a href="https://news.sap.com/2026/04/how-sap-uhlmann-strengthen-value-creation-resilience/">SAP News: How SAP and Uhlmann Are Strengthening Value Creation Resilience</a>
+            </div>
+
+            <h3><span class="tag neu">NEU</span> Tech Mahindra setzt SAP Joule for Consultants ein &ndash; 30 % schnellere Recherche</h3>
+            <ul>
+                <li><strong>Tech Mahindra</strong>, einer der gr&ouml;&szlig;ten globalen SAP-Implementierungspartner, &uuml;bernimmt <strong>SAP Joule for Consultants</strong> zur Beschleunigung von Enterprise-Transformationsprojekten in Indien und weltweit.</li>
+                <li>Erste Ergebnisse: <strong>28&ndash;30 % weniger Recherchezeit</strong>, ca. <strong>2 Stunden Zeitersparnis pro Berater und Tag</strong> durch automatisierte Wissenssuche und -aufbereitung &uuml;ber den gesamten SAP-Projektlebenszyklus.</li>
+                <li>Einsatzbereiche: Von Discovery und Design &uuml;ber Entwicklung und Testing bis hin zu Post-Deployment-Support &ndash; Joule for Consultants liefert kontextbezogene Antworten direkt aus SAPs Wissensbasis.</li>
+                <li>Tech Mahindra reiht sich damit neben <strong>Wipro</strong> in eine wachsende Liste globaler Systemintegratoren ein, die Joule for Consultants produktiv nutzen &ndash; Teil der &bdquo;AI Delivered Right&ldquo;-Strategie.</li>
+            </ul>
+            <div class="sources">
+                <strong>Quellen:</strong>
+                <a href="https://news.sap.com/india/2026/04/tech-mahindra-adopts-sap-joule-for-consultants-to-accelerate-ai-driven-transformation-across-india/">SAP India News: Tech Mahindra Adopts SAP Joule for Consultants</a> |
+                <a href="https://cxotoday.com/media-coverage/tech-mahindra-adopts-sap-joule-for-consultants-to-accelerate-ai-driven-transformation-across-india-2/">CXOToday: Tech Mahindra Adopts SAP Joule for Consultants</a>
+            </div>
+        </section>
+
+        <!-- SECTION 3: Community & Social Media -->
+        <section id="community">
+            <div class="section-header purple">
+                <span class="section-color-indicator"></span>
+                <h2>Community &amp; Social Media</h2>
+            </div>
+
+            <h3><span class="tag neu">NEU</span> sovanta-Analyse: &bdquo;From App to AI&ldquo; &ndash; SAP UX Q1 2026 im Wandel</h3>
+            <ul>
+                <li>Der SAP-UX-Spezialist <strong>sovanta</strong> ver&ouml;ffentlicht eine umfassende Analyse der <strong>SAP User Experience Q1 2026 Updates</strong> &ndash; mit Fokus auf den Paradigmenwechsel von App-zentrierter zu KI-zentrierter Interaktion.</li>
+                <li>Kernbeobachtung: KI entwickelt sich von reiner Assistenz hin zu <strong>echter Automatisierung</strong> &ndash; wiederkehrende Aufgaben werden zunehmend vom System selbst erledigt, nicht nur vorgeschlagen.</li>
+                <li>Der Wandel durchzieht das gesamte SAP-Portfolio: <strong>SuccessFactors (HR), IBP (Planung), Fieldglass (Externes Personal), Analytics Cloud</strong> &ndash; UX wird portfolioweit standardisiert und mit KI angereichert.</li>
+                <li>sovanta: <em>&bdquo;Die Frage ist nicht mehr, ob die Transformation stattfindet, sondern wie effektiv Unternehmen sie nutzen &ndash; der Unterschied liegt zwischen &sbquo;wir haben KI&lsquo; und &sbquo;wir arbeiten wirklich anders&lsquo;.&ldquo;</em></li>
+            </ul>
+            <div class="sources">
+                <strong>Quellen:</strong>
+                <a href="https://sovanta.com/en/from-app-to-ai-sap-ux-q1-2026-updates/">sovanta: From App to AI &ndash; SAP UX Q1 2026 Updates</a> |
+                <a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-ux-q1-2026-update-part-1-ai-joule-sap-build-work-zone-sap-mobile-start/ba-p/14312110">SAP Community: SAP UX Q1/2026 Update Part 1 &ndash; AI, Joule, Build Work Zone</a>
+            </div>
+
+            <h3><span class="tag neu">NEU</span> SAP EHS &amp; Product Compliance Conference: Agentic AI f&uuml;r Regulatorik</h3>
+            <ul>
+                <li>Der offizielle Recap der <strong>SAP EHS &amp; Product Compliance Conference 2026</strong> (Amsterdam, 24.&ndash;25. M&auml;rz) wurde jetzt ver&ouml;ffentlicht &ndash; Agentic AI war das dominierende Thema.</li>
+                <li>Gunther Rothermel (Chief Product Officer, SAP Sustainability) erl&auml;uterte in der Keynote SAPs Produktstrategie: <strong>Saubere Daten als Fundament f&uuml;r KI</strong> &ndash; alle Panelisten betonten die Bedeutung von Datenqualit&auml;t.</li>
+                <li>Diskutierte Agentic-AI-Use-Cases: <strong>Automatische Portfolio-Auswirkungsanalyse</strong> bei regulatorischen &Auml;nderungen, <strong>Compliance-Simulation vor Produktfreigabe</strong>, KI-gest&uuml;tzte Datenl&uuml;cken-Erkennung und <strong>automatische Extraktion aus Sicherheitsdatenbl&auml;ttern</strong>.</li>
+                <li>Hands-on: Teilnehmer konnten <strong>KI-gest&uuml;tztes Compliance Management</strong> und KI-generierte Sicherheitsanweisungen f&uuml;r Risikobewertungen live ausprobieren.</li>
+            </ul>
+            <div class="sources">
+                <strong>Quellen:</strong>
+                <a href="https://community.sap.com/t5/product-lifecycle-management-blog-posts-by-sap/agentic-ai-at-the-2026-sap-ehs-and-product-compliance-conference/ba-p/14368872">SAP Community: Agentic AI at the 2026 SAP EHS and Product Compliance Conference</a>
+            </div>
+
+            <h3><span class="tag neu">NEU</span> Community-Blog: &bdquo;The Rise of Agentic AI &ndash; Transforming Enterprise Intelligence in SAP&ldquo;</h3>
+            <ul>
+                <li>Ein neuer Community-Blogbeitrag ordnet den <strong>Paradigmenwechsel von Predictive AI zu Agentic AI</strong> im SAP-Kontext ein: KI-Systeme planen, handeln und lernen autonom &ndash; statt nur auf Eingaben zu reagieren.</li>
+                <li>Der Beitrag erkl&auml;rt den Unterschied zwischen <strong>Copilots</strong> (antworten auf Fragen, wenn gefragt) und <strong>Agents</strong> (verstehen Ziele, formulieren Pl&auml;ne, f&uuml;hren Aktionen aus und passen ihren Ansatz an).</li>
+                <li>Relevanz f&uuml;r SAP-Teams: Wer sich auf Sapphire 2026 vorbereitet, findet hier einen kompakten &Uuml;berblick &uuml;ber die theoretischen Grundlagen hinter SAPs Agentic-AI-Strategie.</li>
+            </ul>
+            <div class="sources">
+                <strong>Quellen:</strong>
+                <a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-members/the-rise-of-agentic-ai-transforming-enterprise-intelligence-in-sap/ba-p/14375980">SAP Community: The Rise of Agentic AI &ndash; Transforming Enterprise Intelligence in SAP</a>
+            </div>
+        </section>
+
+        <!-- SECTION 4: Learning & Zertifizierungen -->
+        <section id="learning">
+            <div class="section-header green">
+                <span class="section-color-indicator"></span>
+                <h2>Learning &amp; Zertifizierungen</h2>
+            </div>
+
+            <h3><span class="tag event">EVENT</span> Sapphire 2026: Hotel-Deadline am 25. April &ndash; letzte Chance f&uuml;r erm&auml;&szlig;igte Raten</h3>
+            <ul>
+                <li>Wer zur <strong>SAP Sapphire Orlando (11.&ndash;13. Mai)</strong> f&auml;hrt: Die <strong>erm&auml;&szlig;igten Hotelraten enden am 25. April 2026</strong> (Samstag) um 23:59 Uhr EST &ndash; oder sobald die Kontingente ausgebucht sind.</li>
+                <li>Nach dem 22. April m&uuml;ssen &Auml;nderungen oder Stornierungen <strong>direkt beim Hotel</strong> vorgenommen werden, nicht mehr &uuml;ber das SAP-Buchungsportal.</li>
+                <li><span class="tag tipp">TIPP</span> Pre-Conference Seminare am 11. Mai k&ouml;nnen separat zur Registrierung hinzugef&uuml;gt werden &ndash; besonders relevant: die Sessions zu <strong>Agentic ABAP in VS Code</strong> und <strong>Clean Core mit generativer KI</strong>.</li>
+            </ul>
+            <div class="sources">
+                <strong>Quellen:</strong>
+                <a href="https://www.sap.com/events/sapphire/orlando/faq-contact.html">SAP Sapphire Orlando: FAQ &amp; Contact</a> |
+                <a href="https://www.asug.com/events/sap-sapphire-asug-annual-conference-2026">ASUG: Sapphire &amp; ASUG Annual Conference 2026</a>
+            </div>
+
+            <h3><span class="tag tipp">TIPP</span> SAP UX Q1/2026 Updates als Lernressource: 9-teilige Blog-Serie komplett</h3>
+            <ul>
+                <li>Die offizielle <strong>9-teilige SAP UX Q1/2026 Update-Serie</strong> ist jetzt vollst&auml;ndig verf&uuml;gbar und eignet sich hervorragend als strukturierte Lernressource f&uuml;r alle, die sich mit den neuesten KI-Integrationen vertraut machen wollen.</li>
+                <li>Abgedeckte Themen: <strong>Teil 1:</strong> AI, Joule, Build Work Zone, Mobile Start | <strong>Teil 2:</strong> S/4HANA Cloud 2602, Fiori Launchpad | <strong>Teil 3:</strong> AI Beta-Innovationen | <strong>Teil 5:</strong> IBP | <strong>Teil 6:</strong> Fieldglass | <strong>Teil 7:</strong> Analytics Cloud | <strong>Teil 9:</strong> UI Design &amp; Mobile.</li>
+                <li>Besonders relevant f&uuml;r Berater und Architekten, die <strong>vor Sapphire 2026</strong> einen umfassenden &Uuml;berblick &uuml;ber den aktuellen UX-Stand ben&ouml;tigen.</li>
+            </ul>
+            <div class="sources">
+                <strong>Quellen:</strong>
+                <a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-ux-q1-2026-update-part-1-ai-joule-sap-build-work-zone-sap-mobile-start/ba-p/14312110">SAP Community: SAP UX Q1/2026 Update &ndash; Part 1</a> |
+                <a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-ux-q1-2026-update-part-3-ai-beta-innovations-in-sap-s-4hana-cloud/ba-p/14320120">SAP Community: SAP UX Q1/2026 Update &ndash; Part 3: AI Beta</a> |
+                <a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-user-experience-q1-2026-update-part-9-ui-design-and-technology-for-web/ba-p/14355574">SAP Community: SAP UX Q1/2026 Update &ndash; Part 9</a>
+            </div>
+        </section>
+
+        <!-- SECTION 5: Video Resources & Events -->
+        <section id="video-events">
+            <div class="section-header red">
+                <span class="section-color-indicator"></span>
+                <h2>Video Resources &amp; Events</h2>
+            </div>
+
+            <h3>Video-Empfehlungen</h3>
+            <ul>
+                <li><span class="tag neu">NEU</span> <strong>SAP Joule Is Now Free for Developers &ndash; Until 2026</strong> (ZaranTech) &ndash; Aktuelles Video zur verl&auml;ngerten Gratis-Phase von Joule for Developers mit Setup-Anleitung und Feature-&Uuml;bersicht. <a href="https://www.youtube.com/watch?v=M-YW1JdT8Sg">Video ansehen</a></li>
+                <li><span class="tag event">EVENT</span> <strong>Hannover Messe 2026 Live</strong> &ndash; SAP CEO Christian Klein spricht in der Session &bdquo;Industrial AI &ndash; from Strategy to Scaling&ldquo; &uuml;ber den Weg von KI-Ambition zu realer Gesch&auml;ftsausf&uuml;hrung. <a href="https://events.sap.com/hannovermesse/en_us/home.html">SAP @ Hannover Messe</a></li>
+                <li><span class="tag tipp">TIPP</span> <strong>SecurityBridge CEO Video-Interview</strong> &ndash; Channel Insider interviewt den SecurityBridge-CEO zu SAP Security, AI-Risiken und Priorit&auml;ten 2026. <a href="https://www.channelinsider.com/security/video-interview-securitybridge-ceo/">Interview ansehen</a></li>
+            </ul>
+
+            <h3>Kommende Termine</h3>
+            <table>
+                <tr>
+                    <th>Datum</th>
+                    <th>Event</th>
+                    <th>Details</th>
+                </tr>
+                <tr>
+                    <td>20.&ndash;24. April 2026</td>
+                    <td><strong>Hannover Messe 2026</strong></td>
+                    <td>SAP Halle 15, Stand F08 &ndash; 7 neue KI-Agenten f&uuml;r Manufacturing vorgestellt</td>
+                </tr>
+                <tr>
+                    <td>23. April 2026</td>
+                    <td><strong>SAP Q1 2026 Quartalszahlen</strong></td>
+                    <td>Morgen! Earnings Call um 23:00 CEST &ndash; AI-Units, Reltio, Cloud Backlog</td>
+                </tr>
+                <tr>
+                    <td>25. April 2026</td>
+                    <td><strong>Sapphire Hotel-Deadline</strong></td>
+                    <td>Letzte Chance f&uuml;r erm&auml;&szlig;igte Hotelraten in Orlando</td>
+                </tr>
+                <tr>
+                    <td>30. April 2026</td>
+                    <td><strong>BTP ABAP Environment HC2</strong></td>
+                    <td>Hotfix Collection 2 f&uuml;r Pre-Upgrade-Systeme (Release 2605)</td>
+                </tr>
+                <tr>
+                    <td>30. April 2026</td>
+                    <td><strong>SecurityBridge &bdquo;Secure Together&ldquo;</strong></td>
+                    <td>Community-Event in Dallas, TX &ndash; Globe Life Field</td>
+                </tr>
+                <tr>
+                    <td>11. Mai 2026</td>
+                    <td><strong>ASUG Pre-Conference Seminare</strong></td>
+                    <td>Ganztagssessions zu AI, Joule &amp; Cloud-Transformation</td>
+                </tr>
+                <tr>
+                    <td>11.&ndash;13. Mai 2026</td>
+                    <td><strong>SAP Sapphire Orlando</strong></td>
+                    <td>Hauptkonferenz &ndash; Neue Manufacturing-Agenten erstmals in Sessions</td>
+                </tr>
+                <tr>
+                    <td>19.&ndash;21. Mai 2026</td>
+                    <td><strong>SAP Sapphire Madrid</strong></td>
+                    <td>Europ&auml;ische Sapphire-Ausgabe mit eigenem AI-Track</td>
+                </tr>
+            </table>
+        </section>
+
+        <div class="nav-links">
+            <a href="index.html">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
+            <a href="2026-04-21.html">Vorheriges Briefing &rarr;</a>
+        </div>
+    </main>
+
+    <nav class="toc">
+        <h3>Inhalt</h3>
+        <ul>
+            <li><span class="toc-dot" style="background:#e67e22"></span><a href="#abap-classic">ABAP Classic AI</a></li>
+            <li><span class="toc-dot" style="background:#3498db"></span><a href="#sap-cloud">SAP Cloud AI</a></li>
+            <li><span class="toc-dot" style="background:#9b59b6"></span><a href="#community">Community &amp; Social Media</a></li>
+            <li><span class="toc-dot" style="background:#27ae60"></span><a href="#learning">Learning &amp; Zertifizierungen</a></li>
+            <li><span class="toc-dot" style="background:#c0392b"></span><a href="#video-events">Video Resources &amp; Events</a></li>
+        </ul>
+    </nav>
+</div>
+
+<footer>
+    Recherchezeitraum: 21.04.2026 &ndash; 22.04.2026 | Automatisch erstellt mit Claude | SAP AI Daily
+</footer>
+
+<script>
+    document.querySelectorAll('.toc a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
