@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP AI Daily - 28.04.2026 Briefing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f8f9fa; color: #333; line-height: 1.7; }
+        header { background: #1a3a5c; color: white; padding: 40px 20px; border-bottom: 4px solid #e67e22; }
+        header h1 { font-size: 2.2em; margin-bottom: 5px; font-weight: 700; }
+        header .date { font-size: 1em; opacity: 0.85; margin-bottom: 15px; }
+        header .breadcrumb { margin-top: 15px; opacity: 0.9; }
+        header a { color: #fff; text-decoration: none; font-weight: 600; }
+        header a:hover { text-decoration: underline; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 1fr 250px; gap: 30px; }
+        main { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .toc { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 20px; height: fit-content; }
+        .toc h3 { font-size: 0.95em; font-weight: 700; text-transform: uppercase; color: #1a3a5c; margin-bottom: 15px; letter-spacing: 0.5px; }
+        .toc ul { list-style: none; }
+        .toc li { margin-bottom: 10px; font-size: 0.9em; padding-left: 0; }
+        .toc li:before { content: ""; display: none; }
+        .toc .toc-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+        .toc a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        .toc a:hover { color: #1a5a8c; padding-left: 5px; }
+        section { margin-bottom: 50px; }
+        .section-header { display: flex; align-items: center; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid; }
+        .section-header.orange { border-color: #e67e22; }
+        .section-header.blue { border-color: #3498db; }
+        .section-header.purple { border-color: #9b59b6; }
+        .section-header.green { border-color: #27ae60; }
+        .section-header.red { border-color: #c0392b; }
+        .section-header h2 { font-size: 1.8em; margin: 0; font-weight: 700; color: #1a3a5c; }
+        .section-color-indicator { width: 12px; height: 12px; border-radius: 50%; margin-right: 15px; flex-shrink: 0; }
+        .section-header.orange .section-color-indicator { background: #e67e22; }
+        .section-header.blue .section-color-indicator { background: #3498db; }
+        .section-header.purple .section-color-indicator { background: #9b59b6; }
+        .section-header.green .section-color-indicator { background: #27ae60; }
+        .section-header.red .section-color-indicator { background: #c0392b; }
+        h3 { font-size: 1.35em; margin-top: 25px; margin-bottom: 15px; color: #1a3a5c; font-weight: 700; }
+        h3:first-child { margin-top: 0; }
+        ul { list-style: none; margin-bottom: 20px; }
+        li { margin-bottom: 12px; padding-left: 25px; position: relative; line-height: 1.8; }
+        li:before { content: "•"; position: absolute; left: 0; color: #e67e22; font-weight: 700; font-size: 1.2em; }
+        strong { font-weight: 700; color: #1a3a5c; }
+        a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        a:hover { color: #1a5a8c; text-decoration: underline; }
+        .sources { font-size: 0.85em; color: #888; margin-top: 8px; padding-left: 0; }
+        .sources li { padding-left: 0; margin-bottom: 5px; }
+        .sources li:before { content: ""; display: none; }
+        .sources a { color: #888; text-decoration: underline; }
+        .sources a:hover { color: #2980b9; }
+        .tag { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 0.3rem; vertical-align: middle; }
+        .tag.neu { background: #e8f8f5; color: #1abc9c; border: 1px solid #1abc9c; }
+        .tag.update { background: #fef5e7; color: #e67e22; border: 1px solid #e67e22; }
+        .tag.event { background: #f5eef8; color: #9b59b6; border: 1px solid #9b59b6; }
+        .tag.tipp { background: #eaf2fb; color: #2980b9; border: 1px solid #2980b9; }
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden; }
+        th { background: #1a3a5c; color: white; padding: 15px; text-align: left; font-weight: 700; font-size: 0.95em; }
+        td { padding: 12px 15px; border-bottom: 1px solid #e0e0e0; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: #f5f5f5; }
+        footer { background: #2c3e50; color: white; text-align: center; padding: 25px 20px; margin-top: 60px; font-size: 0.9em; }
+        footer a { color: #e67e22; font-weight: 600; }
+        footer a:hover { text-decoration: underline; }
+        .navigation { display: flex; justify-content: space-between; align-items: center; margin: 30px 0 0 0; padding-top: 20px; border-top: 1px solid #e0e0e0; flex-wrap: wrap; gap: 15px; }
+        .navigation a { display: inline-block; padding: 10px 20px; background: #2980b9; color: white; text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s ease; }
+        .navigation a:hover { background: #1a5a8c; text-decoration: none; }
+        .publication-info { background: #f0f4f8; border-radius: 4px; padding: 15px; margin-bottom: 20px; font-size: 0.9em; color: #666; }
+        @media (max-width: 1024px) {
+            .container { grid-template-columns: 1fr; }
+            .toc { position: relative; top: 0; margin-bottom: 30px; display: none; }
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.6em; }
+            main { padding: 25px; }
+            .section-header h2 { font-size: 1.4em; }
+            h3 { font-size: 1.15em; }
+            table { font-size: 0.9em; }
+            th, td { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="breadcrumb"><a href="index.html">&larr; Zur&uuml;ck zur &Uuml;bersicht</a></div>
+        <h1>SAP AI Daily Briefing</h1>
+        <div class="date">28. April 2026</div>
+    </header>
+
+    <div class="container">
+        <main>
+            <div class="publication-info">
+                <strong>Dieses Briefing wurde am 28.04.2026 automatisch erstellt.</strong><br>
+                Recherchezeitraum: 24.04.2026 &ndash; 28.04.2026
+            </div>
+
+            <!-- SECTION 1: Orange - ABAP Classic AI -->
+            <section id="abap-classic">
+                <div class="section-header orange">
+                    <span class="section-color-indicator"></span>
+                    <h2>ABAP Classic AI</h2>
+                </div>
+
+                <h3><span class="tag neu">Neu</span>ABAP AI Podcast: R&uuml;ckblick 2025 &amp; Ausblick 2026 erschienen</h3>
+                <ul>
+                    <li>Die SAP-Community ver&ouml;ffentlicht eine neue Folge des <strong>ABAP AI Podcast</strong>: Hosts und SAP-Experten ziehen Bilanz &uuml;ber das ABAP-AI-Jahr 2025 &ndash; vom Launch von Joule for Developers in den ADT bis zum Aufkommen der ersten produktiven MCP-Server &ndash; und ordnen die Roadmap-Themen f&uuml;r 2026 ein.</li>
+                    <li>Kerntake: 2025 hat das Fundament gelegt (Foundation-Modelle, Standalone-AI-Skills, MCP-Adoption), 2026 ist das Jahr der <strong>vollst&auml;ndigen Agentic-Integration</strong> &ndash; nicht mehr nur einzelne Code-Tasks, sondern orchestrierte End-to-End-Entwicklungs-Workflows mit Joule als zentraler Layer.</li>
+                    <li>Diskutierte Schwerpunkte: Wie Q1-2026-Features (Documentation Chat, ABAP-Unit-Test-Generierung, ATC-Erkl&auml;rungen) in der Praxis ankommen, was Kunden bei der Migration auf ABAP Cloud erwartet und warum SAP den Fokus auf <strong>VS-Code-Parit&auml;t bis Q2/2026</strong> legt.</li>
+                    <li>Der Podcast wendet sich gezielt an ABAP-Entwickler, Architekten und Tech-Leads &ndash; ideal als Audio-Begleitung vor den Sapphire-Sessions im Mai.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/abap-ai-podcast-reflecting-on-2025-and-looking-ahead-to-2026/ba-p/14322098" target="_blank">SAP Community: ABAP AI Podcast &ndash; Reflecting on 2025 and Looking Ahead to 2026</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag tipp">Tipp</span>Sapphire- &amp; ASUG-Sessions f&uuml;r ABAP-AI-Entwickler kuratiert</h3>
+                <ul>
+                    <li>SAP hat eine <strong>kuratierte Session-&Uuml;bersicht</strong> f&uuml;r Sapphire 2026 (Orlando, 11.&ndash;13. Mai) und die ASUG Annual Conference ver&ouml;ffentlicht &ndash; speziell f&uuml;r Joule for Developers ABAP AI Capabilities.</li>
+                    <li><strong>BTP1429 &bdquo;Introduction to ABAP Cloud supported by generative AI&ldquo;:</strong> &Uuml;berblick &uuml;ber ABAP Cloud Innovationen inklusive Clean Core und wie generative AI die Adoption beschleunigt &ndash; Pflichttermin f&uuml;r Architekten, die einen Migrationsplan vor Sapphire fixieren wollen.</li>
+                    <li><strong>BTP2573 &bdquo;Build smarter: Agentic ABAP development tools for Visual Studio Code&ldquo;:</strong> Live-Demo, wie ABAP-Agenten in VS Code &uuml;ber den ABAP MCP-Server orchestriert werden &ndash; das erste Mal, dass SAP eine vollst&auml;ndig agentische ABAP-Entwicklungsumgebung in VS Code &ouml;ffentlich zeigt.</li>
+                    <li>Praktischer Hinweis: Die Sessions sind Teil der Q2-2026-GA-Vorbereitung der ABAP Cloud Extension f&uuml;r VS Code &ndash; wer nach Sapphire einsteigt, hat den ersten Realit&auml;ts-Check live gesehen.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/joule-for-developers-abap-ai-sapphire-and-asug-2026-sessions/ba-p/14365782" target="_blank">SAP Community: Joule for Developers ABAP AI &ndash; Sapphire and ASUG 2026 Sessions</a></li>
+                        <li><a href="https://www.sap.com/events/sapphire/orlando/tracks.html" target="_blank">SAP Sapphire 2026 Tracks &amp; Sessions</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 2: Blue - SAP Cloud AI -->
+            <section id="sap-cloud-ai">
+                <div class="section-header blue">
+                    <span class="section-color-indicator"></span>
+                    <h2>SAP Cloud AI</h2>
+                </div>
+
+                <h3><span class="tag neu">Neu</span>Joule Studio Code Editor: Eigene VS-Code-Extension f&uuml;r AI-Agent-Bau</h3>
+                <ul>
+                    <li>SAP hat eine eigene <strong>Joule Studio Code Editor Extension</strong> f&uuml;r Visual Studio Code im Marketplace ver&ouml;ffentlicht &ndash; nicht zu verwechseln mit der ABAP-Cloud-Extension. Sie zielt explizit auf <strong>Pro-Code-Entwickler</strong>, die Joule-Agenten und Skills bauen, statt sie nur zu konsumieren.</li>
+                    <li>Funktionsumfang: AI-gef&uuml;hrtes Scaffolding, kontextbezogene Code-Generierung, intelligente Empfehlungen f&uuml;r Joule-Konfigurationen und nahtlose Integration mit Joule Studio &ndash; alles im VS-Code-Workflow ohne IDE-Wechsel.</li>
+                    <li>Strategische Position: Die Extension schlie&szlig;t die L&uuml;cke zwischen Low-Code-Joule-Studio (Browser) und CLI-basiertem CI/CD &ndash; Pro-Code-Entwickler bekommen erstmals einen offiziellen, von SAP gepflegten lokalen Editor f&uuml;r Joule-Artefakte.</li>
+                    <li>Wichtig zur Abgrenzung: Joule Studio Code Editor ist getrennt von der angek&uuml;ndigten <em>ABAP Cloud Extension</em> (GA Q2/2026) &ndash; die ABAP-Extension fokussiert ABAP-Code, der Code Editor fokussiert Joule-Agenten und -Skills.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://marketplace.visualstudio.com/items?itemName=SAPSE.joule-studio-code-editor" target="_blank">VS Code Marketplace: Joule Studio Code Editor</a></li>
+                        <li><a href="https://help.sap.com/docs/joule/joule-development-guide-ba88d1ec6a1b442098863d577c19b0c0/joule-studio-code-editor" target="_blank">SAP Help: Joule Studio Code Editor</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag neu">Neu</span>Joule Studio CLI: DevOps-Automation f&uuml;r Agent-Deployments</h3>
+                <ul>
+                    <li>Parallel zum Code Editor stellt SAP die <strong>Joule Studio CLI</strong> bereit &ndash; eine kommandozeilenbasierte Schnittstelle, die Joule-Agent-Lifecycle-Operationen f&uuml;r DevOps- und Plattform-Teams automatisierbar macht.</li>
+                    <li>Use Cases: Automatisierte Projekterstellung, Konfigurations-Management, Deployments &uuml;ber Stages und Orchestrierung von CI/CD-Workflows f&uuml;r Joule-Agenten in Pipelines (Jenkins, GitHub Actions, Azure DevOps).</li>
+                    <li>Praktische Bedeutung: Bisher waren Joule-Agenten weitgehend Browser-zentriert &ndash; mit CLI lassen sich Versionskontrolle, Approval-Gates und Multi-Tenant-Rollouts professionell aufsetzen, ohne UI-Klicks zu skripten.</li>
+                    <li>Zusammen mit dem Code Editor entsteht so erstmals ein <strong>vollst&auml;ndiger Pro-Code-Stack</strong> f&uuml;r Joule: lokaler Editor &rarr; Git &rarr; Pipeline &rarr; Deployment &ndash; analog zu modernen Cloud-Native-Workflows.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://news.sap.com/2026/04/sap-business-ai-release-highlights-q1-2026/" target="_blank">SAP News: Business AI Release Highlights Q1 2026</a></li>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/our-2026-roadmap-for-joule-for-developers-abap-ai-capabilities/ba-p/14360358" target="_blank">SAP Community: 2026 Roadmap for Joule for Developers</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag update">Update</span>Constellation Research: Sapphire-Vorschau &ndash; Genauigkeit als Top-Thema</h3>
+                <ul>
+                    <li>Constellation Research ver&ouml;ffentlicht eine ausf&uuml;hrliche <strong>Sapphire-2026-Vorschau</strong>: Top-Thema wird die <em>Agent-Genauigkeit</em> &ndash; SAP plant fundamentale Portfolio-&Auml;nderungen, um &bdquo;tiefes Dom&auml;nen-Know-how&ldquo; in Joule-Agenten zu integrieren.</li>
+                    <li>Analyst Holger Mueller: 2026 wird der Test, wie SAP <strong>Daten- und Prozesswissen aus seinem Suite-Ansatz</strong> in AI-Agents &uuml;berf&uuml;hrt &ndash; der bisherige horizontale AI-Layer reicht nicht, um Genauigkeitsanforderungen f&uuml;r Payroll, Finance Close oder Supply-Chain-Execution zu erf&uuml;llen.</li>
+                    <li>Erwartete Sapphire-Ank&uuml;ndigungen: Governance-Layer f&uuml;r Agentic AI, weitere Vertiefung der Business Data Cloud (BDC) als Fundament, sowie konkrete Customer-Stories zur AI-Konsumierung &uuml;ber das neue AI-Units-Modell (Start Juli 2026).</li>
+                    <li>Strategische Botschaft: Wer eine SAP-AI-Strategie f&uuml;r 2026/27 plant, sollte Sapphire abwarten &ndash; mehrere Roadmap-Eckpfeiler werden dort erstmals offiziell.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://www.constellationr.com/insights/news/sap-sapphire-2026-themes-ai-agent-accuracy-embedded-domain-knowledge-and-processes" target="_blank">Constellation Research: SAP Sapphire 2026 Themes</a></li>
+                        <li><a href="https://diginomica.com/sap-sapphire-ai-preview-seven-burning-questions-about-ai-sap-should-address" target="_blank">Diginomica: Seven Burning AI Questions for SAP Sapphire</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 3: Purple - Community & Social Media -->
+            <section id="community">
+                <div class="section-header purple">
+                    <span class="section-color-indicator"></span>
+                    <h2>Community &amp; Social Media</h2>
+                </div>
+
+                <h3><span class="tag neu">Neu</span>DSAG Technology Days 2026: Realit&auml;ts-Check zur SAP-AI-Strategie</h3>
+                <ul>
+                    <li>Die <strong>DSAG Technology Days 2026 in Hamburg</strong> haben einen kritischen Realit&auml;ts-Check zu SAPs AI-Strategie geliefert &ndash; mit dem Leitthema &bdquo;Lights on Layers. Clarity-by-Design?&ldquo;. nextlytics und E3-Magazin fassen die Kernbotschaften zusammen.</li>
+                    <li><strong>Harte Zahl:</strong> Nur <strong>3 % der SAP-Kunden</strong> betreiben SAP Business AI laut DSAG-Umfrage produktiv &ndash; w&auml;hrend 77 % der AI-aktiven Unternehmen auf Drittanbieter-Tools wie Microsoft Copilot setzen. Die L&uuml;cke zwischen Vision und Realit&auml;t bleibt gro&szlig;.</li>
+                    <li>DSAG-Forderungskatalog: <strong>Kostentransparenz</strong> bei AI-Features (Stichwort AI Units), echte <strong>Interoperabilit&auml;t</strong> der Datenplattformen (auch zu Non-SAP-Systemen), klare Entscheidungslogik in Agenten und Investitionsschutz f&uuml;r bestehende Technologien wie Fiori.</li>
+                    <li>Hauptkritik: SAPs &bdquo;All in on AI&ldquo;-Kurs setzt eine Cloud-Migration voraus, die viele Bestandskunden noch nicht abgeschlossen haben &ndash; ein struktureller Engpass f&uuml;r breite Adoption. Die DSAG fordert mehr Realismus bei Roadmaps und Stage-Gates.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://www.nextlytics.com/blog/dsag-technology-days-2026-saps-ai-strategy-in-the-reality-check" target="_blank">nextlytics: DSAG Technology Days 2026 &ndash; SAP&rsquo;s AI Strategy in the Reality Check</a></li>
+                        <li><a href="https://e3mag.com/en/dsag-technology-days-2026-ki-data-security-sap-must-deliver/" target="_blank">E3-Magazin: DSAG Technology Days 2026 &ndash; AI, Data, Security &ndash; SAP Must Deliver</a></li>
+                        <li><a href="https://www.cio.com/article/4159954/saps-gap-from-customers-must-not-widen-further.html" target="_blank">CIO: SAP&rsquo;s Gap from Customers Must Not Widen Further</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag event">Event</span>AI Experience Workshop Salzburg: 11. Juni mit CCoE-Fokus</h3>
+                <ul>
+                    <li>SAP und das <strong>E3-Magazin</strong> ver&ouml;ffentlichen die n&auml;chste Etappe der AI-Experience-Workshop-Serie: Nach dem Termin in Heidelberg im April folgt am <strong>11. Juni 2026 Salzburg</strong> &ndash; im Rahmen des Competence Center Summit mit Schwerpunkt CCoE (Cloud Center of Excellence).</li>
+                    <li>Format: Hands-on-Lab f&uuml;r Architekten und CCoE-Verantwortliche &ndash; konkrete Use-Cases werden mit BTP-AI-Diensten, Joule und Joule Studio durchgespielt. Fokus: Wie integriere ich SAP-AI-Capabilities sauber in eine Cloud-Center-of-Excellence-Governance?</li>
+                    <li>F&uuml;r DACH-Kunden besonders relevant: Bisher wurden AI-Workshops oft auf Sapphire/TechEd-B&uuml;hnen pr&auml;sentiert &ndash; die Salzburg-Session ist eine der wenigen Mittelstands- und CCoE-orientierten Veranstaltungen.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://e3mag.com/en/the-ki-experience-workshop/" target="_blank">E3-Magazin: The AI Experience Workshop</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 4: Green - Learning & Zertifizierungen -->
+            <section id="learning">
+                <div class="section-header green">
+                    <span class="section-color-indicator"></span>
+                    <h2>Learning &amp; Zertifizierungen</h2>
+                </div>
+
+                <h3><span class="tag update">Update</span>SAP Certification 2026: Praktische Pr&uuml;fungen jetzt in voller Breite</h3>
+                <ul>
+                    <li>SAP Learning hat den Rollout der <strong>praktischen Zertifizierungspr&uuml;fungen</strong> in Phasen abgeschlossen: Die meisten Pr&uuml;fungen sind seit Mitte Januar 2026 verf&uuml;gbar, alle Practical Exams wurden bis Ende M&auml;rz 2026 umgestellt.</li>
+                    <li>Paradigmenwechsel: Weg von Multiple-Choice-Pr&uuml;fungen, hin zu <strong>performance-basierten, system-basierten Open-Book-Assessments</strong>. Kandidaten konfigurieren Systeme, designen Workflows oder schreiben Code &ndash; n&auml;her an realer Projektarbeit.</li>
+                    <li><strong>AI-Tools sind w&auml;hrend der Pr&uuml;fung erlaubt</strong>, ebenso offizielle Dokumentation. Damit erkennt SAP an, dass ein moderner Berater nicht ohne AI- und Doku-Zugriff arbeitet &ndash; gepr&uuml;ft wird die L&ouml;sungskompetenz, nicht das Auswendiglernen.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/sap-learning-blog-posts/sap-certification-update-practical-exams-roll-out-in-2026/ba-p/14317789" target="_blank">SAP Community: SAP Certification Update &ndash; Practical Exams Roll Out in 2026</a></li>
+                        <li><a href="https://learning.sap.com/get-certified/reimagining-certification" target="_blank">SAP Learning: Reimagining Certification in the Age of AI</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag neu">Neu</span>SAP Generative AI Developer (C_AIG): Updated 2026 Format</h3>
+                <ul>
+                    <li>Die Zertifizierung <strong>SAP Certified Associate &ndash; SAP Generative AI Developer (C_AIG)</strong> ist im neuen 2026-System-Based-Format verf&uuml;gbar. Inhalte: Generative AI Hub, Joule, AI Foundation, Prompt-Engineering, RAG-Patterns und LLM-Orchestrierung im SAP-Kontext.</li>
+                    <li>Zielgruppe: Entwickler, Architekten und Berater, die produktive AI-Anwendungen auf BTP bauen &ndash; vom Proof of Concept bis zur Produktion mit Governance-Layer.</li>
+                    <li>Ank&uuml;ndigung im Roadmap-Update: Eine erweiterte <strong>Advanced AI Architect-Zertifizierung</strong> wird f&uuml;r Q2/2026 erwartet, dazu <strong>industriespezifische AI-Zertifizierungen</strong> (z.&nbsp;B. f&uuml;r Manufacturing, HR, CX). Bisher konzentrierten sich AI-Pr&uuml;fungen auf Generalisten &ndash; 2026 wird der Spezialisierungspfad ge&ouml;ffnet.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://learning.sap.com/certifications/sap-certified-associate-sap-generative-ai-developer" target="_blank">SAP Learning: SAP Certified Associate &ndash; SAP Generative AI Developer</a></li>
+                        <li><a href="https://theexamquestions.com/blog/sap-ai-machine-learning-certifications-guide" target="_blank">Exam Questions Guide: AI and Machine Learning &ndash; New SAP Certifications in 2026</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 5: Red - Video Resources & Events -->
+            <section id="videos">
+                <div class="section-header red">
+                    <span class="section-color-indicator"></span>
+                    <h2>Video Resources &amp; Events</h2>
+                </div>
+
+                <h3><span class="tag tipp">Tipp</span>Pre-Conference Seminare: Hands-On mit BTP AI &amp; Joule Studio</h3>
+                <ul>
+                    <li>F&uuml;r Sapphire-Reisende: Die <strong>ASUG Pre-Conference Seminars</strong> am Montag, 11. Mai 2026, bieten zehn Tiefen-Sessions &ndash; zwei sind ABAP-AI-relevant.</li>
+                    <li><strong>&bdquo;Hands-On with SAP BTP AI&ldquo;:</strong> Bauen mit Joule und Joule Studio von Low-Code-Szenarien bis zu fortgeschrittenen Entwicklungs-Patterns &ndash; ideal f&uuml;r Architekten, die ihren ersten produktiven Joule-Agent skizzieren wollen.</li>
+                    <li><strong>&bdquo;Hands-On with SAP BTP Application Development&ldquo;:</strong> RAP auf ABAP Cloud kombiniert mit CAP-Frameworks und Clean-Core-Prinzipien &ndash; der praktische Pfad f&uuml;r ABAP-Entwickler, die Side-by-Side-Extensions bauen.</li>
+                    <li>Anmeldung erforderlich (separate Geb&uuml;hr neben dem Sapphire-Ticket); Pl&auml;tze begrenzt.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://www.asug.com/events/sap-sapphire-asug-annual-conference-2026" target="_blank">ASUG: Sapphire &amp; ASUG Annual Conference 2026</a></li>
+                        <li><a href="https://www.sap.com/events/sapphire/orlando.html" target="_blank">SAP Sapphire Orlando 2026</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag event">Event</span>Termine &amp; Events</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Datum</th>
+                            <th>Event</th>
+                            <th>Format / Ort</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>11. Mai 2026</td>
+                            <td>ASUG Pre-Conference Seminars (Hands-On BTP AI &amp; App Dev)</td>
+                            <td>Orlando (OCCC)</td>
+                        </tr>
+                        <tr>
+                            <td>11.&ndash;13. Mai 2026</td>
+                            <td>SAP Sapphire &amp; ASUG Annual Conference</td>
+                            <td>Orlando (OCCC)</td>
+                        </tr>
+                        <tr>
+                            <td>16./17. Mai 2026</td>
+                            <td>BTP ABAP Environment Upgrade Release 2605</td>
+                            <td>Cloud Maintenance Window</td>
+                        </tr>
+                        <tr>
+                            <td>19.&ndash;21. Mai 2026</td>
+                            <td>SAP Sapphire Madrid</td>
+                            <td>Madrid</td>
+                        </tr>
+                        <tr>
+                            <td>11. Juni 2026</td>
+                            <td>AI Experience Workshop (CCoE-Fokus)</td>
+                            <td>Salzburg, Competence Center Summit</td>
+                        </tr>
+                        <tr>
+                            <td>Q2 2026</td>
+                            <td>GA: ABAP Cloud Extension f&uuml;r VS Code</td>
+                            <td>Mit Joule-Integration &amp; ABAP MCP-Server</td>
+                        </tr>
+                        <tr>
+                            <td>Juli 2026</td>
+                            <td>Start AI-Units Consumption-Pricing</td>
+                            <td>Joule, Datasphere, AI Foundation</td>
+                        </tr>
+                        <tr>
+                            <td>September 2026</td>
+                            <td>Ende der kostenlosen Joule-for-Developers-Phase</td>
+                            <td>Danach AI-Units-Modell</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <div class="navigation">
+                <a href="index.html">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
+                <a href="2026-04-27.html">Vorheriges Briefing &rarr;</a>
+            </div>
+        </main>
+
+        <aside class="toc">
+            <h3>Inhaltsverzeichnis</h3>
+            <ul>
+                <li><span class="toc-dot" style="background:#e67e22"></span><a href="#abap-classic">ABAP Classic AI</a></li>
+                <li><span class="toc-dot" style="background:#3498db"></span><a href="#sap-cloud-ai">SAP Cloud AI</a></li>
+                <li><span class="toc-dot" style="background:#9b59b6"></span><a href="#community">Community &amp; Social Media</a></li>
+                <li><span class="toc-dot" style="background:#27ae60"></span><a href="#learning">Learning &amp; Zertifizierungen</a></li>
+                <li><span class="toc-dot" style="background:#c0392b"></span><a href="#videos">Video Resources &amp; Events</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        Dieses Briefing wurde am 28.04.2026 automatisch erstellt. Recherchezeitraum: 24.04.2026 &ndash; 28.04.2026 | Automatisch erstellt mit Claude | SAP AI Daily
+    </footer>
+
+    <script>
+        document.querySelectorAll('.toc a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
