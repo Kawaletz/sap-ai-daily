@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP AI Daily - 29.04.2026 Briefing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f8f9fa; color: #333; line-height: 1.7; }
+        header { background: #1a3a5c; color: white; padding: 40px 20px; border-bottom: 4px solid #e67e22; }
+        header h1 { font-size: 2.2em; margin-bottom: 5px; font-weight: 700; }
+        header .date { font-size: 1em; opacity: 0.85; margin-bottom: 15px; }
+        header .breadcrumb { margin-top: 15px; opacity: 0.9; }
+        header a { color: #fff; text-decoration: none; font-weight: 600; }
+        header a:hover { text-decoration: underline; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 1fr 250px; gap: 30px; }
+        main { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .toc { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 20px; height: fit-content; }
+        .toc h3 { font-size: 0.95em; font-weight: 700; text-transform: uppercase; color: #1a3a5c; margin-bottom: 15px; letter-spacing: 0.5px; }
+        .toc ul { list-style: none; }
+        .toc li { margin-bottom: 10px; font-size: 0.9em; padding-left: 0; }
+        .toc li:before { content: ""; display: none; }
+        .toc .toc-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+        .toc a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        .toc a:hover { color: #1a5a8c; padding-left: 5px; }
+        section { margin-bottom: 50px; }
+        .section-header { display: flex; align-items: center; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid; }
+        .section-header.orange { border-color: #e67e22; }
+        .section-header.blue { border-color: #3498db; }
+        .section-header.purple { border-color: #9b59b6; }
+        .section-header.green { border-color: #27ae60; }
+        .section-header.red { border-color: #c0392b; }
+        .section-header h2 { font-size: 1.8em; margin: 0; font-weight: 700; color: #1a3a5c; }
+        .section-color-indicator { width: 12px; height: 12px; border-radius: 50%; margin-right: 15px; flex-shrink: 0; }
+        .section-header.orange .section-color-indicator { background: #e67e22; }
+        .section-header.blue .section-color-indicator { background: #3498db; }
+        .section-header.purple .section-color-indicator { background: #9b59b6; }
+        .section-header.green .section-color-indicator { background: #27ae60; }
+        .section-header.red .section-color-indicator { background: #c0392b; }
+        h3 { font-size: 1.35em; margin-top: 25px; margin-bottom: 15px; color: #1a3a5c; font-weight: 700; }
+        h3:first-child { margin-top: 0; }
+        ul { list-style: none; margin-bottom: 20px; }
+        li { margin-bottom: 12px; padding-left: 25px; position: relative; line-height: 1.8; }
+        li:before { content: "\2022"; position: absolute; left: 0; color: #e67e22; font-weight: 700; font-size: 1.2em; }
+        strong { font-weight: 700; color: #1a3a5c; }
+        a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        a:hover { color: #1a5a8c; text-decoration: underline; }
+        .sources { font-size: 0.85em; color: #888; margin-top: 8px; padding-left: 0; }
+        .sources li { padding-left: 0; margin-bottom: 5px; }
+        .sources li:before { content: ""; display: none; }
+        .sources a { color: #888; text-decoration: underline; }
+        .sources a:hover { color: #2980b9; }
+        .tag { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 0.3rem; vertical-align: middle; }
+        .tag.neu { background: #e8f8f5; color: #1abc9c; border: 1px solid #1abc9c; }
+        .tag.update { background: #fef5e7; color: #e67e22; border: 1px solid #e67e22; }
+        .tag.event { background: #f5eef8; color: #9b59b6; border: 1px solid #9b59b6; }
+        .tag.tipp { background: #eaf2fb; color: #2980b9; border: 1px solid #2980b9; }
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden; }
+        th { background: #1a3a5c; color: white; padding: 15px; text-align: left; font-weight: 700; font-size: 0.95em; }
+        td { padding: 12px 15px; border-bottom: 1px solid #e0e0e0; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: #f5f5f5; }
+        footer { background: #2c3e50; color: white; text-align: center; padding: 25px 20px; margin-top: 60px; font-size: 0.9em; }
+        footer a { color: #e67e22; font-weight: 600; }
+        footer a:hover { text-decoration: underline; }
+        .navigation { display: flex; justify-content: space-between; align-items: center; margin: 30px 0 0 0; padding-top: 20px; border-top: 1px solid #e0e0e0; flex-wrap: wrap; gap: 15px; }
+        .navigation a { display: inline-block; padding: 10px 20px; background: #2980b9; color: white; text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s ease; }
+        .navigation a:hover { background: #1a5a8c; text-decoration: none; }
+        .publication-info { background: #f0f4f8; border-radius: 4px; padding: 15px; margin-bottom: 20px; font-size: 0.9em; color: #666; }
+        @media (max-width: 1024px) {
+            .container { grid-template-columns: 1fr; }
+            .toc { position: relative; top: 0; margin-bottom: 30px; display: none; }
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.6em; }
+            main { padding: 25px; }
+            .section-header h2 { font-size: 1.4em; }
+            h3 { font-size: 1.15em; }
+            table { font-size: 0.9em; }
+            th, td { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="breadcrumb"><a href="index.html">&larr; Zur&uuml;ck zur &Uuml;bersicht</a></div>
+        <h1>SAP AI Daily Briefing</h1>
+        <div class="date">29. April 2026</div>
+    </header>
+
+    <div class="container">
+        <main>
+            <div class="publication-info">
+                <strong>Dieses Briefing wurde am 29.04.2026 automatisch erstellt.</strong><br>
+                Recherchezeitraum: 28.04.2026 &ndash; 29.04.2026
+            </div>
+
+            <!-- SECTION 1: Orange - ABAP Classic AI -->
+            <section id="abap-classic">
+                <div class="section-header orange">
+                    <span class="section-color-indicator"></span>
+                    <h2>ABAP Classic AI</h2>
+                </div>
+
+                <h3><span class="tag update">Update</span>SAP API Policy v.4/2026a: AI-Klausel l&ouml;st Lock-in-Debatte aus</h3>
+                <ul>
+                    <li>Am 27. April hat SAP eine aktualisierte <strong>API Policy v.4.2026a</strong> ver&ouml;ffentlicht; The Register und die Community haben am 28./29. April auf eine neue Klausel reagiert: SAP <strong>untersagt die Nutzung seiner APIs f&uuml;r &bdquo;(semi-)autonome oder generative AI-Systeme&ldquo;</strong>, die API-Aufrufe planen, ausw&auml;hlen oder ausf&uuml;hren &ndash; au&szlig;erhalb der von SAP zertifizierten Architekturen.</li>
+                    <li>Konkret betroffen sind &bdquo;Scraping, Harvesting oder systematische bzw. gro&szlig;skalige Datenextraktion&ldquo; &uuml;ber APIs &ndash; ein Muster, das bei vielen ABAP-Cloud- und MCP-Server-Setups vorkommt, wenn Drittanbieter-Agenten direkt gegen ABAP- oder S/4-APIs arbeiten.</li>
+                    <li><strong>SAP-Argumentation (Christian Klein):</strong> Es gehe um Sicherheit und Performance &ndash; Millionen unkontrollierter API-Calls von AI-Agenten m&uuml;ssten gedrosselt werden; Kunden sollen weiterhin ohne zus&auml;tzliche Geb&uuml;hren auf eigene Daten zugreifen k&ouml;nnen.</li>
+                    <li><strong>Praktische Konsequenz f&uuml;r ABAP-Entwickler:</strong> Wer eigene oder Open-Source-MCP-Server an OData-, ADT- oder S/4-APIs anschlie&szlig;t, muss pr&uuml;fen, ob das Setup unter die neue Policy f&auml;llt &ndash; insbesondere bei produktiven Side-by-Side-Agenten au&szlig;erhalb der offiziellen Joule-/Joule-Studio-Architektur.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://www.theregister.com/2026/04/29/new_sap_api_policy_provokes" target="_blank">The Register: AI clause in new SAP API policy provokes lock-in concern (29.04.2026)</a></li>
+                        <li><a href="https://help.sap.com/doc/sap-api-policy/latest/en-US/API_Policy_latest.pdf" target="_blank">SAP Help: API Policy v.4.2026a (PDF)</a></li>
+                        <li><a href="https://community.sap.com/t5/technology-q-a/impacts-of-sap-api-policy-v4-2026-on-existing-customer-integrations/qaq-p/14381879" target="_blank">SAP Community Q&amp;A: Impacts of SAP API Policy v4/2026 on Existing Customer Integrations</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag tipp">Tipp</span>Auswirkungen auf MCP-Server und ABAP-Cloud-Agenten konkret pr&uuml;fen</h3>
+                <ul>
+                    <li>Die SAP-Community sammelt unter dem Q&amp;A-Thread &bdquo;Impacts of SAP API Policy v4/2026 on existing customer integrations&ldquo; konkrete Szenarien &ndash; viele betreffen ABAP-Klassiker wie Datenexporte f&uuml;r Reporting-Agenten oder MCP-basierte Code-Analysen &uuml;ber ADT.</li>
+                    <li>Empfehlung f&uuml;r ABAP-Architekten: <strong>Inventarisieren Sie laufende AI-Agenten</strong>, die nicht &uuml;ber Joule oder die offizielle ABAP-Cloud-Extension laufen &ndash; diese werden jetzt zur Compliance-Frage und sollten bis Sapphire (11.&ndash;13.&nbsp;Mai) pr&auml;sentationsreif dokumentiert sein.</li>
+                    <li>Strategischer Hinweis: SAP signalisiert mit der Klausel, dass die offizielle <em>Agentic-AI-Plattform</em> (Joule Studio + AI Foundation + ABAP MCP Server in Q2/2026) der einzig vertraglich saubere Pfad sein soll. Wer AI-Workloads auf Eigenbau-MCPs setzt, muss eine Migrationsoption skizzieren.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/technology-q-a/impacts-of-sap-api-policy-v4-2026-on-existing-customer-integrations/qaq-p/14381879" target="_blank">SAP Community Q&amp;A: Impacts of SAP API Policy v4/2026</a></li>
+                        <li><a href="https://blog.zeis.de/" target="_blank">Marian Zeis Blog &ndash; Kommentare zur API Policy</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 2: Blue - SAP Cloud AI -->
+            <section id="sap-cloud-ai">
+                <div class="section-header blue">
+                    <span class="section-color-indicator"></span>
+                    <h2>SAP Cloud AI</h2>
+                </div>
+
+                <h3><span class="tag neu">Neu</span>Joule Deep Research (Beta) und Joule Action Bar in Q1/2026 produktiv</h3>
+                <ul>
+                    <li>Im SAP UX Q1/2026 Update sind zwei Joule-Funktionen aufgetaucht, die in den vergangenen Briefings noch nicht im Detail behandelt wurden: <strong>Joule Deep Research (Beta)</strong> und die <strong>Joule Action Bar</strong>.</li>
+                    <li><strong>Joule Deep Research (Beta):</strong> Joule fragt zun&auml;chst eine Recherche-Strategie ab, l&auml;sst sich diese vom User best&auml;tigen (&bdquo;Human in Control&ldquo;), und kombiniert dann interne SAP-Daten mit externen Webquellen via <em>Perplexity Deep Research</em>. Ziel: Komplexe Business-Fragen mit synthetisierten Erkl&auml;rungen statt einfacher Antworten beantworten.</li>
+                    <li><strong>Joule Action Bar:</strong> Kontextsensitive Aktionsleiste, die direkt aus Anwendungen heraus Joule-Skills und Agenten anbietet &ndash; ohne Kontextwechsel in einen separaten Joule-Bereich. F&uuml;r Pro-Code-Teams interessant: Die Bar ist erweiterbar, um eigene Joule-Skills (auch ABAP-AI) als Quick-Action einzubinden.</li>
+                    <li>F&uuml;r Architekten: Beide Features signalisieren den Schritt von &bdquo;Joule als zentralisiertem Chat-UX&ldquo; zu <strong>Joule als ambient AI-Layer</strong> &ndash; eingebettet in Datasphere, Mobile Start, S/4HANA und SuccessFactors.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-ux-q1-2026-update-part-1-ai-joule-sap-build-work-zone-sap-mobile-start/ba-p/14312110" target="_blank">SAP Community: SAP UX Q1/2026 Update &ndash; Part 1 (AI, Joule, Mobile Start)</a></li>
+                        <li><a href="https://news.sap.com/2026/04/sap-business-ai-release-highlights-q1-2026/" target="_blank">SAP News: Business AI Release Highlights Q1 2026</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag update">Update</span>Joule Studio Agent Builder GA &ndash; Custom Agents bis 31.&nbsp;Mai kostenlos betreiben</h3>
+                <ul>
+                    <li>Der <strong>Joule Studio Agent Builder</strong> ist offiziell <strong>generally available</strong>. Damit k&ouml;nnen Enterprises und Partner eigene Agenten low-/no-code bauen, mit SAP- und Non-SAP-Datenquellen verbinden, Multi-Agent-Workflows orchestrieren und mit rollenbasierten Zugriffsrechten ausrollen &ndash; inklusive Audit-Trail.</li>
+                    <li><strong>Promotion bis 31. Mai 2026:</strong> SAP-Build-Kunden k&ouml;nnen <em>eigene Joule-Agenten kostenlos betreiben</em> &ndash; ein klares Signal, vor Sapphire die Agent-Adoption zu beschleunigen. Wer einen Proof of Concept erw&auml;gt, sollte das Fenster nutzen, bevor das AI-Units-Modell ab Juli 2026 die Verbrauchskosten umstellt.</li>
+                    <li>Praktischer Use Case: Branchenagenten f&uuml;r Manufacturing (Produktionsplanung), Retail (Demand Forecasting), Life Sciences (Compliance-Workflows) &ndash; alle im Agent Builder konfigurierbar, ohne Code-Schreiben in Joule Studio.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/agent-builder-in-joule-studio-is-now-generally-available-build-your-own/ba-p/14289282" target="_blank">SAP Community: Agent Builder in Joule Studio is now Generally Available</a></li>
+                        <li><a href="https://www.sap.com/products/artificial-intelligence/joule-studio.html" target="_blank">SAP Joule Studio Produktseite</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag neu">Neu</span>SAP positioniert AI Foundation als &bdquo;AI-Operating-System&ldquo;</h3>
+                <ul>
+                    <li>Im Vorfeld von Sapphire 2026 positioniert SAP die <strong>AI Foundation</strong> nicht mehr nur als Service-Bundle, sondern explizit als <em>AI-Operating-System f&uuml;r Business AI</em> &ndash; mit Generative AI Hub, Joule Studio und SAP Knowledge Graph als integriertem Stack.</li>
+                    <li>Architektur-Botschaft: AI-Foundation soll AI-Modelle an &bdquo;trusted, governed business data&ldquo; im SAP-Suite-Kontext anbinden, mit eingebettetem Business-Context und Multi-Model-Support &ndash; abgesetzt vom horizontalen, Hyperscaler-zentrierten AI-Layer der Mitbewerber.</li>
+                    <li>F&uuml;r Entscheider relevant: Diese Framing-&Auml;nderung deutet darauf hin, dass auf der Sapphire-Keynote eine st&auml;rker betriebssystem-artige Sichtweise pr&auml;sentiert wird &ndash; mit Governance-Layer, Knowledge-Graph-Indexierung und einer klareren Trennung von Joule (UX) und AI Foundation (Plattform).</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://news.sap.com/2026/04/sap-business-ai-release-highlights-q1-2026/" target="_blank">SAP News: Business AI Release Highlights Q1 2026</a></li>
+                        <li><a href="https://www.sap.com/products/artificial-intelligence.html" target="_blank">SAP Business AI &ndash; Produkt&uuml;bersicht</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 3: Purple - Community & Social Media -->
+            <section id="community">
+                <div class="section-header purple">
+                    <span class="section-color-indicator"></span>
+                    <h2>Community &amp; Social Media</h2>
+                </div>
+
+                <h3><span class="tag neu">Neu</span>SAP Architecture Center relauncht &ndash; AI Golden Path jetzt &ouml;ffentlich</h3>
+                <ul>
+                    <li>Am 22. April hat SAP das <strong>SAP Architecture Center</strong> in einer komplett &uuml;berarbeiteten Version ver&ouml;ffentlicht (architecture.learning.sap.com). F&uuml;r Architekten, die SAP-AI-Workloads designen, ist der Relaunch besonders relevant.</li>
+                    <li><strong>Inhaltliche Schwerpunkte:</strong> 30 Referenzarchitekturen in 104 einzigartigen Dokumenten, die externe Version des <em>AI Golden Path</em>, sowie detaillierte Guidance f&uuml;r Integrationen mit Hyperscalern und Technologiepartnern.</li>
+                    <li>Neuer Anspruch: SAP will Transparenz &uuml;ber Work-in-Progress geben &ndash; nicht nur fertige Architekturen, sondern auch Forschungsinitiativen und strategische Richtungen werden gezeigt. F&uuml;r ABAP-/BTP-Architekten wertvoll, da AI-Architekturpatterns sonst h&auml;ufig nur intern in Sapphire-Sessions kursieren.</li>
+                    <li>Quick Start-Workflow auf GitHub-Basis ist angek&uuml;ndigt &ndash; Community-Beitr&auml;ge zu Architekturpattern werden so einfacher m&ouml;glich.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://architecture.learning.sap.com/news/2026/04/22/introducing-the-refreshed-sap-architecture-center" target="_blank">SAP Architecture Center: Introducing the refreshed SAP Architecture Center (22.04.2026)</a></li>
+                        <li><a href="https://architecture.learning.sap.com/" target="_blank">SAP Architecture Center &ndash; Startseite</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag update">Update</span>Hannover Messe 2026: ANYbotics-Roboter via Joule live ferngewartet</h3>
+                <ul>
+                    <li>Auf der letzten Hannover-Messe-Etappe (28. April) hat SAP eine bisher noch nicht im Detail dokumentierte Demo gezeigt: Ein <strong>ANYbotics-Vier-Bein-Roboter</strong> wird &uuml;ber <em>Joule mit nat&uuml;rlicher Sprache</em> ferngesteuert &ndash; f&uuml;r Field-Service-Inspektionen in industriellen Umgebungen.</li>
+                    <li>Architektur-Highlight: Kein klassisches Robotic-UI, sondern ein <strong>Agent-to-Agent-Pattern</strong> &ndash; Joule &uuml;bersetzt Operator-Anweisungen in strukturierte Inspektions-Tasks, die ein autonomer Agent auf dem Roboter ausf&uuml;hrt; R&uuml;ckmeldungen werden direkt in SAP-Prozesse (z.B. Maintenance-Order in S/4) zur&uuml;ckgef&uuml;hrt.</li>
+                    <li>Bedeutung: Erstmals zeigt SAP &ouml;ffentlich, wie <em>physische AI-Agenten</em> &uuml;ber den Joule-Layer in ein ERP-System integriert werden &ndash; ein Vorl&auml;ufer-Showcase f&uuml;r &Auml;hnliches auf Sapphire.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://news.sap.com/2026/04/hannover-messe-live-ai-use-cases-manufacturing-scm/" target="_blank">SAP News: Hannover Messe 2026 &ndash; Live AI Use Cases (28.04.2026)</a></li>
+                        <li><a href="https://news.sap.com/2026/04/sap-at-hannover-messe-2026-agentic-ai-resilient-manufacturing/" target="_blank">SAP News: Hannover Messe 2026 &ndash; Operationalizing Agentic AI</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 4: Green - Learning & Zertifizierungen -->
+            <section id="learning">
+                <div class="section-header green">
+                    <span class="section-color-indicator"></span>
+                    <h2>Learning &amp; Zertifizierungen</h2>
+                </div>
+
+                <h3><span class="tag event">Event</span>AI Developer Challenge April 2026 &ndash; Woche&nbsp;4 mit CrewAI &amp; Generative AI Hub</h3>
+                <ul>
+                    <li>Die SAP <strong>AI Developer Challenge April 2026</strong> ist im Endspurt &ndash; Woche&nbsp;4 (28.&nbsp;April&nbsp;ff.) konzentriert sich auf den Bau <em>code-basierter Agenten</em> mit <strong>CrewAI</strong> in Kombination mit dem Generative AI Hub auf SAP AI Core.</li>
+                    <li>Curriculum-Reise: Document Grounding &rarr; Vektor-Embeddings f&uuml;r semantische Suche &rarr; Retrieval Augmented Generation in HANA Cloud &rarr; Agentic Patterns mit CrewAI. Material wird in vorkonfigurierten Jupyter-Notebooks bereitgestellt.</li>
+                    <li>Wer noch einsteigen will: System-Zugang ist seit Anfang April aktiv, das Material bleibt nach Abschluss der Challenge als Self-Paced-Lernpfad verf&uuml;gbar &ndash; <strong>ideal f&uuml;r Entwickler, die Sapphire-Demos aktiv nachbauen wollen</strong>.</li>
+                    <li>Tipp: Die Challenge nutzt freie SAP-AI-Core-Ressourcen f&uuml;r die Dauer der Aktion &ndash; die Trainingsumgebung schl&auml;gt sich nicht auf das k&uuml;nftige AI-Units-Konto nieder.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/ai-developer-challenge-april-2026-build-ai-agents-with-generative-ai-hub/ba-p/14327218" target="_blank">SAP Community: AI Developer Challenge April 2026 &ndash; Build AI Agents with Generative AI Hub</a></li>
+                        <li><a href="https://learning.sap.com/courses/discovering-sap-s-generative-ai-hub" target="_blank">SAP Learning: Discovering SAP&rsquo;s Generative AI Hub</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 5: Red - Video Resources & Events -->
+            <section id="videos">
+                <div class="section-header red">
+                    <span class="section-color-indicator"></span>
+                    <h2>Video Resources &amp; Events</h2>
+                </div>
+
+                <h3><span class="tag event">Event</span>SAP TechEd 2026: 27.&ndash;29. Oktober in Berlin best&auml;tigt</h3>
+                <ul>
+                    <li>SAP hat den Termin f&uuml;r <strong>SAP TechEd 2026</strong> offiziell best&auml;tigt: <strong>27.&ndash;29. Oktober 2026 in Berlin</strong> (mit virtuellem Track parallel). Die Veranstaltung kehrt damit nach Deutschland zur&uuml;ck und bildet den j&auml;hrlichen Tech-Gegenpol zur Business-orientierten Sapphire.</li>
+                    <li>Schwerpunkte: Tiefes technisches Lernen, Best Practices und Hands-on-Training &ndash; klassischer Sweet Spot f&uuml;r ABAP-Entwickler, BTP-Architekten und Joule-Studio-Builder.</li>
+                    <li>F&uuml;r APAC-Region: <strong>Mastering SAP Collaborate</strong> als offizieller TechEd-Tour-Stop in Sydney (17.&ndash;19. November 2026) bringt einen kuratierten Auszug der Berlin-Sessions in die Region.</li>
+                    <li>Praktischer Hinweis: Wer Sapphire-Reisen nicht stemmen kann, sollte TechEd Berlin als Pflichttermin einplanen &ndash; viele ABAP-AI- und MCP-Sessions werden in Berlin in Hands-on-Form vertieft, w&auml;hrend Sapphire st&auml;rker auf Strategy/Customer Stories setzt.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://www.sap.com/germany/events/2026-10-27-de-online-sap-teched-berlin-and-virtual.html" target="_blank">SAP Events: TechEd Berlin &amp; Virtual (27.&ndash;29. Oktober 2026)</a></li>
+                        <li><a href="https://www.masteringsap.events/collaborate-sap-teched-on-tour" target="_blank">Mastering SAP Collaborate &ndash; SAP TechEd on Tour Sydney</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag event">Event</span>DSAG-Jahreskongress 2026: 6.&ndash;8. Oktober in K&ouml;ln, AI-Thementage Ende Juni</h3>
+                <ul>
+                    <li>Die DSAG hat das Programm f&uuml;r den <strong>DSAG-Jahreskongress 2026</strong> (6.&ndash;8. Oktober, Koelnmesse, Halle 2) konkretisiert. Motto: <em>&bdquo;Claim your ground &ndash; Lead your Business&ldquo;</em> &ndash; bewusst nicht euphorisch, sondern fokussiert auf Realismus bei Cloud-, BTP-, AI- und Automatisierungsprojekten.</li>
+                    <li>Vorschalt-Termin f&uuml;r AI-Spezialisten: <strong>DSAG-KI-Thementage am 30. Juni und 1. Juli 2026 in Sankt Leon-Rot</strong> &ndash; Praxisberichte und Use Cases zu SAP Business AI, mit explizitem Fokus auf produktiven Einsatz statt Strategie-Folien.</li>
+                    <li>F&uuml;r DACH-ABAP-Teams: Die Personaltage 2026 (17.&ndash;18. Juni, Heidelberg) sind als HR/SuccessFactors-AI-Termin gesetzt &ndash; AI-relevante Sessions zu Payroll Explanation Agents und Talent Intelligence Hub werden dort gezeigt.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://dsag.de/events/dsag-jahreskongress-2026/" target="_blank">DSAG: Jahreskongress 2026 (6.&ndash;8. Oktober K&ouml;ln)</a></li>
+                        <li><a href="https://dsag.de/events/" target="_blank">DSAG Events &Uuml;bersicht (KI-Thementage, Personaltage)</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag event">Event</span>Termine &amp; Events</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Datum</th>
+                            <th>Event</th>
+                            <th>Format / Ort</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>11.&ndash;13. Mai 2026</td>
+                            <td>SAP Sapphire &amp; ASUG Annual Conference</td>
+                            <td>Orlando (OCCC)</td>
+                        </tr>
+                        <tr>
+                            <td>19.&ndash;21. Mai 2026</td>
+                            <td>SAP Sapphire Madrid</td>
+                            <td>Madrid</td>
+                        </tr>
+                        <tr>
+                            <td>31. Mai 2026</td>
+                            <td>Ende der kostenlosen Joule-Custom-Agent-Promotion</td>
+                            <td>SAP Build / Joule Studio</td>
+                        </tr>
+                        <tr>
+                            <td>11. Juni 2026</td>
+                            <td>AI Experience Workshop (CCoE-Fokus)</td>
+                            <td>Salzburg, Competence Center Summit</td>
+                        </tr>
+                        <tr>
+                            <td>17.&ndash;18. Juni 2026</td>
+                            <td>DSAG-Personaltage 2026</td>
+                            <td>Heidelberg Congress Center</td>
+                        </tr>
+                        <tr>
+                            <td>30. Juni &ndash; 1. Juli 2026</td>
+                            <td>DSAG-KI-Thementage (SAP Business AI)</td>
+                            <td>Sankt Leon-Rot</td>
+                        </tr>
+                        <tr>
+                            <td>Juli 2026</td>
+                            <td>Start AI-Units Consumption-Pricing</td>
+                            <td>Joule, Datasphere, AI Foundation</td>
+                        </tr>
+                        <tr>
+                            <td>September 2026</td>
+                            <td>Ende der kostenlosen Joule-for-Developers-Phase</td>
+                            <td>Danach AI-Units-Modell</td>
+                        </tr>
+                        <tr>
+                            <td>6.&ndash;8. Oktober 2026</td>
+                            <td>DSAG-Jahreskongress 2026</td>
+                            <td>K&ouml;ln (Koelnmesse, Halle 2)</td>
+                        </tr>
+                        <tr>
+                            <td>27.&ndash;29. Oktober 2026</td>
+                            <td>SAP TechEd 2026</td>
+                            <td>Berlin (mit Virtual Track)</td>
+                        </tr>
+                        <tr>
+                            <td>17.&ndash;19. November 2026</td>
+                            <td>Mastering SAP Collaborate (TechEd on Tour)</td>
+                            <td>Sydney</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <div class="navigation">
+                <a href="index.html">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
+                <a href="2026-04-28.html">Vorheriges Briefing &rarr;</a>
+            </div>
+        </main>
+
+        <aside class="toc">
+            <h3>Inhaltsverzeichnis</h3>
+            <ul>
+                <li><span class="toc-dot" style="background:#e67e22"></span><a href="#abap-classic">ABAP Classic AI</a></li>
+                <li><span class="toc-dot" style="background:#3498db"></span><a href="#sap-cloud-ai">SAP Cloud AI</a></li>
+                <li><span class="toc-dot" style="background:#9b59b6"></span><a href="#community">Community &amp; Social Media</a></li>
+                <li><span class="toc-dot" style="background:#27ae60"></span><a href="#learning">Learning &amp; Zertifizierungen</a></li>
+                <li><span class="toc-dot" style="background:#c0392b"></span><a href="#videos">Video Resources &amp; Events</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        Dieses Briefing wurde am 29.04.2026 automatisch erstellt. Recherchezeitraum: 28.04.2026 &ndash; 29.04.2026 | Automatisch erstellt mit Claude | SAP AI Daily
+    </footer>
+
+    <script>
+        document.querySelectorAll('.toc a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
