@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP AI Daily - 08.05.2026 Briefing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f8f9fa; color: #333; line-height: 1.7; }
+        header { background: #1a3a5c; color: white; padding: 40px 20px; border-bottom: 4px solid #e67e22; }
+        header h1 { font-size: 2.2em; margin-bottom: 5px; font-weight: 700; }
+        header .date { font-size: 1em; opacity: 0.85; margin-bottom: 15px; }
+        header .breadcrumb { margin-top: 15px; opacity: 0.9; }
+        header a { color: #fff; text-decoration: none; font-weight: 600; }
+        header a:hover { text-decoration: underline; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 1fr 250px; gap: 30px; }
+        main { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .toc { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 20px; height: fit-content; }
+        .toc h3 { font-size: 0.95em; font-weight: 700; text-transform: uppercase; color: #1a3a5c; margin-bottom: 15px; letter-spacing: 0.5px; }
+        .toc ul { list-style: none; }
+        .toc li { margin-bottom: 10px; font-size: 0.9em; padding-left: 0; }
+        .toc li:before { content: ""; display: none; }
+        .toc .toc-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+        .toc a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        .toc a:hover { color: #1a5a8c; padding-left: 5px; }
+        section { margin-bottom: 50px; }
+        .section-header { display: flex; align-items: center; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid; }
+        .section-header.orange { border-color: #e67e22; }
+        .section-header.blue { border-color: #3498db; }
+        .section-header.purple { border-color: #9b59b6; }
+        .section-header.green { border-color: #27ae60; }
+        .section-header.red { border-color: #c0392b; }
+        .section-header h2 { font-size: 1.8em; margin: 0; font-weight: 700; color: #1a3a5c; }
+        .section-color-indicator { width: 12px; height: 12px; border-radius: 50%; margin-right: 15px; flex-shrink: 0; }
+        .section-header.orange .section-color-indicator { background: #e67e22; }
+        .section-header.blue .section-color-indicator { background: #3498db; }
+        .section-header.purple .section-color-indicator { background: #9b59b6; }
+        .section-header.green .section-color-indicator { background: #27ae60; }
+        .section-header.red .section-color-indicator { background: #c0392b; }
+        h3 { font-size: 1.35em; margin-top: 25px; margin-bottom: 15px; color: #1a3a5c; font-weight: 700; }
+        h3:first-child { margin-top: 0; }
+        ul { list-style: none; margin-bottom: 20px; }
+        li { margin-bottom: 12px; padding-left: 25px; position: relative; line-height: 1.8; }
+        li:before { content: "\2022"; position: absolute; left: 0; color: #e67e22; font-weight: 700; font-size: 1.2em; }
+        strong { font-weight: 700; color: #1a3a5c; }
+        a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        a:hover { color: #1a5a8c; text-decoration: underline; }
+        .sources { font-size: 0.85em; color: #888; margin-top: 8px; padding-left: 0; }
+        .sources li { padding-left: 0; margin-bottom: 5px; }
+        .sources li:before { content: ""; display: none; }
+        .sources a { color: #888; text-decoration: underline; }
+        .sources a:hover { color: #2980b9; }
+        .tag { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 0.3rem; vertical-align: middle; }
+        .tag.neu { background: #e8f8f5; color: #1abc9c; border: 1px solid #1abc9c; }
+        .tag.update { background: #fef5e7; color: #e67e22; border: 1px solid #e67e22; }
+        .tag.event { background: #f5eef8; color: #9b59b6; border: 1px solid #9b59b6; }
+        .tag.tipp { background: #eaf2fb; color: #2980b9; border: 1px solid #2980b9; }
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden; }
+        th { background: #1a3a5c; color: white; padding: 15px; text-align: left; font-weight: 700; font-size: 0.95em; }
+        td { padding: 12px 15px; border-bottom: 1px solid #e0e0e0; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: #f5f5f5; }
+        footer { background: #2c3e50; color: white; text-align: center; padding: 25px 20px; margin-top: 60px; font-size: 0.9em; }
+        footer a { color: #e67e22; font-weight: 600; }
+        footer a:hover { text-decoration: underline; }
+        .navigation { display: flex; justify-content: space-between; align-items: center; margin: 30px 0 0 0; padding-top: 20px; border-top: 1px solid #e0e0e0; flex-wrap: wrap; gap: 15px; }
+        .navigation a { display: inline-block; padding: 10px 20px; background: #2980b9; color: white; text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s ease; }
+        .navigation a:hover { background: #1a5a8c; text-decoration: none; }
+        .publication-info { background: #f0f4f8; border-radius: 4px; padding: 15px; margin-bottom: 20px; font-size: 0.9em; color: #666; }
+        .empty-section { font-style: italic; color: #888; padding: 10px 0; }
+        @media (max-width: 1024px) {
+            .container { grid-template-columns: 1fr; }
+            .toc { position: relative; top: 0; margin-bottom: 30px; display: none; }
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.6em; }
+            main { padding: 25px; }
+            .section-header h2 { font-size: 1.4em; }
+            h3 { font-size: 1.15em; }
+            table { font-size: 0.9em; }
+            th, td { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="breadcrumb"><a href="index.html">&larr; Zur&uuml;ck zur &Uuml;bersicht</a></div>
+        <h1>SAP AI Daily Briefing</h1>
+        <div class="date">08. Mai 2026</div>
+    </header>
+
+    <div class="container">
+        <main>
+            <div class="publication-info">
+                <strong>Dieses Briefing wurde am 08.05.2026 automatisch erstellt.</strong><br>
+                Recherchezeitraum: 05.05.2026 &ndash; 08.05.2026
+            </div>
+
+            <!-- SECTION 1: Orange - ABAP Classic AI -->
+            <section id="abap-classic">
+                <div class="section-header orange">
+                    <span class="section-color-indicator"></span>
+                    <h2>ABAP Classic AI</h2>
+                </div>
+
+                <h3><span class="tag neu">Neu</span>Marcello Urbanis &bdquo;abap_remote_fs&ldquo; wird zur Agentic-AI-Plattform &ndash; 39 LM Tools, Autonomous Agent Mode, AI Subagents</h3>
+                <ul>
+                    <li>Das langj&auml;hrig etablierte VS-Code-Plugin <strong>vscode_abap_remote_fs</strong> von <strong>Marcello Urbani</strong> hat sich in den letzten Wochen vom &bdquo;ABAP-Filesystem in VS Code&ldquo; zu einer ausgewachsenen <em>VS-Code-based Agentic AI Platform for SAP ABAP Development</em> gewandelt &ndash; und ist damit eine konkrete, heute schon nutzbare Alternative zur erst f&uuml;r Q2/2026 angek&uuml;ndigten offiziellen ABAP Cloud Extension von SAP.</li>
+                    <li><strong>39 Language-Model-Tools im Paket:</strong> Das Plugin exponiert ABAP-Kernoperationen (Lesen/Schreiben von Klassen, Funktionen, Programmen, CDS-Views, Tests, Tabellen, Dumps, Performance-Traces) als LM-Tools, die Copilot, Cursor oder Claude direkt ansprechen k&ouml;nnen &ndash; <em>ohne</em> dass ein separater MCP-Server aufgesetzt werden muss.</li>
+                    <li><strong>Autonomous Agent Mode &amp; Subagenten:</strong> Eine zentrale Neuerung ist der Autonomous Agent Mode, in dem die KI eine Codebasis selbst&auml;ndig exploriert. Spezialisierte AI Subagents lassen sich f&uuml;r Aufgaben wie Refactoring, Test-Generierung oder Dump-Analyse delegieren &ndash; das ist exakt das Subagent-Konzept, das auch die offizielle SAP-Roadmap (Lead-Agent + Spezialisten) beschreibt, hier aber bereits in Open-Source-Form lauff&auml;hig.</li>
+                    <li><strong>AI Skills &amp; Heartbeat-Monitoring:</strong> Mit AI Skills lassen sich themenspezifische Wissens-Packs (z.&nbsp;B. Performance, Migration, Clean Core) automatisch laden, wenn sie f&uuml;r den aktuellen Kontext relevant werden. Heartbeat-Monitoring h&auml;lt das Backend-System im Blick und l&ouml;st Reaktionen aus, ohne dass jede Anfrage manuell ausgel&ouml;st werden muss.</li>
+                    <li><strong>F&uuml;r Architekten &amp; CCoE-Teams:</strong> Wer auf den GA-Release der ABAP Cloud Extension warten will, hat dazu gute Gr&uuml;nde (Support, Lifecycle). Wer aber heute schon Agent-Mode-Workflows mit Anthropic Claude oder GitHub Copilot in einem On-Premise-/Private-Cloud-System pilotieren m&ouml;chte, findet hier den derzeit ausgereiftesten Open-Source-Stack &ndash; inklusive SQL Query Browser, Runtime-Dump-Analyse und Debug-Recording.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://github.com/marcellourbani/vscode_abap_remote_fs" target="_blank">GitHub: marcellourbani/vscode_abap_remote_fs &ndash; VS Code-based Agentic AI Platform for SAP ABAP Development</a></li>
+                        <li><a href="https://marketplace.visualstudio.com/items?itemName=murbani.vscode-abap-remote-fs" target="_blank">VS Code Marketplace: ABAP remote filesystem</a></li>
+                        <li><a href="https://github.com/marcellourbani/vscode_abap_remote_fs/blob/master/DOCUMENTATION.md" target="_blank">GitHub: vscode_abap_remote_fs &ndash; DOCUMENTATION.md (LM Tools &amp; Agent Mode)</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag tipp">Tipp</span>Warren Eiserman auf Medium: ABAP Remote Filesystem mit Claude Code &ndash; praktischer Hands-on-Guide</h3>
+                <ul>
+                    <li>Erg&auml;nzend zur Plattform selbst hat <strong>Warren Eiserman</strong> einen ausf&uuml;hrlichen <strong>Medium-Artikel</strong> ver&ouml;ffentlicht, der zeigt, wie sich das ABAP Remote Filesystem in VS Code mit <em>Claude Code</em> kombinieren l&auml;sst &ndash; nicht als Marketing-Demo, sondern als reproduzierbares Setup auf einem realen Entwicklungssystem.</li>
+                    <li><strong>Praktischer Wert:</strong> Der Artikel ist eine der wenigen unabh&auml;ngigen Beschreibungen, wie Anthropic Claude (via Claude Code CLI) tats&auml;chlich auf einen ABAP-Stack zugreift, Code-Kontext aufbaut, &Auml;nderungen sicher durchf&uuml;hrt und welche Stolpersteine bei Authentifizierung und Berechtigungen auftauchen.</li>
+                    <li><strong>F&uuml;r ABAP-Entwickler:</strong> Wer in den n&auml;chsten Wochen ein Pilot-Projekt mit Claude oder einem hauseigenen MCP-Workflow plant, kann sich an dieser Setup-Dokumentation orientieren &ndash; insbesondere die Abschnitte zu Tool-Permissions und Diff-Reviews sparen Zeit gegen&uuml;ber dem Trial-and-Error-Weg.</li>
+                    <li><strong>Einordnung:</strong> Zusammen mit der oben skizzierten Plattform entsteht damit eine reife Alternative zum offiziellen J4D-Stack &ndash; mit dem Unterschied, dass die LLM-Wahl beim Anwender liegt (Claude, GPT-5.2, Gemini 3.0 Pro u.&nbsp;a. via Provider-Plugin) und nicht durch das SAP-AI-Foundation-Setup vorgegeben wird.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://medium.com/@warren_eiserman/using-vs-code-abap-remote-file-system-extension-with-claude-code-6d1640ce26ad" target="_blank">Medium (Warren Eiserman, Apr 2026): Using VS Code ABAP Remote File System Extension with Claude Code</a></li>
+                        <li><a href="https://github.com/marcellourbani/vscode_abap_remote_fs/wiki/getting-started" target="_blank">GitHub Wiki: vscode_abap_remote_fs &ndash; Getting Started</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 2: Blue - SAP Cloud AI -->
+            <section id="sap-cloud-ai">
+                <div class="section-header blue">
+                    <span class="section-color-indicator"></span>
+                    <h2>SAP Cloud AI</h2>
+                </div>
+
+                <h3><span class="tag neu">Neu</span>Pre-Sapphire-Pauke: SAP &uuml;bernimmt Dremio &ndash; Iceberg-native Data Lakehouse f&uuml;r Agentic AI</h3>
+                <ul>
+                    <li>Anfang dieser Woche hat SAP die <strong>geplante &Uuml;bernahme von Dremio</strong> bekanntgegeben &ndash; eine der gr&ouml;&szlig;ten Daten-Akquisitionen seit Sybase. Dremio wird in die <strong>SAP Business Data Cloud (BDC)</strong> integriert und macht sie zum <em>Apache-Iceberg-nativen Enterprise Lakehouse</em>, das SAP- und Non-SAP-Daten f&uuml;r Agentic AI in Echtzeit vereint. Closing erwartet f&uuml;r Q3 2026, Konditionen nicht offengelegt.</li>
+                    <li><strong>Warum das f&uuml;r Agent-Architekturen relevant ist:</strong> SAP zitiert die typische Schwachstelle aller Enterprise-AI-Projekte &ndash; nicht das Modell scheitert, sondern die fragmentierten, propriet&auml;ren Datenformate ohne Business-Kontext. Dremios Iceberg-Engine ben&ouml;tigt <em>keine Datenbewegung und keine Format-Konvertierung</em>; SAP- und Non-SAP-Daten leben auf demselben offenen Fundament, kombiniert mit der HANA-Cloud-In-Memory-Engine f&uuml;r operative Echtzeit-Workloads.</li>
+                    <li><strong>Strategische Lesart:</strong> Dremio bezeichnet sich selbst als &bdquo;Agentic Lakehouse &ndash; die einzige Iceberg-native Datenplattform, die f&uuml;r Agenten gebaut und von Agenten verwaltet wird&ldquo;. F&uuml;r SAP schlie&szlig;t das die L&uuml;cke zwischen Datasphere/HANA Cloud und der wachsenden Joule-Agent-Welt: ein gemeinsamer, governed Datenlayer, an den Joule-Agenten und Drittanbieter-Agenten via A2A andocken k&ouml;nnen.</li>
+                    <li><strong>F&uuml;r Datenarchitekten:</strong> Wer aktuell Reltio-, BigQuery- oder Snowflake-Integrationen f&uuml;r BDC plant, sollte Dremios Federation-F&auml;higkeiten in die Bewertung einrechnen &ndash; Sapphire wird dazu konkrete Roadmap-Aussagen liefern. Auch f&uuml;r Bestandskunden mit Iceberg-Strategie ist die &Uuml;bernahme ein Signal, BDC neu zu evaluieren.</li>
+                    <li><strong>Open-Source-Frage:</strong> Dremio bringt eine relevante Open-Source-Community mit (Project Nessie, Iceberg-Tools). Branchenanalysten wie ERP.today und CIO Dive lesen die Akquise als bewussten Schritt SAPs in Richtung &bdquo;offener AI-Datenlayer&ldquo; statt geschlossener BTP-Silos.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://news.sap.com/2026/05/sap-to-acquire-dremio-unify-sap-and-non-sap-data-power-agentic-ai/" target="_blank">SAP News (Mai 2026): SAP to Acquire Dremio to Unify SAP and Non-SAP Data to Power Agentic AI</a></li>
+                        <li><a href="https://www.dremio.com/blog/sap-intends-to-acquire-dremio/" target="_blank">Dremio Blog: SAP Intends to Acquire Dremio</a></li>
+                        <li><a href="https://www.cio.com/article/4166881/sap-to-acquire-data-lakehouse-vendor-dremio.html" target="_blank">CIO: SAP to acquire data lakehouse vendor Dremio</a></li>
+                        <li><a href="https://erp.today/sap-dremio-prior-labs-enterprise-ai-acquisition/" target="_blank">ERP.today: SAP Targets Data and Model Gaps with Dremio and Prior Labs</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag neu">Neu</span>Parallel-Akquise: SAP investiert &gt;1&nbsp;Mrd. EUR in Prior Labs &ndash; europ&auml;isches Frontier-AI-Lab f&uuml;r Tabular Foundation Models</h3>
+                <ul>
+                    <li>Zeitgleich mit der Dremio-Akquise hat SAP angek&uuml;ndigt, das Freiburger AI-Forschungslabor <strong>Prior Labs</strong> zu &uuml;bernehmen und in den n&auml;chsten vier Jahren <strong>mehr als 1 Milliarde Euro</strong> in den Aufbau eines europ&auml;ischen Frontier-AI-Labs zu investieren. Prior Labs bleibt rechtlich eigenst&auml;ndig, Sitz Freiburg, mit B&uuml;ros in Berlin und New York.</li>
+                    <li><strong>Was Prior Labs einzigartig macht:</strong> Das Team baut <em>Tabular Foundation Models (TFMs)</em> &ndash; spezialisiert auf strukturierte Enterprise-Daten wie Zahlungsverhalten, Lieferantenrisiko oder Customer Churn. Klassische LLMs scheitern an Tabellen, Zahlen und Statistik; TFMs liefern hier echte Vorhersagequalit&auml;t. Das Flaggschiff <strong>TabPFN-2.6</strong> f&uuml;hrt aktuell den TabArena-Benchmark an und erreicht laut SAP die Genauigkeit einer 4-stuendigen AutoML-Pipeline &ndash; <em>instant, single-model</em>.</li>
+                    <li><strong>Strategische Verbindung zu SAP-RPT-1:</strong> Prior Labs ist die zweite gro&szlig;e Investition SAPs in das Tabular-AI-Layer (nach SAP-RPT-1, das gerade in der SAP Analytics Cloud Q2/2026 GA wird). F&uuml;r SAP entsteht damit ein durchg&auml;ngiger AI-Stack vom Foundation-Modell &uuml;ber AI Foundation bis zur konkreten Anwendung in BDC und SAC.</li>
+                    <li><strong>Politische Lesart:</strong> Frontier-AI-Lab in Europa, &uuml;berwiegend deutsche Forschung, &uuml;ber 1 Mrd. EUR Investment &ndash; SAP positioniert sich damit explizit als europ&auml;ische Antwort auf US-amerikanische und chinesische AI-Lab-Konzentrationen. F&uuml;r DACH-Kunden ein nicht zu untersch&auml;tzendes Argument im Sourcing- und Compliance-Kontext.</li>
+                    <li><strong>F&uuml;r CIOs:</strong> Wer aktuell ML-Plattformen evaluiert (Databricks, Dataiku, eigene Python-Stacks), sollte Prior-Labs-Modelle &uuml;ber den Generative AI Hub im Auge behalten &ndash; sobald TabPFN/TFM-Varianten dort verf&uuml;gbar sind, wird der Business-Case f&uuml;r &bdquo;eigenes ML-Team&ldquo; vs. &bdquo;TFM as a Service&ldquo; neu zu rechnen sein.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://news.sap.com/2026/05/sap-to-acquire-prior-labs-establish-frontier-ai-lab-europe/" target="_blank">SAP News (Mai 2026): SAP to Acquire Prior Labs to Establish a Globally Leading Frontier AI Lab in Europe</a></li>
+                        <li><a href="https://priorlabs.ai/blog-posts/priorlabs-next-chapter" target="_blank">Prior Labs Blog: The Next Chapter for Prior Labs</a></li>
+                        <li><a href="https://thenextweb.com/news/sap-prior-labs-acquisition-tabular-foundation-model" target="_blank">The Next Web: SAP buys Prior Labs to anchor a European frontier AI lab around tabular foundation models</a></li>
+                        <li><a href="https://priorlabs.ai/tabpfn" target="_blank">Prior Labs: TabPFN &ndash; Tabular Foundation Models</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag tipp">Tipp</span>Sapphire-Vorbereitung: Community-Tiefenblick &bdquo;Unlocking Next-Level Innovation to AI with SAP&rsquo;s Platform&ldquo;</h3>
+                <ul>
+                    <li>Erg&auml;nzend zum offiziellen Session-Guide hat ein neuer SAP-Community-Beitrag &bdquo;<strong>SAP Sapphire 2026: Unlocking Next-Level Innovation to AI with SAP&rsquo;s Platform</strong>&ldquo; eine Plattform-zentrierte Lesart der Sapphire-Themen ver&ouml;ffentlicht &ndash; sehr empfehlenswert f&uuml;r alle, die nicht nur den AI-Track, sondern den Plattform-Stack als Ganzes verstehen wollen.</li>
+                    <li><strong>Inhaltliche Schwerpunkte:</strong> Wie sich BTP, Build, Build Code, Joule Studio und der AI Agent Hub als <em>integriertes Innovation-Layer</em> positionieren &ndash; mit konkretem Mapping, welche Sapphire-Sessions welchen Stack-Layer adressieren.</li>
+                    <li><strong>Erg&auml;nzend &bdquo;SAP Business Data Cloud and Datasphere News in April&ldquo;:</strong> Ein zweiter Community-Post listet die BDC-/Datasphere-Updates aus dem April konsolidiert &ndash; ideale Pflichtlekt&uuml;re vor der Dremio-Diskussion auf der Konferenz, weil hier die <em>Vorgeschichte</em> der jetzigen Akquise klar wird (Joule-GA in Datasphere, Reltio-Integration, Knowledge-Graph-Erweiterungen).</li>
+                    <li><strong>Praktisch:</strong> Beide Beitr&auml;ge sind in der SAP Community ohne Anmeldung lesbar; sie verkn&uuml;pfen die Roadmap-Texte mit den konkreten Sapphire-Session-IDs &ndash; sehr n&uuml;tzlich, wenn der Agenda-Builder &uuml;berfordert ist.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-sapphire-2026-unlocking-next-level-innovation-to-ai-with-sap-s-platform/ba-p/14390712" target="_blank">SAP Community: SAP Sapphire 2026 &ndash; Unlocking Next-Level Innovation to AI with SAP&rsquo;s Platform</a></li>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-business-data-cloud-and-datasphere-news-in-april/ba-p/14389008" target="_blank">SAP Community: SAP Business Data Cloud and Datasphere News in April</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 3: Purple - Community & Social Media -->
+            <section id="community">
+                <div class="section-header purple">
+                    <span class="section-color-indicator"></span>
+                    <h2>Community &amp; Social Media</h2>
+                </div>
+
+                <h3><span class="tag neu">Neu</span>SAP-Community-Vorgriff: &bdquo;Beyond Joule Capabilities &ndash; A Knowledge Graph Driven Runtime for SAP Business AI&ldquo;</h3>
+                <ul>
+                    <li>Ein viel beachteter SAP-Community-Beitrag stellt einen funktionierenden Prototyp f&uuml;r eine <strong>Knowledge-Graph-getriebene Runtime f&uuml;r SAP Business AI</strong> vor &ndash; und liefert damit eine architektonische Antwort auf die zentrale Frage, wie sich Joule und Custom Agents jenseits der heutigen Skill-Grenzen skalieren lassen.</li>
+                    <li><strong>Kernidee:</strong> Statt jede Joule-Skill als isolierten Endpoint zu modellieren, baut der Prototyp einen <em>Wissensgraphen</em> auf, der Datenobjekte, Prozesse, Agenten und deren Zust&auml;ndigkeiten verbindet. Die Runtime entscheidet dann zur Laufzeit, welcher Agent welchen Subgraphen bedienen muss.</li>
+                    <li><strong>Warum das jetzt z&auml;hlt:</strong> Mit der Dremio-&Uuml;bernahme und der zunehmenden A2A-Orchestrierung wird genau diese Frage &ndash; &bdquo;wie lassen sich heterogene Daten und Agenten fed&eacute;rativ steuern?&ldquo; &ndash; auf der Sapphire 2026 ein Hauptthema sein. Wer den Beitrag vorab liest, erkennt die Marketing-Begriffe der Keynote schneller.</li>
+                    <li><strong>F&uuml;r Architekten:</strong> Der Prototyp ist explizit als &bdquo;Idee, nicht Produkt&ldquo; gekennzeichnet &ndash; aber die Architekturskizze ist eine der saubersten zur Frage, wie SAP-Knowledge-Graph, Joule und Agent-Hub langfristig zusammenwirken k&ouml;nnen.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/beyond-joule-capabilities-a-knowledge-graph-driven-runtime-for-sap-business/ba-p/14380937" target="_blank">SAP Community: Beyond Joule Capabilities &ndash; A Knowledge Graph Driven Runtime for SAP Business AI</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag neu">Neu</span>SAP Integration Suite trifft Agentic AI &ndash; MCP Server f&uuml;r API Management ist live</h3>
+                <ul>
+                    <li>Ein weiterer Community-Beitrag pr&auml;sentiert einen <strong>MCP Server f&uuml;r SAP Integration Suite API Management</strong>: Damit l&auml;sst sich Integration Suite an jeden MCP-kompatiblen Client anbinden &ndash; Claude Desktop, Cursor, VS-Code-Agents oder einen eigenen Custom-Agent &ndash; und API Management wird zur <em>nat&uuml;rlichsprachlich bedienbaren Plattform</em>.</li>
+                    <li><strong>Konkretes Anwendungsbeispiel:</strong> Ein Agent kann auf Anfrage &bdquo;welche APIs hat unser SAP-Kunden-Hub und welche sind heute langsam?&ldquo; den entsprechenden Proxy lokalisieren, Statistiken auslesen, Logs abfragen und einen Analyse-Bericht erstellen &ndash; ohne dass ein Entwickler den Integration-Suite-Cockpit selbst &ouml;ffnet.</li>
+                    <li><strong>Strategische Einordnung:</strong> Der Beitrag passt exakt in den Trend, dass praktisch jede SAP-Plattform-Komponente einen eigenen MCP-Endpoint bekommt &ndash; ADT (ARC-1), Datasphere, Integration Suite, Storefront. Wer einen Multi-Agent-Stack plant, sollte sich diese Stuckliste fr&uuml;hzeitig zusammenstellen.</li>
+                    <li><strong>F&uuml;r Integrationsteams:</strong> Der Beitrag enth&auml;lt eine konkrete Setup-Anleitung und Beispiel-Prompts &ndash; direkt nachvollziehbar f&uuml;r Teams, die in den n&auml;chsten Wochen einen Integration-Suite-Health-Check als Agenten-Pilot aufsetzen wollen.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/integration-blog-posts/sap-integration-suite-api-management-meets-agentic-ai/ba-p/14380659" target="_blank">SAP Community: SAP Integration Suite API Management Meets Agentic AI</a></li>
+                        <li><a href="https://github.com/marianfoo/sap-ai-mcp-servers" target="_blank">GitHub (Marian Foo): Komplette Liste der SAP MCP Servers und SAP AI Skills</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag neu">Neu</span>Hack2Build 2026: Avvales &bdquo;Early Payment Assistant&ldquo; auf Platz 2, Capgemini mit &bdquo;Demand-to-Award Agent&ldquo;</h3>
+                <ul>
+                    <li>SAP hat die <strong>Ergebnisse der zweiten Hack2Build Custom AI Solutions</strong> (Build-Phase nach dem 10.&ndash;17. M&auml;rz) gepostet. 13 Partnerteams haben funktionsf&auml;hige Prototypen abgeliefert &ndash; entweder als Content-based Agents im Joule Studio Agent Builder oder als Code-based Agents mit dem Joule Studio Code Editor und dem SAP Cloud SDK for AI.</li>
+                    <li><strong>Avvale: Early Payment Assistant (Platz 2):</strong> Ein spezialisierter Joule-Agent f&uuml;r Accounts Payable und Working-Capital-Management &ndash; identifiziert auszahlungsf&auml;hige Verbindlichkeiten mit Skontomarge, simuliert Cashflow-Auswirkungen und schl&auml;gt Approval-Pfade vor. Der Use Case ist ein Lehrst&uuml;ck f&uuml;r &bdquo;ROI-fokussierte Agentic AI&ldquo;, das CFOs &uuml;berzeugt.</li>
+                    <li><strong>Capgemini: Demand-to-Award Agent:</strong> Ein End-to-End-Procurement-Workflow vom Bedarfsantrag &uuml;ber Lieferanten-Shortlisting, RFQ, Angebotsbewertung bis zur Bestellung in S/4HANA &ndash; orchestriert &uuml;ber spezialisierte Sub-Agenten, die jeweils einen Procurement-Schritt verantworten.</li>
+                    <li><strong>Sodales:</strong> Health-, Safety-, Employee-Relations-Agent zur Integration in HR-Workflows &ndash; konkret f&uuml;r Accommodations, Return-to-Work und Safety-Reporting; spannend f&uuml;r alle, die SuccessFactors-Joule-Agents auf konkrete Compliance-Workflows ausweiten wollen.</li>
+                    <li><strong>Lesart:</strong> Die Hack2Build-Ergebnisse sind das beste verf&uuml;gbare Material zur Frage &bdquo;was kann man mit Joule Studio in 1&ndash;2 Wochen wirklich bauen?&ldquo; &ndash; deutlich greifbarer als die SAP-Marketing-Demos zu Sapphire.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/agentic-ai-gains-momentum-as-partners-build-content-and-code-based-customer/ba-p/14354661" target="_blank">SAP Community: Agentic AI Gains Momentum as Partners Build Content- and Code-Based Customer Solutions</a></li>
+                        <li><a href="https://www.avvale.com/newsroom/the-agentic-edge" target="_blank">Avvale Newsroom: The Agentic Edge &ndash; Avvale&rsquo;s Early Payment Assistant Wins 2nd Place at Hack2Build 2026</a></li>
+                        <li><a href="https://sodalessolutions.com/ai-reinventing-accommodations-rtw-safety/" target="_blank">Sodales: How Agentic AI Is Reinventing Accommodations, RTW &amp; Safety</a></li>
+                        <li><a href="https://sapinsider.org/map/cbs-wins-sap-hack2build-with-ai-powered-integration-monitoring-assistant/" target="_blank">SAPinsider: cbs Wins SAP Hack2Build with AI-Powered Integration Monitoring Assistant</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 4: Green - Learning & Zertifizierungen -->
+            <section id="learning">
+                <div class="section-header green">
+                    <span class="section-color-indicator"></span>
+                    <h2>Learning &amp; Zertifizierungen</h2>
+                </div>
+
+                <h3><span class="tag event">Event</span>SAP CodeJam Joule Studio Tour 2026 &ndash; Mailand, Paris, Hyderabad in der Pipeline</h3>
+                <ul>
+                    <li>F&uuml;r alle, die Joule Studio nicht nur in Slides, sondern Hands-on lernen wollen, hat SAP eine <strong>internationale CodeJam-Reihe zu Joule Studio</strong> aktiviert. Drei kommende Stationen sind im Community-Kalender bereits konkret &ndash; alle kostenfrei, alle mit eigenem Hardware-Setup, alle moderiert.</li>
+                    <li><strong>Mailand, Italien:</strong> &bdquo;Joule Studio &ndash; Create Skills and Agents to Extend Joule&ldquo; &ndash; klassischer Tagesworkshop mit Schwerpunkt auf Skill-Erstellung; ideal f&uuml;r Joule-Studio-Einsteiger und SAP-Build-Architekten.</li>
+                    <li><strong>Paris, Frankreich:</strong> &bdquo;Joule Studio &ndash; Create Joule Skills and Agents Without Coding&ldquo; &ndash; explizit f&uuml;r Low-Code-Profile (Business Analysts, Citizen Developer) konzipiert.</li>
+                    <li><strong>Hyderabad, Indien (23. Juni 2026):</strong> Tagesworkshop bei Tekskills India mit 35 Pl&auml;tzen &ndash; vermittelt Skills, Agents und auch das <em>Code-Editor-Erlebnis</em> mit Python-Agenten. Anmeldung &uuml;ber den Community-Eventeintrag.</li>
+                    <li><strong>Praxis-Tipp:</strong> CodeJams f&uuml;llen sich erfahrungsgem&auml;&szlig; schnell. Wer aus der DACH-Region keine Reise plant, sollte gezielt nach &bdquo;Inside Track&ldquo;-Pendants in Deutschland/Niederlande Ausschau halten &ndash; SAP Inside Track Belgium und SAP Inside Track NRW haben in den letzten Jahren regelm&auml;&szlig;ig Joule-Sessions im Programm gehabt.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/sap-codejam/joule-studio-create-skills-and-agents-to-extend-joule-milan-italy/ev-p/14300897" target="_blank">SAP Community: Joule Studio CodeJam &ndash; Mailand</a></li>
+                        <li><a href="https://community.sap.com/t5/sap-codejam/joule-studio-create-joule-skills-and-agents-without-coding-paris-france/ev-p/14303203" target="_blank">SAP Community: Joule Studio CodeJam &ndash; Paris</a></li>
+                        <li><a href="https://community.sap.com/t5/sap-codejam/joule-studio-create-joule-skills-and-agents-without-coding-hyderabad-india/ev-p/14378209" target="_blank">SAP Community: Joule Studio CodeJam &ndash; Hyderabad (23.06.2026)</a></li>
+                        <li><a href="https://developers.sap.com/tutorials/joule-studio-codejam-0-overview..html" target="_blank">SAP Developers: Joule Studio CodeJam Tutorial &ndash; Overview</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag tipp">Tipp</span>SAP Joule Skills and Agents Workshop f&uuml;r Partner &ndash; offizieller Hands-on-Track</h3>
+                <ul>
+                    <li>SAP hat parallel einen offiziellen <strong>Partner-Workshop zu Joule Skills und Agenten</strong> aufgesetzt &ndash; nicht im Community-Format, sondern als formaler Enablement-Track f&uuml;r Implementierungspartner und ISVs (events.sap.com/agenticai4partners).</li>
+                    <li><strong>Inhalt:</strong> Vom Setup eines Joule-Studio-Tenants &uuml;ber den Aufbau einer ersten Skill bis zur Integration in einen kundenseitigen S/4-Use-Case &ndash; mit dedizierten Mentoring-Sessions durch SAP-Engineering und SAP-Partner-Ecosystem-Success.</li>
+                    <li><strong>F&uuml;r Beratungsh&auml;user:</strong> Der Workshop-Track ist die nat&uuml;rliche Erweiterung der SAP-Learning-Journey &bdquo;Discovering High-Value Opportunities for Agentic AI&ldquo; &ndash; wer die Journey absolviert hat, hat mit dem Workshop die Br&uuml;cke zur konkreten Solution-Entwicklung.</li>
+                    <li><strong>Im Kontext der Hack2Build-Ergebnisse:</strong> Avvale, Capgemini und Sodales sind genau aus solchen Enablement-Programmen hervorgegangen &ndash; das Workshop-Format ist also eindeutig der direkte Pfad zur Sapphire-Demo-B&uuml;hne 2027.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://events.sap.com/agenticai4partners/en_us/home.html" target="_blank">SAP Events: Joule Skills and Agents Workshop for Partners</a></li>
+                        <li><a href="https://learning.sap.com/learning-journeys/discovering-high-value-opportunities-for-agentic-ai" target="_blank">SAP Learning: Discovering High-Value Opportunities for Agentic AI (Learning Journey)</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 5: Red - Video Resources & Events -->
+            <section id="videos">
+                <div class="section-header red">
+                    <span class="section-color-indicator"></span>
+                    <h2>Video Resources &amp; Events</h2>
+                </div>
+
+                <h3><span class="tag tipp">Tipp</span>Sapphire-2026-Datenarchitekten-Sicht: Konsolidierte Session-Empfehlungen f&uuml;r Database, Analytics &amp; HANA</h3>
+                <ul>
+                    <li>F&uuml;nf Tage vor Sapphire haben zwei SAP-Community-Beitr&auml;ge konsolidierte <strong>Session-Empfehlungen f&uuml;r Daten- und Analytics-Profile</strong> ver&ouml;ffentlicht &ndash; deutlich praxisn&auml;her als der allgemeine SAP-Session-Guide.</li>
+                    <li><strong>&bdquo;Database @ SAP Sapphire 2026 &ndash; Key Sessions to Attend&ldquo;:</strong> Kuratierte Liste der HANA-Cloud-, Datasphere- und BDC-Sessions, inklusive der Sessions, in denen die <em>Dremio-Integration</em> erstmals vor Publikum erkl&auml;rt werden d&uuml;rfte. F&uuml;r Datenarchitekten Pflichtprogramm.</li>
+                    <li><strong>&bdquo;SAP Sapphire 2026 &ndash; Top Agenda Picks for Analytics Practitioners&ldquo;:</strong> Etwas breitere Sicht auf die Analytics-Track-Sessions inklusive SAC, Joule Analytical Insights und die Tabular-AI-Roadmap mit SAP-RPT-1 (und dem jetzt aktuellen Prior-Labs-Bezug).</li>
+                    <li><strong>F&uuml;r Sapphire-Virtual-Zuschauer:</strong> Beide Beitr&auml;ge bewerten explizit, welche Sessions auch im Live-Stream sinnvoll abrufbar sind und wo die On-Site-Demos den Mehrwert bringen &ndash; hilft bei der Auswahl der vier parallelen Channels am 12./13. Mai.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/data-professionals-blog-posts/database-sap-sapphire-2026-key-sessions-to-attend/ba-p/14387121" target="_blank">SAP Community: Database @ SAP Sapphire 2026 &ndash; Key Sessions to Attend</a></li>
+                        <li><a href="https://community.sap.com/t5/data-professionals-blog-posts/sap-sapphire-2026-top-agenda-picks-for-analytics-practitioners/ba-p/14385956" target="_blank">SAP Community: SAP Sapphire 2026 &ndash; Top Agenda Picks for Analytics Practitioners</a></li>
+                        <li><a href="https://www.sap.com/events/sapphire/virtual.html" target="_blank">SAP Events: Sapphire Virtual 2026 &ndash; vier parallele Live-Channels</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag event">Event</span>Termine &amp; Events</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Datum</th>
+                            <th>Event</th>
+                            <th>Format / Ort</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>11. Mai 2026</td>
+                            <td>ASUG Pre-Conference Seminars (BTP Application Development Hands-on)</td>
+                            <td>Orlando (10&ndash;17 Uhr)</td>
+                        </tr>
+                        <tr>
+                            <td>11.&ndash;13. Mai 2026</td>
+                            <td>SAP Sapphire &amp; ASUG Annual Conference</td>
+                            <td>Orlando (OCCC)</td>
+                        </tr>
+                        <tr>
+                            <td>12.&ndash;13. Mai 2026</td>
+                            <td>SAP Sapphire Virtual (kostenfreier Live-Stream)</td>
+                            <td>4 parallele Channels</td>
+                        </tr>
+                        <tr>
+                            <td>19.&ndash;21. Mai 2026</td>
+                            <td>SAP Sapphire Madrid</td>
+                            <td>IFEMA Madrid</td>
+                        </tr>
+                        <tr>
+                            <td>31. Mai 2026</td>
+                            <td>Ende der kostenlosen Joule-Custom-Agent-Promotion</td>
+                            <td>SAP Build / Joule Studio</td>
+                        </tr>
+                        <tr>
+                            <td>11. Juni 2026</td>
+                            <td>AI Experience Workshop (CCoE-Fokus)</td>
+                            <td>Salzburg</td>
+                        </tr>
+                        <tr>
+                            <td>17.&ndash;18. Juni 2026</td>
+                            <td>DSAG-Personaltage 2026</td>
+                            <td>Heidelberg Congress Center</td>
+                        </tr>
+                        <tr>
+                            <td>23. Juni 2026</td>
+                            <td>SAP CodeJam: Joule Studio (Skills &amp; Agents)</td>
+                            <td>Hyderabad (Tekskills India)</td>
+                        </tr>
+                        <tr>
+                            <td>30. Juni &ndash; 1. Juli 2026</td>
+                            <td>DSAG-KI-Thementage (SAP Business AI)</td>
+                            <td>Sankt Leon-Rot</td>
+                        </tr>
+                        <tr>
+                            <td>Q3 2026 (geplant)</td>
+                            <td>Closing der Dremio-&Uuml;bernahme</td>
+                            <td>Iceberg-native BDC</td>
+                        </tr>
+                        <tr>
+                            <td>Q3 2026 (laufend)</td>
+                            <td>Closing der Prior-Labs-&Uuml;bernahme &amp; Aufbau Frontier-AI-Lab Europe</td>
+                            <td>Freiburg / Berlin / NYC</td>
+                        </tr>
+                        <tr>
+                            <td>14.&ndash;16. Juli 2026</td>
+                            <td>HANA Tech Con 2026</td>
+                            <td>Online (kostenfrei)</td>
+                        </tr>
+                        <tr>
+                            <td>September 2026</td>
+                            <td>Ende der kostenlosen Joule-for-Developers-Phase</td>
+                            <td>Danach AI-Units-Modell</td>
+                        </tr>
+                        <tr>
+                            <td>6.&ndash;8. Oktober 2026</td>
+                            <td>DSAG-Jahreskongress 2026</td>
+                            <td>K&ouml;ln (Koelnmesse, Halle 2)</td>
+                        </tr>
+                        <tr>
+                            <td>27.&ndash;29. Oktober 2026</td>
+                            <td>SAP TechEd 2026</td>
+                            <td>Berlin (mit Virtual Track)</td>
+                        </tr>
+                        <tr>
+                            <td>17.&ndash;19. November 2026</td>
+                            <td>Mastering SAP Collaborate (TechEd on Tour)</td>
+                            <td>Sydney</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <div class="navigation">
+                <a href="index.html">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
+                <a href="2026-05-04.html">Vorheriges Briefing &rarr;</a>
+            </div>
+        </main>
+
+        <aside class="toc">
+            <h3>Inhaltsverzeichnis</h3>
+            <ul>
+                <li><span class="toc-dot" style="background:#e67e22"></span><a href="#abap-classic">ABAP Classic AI</a></li>
+                <li><span class="toc-dot" style="background:#3498db"></span><a href="#sap-cloud-ai">SAP Cloud AI</a></li>
+                <li><span class="toc-dot" style="background:#9b59b6"></span><a href="#community">Community &amp; Social Media</a></li>
+                <li><span class="toc-dot" style="background:#27ae60"></span><a href="#learning">Learning &amp; Zertifizierungen</a></li>
+                <li><span class="toc-dot" style="background:#c0392b"></span><a href="#videos">Video Resources &amp; Events</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        Dieses Briefing wurde am 08.05.2026 automatisch erstellt. Recherchezeitraum: 05.05.2026 &ndash; 08.05.2026 | Automatisch erstellt mit Claude | SAP AI Daily
+    </footer>
+
+    <script>
+        document.querySelectorAll('.toc a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
