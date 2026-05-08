@@ -95,8 +95,8 @@
     <div class="container">
         <main>
             <div class="publication-info">
-                <strong>Dieses Briefing wurde am 08.05.2026 automatisch erstellt.</strong><br>
-                Recherchezeitraum: 05.05.2026 &ndash; 08.05.2026
+                <strong>Dieses Briefing wurde am 08.05.2026 automatisch erstellt und am Vormittag aktualisiert.</strong><br>
+                Recherchezeitraum: 05.05.2026 &ndash; 08.05.2026 &middot; Update: Reltio-Closing (07.05.) &amp; Pydantic-AI-Multi-Agent-Serie erg&auml;nzt
             </div>
 
             <!-- SECTION 1: Orange - ABAP Classic AI -->
@@ -196,6 +196,22 @@
                         <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-business-data-cloud-and-datasphere-news-in-april/ba-p/14389008" target="_blank">SAP Community: SAP Business Data Cloud and Datasphere News in April</a></li>
                     </ul>
                 </div>
+            
+                <h3><span class="tag update">Update</span>Reltio-Akquise abgeschlossen (07.05.) &ndash; MDM-Schicht jetzt unter SAP-Dach f&uuml;r Agentic AI</h3>
+                <ul>
+                    <li>Am 7. Mai 2026 hat SAP das Closing der <strong>Reltio-Akquise</strong> bekanntgegeben &ndash; angek&uuml;ndigt im Februar/M&auml;rz, jetzt rechtlich vollzogen. Reltio liefert die Master-Data-Management-Schicht (Stammdaten f&uuml;r Kunden, Lieferanten, Produkte), die SAP explizit als <em>data foundation for agentic AI</em> positioniert.</li>
+                    <li><strong>Bedeutung im Kontext der Dremio-/Prior-Labs-Akquisen:</strong> Reltio liefert <em>kuratierte, harmonisierte Stammdaten</em>, Dremio die <em>federierte Iceberg-Lakehouse-Engine</em>, Prior Labs die <em>Tabular Foundation Models</em>. Damit hat SAP innerhalb weniger Wochen drei strategische Bausteine f&uuml;r das gleiche Ziel zusammengef&uuml;gt: AI-bereite, governed Daten als Fundament f&uuml;r jeden Joule- oder A2A-Agenten.</li>
+                    <li><strong>Konkrete Auswirkung f&uuml;r BDC-/MDG-Roadmaps:</strong> Reltio-F&auml;higkeiten f&uuml;r Realtime-Matching und Knowledge-Graph-Building flie&szlig;en mittelfristig in die SAP Business Data Cloud ein. Bestandskunden mit SAP MDG-Setup sollten die Sapphire-Sessions nutzen, um konkrete Migrations- bzw. Co-Existence-Pfade zu kl&auml;ren.</li>
+                    <li><strong>Strategische Lesart:</strong> Closing direkt vor Sapphire ist kein Zufall &ndash; Christian Klein d&uuml;rfte in der Keynote die <em>Datenfoundation</em> als &bdquo;dritten Pfeiler neben Joule und BTP&ldquo; positionieren. Wer die Reltio-Funktionen vor der Konferenz versteht, ordnet die Keynote-Botschaften klarer ein.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://news.sap.com/2026/05/sap-completes-acquisition-of-reltio/" target="_blank">SAP News (07.05.2026): SAP Completes Acquisition of Reltio</a></li>
+                        <li><a href="https://www.constellationr.com/insights/news/sap-acquires-dremio-prior-labs-it-builds-out-its-data-platform-plan" target="_blank">Constellation Research: SAP acquires Dremio, Prior Labs as it builds out its data platform plan</a></li>
+                    </ul>
+                </div>
+
             </section>
 
             <!-- SECTION 3: Purple - Community & Social Media -->
@@ -251,6 +267,23 @@
                         <li><a href="https://sapinsider.org/map/cbs-wins-sap-hack2build-with-ai-powered-integration-monitoring-assistant/" target="_blank">SAPinsider: cbs Wins SAP Hack2Build with AI-Powered Integration Monitoring Assistant</a></li>
                     </ul>
                 </div>
+            
+                <h3><span class="tag neu">Neu</span>Multi-Agent-on-BTP mit Pydantic AI: Zweiteilige Community-Serie zeigt Orchestrator-Pattern mit OData-MCP-Proxy</h3>
+                <ul>
+                    <li>In der vergangenen Woche sind <strong>zwei aufeinander aufbauende Community-Beitr&auml;ge</strong> zur Frage erschienen, wie sich ein produktiver Multi-Agent-Stack auf SAP BTP konkret bauen l&auml;sst &ndash; mit getypten Agenten, getypten Tool-Calls und nativem MCP-Client-Support &uuml;ber das junge Python-Framework <strong>Pydantic AI</strong>.</li>
+                    <li><strong>Teil&nbsp;1 &bdquo;a Multi-Agent App with Pydantic AI&ldquo;:</strong> Erkl&auml;rt, warum getypte Agenten gegen&uuml;ber freien LangChain-/CrewAI-Setups Vorteile bringen, wenn die Werkzeug-Schemata aus SAP-OData- oder MCP-Quellen kommen. Skizziert eine kompakte App, die einen Orchestrator-Agenten mit Spezialisten-Agenten kombiniert.</li>
+                    <li><strong>Teil&nbsp;2 &bdquo;Dynamic Multi-Agent on Demand&ldquo;:</strong> F&uuml;hrt einen <em>OData-MCP-Proxy</em> ein und wickelt MCP-Server in einer Pydantic-AI-Multi-Agenten-Anwendung ein &ndash; mit einem Orchestrator obendrauf und je einem Spezialisten pro MCP-Server. Damit greift die Serie das gleiche Subagenten-Konzept auf, das SAP in der J4D-Roadmap und Marcello Urbanis VS-Code-Plugin als Pattern beschreibt.</li>
+                    <li><strong>F&uuml;r BTP-Architekten:</strong> Beide Beitr&auml;ge sind ein konkretes Gegenst&uuml;ck zu &bdquo;wir warten auf Joule Studio&ldquo; &ndash; sie zeigen, wie Teams schon heute mit Open-Source-Stacks produktive Multi-Agent-Pipelines auf BTP entwickeln k&ouml;nnen, die per OData/MCP an S/4-Workflows andocken.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-members/agentic-ai-on-btp-a-multi-agent-app-with-pydantic-ai/ba-p/14388029" target="_blank">SAP Community: Agentic AI on BTP &ndash; a Multi-Agent App with Pydantic AI</a></li>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-members/agentic-ai-on-btp-dynamic-multi-agent-on-demand-with-pydantic-ai/ba-p/14388032" target="_blank">SAP Community: Agentic AI on BTP &ndash; Dynamic Multi-Agent on Demand with Pydantic AI</a></li>
+                        <li><a href="https://ai.pydantic.dev/" target="_blank">Pydantic AI &ndash; Framework-Dokumentation</a></li>
+                    </ul>
+                </div>
+
             </section>
 
             <!-- SECTION 4: Green - Learning & Zertifizierungen -->
@@ -430,7 +463,7 @@
     </div>
 
     <footer>
-        Dieses Briefing wurde am 08.05.2026 automatisch erstellt. Recherchezeitraum: 05.05.2026 &ndash; 08.05.2026 | Automatisch erstellt mit Claude | SAP AI Daily
+        Dieses Briefing wurde am 08.05.2026 automatisch erstellt und am Vormittag aktualisiert. Recherchezeitraum: 05.05.2026 &ndash; 08.05.2026 | Automatisch erstellt mit Claude | SAP AI Daily
     </footer>
 
     <script>
