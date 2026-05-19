@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP AI Daily - 19.05.2026 Briefing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f8f9fa; color: #333; line-height: 1.7; }
+        header { background: #1a3a5c; color: white; padding: 40px 20px; border-bottom: 4px solid #e67e22; }
+        header h1 { font-size: 2.2em; margin-bottom: 5px; font-weight: 700; }
+        header .date { font-size: 1em; opacity: 0.85; margin-bottom: 15px; }
+        header .breadcrumb { margin-top: 15px; opacity: 0.9; }
+        header a { color: #fff; text-decoration: none; font-weight: 600; }
+        header a:hover { text-decoration: underline; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 1fr 250px; gap: 30px; }
+        main { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .toc { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 20px; height: fit-content; }
+        .toc h3 { font-size: 0.95em; font-weight: 700; text-transform: uppercase; color: #1a3a5c; margin-bottom: 15px; letter-spacing: 0.5px; }
+        .toc ul { list-style: none; }
+        .toc li { margin-bottom: 10px; font-size: 0.9em; padding-left: 0; }
+        .toc li:before { content: ""; display: none; }
+        .toc .toc-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+        .toc a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        .toc a:hover { color: #1a5a8c; padding-left: 5px; }
+        section { margin-bottom: 50px; }
+        .section-header { display: flex; align-items: center; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid; }
+        .section-header.orange { border-color: #e67e22; }
+        .section-header.blue { border-color: #3498db; }
+        .section-header.purple { border-color: #9b59b6; }
+        .section-header.green { border-color: #27ae60; }
+        .section-header.red { border-color: #c0392b; }
+        .section-header h2 { font-size: 1.8em; margin: 0; font-weight: 700; color: #1a3a5c; }
+        .section-color-indicator { width: 12px; height: 12px; border-radius: 50%; margin-right: 15px; flex-shrink: 0; }
+        .section-header.orange .section-color-indicator { background: #e67e22; }
+        .section-header.blue .section-color-indicator { background: #3498db; }
+        .section-header.purple .section-color-indicator { background: #9b59b6; }
+        .section-header.green .section-color-indicator { background: #27ae60; }
+        .section-header.red .section-color-indicator { background: #c0392b; }
+        h3 { font-size: 1.35em; margin-top: 25px; margin-bottom: 15px; color: #1a3a5c; font-weight: 700; }
+        h3:first-child { margin-top: 0; }
+        ul { list-style: none; margin-bottom: 20px; }
+        li { margin-bottom: 12px; padding-left: 25px; position: relative; line-height: 1.8; }
+        li:before { content: "\2022"; position: absolute; left: 0; color: #e67e22; font-weight: 700; font-size: 1.2em; }
+        strong { font-weight: 700; color: #1a3a5c; }
+        a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        a:hover { color: #1a5a8c; text-decoration: underline; }
+        .sources { font-size: 0.85em; color: #888; margin-top: 8px; padding-left: 0; }
+        .sources li { padding-left: 0; margin-bottom: 5px; }
+        .sources li:before { content: ""; display: none; }
+        .sources a { color: #888; text-decoration: underline; }
+        .sources a:hover { color: #2980b9; }
+        .tag { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 0.3rem; vertical-align: middle; }
+        .tag.neu { background: #e8f8f5; color: #1abc9c; border: 1px solid #1abc9c; }
+        .tag.update { background: #fef5e7; color: #e67e22; border: 1px solid #e67e22; }
+        .tag.event { background: #f5eef8; color: #9b59b6; border: 1px solid #9b59b6; }
+        .tag.tipp { background: #eaf2fb; color: #2980b9; border: 1px solid #2980b9; }
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden; }
+        th { background: #1a3a5c; color: white; padding: 15px; text-align: left; font-weight: 700; font-size: 0.95em; }
+        td { padding: 12px 15px; border-bottom: 1px solid #e0e0e0; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: #f5f5f5; }
+        footer { background: #2c3e50; color: white; text-align: center; padding: 25px 20px; margin-top: 60px; font-size: 0.9em; }
+        footer a { color: #e67e22; font-weight: 600; }
+        footer a:hover { text-decoration: underline; }
+        .navigation { display: flex; justify-content: space-between; align-items: center; margin: 30px 0 0 0; padding-top: 20px; border-top: 1px solid #e0e0e0; flex-wrap: wrap; gap: 15px; }
+        .navigation a { display: inline-block; padding: 10px 20px; background: #2980b9; color: white; text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s ease; }
+        .navigation a:hover { background: #1a5a8c; text-decoration: none; }
+        .publication-info { background: #f0f4f8; border-radius: 4px; padding: 15px; margin-bottom: 20px; font-size: 0.9em; color: #666; }
+        .empty-section { font-style: italic; color: #888; padding: 10px 0; }
+        @media (max-width: 1024px) {
+            .container { grid-template-columns: 1fr; }
+            .toc { position: relative; top: 0; margin-bottom: 30px; display: none; }
+        }
+        @media (max-width: 768px) {
+            header h1 { font-size: 1.6em; }
+            main { padding: 25px; }
+            .section-header h2 { font-size: 1.4em; }
+            h3 { font-size: 1.15em; }
+            table { font-size: 0.9em; }
+            th, td { padding: 10px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="breadcrumb"><a href="index.html">&larr; Zur&uuml;ck zur &Uuml;bersicht</a></div>
+        <h1>SAP AI Daily Briefing</h1>
+        <div class="date">19. Mai 2026</div>
+    </header>
+
+    <div class="container">
+        <main>
+            <div class="publication-info">
+                <strong>Dieses Briefing wurde am 19.05.2026 zum Auftakt der SAP Sapphire Madrid automatisch erstellt.</strong><br>
+                Recherchezeitraum: 16.05.2026 &ndash; 19.05.2026 &middot; Schwerpunkt: MCP-&Ouml;kosystem-Konsolidierung, ARC-1-Praxis-Showcases, Sapphire-EMEA-Start, &euro;100&nbsp;Mio. Partner-Fund
+            </div>
+
+            <!-- SECTION 1: Orange - ABAP Classic AI -->
+            <section id="abap-classic">
+                <div class="section-header orange">
+                    <span class="section-color-indicator"></span>
+                    <h2>ABAP Classic AI</h2>
+                </div>
+
+                <h3><span class="tag neu">Neu</span>Marian Zeis ver&ouml;ffentlicht &bdquo;sap-ai-mcp-servers&ldquo; &ndash; die erste vollst&auml;ndige &Uuml;bersicht aller SAP-MCP-Server &amp; AI-Skills</h3>
+                <ul>
+                    <li>Am <strong>18.05.2026</strong> hat Marian Zeis das kuratierte Repository <strong>marianfoo/sap-ai-mcp-servers</strong> ver&ouml;ffentlicht &ndash; eine systematisch gepflegte Liste s&auml;mtlicher SAP-MCP-Server, AI-Skills und benachbarter Entwickler-Tools. F&uuml;r ABAP-Architekten, die seit Wochen versuchen, das wuchernde MCP-&Ouml;kosystem zu &uuml;berblicken, ist das der erste belastbare Single Point of Truth.</li>
+                    <li><strong>Drei klare Kategorien:</strong> <em>Offizielle SAP-MCP-Server</em> (SAP Fiori, CAP, UI5, MDK), <em>Community-MCP-Server</em> (Docs, ABAP/ADT, Integration, Datasphere, OData, SAP GUI, HANA) und <em>Skills &amp; Adjacent Tools</em> (Plugins, Samples, IDE-Integrationen). Lizenzen, Maintenance-Status und Star-Counts sind in Tabellenform vergleichbar &ndash; statt LinkedIn-Posts manuell zusammenzusuchen.</li>
+                    <li><strong>Praktischer Nutzen f&uuml;r CCoE-Teams:</strong> Vor Sprint-Planung oder Proof-of-Concept l&auml;sst sich in unter 10 Minuten kl&auml;ren, welche Server aktiv gepflegt werden (z.&nbsp;B. Fiori-MCP/UI5-MCP zuletzt aktualisiert am 18.05.2026, CAP-MCP am 04.05.2026) und welche der Repos nur als &bdquo;Proof of Concept&ldquo; markiert sind. Damit l&auml;sst sich der bisherige Trial-and-Error-Aufwand bei der MCP-Auswahl deutlich reduzieren.</li>
+                    <li><strong>Einordnung:</strong> Die Liste positioniert die offiziellen SAP-Server (Fiori/CAP/UI5/MDK) als Stack-Basis und zeigt zugleich, wo Community-Tools wie ARC-1, abap_remote_fs oder mcp-sap-docs &uuml;ber den offiziellen SAP-Scope hinausgehen &ndash; insbesondere f&uuml;r ABAP-Server-Side- und On-Premise-Szenarien, in denen die offizielle Toolchain (Q2/2026 GA) noch nicht greift.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://github.com/marianfoo/sap-ai-mcp-servers" target="_blank">GitHub: marianfoo/sap-ai-mcp-servers &ndash; A complete list of SAP MCP Servers and SAP AI Skills</a></li>
+                        <li><a href="https://blog.zeis.de/posts/2026-03-05-sap-ai-mcp-servers-overview/" target="_blank">Marian Zeis Blog: SAP MCP Servers &ndash; The Missing Overview (Vorl&auml;ufer-Artikel)</a></li>
+                        <li><a href="https://likweitan.github.io/sap-mcp-servers-official/" target="_blank">Lik Wei Tan: SAP's Official MCP Servers (Erg&auml;nzungs&uuml;bersicht)</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag neu">Neu</span>ARC-1 mit Microsoft Copilot Studio &ndash; ABAP-Systemkontext jenseits der Entwickler-IDE</h3>
+                <ul>
+                    <li>Marian Zeis hat eine eigene Folge der ARC-1-Praxis-Reihe ver&ouml;ffentlicht: <strong>ARC-1 wird in Microsoft Copilot Studio eingebunden</strong> und damit f&uuml;r Microsoft-365-Copilot- und Teams-Anwender nutzbar gemacht &ndash; nicht nur f&uuml;r ABAP-Entwickler. Damit wird die ARC-1-Architektur zur ersten konkreten Antwort auf die Frage &bdquo;Wie bekommen wir ABAP-System-Wissen in den t&auml;glichen Microsoft-Stack der Fachabteilungen?&ldquo;.</li>
+                    <li><strong>Was der Agent kann:</strong> &uuml;ber ARC-1 fragen Copilot-Studio-Agenten nach aktuellen ABAP-Objekten, CDS-Views, Tabellenstrukturen, Message-Texten, Service-Bindings, Transaktions-Metadaten oder ausgew&auml;hlten Tabellendaten &ndash; alles innerhalb des bestehenden Microsoft-Berechtigungs- und Audit-Modells.</li>
+                    <li><strong>F&uuml;r Konzern-IT relevant:</strong> Wer schon eine Copilot-Studio-Strategie hat (Office, Outlook, Teams), bekommt mit ARC-1 einen direkten Br&uuml;ckenkopf zur S/4-Welt &ndash; ohne zus&auml;tzliches Joule-Lizenz-Modell und ohne komplexen BTP-Setup. Die Authentifizierung l&auml;uft via ARC-1-OIDC-Layer, der pro Tool-Call Audit-eintr&auml;ge erzeugt &ndash; Compliance-Fragen sind damit dokumentiert l&ouml;sbar.</li>
+                    <li><strong>Strategische Lesart:</strong> ARC-1 entwickelt sich vom ADT-MCP-Server zur MCP-Plattform f&uuml;r alle Drittanbieter-Agenten, die ABAP-Systemkontext brauchen &ndash; Claude Code, GitHub Copilot, Copilot Studio, Joule Studio (siehe ARC-1-Joule-Studio-Post vom 08.05.). F&uuml;r Bestandskunden ein deutliches Signal, ARC-1 in die mittelfristige Architektur einzuplanen.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://blog.zeis.de/posts/2026-05-05-arc-1-copilot-studio/" target="_blank">Marian Zeis Blog: ARC-1 with Copilot Studio &ndash; SAP System Context Beyond Developers</a></li>
+                        <li><a href="https://github.com/marianfoo/arc-1" target="_blank">GitHub: marianfoo/arc-1 &ndash; Source &amp; Dokumentation</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag tipp">Tipp</span>Hands-on mit ARC-1: SEGW- und Legacy-UI5-Migration nach RAP in der Praxis</h3>
+                <ul>
+                    <li>Eine der konkretesten Hands-on-Beschreibungen einer agentischen ABAP-Migration zum Lesen vor dem n&auml;chsten S/4-Refactoring-Sprint: Marian Zeis dokumentiert in &bdquo;<strong>From SEGW and Legacy UI5 to RAP with ARC-1</strong>&ldquo; (11.05.2026) eine reale Migration auf einem S/4HANA-2023-Trialsystem mit ABAP Platform 7.58.</li>
+                    <li><strong>Setup:</strong> Eine kleine Projektmanagement-Anwendung mit drei Custom-Tabellen, einem SEGW-OData-V2-Service (ZDEMO_MIG_PROJECTS_SRV mit ProjectSet/TaskSet/TimeEntrySet) und einer Legacy-UI5-JavaScript-App wird durchg&auml;ngig auf RAP, UI5-TypeScript und Fiori-Elements gehoben.</li>
+                    <li><strong>Drei ARC-1-Skills im Einsatz:</strong> <code>migrate-segw-to-rap</code> &uuml;bernimmt die Backend-Migration (CDS-Views, Behavior Definitions, Service Bindings), <code>modernize-ui5-app</code> portiert die JavaScript-App nach TypeScript inkl. moderner Build-Pipeline, und <code>convert-ui5-to-fiori-elements</code> ersetzt Freestyle-UI durch deklarative Fiori-Elements-Metadaten.</li>
+                    <li><strong>Architektur-Wert:</strong> Der Beitrag zeigt, wie ARC-1 als zentraler ADT-MCP-Server mit erg&auml;nzenden Servern (SAP Docs MCP f&uuml;r RAP/CDS-Doku, UI5 MCP, SAP Fiori MCP) zusammenarbeitet &ndash; ein konkretes Beispiel f&uuml;r das in der Sapphire-Keynote angek&uuml;ndigte Multi-Server-MCP-Setup. F&uuml;r Teams, die aktuell ECC-Bestand auf RAP heben m&uuml;ssen, ist das die bisher detaillierteste &ouml;ffentliche Anleitung.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://blog.zeis.de/posts/2026-05-11-segw-to-rap/" target="_blank">Marian Zeis Blog: From SEGW and Legacy UI5 to RAP with ARC-1</a></li>
+                        <li><a href="https://github.com/marianfoo/mcp-sap-docs" target="_blank">GitHub: marianfoo/mcp-sap-docs &ndash; SAP Documentation MCP Server</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 2: Blue - SAP Cloud AI -->
+            <section id="sap-cloud-ai">
+                <div class="section-header blue">
+                    <span class="section-color-indicator"></span>
+                    <h2>SAP Cloud AI</h2>
+                </div>
+
+                <h3><span class="tag update">Update</span>SAP Cloud SDK for AI v6.10.0 (Python) &ndash; Module-Fallback, Claude-4-Familie und GPT-5 in Generative AI Hub</h3>
+                <ul>
+                    <li>Am <strong>05.05.2026</strong> wurde die Python-Variante des <strong>SAP Cloud SDK for AI</strong> in der Version <strong>6.10.0</strong> auf PyPI ver&ouml;ffentlicht. F&uuml;r BTP-AI-Entwickler ist das die wichtigste SDK-Iteration seit Jahresbeginn &ndash; mit konkreten Konsequenzen f&uuml;r Pydantic-AI-, LangGraph- und CAP-AI-Workflows.</li>
+                    <li><strong>Modell-Erweiterung im Generative AI Hub:</strong> Das SDK unterst&uuml;tzt jetzt offiziell <code>anthropic--claude-4-opus</code>, <code>anthropic--claude-4-sonnet</code>, <code>gpt-5</code>/<code>gpt-5-mini</code>/<code>gpt-5-nano</code>, <code>amazon--nova-premier</code> sowie <code>gemini-2.5-flash</code>/<code>gemini-2.5-pro</code>. Damit ist die Sapphire-Botschaft &bdquo;Claude wird Top-Reasoning-Modell&ldquo; auch f&uuml;r Eigenentwicklungen au&szlig;erhalb von Joule sauber ansprechbar.</li>
+                    <li><strong>OrchestrationClient-Neuerungen:</strong> Neu sind ein <em>optionaler <code>deploymentId</code>-Parameter</em> f&uuml;r die Initialisierung, eine <code>findChoiceByIndex()</code>-Methode f&uuml;r Streaming-Responses sowie <strong>Module-Fallback-Support</strong>: Beim Non-Streaming-Request lassen sich Listen von Modul-Konfigurationen mitgeben &ndash; bei Modellausfall wechselt der Hub automatisch auf die n&auml;chste Konfiguration.</li>
+                    <li><strong>Migrations-Hinweis:</strong> Strukturierte Outputs f&uuml;r deprecated GPT-4- und GPT-3-Modelle wurden entfernt &ndash; wer noch klassische Function-Calling-Pipelines auf diesen Modellen laufen hat, muss vor dem Upgrade auf GPT-4o/GPT-5 oder Claude 4 umstellen.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://help.sap.com/doc/generative-ai-hub-sdk/CLOUD/en-US/_reference/RELEASE_NOTES.html" target="_blank">SAP Help: SAP Cloud SDK for AI (Python) generative v6.10.0 &ndash; Release Notes</a></li>
+                        <li><a href="https://pypi.org/project/sap-ai-sdk-gen/" target="_blank">PyPI: sap-ai-sdk-gen 6.10.0</a></li>
+                        <li><a href="https://sap.github.io/ai-sdk/docs/js/release-notes" target="_blank">SAP Cloud SDK for AI (JS) &ndash; Release Notes</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag update">Update</span>SAP Fiori MCP Server &amp; UI5 MCP Server: Tooling-Schub kurz vor der ABAP-Cloud-Extension-GA</h3>
+                <ul>
+                    <li>Die offiziellen <strong>SAP-MCP-Server f&uuml;r Fiori und UI5</strong> wurden am 18.05.2026 in einer neuen Version ver&ouml;ffentlicht. Aktuell stehen <code>@sap-ux/fiori-mcp-server</code> (147 GitHub-Stars) und der <code>UI5/mcp-server</code> (85 Stars) auf der h&ouml;chsten Aktivit&auml;tsstufe seit ihrem Launch zu Jahresbeginn.</li>
+                    <li><strong>Fiori-MCP-Server &ndash; was er kann:</strong> Generiert oder modifiziert SAP-Fiori-Apps inklusive Page-Hinzuf&uuml;gen, Controller-Extensions, Flexible Column Layout und Manifest-&Auml;nderungen &ndash; und liefert den Coding-Agenten die n&ouml;tigen Parameter strukturiert zur&uuml;ck, bevor die &Auml;nderung ausgef&uuml;hrt wird. Zus&auml;tzlich: Suche &uuml;ber SAP-Fiori-Elements-, Annotations- und UI5-Dokumentation; Verzeichnis-Scan f&uuml;r vorhandene Fiori-Apps zum gezielten Modifizieren.</li>
+                    <li><strong>Status &amp; Stabilit&auml;t:</strong> SAP markiert den Fiori-MCP-Server explizit als <em>Experimental</em> &ndash; die Schnittstelle kann sich bei jedem Release &auml;ndern. F&uuml;r CI-Pipelines deshalb noch nicht produktionsreif, aber f&uuml;r Spike- und Pilotprojekte mit GitHub Copilot, Cursor und Claude Code voll nutzbar.</li>
+                    <li><strong>Strategische Einordnung:</strong> Zusammen mit der heute schon laufenden Q2/2026-GA-Vorbereitung f&uuml;r die ABAP Development Tools in VS Code (Sonderbriefing 15.05.) entsteht ein konsistenter SAP-Frontend-Stack: ABAP-Backend &uuml;ber ADT-MCP, Fiori-/UI5-Frontend &uuml;ber die Fiori-/UI5-MCPs &ndash; alles in derselben IDE, alle &uuml;ber denselben Coding-Agent.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://github.com/SAP/open-ux-tools/tree/main/packages/fiori-mcp-server" target="_blank">GitHub: SAP/open-ux-tools &ndash; fiori-mcp-server (Quellcode)</a></li>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-fiori-tools-update-first-release-of-the-sap-fiori-mcp-server-for/ba-p/14204694" target="_blank">SAP Community: SAP Fiori Tools Update &ndash; First Release of the SAP Fiori MCP Server</a></li>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-members/accelerating-sap-fiori-amp-cap-development-with-sap-mcp-server-github/ba-p/14391413" target="_blank">SAP Community: Accelerating SAP Fiori &amp; CAP Development With SAP MCP Server + GitHub Copilot</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag neu">Neu</span>&euro;100&nbsp;Mio. Partner-Fund &amp; 680+ Agent-Submissions: SAP-AI-Agent-Hub &ouml;ffnet sich f&uuml;r das gesamte &Ouml;kosystem</h3>
+                <ul>
+                    <li>Die Nachlese zur Sapphire-Partner-Summit hat einen Aspekt konkretisiert, der in der Day-2-Keynote nur kurz angerissen wurde: SAP <strong>investiert &euro;100&nbsp;Mio. in einen dedizierten Partner-Fund f&uuml;r Agent-Entwicklung</strong>. Der Fonds richtet sich an Beratungsh&auml;user und ISVs, die SAP-Standardagenten ausrollen <em>oder</em> auf Joule Studio 2.0 eigene Agenten bauen.</li>
+                    <li><strong>SAP AI Agent Hub als zentrale Drehscheibe:</strong> Der Hub deckt jetzt vendor-agnostisch jeden Agent, jedes LLM und jeden MCP-Server im Unternehmen ab &ndash; unabh&auml;ngig davon, wer ihn gebaut hat. <em>Beim Sapphire-Auftakt waren 680+ Agent-Submissions aus dem Partner-Netzwerk</em> registriert &ndash; deutlich mehr als die zuvor kommunizierten 30+ SAP-Joule-Agenten.</li>
+                    <li><strong>GA-Plan f&uuml;r den Hub:</strong> Allgemeine Verf&uuml;gbarkeit ist f&uuml;r <strong>Q3/2026</strong> angesetzt; der Hub ist Bestandteil der SAP Business AI Platform <em>ohne zus&auml;tzliche Lizenzkosten</em>. F&uuml;r CIOs bedeutet das: die Frage &bdquo;Wie steuere ich 30+ Joule-Agenten plus N Partner-Agenten?&ldquo; bekommt eine einheitliche Antwort auf SAP-LeanIX-Basis.</li>
+                    <li><strong>F&uuml;r Bestandskunden mit Partner-Roadmap:</strong> Wer aktuell mit einem SAP-Beratungspartner &uuml;ber agentische Workflows verhandelt, sollte den Partner-Fund explizit in die Vertragsgespr&auml;che einbringen &ndash; der Zugang ist explizit f&uuml;r Kunden- und Partner-gef&ouml;rderte Adoption gedacht.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://news.sap.com/2026/05/partner-summit-sap-sapphire-autonomous-enterprise-era/" target="_blank">SAP News: Partner Summit at SAP Sapphire &ndash; Autonomous Enterprise Era</a></li>
+                        <li><a href="https://www.ad-hoc-news.de/boerse/news/ueberblick/sap-se-stock-de0007164600-unveils-new-ai-platform-and-100m-partner/69317080" target="_blank">ad-hoc-news.de: SAP SE &ndash; Unveils new AI platform and &euro;100m partner fund</a></li>
+                        <li><a href="https://thenewstack.io/sap-ai-agent-hub/" target="_blank">The New Stack: SAP launches AI Agent Hub at Sapphire 2026 to tame vendor agent sprawl</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 3: Purple - Community & Social Media -->
+            <section id="community">
+                <div class="section-header purple">
+                    <span class="section-color-indicator"></span>
+                    <h2>Community &amp; Social Media</h2>
+                </div>
+
+                <h3><span class="tag neu">Neu</span>SAP-Community-Beitrag &bdquo;Entering the New Era of Agentic AI for ABAP Development&ldquo;</h3>
+                <ul>
+                    <li>Frisch ver&ouml;ffentlicht im offiziellen SAP-Technology-Blog (17.05.2026) fasst dieser Beitrag die ABAP-AI-Sapphire-Botschaft aus Praxis-Perspektive zusammen &ndash; und liefert die <em>quantitativen</em> Argumente, die in der Keynote nur kurz auftauchten: <strong>20&nbsp;% Zeitersparnis beim Schreiben, 25&nbsp;% beim Testen, 4,4&nbsp;% schnellerer Time-to-Value</strong>.</li>
+                    <li><strong>Neuer ABAP-Unit-Test-Generator:</strong> Joule for Developers kann nun ABAP-Unit-Tests f&uuml;r &ouml;ffentliche, gesch&uuml;tzte und <em>private</em> Methoden globaler ABAP-Klassen generieren &ndash; die letzte L&uuml;cke gegen&uuml;ber GitHub-Copilot-Workflows ist damit geschlossen. F&uuml;r Test-Coverage-Programme im S/4-Brownfield ein echter Sprung.</li>
+                    <li><strong>Documentation-Chat:</strong> Direkt in ADT k&ouml;nnen Entwickler kontextbezogen mit der SAP-Help-Portal-Dokumentation chatten &ndash; mit R&uuml;ckverweisen auf die jeweiligen Hilfeseiten. F&uuml;r Onboarding neuer ABAP-Kollegen ein konkreter Produktivit&auml;ts-Hebel, weil das Wechseln zwischen IDE und Browser entf&auml;llt.</li>
+                    <li><strong>F&uuml;r ABAP-Tech-Leads:</strong> Der Beitrag ist die offizielle Lese-Referenz f&uuml;r die n&auml;chsten Roadmap-Gespr&auml;che mit SAP-Account-Teams &ndash; insbesondere die Zahlenangaben zu Produktivit&auml;tszuwachs sollten in CCoE-Vorlagen aufgenommen werden, wenn die ABAP-AI-Investition intern argumentiert werden muss.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/entering-the-new-era-of-agentic-ai-for-abap-development/ba-p/14394643" target="_blank">SAP Community: Entering the New Era of Agentic AI for ABAP Development</a></li>
+                        <li><a href="https://community.sap.com/t5/developer-news/sap-developer-news-special-sapphire-2026-edition/ba-p/14394740" target="_blank">SAP Community: SAP Developer News Special Sapphire 2026 Edition</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag tipp">Tipp</span>Partner-&Ouml;kosystem-Nachlese: &bdquo;SAP Sapphire 2026 Announcements and What it means to SAP Partner Ecosystem&ldquo;</h3>
+                <ul>
+                    <li>F&uuml;r alle, die im DACH-Raum mit SAP-Partnern (Beratungsh&auml;user, ISVs, GSIs) zusammenarbeiten, ist der frisch ver&ouml;ffentlichte Community-Beitrag <em>&bdquo;SAP Sapphire 2026 Announcements and What it means to SAP Partner Ecosystem&ldquo;</em> die bisher konkreteste Einordnung der Ank&uuml;ndigungen aus Partner-Sicht.</li>
+                    <li><strong>Kernpunkte:</strong> Wie sich Build-Partner, Service-Partner und PartnerEdge-Cloud-Choice-Mitglieder am Joule-Studio-2.0-Programm beteiligen k&ouml;nnen, welche Voraussetzungen f&uuml;r den Zugang zum &euro;100&nbsp;Mio.-Fonds gelten und wie der SAP-AI-Agent-Hub als Schaufenster f&uuml;r Partner-Agenten funktioniert.</li>
+                    <li><strong>F&uuml;r CCoE- und Sourcing-Verantwortliche:</strong> Der Beitrag ist die Argumentations-Vorlage f&uuml;r das n&auml;chste Beratungs-Procurement &ndash; statt allgemeine &bdquo;AI-Readiness&ldquo;-Slogans bekommen Sie konkrete SAP-Programmatiken, die Sie von Partnern einfordern k&ouml;nnen.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-sapphire-2026-announcements-and-what-it-means-to-sap-partner-ecosystem/ba-p/14396203" target="_blank">SAP Community: SAP Sapphire 2026 Announcements and What it Means to SAP Partner Ecosystem</a></li>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-sapphire-2026-announcements-only/ba-p/14396190" target="_blank">SAP Community: SAP Sapphire 2026 Announcements only</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 4: Green - Learning & Zertifizierungen -->
+            <section id="learning">
+                <div class="section-header green">
+                    <span class="section-color-indicator"></span>
+                    <h2>Learning &amp; Zertifizierungen</h2>
+                </div>
+
+                <h3><span class="tag update">Update</span>SAP-Zertifizierungsumbau: C_ABAPD_2601 wird zur ersten praxis-basierten ABAP-Cloud-Pr&uuml;fung</h3>
+                <ul>
+                    <li>SAP setzt seinen Anfang 2026 angek&uuml;ndigten Umbau zu <strong>system-basierten Practical-Exams</strong> konsequent fort. F&uuml;r ABAP-Entwickler ist die wichtigste Konsequenz: <strong>C_ABAPD_2601 &ndash; ABAP Cloud &ndash; System-Based Tasks and Tips 2026</strong>. Statt Multiple-Choice m&uuml;ssen Kandidaten Aufgaben <em>im echten SAP-System</em> l&ouml;sen: RAP-Service entwickeln, CDS-View modellieren, Clean-Core-Patterns umsetzen.</li>
+                    <li><strong>Stand der Umstellung:</strong> Die Mehrzahl aller SAP-Zertifizierungen ist bereits bis Mitte Januar 2026 in das Practical-Format gewechselt; bis Ende M&auml;rz 2026 war der gesamte Pflicht-Katalog umgestellt. F&uuml;r Bestandszertifikate gilt eine &Uuml;bergangsphase &ndash; vorhandene Multiple-Choice-Zertifikate bleiben g&uuml;ltig, neue Anmeldungen erfolgen nur noch im Practical-Format.</li>
+                    <li><strong>F&uuml;r Recruiting &amp; Talent-Development:</strong> Wer in den n&auml;chsten Monaten neue ABAP-Entwickler einstellt, sollte explizit nach Practical-Zertifikaten fragen &ndash; das C_ABAPD_2601-Format ist der erste Skill-Beleg, der wirklich Live-Coding nachweist und nicht nur Wissensabfrage. Trainings dazu sind sowohl im SAP Learning Hub als auch in Drittanbieter-Kursen verf&uuml;gbar.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://learning.sap.com/get-certified/reimagining-certification" target="_blank">SAP Learning: Reimagining certification in the age of AI</a></li>
+                        <li><a href="https://www.udemy.com/course/c_abapd_2601-abap-cloud-system-based-tasks-and-tips-2026/" target="_blank">Udemy: C_ABAPD_2601 &ndash; ABAP Cloud System-Based Tasks and Tips 2026 (Vorbereitung)</a></li>
+                        <li><a href="https://learning.sap.com/learning-journeys/acquiring-core-abap-skills" target="_blank">SAP Learning: Acquiring Core ABAP Skills (Joule-for-Developers-Modul)</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag tipp">Tipp</span>SAP Generative AI Developer Certification (C_AIG) &ndash; 2026-System-Based-Format vorbereiten</h3>
+                <ul>
+                    <li>Parallel zum ABAP-Cloud-Pfad gibt es jetzt die <strong>SAP Generative AI Developer Certification (C_AIG 2026)</strong> im neuen System-Based-Format. Der Fokus liegt auf SAP-Joule-, Generative-AI-Hub- und Joule-Studio-2.0-Themen &ndash; mit praktischen Aufgaben in einer SAP-AI-Core-Sandbox.</li>
+                    <li><strong>Wer adressiert wird:</strong> Entwickler und Architekten, die in Kundenprojekten Joule-Skills bauen, GenAI-Hub-Calls in CAP-/RAP-Services integrieren oder eigene Agenten in Joule Studio entwickeln. Die Pr&uuml;fung deckt Prompt-Engineering, Orchestration-Service, Embedding/Vector-Stores und Agent-Lifecycle ab.</li>
+                    <li><strong>Empfohlene Vorbereitung:</strong> Der Learning-Journey-Pfad <em>&bdquo;Using Advanced AI Techniques with SAP's Generative AI Hub&ldquo;</em> deckt den Orchestration-Service vollst&auml;ndig ab; erg&auml;nzend bietet SAP Learning den kostenfreien Kurs <em>&bdquo;Create Joule Skills with Joule Studio&ldquo;</em>. Wer praxisorientierter lernen will, kann die zugeh&ouml;rigen Hands-on-Notebooks aus dem SAP-Cloud-SDK-for-AI-Repository nutzen.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://learning.sap.com/artificial-intelligence" target="_blank">SAP Learning: Artificial Intelligence Hub</a></li>
+                        <li><a href="https://learning.sap.com/learning-journeys/using-advanced-ai-techniques-with-sap-s-generative-ai-hub/implementing-the-orchestration-service-to-enhance-workflows" target="_blank">SAP Learning Journey: Implementing the Orchestration Service to Enhance Workflows</a></li>
+                        <li><a href="https://learning.sap.com/courses/boosting-ai-driven-business-transformation-with-joule-agents" target="_blank">SAP Learning: Boosting AI-driven Business Transformation with Joule Agents</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- SECTION 5: Red - Video Resources & Events -->
+            <section id="videos">
+                <div class="section-header red">
+                    <span class="section-color-indicator"></span>
+                    <h2>Video Resources &amp; Events</h2>
+                </div>
+
+                <h3><span class="tag tipp">Tipp</span>YouTube-Empfehlung: &bdquo;Build AI Agents with Joule Studio | SAP Sapphire Orlando 2026&ldquo;</h3>
+                <ul>
+                    <li>Das offizielle SAP-Video <strong>&bdquo;Build AI Agents with Joule Studio | SAP Sapphire Orlando 2026&ldquo;</strong> ist letzte Woche auf dem SAP-YouTube-Kanal erschienen. Es zeigt den End-to-End-Flow vom Business-Intent bis zum produktiven Joule-Agent &ndash; mit Live-Demo, ohne Marketing-Folien dazwischen.</li>
+                    <li><strong>F&uuml;r Joule-Studio-Einsteiger:</strong> Das Video richtet sich an Teams, die bisher mit dem Joule-Studio-1.x-Builder gearbeitet haben und den Umstieg auf Joule Studio 2.0 verstehen wollen &ndash; insbesondere den Wechsel von Low-Code- auf Pro-Code-Workflows mit Cursor/Claude-Code-Integration.</li>
+                    <li><strong>Erg&auml;nzend:</strong> SAP hat zus&auml;tzlich die <em>14-min&uuml;tigen Global-Keynote-Highlights</em> als kompakte Zusammenfassung publiziert &ndash; ideal als Briefing-Material f&uuml;r Management-Stakeholder, die nicht die komplette Keynote sehen werden.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://www.youtube.com/watch?v=3dJeQu7sxk4" target="_blank">YouTube: Build AI Agents with Joule Studio &ndash; SAP Sapphire Orlando 2026</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=wU4FQd6Ps3Q" target="_blank">YouTube: Global Keynote Highlights &ndash; Reimagined Joule, AI &amp; More in 14 Minutes</a></li>
+                    </ul>
+                </div>
+
+                <h3><span class="tag event">Event</span>SAP Sapphire Madrid startet <strong>heute</strong> (19.&ndash;21. Mai 2026)</h3>
+                <ul>
+                    <li>Heute beginnt im <strong>IFEMA Madrid</strong> die EMEA-Edition der SAP Sapphire 2026. Anders als bei der Orlando-Auflage steht die regionale &Uuml;bersetzung der globalen Ank&uuml;ndigungen f&uuml;r europ&auml;ische Kunden im Vordergrund &ndash; mit Schwerpunkt auf DSAG-/SE-Region-Themen wie Sovereign Cloud, GDPR-konforme Agent-Architekturen und EU-AI-Act-Compliance.</li>
+                    <li><strong>Keynote-Crew:</strong> CEO Christian Klein, COO Sebastian Steinhaeuser und CTO Philipp Herzig wiederholen das Orlando-Drehbuch in europ&auml;ischer Lesart; Tag&nbsp;2 und Tag&nbsp;3 sind regional-spezifischen Sessions vorbehalten (S/4HANA-Migration in DACH, Industrie-Use-Cases f&uuml;r Manufacturing &amp; Public Sector).</li>
+                    <li><strong>F&uuml;r DACH-Teams:</strong> Die Madrid-Edition ist die letzte gro&szlig;e SAP-B&uuml;hne vor der DSAG-KI-Thementage Ende Juni &ndash; wer Sapphire-Material f&uuml;r interne Investitionsgespr&auml;che sammelt, sollte auf europ&auml;ische Customer-Stories (Erm&ouml;glicht durch BMW-, Bosch-, Henkel-Showcases) achten.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://www.sap.com/events/sapphire/madrid.html" target="_blank">SAP Events: SAP Sapphire Madrid 2026 (Hauptseite)</a></li>
+                        <li><a href="https://www.sap.com/events/sapphire/madrid/attendee-information.html" target="_blank">SAP Events: SAP Sapphire Madrid 2026 &ndash; Attendee Information</a></li>
+                        <li><a href="https://www.sap.com/spain/events/2026-05-19-es-sap-sapphire-madrid-2026.html" target="_blank">SAP Spanien: Sapphire Madrid 2026 (Programm)</a></li>
+                    </ul>
+                </div>
+
+                <h3>Termine &amp; Events</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Datum</th>
+                            <th>Event</th>
+                            <th>Ort/Format</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>19.&ndash;21. Mai 2026</td>
+                            <td>SAP Sapphire Madrid (EMEA-Edition, l&auml;uft heute an)</td>
+                            <td>IFEMA Madrid</td>
+                        </tr>
+                        <tr>
+                            <td>29. Mai 2026</td>
+                            <td>GA: ABAP Development Tools f&uuml;r VS Code (inkl. offizieller ABAP MCP Server)</td>
+                            <td>SAP &amp; VS Code Marketplace</td>
+                        </tr>
+                        <tr>
+                            <td>4.&ndash;5. Juni 2026</td>
+                            <td>DSAG-Personaltage 2026</td>
+                            <td>Heidelberg Congress Center</td>
+                        </tr>
+                        <tr>
+                            <td>23. Juni 2026</td>
+                            <td>SAP CodeJam: Joule Studio (Skills &amp; Agents)</td>
+                            <td>Hyderabad (Tekskills India)</td>
+                        </tr>
+                        <tr>
+                            <td>30. Juni &ndash; 1. Juli 2026</td>
+                            <td>DSAG-KI-Thementage (SAP Business AI)</td>
+                            <td>Sankt Leon-Rot</td>
+                        </tr>
+                        <tr>
+                            <td>Q2 2026</td>
+                            <td>GA: ABAP MCP Server (Eclipse + VS Code); ABAP Custom Code Transformation Agent</td>
+                            <td>SAP-Hub-Service</td>
+                        </tr>
+                        <tr>
+                            <td>Q3 2026 (geplant)</td>
+                            <td>GA: Joule Studio 2.0; SAP AI Agent Hub; LiveKit Voice GA; Joule Work Desktop GA (H2)</td>
+                            <td>SAP Business AI Platform</td>
+                        </tr>
+                        <tr>
+                            <td>Q3 2026 (geplant)</td>
+                            <td>Closing der Dremio-&Uuml;bernahme</td>
+                            <td>Iceberg-native BDC</td>
+                        </tr>
+                        <tr>
+                            <td>14.&ndash;16. Juli 2026</td>
+                            <td>HANA Tech Con 2026</td>
+                            <td>Online (kostenfrei)</td>
+                        </tr>
+                        <tr>
+                            <td>September 2026</td>
+                            <td>Ende der kostenlosen Joule-for-Developers-Phase (Wechsel zu AI Units)</td>
+                            <td>Global</td>
+                        </tr>
+                        <tr>
+                            <td>6.&ndash;8. Oktober 2026</td>
+                            <td>DSAG-Jahreskongress 2026</td>
+                            <td>K&ouml;ln (Koelnmesse, Halle 2)</td>
+                        </tr>
+                        <tr>
+                            <td>27.&ndash;29. Oktober 2026</td>
+                            <td>SAP TechEd 2026 (Registrierung offen)</td>
+                            <td>Berlin (mit Virtual Track)</td>
+                        </tr>
+                        <tr>
+                            <td>17.&ndash;19. November 2026</td>
+                            <td>Mastering SAP Collaborate (TechEd on Tour)</td>
+                            <td>Sydney</td>
+                        </tr>
+                        <tr>
+                            <td>Ende 2026</td>
+                            <td>Ende des 12-monatigen Joule-Studio-Free-Design-Time-Zugangs</td>
+                            <td>SAP Business AI Platform</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <div class="navigation">
+                <a href="index.html">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
+                <a href="2026-05-15.html">Vorheriges Briefing &rarr;</a>
+            </div>
+        </main>
+
+        <aside class="toc">
+            <h3>Inhaltsverzeichnis</h3>
+            <ul>
+                <li><span class="toc-dot" style="background:#e67e22"></span><a href="#abap-classic">ABAP Classic AI</a></li>
+                <li><span class="toc-dot" style="background:#3498db"></span><a href="#sap-cloud-ai">SAP Cloud AI</a></li>
+                <li><span class="toc-dot" style="background:#9b59b6"></span><a href="#community">Community &amp; Social Media</a></li>
+                <li><span class="toc-dot" style="background:#27ae60"></span><a href="#learning">Learning &amp; Zertifizierungen</a></li>
+                <li><span class="toc-dot" style="background:#c0392b"></span><a href="#videos">Video Resources &amp; Events</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        Dieses Briefing wurde am 19.05.2026 zum Auftakt der SAP Sapphire Madrid automatisch erstellt. Recherchezeitraum: 16.05.2026 &ndash; 19.05.2026 | Automatisch erstellt mit Claude | SAP AI Daily
+    </footer>
+
+    <script>
+        document.querySelectorAll('.toc a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                const href = this.getAttribute('href');
+                if (href.startsWith('#')) {
+                    e.preventDefault();
+                    const target = document.querySelector(href);
+                    if (target) {
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+</html>
