@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP AI Daily - 21.05.2026 Briefing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f8f9fa; color: #333; line-height: 1.7; }
+        header { background: #1a3a5c; color: white; padding: 40px 20px; border-bottom: 4px solid #e67e22; }
+        header h1 { font-size: 2.2em; margin-bottom: 5px; font-weight: 700; }
+        header .date { font-size: 1em; opacity: 0.85; margin-bottom: 15px; }
+        header .breadcrumb { margin-top: 15px; opacity: 0.9; }
+        header a { color: #fff; text-decoration: none; font-weight: 600; }
+        header a:hover { text-decoration: underline; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 1fr 250px; gap: 30px; }
+        main { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .toc { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 20px; height: fit-content; }
+        .toc h3 { font-size: 0.95em; font-weight: 700; text-transform: uppercase; color: #1a3a5c; margin-bottom: 15px; letter-spacing: 0.5px; }
+        .toc ul { list-style: none; }
+        .toc li { margin-bottom: 10px; font-size: 0.9em; padding-left: 0; }
+        .toc li:before { content: ""; display: none; }
+        .toc .toc-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+        .toc a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        .toc a:hover { color: #1a5a8c; padding-left: 5px; }
+        section { margin-bottom: 50px; }
+        .section-header { display: flex; align-items: center; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid; }
+        .section-header.orange { border-color: #e67e22; }
+        .section-header.blue { border-color: #3498db; }
+        .section-header.purple { border-color: #9b59b6; }
+        .section-header.green { border-color: #27ae60; }
+        .section-header.red { border-color: #c0392b; }
+        .section-header h2 { font-size: 1.8em; margin: 0; font-weight: 700; color: #1a3a5c; }
+        .section-color-indicator { width: 12px; height: 12px; border-radius: 50%; margin-right: 15px; flex-shrink: 0; }
+        .section-header.orange .section-color-indicator { background: #e67e22; }
+        .section-header.blue .section-color-indicator { background: #3498db; }
+        .section-header.purple .section-color-indicator { background: #9b59b6; }
+        .section-header.green .section-color-indicator { background: #27ae60; }
+        .section-header.red .section-color-indicator { background: #c0392b; }
+        h3 { font-size: 1.35em; margin-top: 25px; margin-bottom: 15px; color: #1a3a5c; font-weight: 700; }
+        h3:first-child { margin-top: 0; }
+        ul { list-style: none; margin-bottom: 20px; }
+        li { margin-bottom: 12px; padding-left: 25px; position: relative; line-height: 1.8; }
+        li:before { content: "\2022"; position: absolute; left: 0; color: #e67e22; font-weight: 700; font-size: 1.2em; }
+        strong { font-weight: 700; color: #1a3a5c; }
+        a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        a:hover { color: #1a5a8c; text-decoration: underline; }
+        .sources { font-size: 0.85em; color: #888; margin-top: 8px; padding-left: 0; }
+        .sources li { padding-left: 0; margin-bottom: 5px; }
+        .sources li:before { content: ""; display: none; }
+        .sources a { color: #888; text-decoration: underline; }
+        .sources a:hover { color: #2980b9; }
+        .tag { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 0.3rem; vertical-align: middle; }
+        .tag.neu { background: #e8f8f5; color: #1abc9c; border: 1px solid #1abc9c; }
+        .tag.update { background: #fef5e7; color: #e67e22; border: 1px solid #e67e22; }
+        .tag.event { background: #f5eef8; color: #9b59b6; border: 1px solid #9b59b6; }
+        .tag.tipp { background: #eaf2fb; color: #2980b9; border: 1px solid #2980b9; }
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden; }
+        th { background: #1a3a5c; color: white; padding: 15px; text-align: left; font-weight: 700; font-size: 0.95em; }
+        td { padding: 12px 15px; border-bottom: 1px solid #e0e0e0; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: #f5f5f5; }
+        footer { background: #2c3e50; color: white; text-align: center; padding: 25px 20px; margin-top: 60px; font-size: 0.9em; }
+        footer a { color: #e67e22; font-weight: 600; }
+        footer a:hover { text-decoration: underline; }
+        .navigation { display: flex; justify-content: space-between; align-items: center; margin: 30px 0 0 0; padding-top: 20px; border-top: 1px solid #e0e0e0; flex-wrap: wrap; gap: 15px; }
+        .navigation a { display: inline-block; padding: 10px 20px; background: #2980b9; color: white; text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s ease; }
+        .navigation a:hover { background: #1a5a8c; text-decoration: none; }
+        .publication-info { background: #f0f4f8; border-radius: 4px; padding: 15px; margin-bottom: 20px; font-size: 0.9em; color: #666; }
+        .empty-section { font-style: italic; color: #888; padding: 10px 0; }
+        @media (max-width: 1024px) { .container { grid-template-columns: 1fr; } .toc { position: relative; top: 0; margin-bottom: 30px; display: none; } }
+        @media (max-width: 768px) { header h1 { font-size: 1.6em; } main { padding: 25px; } .section-header h2 { font-size: 1.4em; } h3 { font-size: 1.15em; } table { font-size: 0.9em; } th, td { padding: 10px; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div class="breadcrumb"><a href="index.html">&#8592; Zurück zur Übersicht</a></div>
+        <h1>SAP AI Daily Briefing</h1>
+        <div class="date">21. Mai 2026</div>
+        <div style="font-size: 0.95em; opacity: 0.9; margin-top: 8px;">Post-Sapphire Konsolidierung: SAP-ABAP-2 Domain Model, MCP Gateway in Integration Suite, Keynote-Videos on-demand, Zertifizierungen neu gedacht &amp; Madrid-Finale.</div>
+    </div>
+</header>
+
+<div class="container">
+    <main>
+        <div class="publication-info">
+            Erstellt am 21.05.2026 &middot; Recherchezeitraum: 20.05.2026 &ndash; 21.05.2026 &middot; Schwerpunkte: SAP Domain Models mit SAP-ABAP-2 &amp; Ariba-Variante, MCP Gateway in Integration Suite, GenAI Hub neue Modelle (GPT 5.2 &amp; Gemini 3.0 Pro), Business AI Adoption Program, Drei-Phasen-Autonomie-Roadmap, SAP-Zertifizierungen neu gedacht (KI erlaubt in Prüfungen), Sapphire-Keynote-Videos on-demand, Madrid letzter Kongresstag
+        </div>
+
+        <section id="abap-classic">
+            <div class="section-header orange">
+                <span class="section-color-indicator"></span>
+                <h2>ABAP Classic AI</h2>
+            </div>
+
+            <h3>SAP Domain Models: SAP-ABAP-2 als zweite Modellgeneration angekündigt <span class="tag neu">NEU</span></h3>
+            <ul>
+                <li>SAP hat auf der Sapphire 2026 die <strong>SAP Domain Models Familie</strong> offiziell eingeführt &ndash; eine neue Produktlinie nativ trainierter Foundation Models, die direkt auf SAP-Geschäftslogik, Domänenwissen und historischem Code basieren.</li>
+                <li><strong>SAP-ABAP-2</strong> ist die zweite Generation des spezialisierten ABAP-Coding-Modells. Im Vergleich zu SAP-ABAP-1 (seit Januar 2026 im GenAI Hub) wurden weitere ABAP-Cloud- und RAP-Muster eintrainiert &ndash; mit verbesserten Fähigkeiten für Behavior Definitions, Service Bindings und CDS-Annotation-Generierung.</li>
+                <li>Neben SAP-ABAP-2 enthält die Familie spezialisierte Varianten für <strong>SAP S/4HANA Finance und Operations</strong> sowie für <strong>SAP Ariba</strong> (Genehmigungsworkflows, Beschaffungslogik). Diese Modelle verstehen SAP-spezifische Konzepte wie Kontierungslogik, MRP oder Ariba-Approval-Flows ohne manuelle Regelcodierung.</li>
+                <li>Technische Basis: Die Modelle werden durch den <strong>SAP Knowledge Graph</strong> (452.000 Tabellen, 7,3 Mio. Datenfelder) geerdet. Das reduziert Halluzinationen bei ABAP-Objektnamen, Methodensignaturen und API-Referenzen strukturell &ndash; anders als generische LLMs, die ERP-Fachterminologie oft falsch kombinieren.</li>
+                <li>ABAP-Architektur-Empfehlung: Prompt-Designs für ABAP-AI-Workflows sollten ab sofort <strong>SAP-ABAP-2</strong> als primäres Coding-Modell einplanen, Claude weiterhin als Reasoning-Layer für Multi-Step-Agentic-Workflows (gemäß SAP-Anthropic-Partnerschaft).</li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://www.sap.com/norway/products/artificial-intelligence/ai-models/domain-models.html">SAP: Domain Models &ndash; Native Foundation Models</a></li>
+                    <li><a href="https://erp.today/sap-business-ai-platform-consolidates-sap-btp-stack-to-solve-enterprise-ai-fragmentation/">erp.today: SAP Business AI Platform Consolidates SAP BTP Stack</a></li>
+                    <li><a href="https://sapinsider.org/blogs/sap-sapphire-2026-how-sap-business-ai-platform-consolidates-sap-btp-sap-business-data-cloud-and-sap-business-ai/">SAPinsider: How SAP Business AI Platform Consolidates SAP BTP, BDC und SAP Business AI</a></li>
+                </ul>
+            </div>
+
+            <h3>MCP Gateway in der SAP Integration Suite &ndash; gesteuerter API-Zugang für Agenten <span class="tag neu">NEU</span></h3>
+            <ul>
+                <li>Die SAP Developer News Sapphire 2026 Special Edition (Live-Video aus Orlando) hat ein neues Feature vorgestellt: den <strong>MCP Gateway in der SAP Integration Suite</strong>. Agent-Entwickler können darüber aus einem kuratierten API-Katalog einzelne APIs selektieren und für KI-Agenten sicher exponieren.</li>
+                <li><strong>Governed und Secured Access</strong> als Kern: Der MCP Gateway ermöglicht es, nur genehmigte API-Endpunkte freizuschalten &ndash; mit Audit-Logging, Berechtigungskontrolle und Rate-Limiting. Das adressiert direkt die EU-AI-Act-Anforderung zur Nachvollziehbarkeit von Agenten-Aktionen.</li>
+                <li>Praxisbedeutung: Wer heute über den ABAP MCP Server (Eclipse oder VS Code) mit eigenen S/4-APIs arbeitet, kann zusätzlich den Integration Suite MCP Gateway nutzen, um Integration-Suite-verwaltete APIs in Agenten-Workflows einzubetten &ndash; ohne separates API-Management-Tool.</li>
+                <li>Ergänzung: <strong>Joule in der Integration Suite</strong> erlaubt Entwicklern, per natürlicher Sprache Integrationsszenarien zu generieren &ndash; inklusive Message-Transformation und B2B-Szenarien. Die Kombination mit dem MCP Gateway ergibt einen vollständig agentengesteuerten Integrations-Build-Flow.</li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://community.sap.com/t5/developer-news/sap-developer-news-special-sapphire-2026-edition/ba-p/14394740">SAP Community: SAP Developer News Special Sapphire 2026 Edition</a></li>
+                    <li><a href="https://news.sap.com/2026/05/sap-sapphire-sap-unveils-autonomous-enterprise/">SAP News: SAP Unveils the Autonomous Enterprise</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="sap-cloud">
+            <div class="section-header blue">
+                <span class="section-color-indicator"></span>
+                <h2>SAP Cloud AI</h2>
+            </div>
+
+            <h3>Generative AI Hub: GPT 5.2, Gemini 3.0 Pro und Claude Opus 4.6 jetzt verfügbar <span class="tag update">UPDATE</span></h3>
+            <ul>
+                <li>Der <strong>SAP Generative AI Hub</strong> wurde mit neuen Modellen erweitert: <strong>OpenAI GPT 5.2</strong>, <strong>Google Gemini 3.0 Pro</strong> und <strong>Anthropic Claude Opus 4.6</strong> (sowie Claude Sonnet 4.6) sind jetzt verfügbar. Damit deckt der Hub mit Stand Mai 2026 die aktuellsten Frontier-Modelle aller drei führenden Anbieter ab.</li>
+                <li>Technische Enhancements: <strong>Advanced Prompt Optimization</strong> (automatische Prompt-Verbesserung), <strong>Metadata Filtering</strong> für präzisere RAG-Abfragen und <strong>Declarative Orchestration Configurations</strong> im Prompt Registry &ndash; Entwickler können Orchestrierungslogik jetzt deklarativ definieren statt in Code zu verdrahten.</li>
+                <li>Einordnung: Die Erweiterung auf GPT 5.2 und Gemini 3.0 Pro stärkt die Verhandlungsposition gegenüber Modell-Lock-in &ndash; ein Thema, das Forrester nach der Sapphire als strategisches Risiko adressiert hatte. Multi-Modell-Routing bleibt SAPs Antwort auf Concentrations-Risiko.</li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://news.sap.com/2026/04/sap-business-ai-release-highlights-q1-2026/">SAP News: SAP Business AI Release Highlights Q1 2026</a></li>
+                    <li><a href="https://help.sap.com/docs/ai-launchpad/sap-ai-launchpad/models-and-scenarios-in-generative-ai-hub-fef463b24bff4f44a33e98bb1e4f3148">SAP Help: Models and Scenarios in the Generative AI Hub</a></li>
+                    <li><a href="https://www.savictech.com/insights/sap-ai-foundation-knowledge-graph-architecture-enterprise-2026/">SAVIC: SAP AI Foundation Architecture 2026</a></li>
+                </ul>
+            </div>
+
+            <h3>Business AI Partner-Led Adoption Program &ndash; vier Pakete, EUR 100 Mio. Fonds <span class="tag neu">NEU</span></h3>
+            <ul>
+                <li>SAP hat die Struktur des <strong>Business AI Partner-Led Adoption Program</strong> konkretisiert. Der EUR&nbsp;100-Millionen-Partnerfonds wird über vier Service-Pakete abgewickelt: <strong>Adoption, Launch, Performance und Enterprise</strong> &ndash; mit eskalierenden Anforderungen für den Einsatz kundenspezifischer Agenten via Joule Studio.</li>
+                <li><strong>RISE with SAP-Kunden</strong> erhalten eine vertragliche Verpflichtung zur Aktivierung von mindestens <strong>drei Joule Assistants im ersten Jahr</strong> &ndash; mit dem Max Success Plan wird die Adoption auf das gesamte Unternehmen ausgeweitet. Erstmals sichert SAP AI-Adoption vertraglich zu.</li>
+                <li><strong>GROW with SAP-Kunden</strong> erhalten von Tag eins an Zugang zu <strong>mehr als 20 KI-Assistenten</strong>. Eine KI-gestützte Migrationstoolchain zielt auf bis zu 50&nbsp;% Aufwandsreduktion bei der ERP-Migration ab.</li>
+                <li>Für SI-Partner: Das Adoption-Paket ist der Einstieg für Kunden-Onboarding. Das Enterprise-Paket erfordert nachgewiesene Custom-Agent-Deployments via Joule Studio &ndash; neue Benchmark für KI-getriebene SAP-Beratungsleistungen.</li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-sapphire-2026-announcements-and-what-it-means-to-sap-partner-ecosystem/ba-p/14396203">SAP Community: SAP Sapphire 2026 &ndash; What it means to the SAP Partner Ecosystem</a></li>
+                    <li><a href="https://news.sap.com/2026/05/sap-sapphire-sap-unveils-autonomous-enterprise/">SAP News: SAP Unveils the Autonomous Enterprise</a></li>
+                    <li><a href="https://sapinsider.org/articles/sap-sapphire-2026-the-autonomous-enterprise-and-the-rise-of-the-partnership-economy/">SAPinsider: The Autonomous Enterprise and the Rise of the Partnership Economy</a></li>
+                </ul>
+            </div>
+
+            <h3>Drei-Phasen-Autonomie-Roadmap: Human Enacted &rarr; Human Monitored &rarr; Human Autonomous <span class="tag tipp">TIPP</span></h3>
+            <ul>
+                <li>SAPinsider hat in &bdquo;Seven Questions Every Leader Must Answer&ldquo; die <strong>Drei-Phasen-Roadmap</strong> zur autonomen Enterprise-AI aufgeschlüsselt &ndash; die konkreteste Planungsgrundlage für CIOs nach der Sapphire 2026:</li>
+                <li><strong>Phase 1 &ndash; Human Enacted (heute):</strong> Menschen führen Aufgaben vollständig durch; KI liefert Vorschläge, entscheidet nicht.</li>
+                <li><strong>Phase 2 &ndash; Human Monitored (2026&ndash;2027):</strong> KI-Agenten führen Prozessabschnitte aus, mit menschlichen Genehmigungspunkten. Typisch: Rechnungsverarbeitung, Bestellgenehmigung, Anomalie-Eskalation.</li>
+                <li><strong>Phase 3 &ndash; Human Autonomous (2027&ndash;2028+):</strong> KI führt End-to-End-Prozesse eigenständig aus; Menschen setzen Richtlinien. Voraussetzung: vollständige Audit-Trail-Infrastruktur und regulatorische Freigabe.</li>
+                <li>Regulatorischer Druck: Die <strong>High-Risk-KI-Pflichten des EU AI Act</strong> greifen vollständig ab <strong>2. August 2026</strong> &ndash; Strafen bis 7&nbsp;% des globalen Jahresumsatzes. Wer jetzt Agenten in Produktion bringt, muss technische Dokumentation, Human-Oversight und Audit-Trails bereits sicherstellen.</li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://sapinsider.org/articles/sapphire-2026-your-sap-erp-just-got-an-ai-brain-now-what-seven-questions-every-leader-must-answer/">SAPinsider: Seven Questions Every Leader Must Answer</a></li>
+                    <li><a href="https://sapinsider.org/blogs/sap-sapphire-2026-autonomous-enterprise-ai-agents/">SAPinsider: The Autonomous Enterprise and AI Agent Guardrails</a></li>
+                    <li><a href="https://clarkstonconsulting.com/insights/2026-sapphire-takeaways/">Clarkston Consulting: Key Takeaways from the 2026 SAP Sapphire Conference</a></li>
+                </ul>
+            </div>
+
+            <h3>Joule Studio Design-Time-Zugang kostenlos bis Ende 2026 <span class="tag update">UPDATE</span></h3>
+            <ul>
+                <li>SAP hat bestätigt: <strong>Kostenloser Design-Time-Zugang zu Joule Studio bis Ende 2026</strong> &ndash; inklusive KI-gestützter Entwicklungsfähigkeiten unter Fair-Use-Limits. Optimaler Einstiegspunkt für Teams, die erste Custom-Agenten ohne sofortige Lizenzkosten testen wollen.</li>
+                <li>Scope: Design-Time umfasst Agenten-Builder, Framework-Integration (LangChain, AutoGen, LlamaIndex, n8n-Embed) und Scaffolding via Claude Code, Cursor oder VS Code. <strong>Runtime-Execution</strong> (Produktion, echte Endnutzer) erfordert weiterhin AI Units.</li>
+                <li>Empfehlung: Teams mit Q3/Q4-2026-Agenten-Piloten sollten den Design-Time-Zugang sofort aktivieren und Agenten in der Sandbox entwickeln &ndash; bevor das Angebot Ende 2026 auf kostenpflichtige Nutzung wechselt.</li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://news.sap.com/2026/05/new-joule-studio-enterprise-scale-agentic-development/">SAP News: Announcing New Joule Studio for Enterprise Scale Agentic Development</a></li>
+                    <li><a href="https://thenewstack.io/sap-joule-studio-managed-agents/">The New Stack: SAP launches managed Joule Studio with Cursor and Claude Code support</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="community">
+            <div class="section-header purple">
+                <span class="section-color-indicator"></span>
+                <h2>Community &amp; Social Media</h2>
+            </div>
+
+            <h3>Post-Sapphire Community-Welle: Erfahrungsberichte und kuratierte Ankündigungsliste <span class="tag neu">NEU</span></h3>
+            <ul>
+                <li><strong>&bdquo;A Look Back on My SAP Sapphire 2026 Experience&ldquo;</strong> (Data Professionals Blog): Persönliche Perspektive auf die Konferenz aus Datenpraktiker-Sicht &ndash; jenseits der offiziellen Pressemitteilungen, mit konkreten Session-Eindrücken und Netzwerk-Beobachtungen.</li>
+                <li>SAP hat einen <strong>kuratierten &bdquo;Announcements Only&ldquo;-Thread</strong> in der Community eingerichtet &ndash; ein strukturierter Index aller offiziellen Sapphire-2026-Ankündigungen ohne Kommentarflut. Für interne Stakeholder-Kommunikation der effizienteste Ausgangspunkt.</li>
+                <li><strong>&bdquo;The Future of UX Is Here &ndash; Are You Ready for an AI-Powered World?&ldquo;</strong> (SAP Community, UX-Lead): Fokus auf die neue Joule-Engagement-Layer-Architektur (Conversations + Spaces) als UX-Paradigmenwechsel &ndash; relevant für Anwender-Onboarding-Strategie.</li>
+                <li><strong>&bdquo;Joule Studio: From Business Intent to Enterprise-Ready AI Agents&ldquo;</strong> (SAP Community Technology Blog): Erklärt, wie Joule Studio Geschäftsanforderungen in deployment-fertige Agenten übersetzt &ndash; mit Governance-Layer und Monitoring. Pflichtlektüre vor dem ersten Joule-Studio-Piloten.</li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://community.sap.com/t5/data-professionals-blog-posts/a-look-back-on-my-sap-sapphire-2026-experience/ba-p/14399365">SAP Community: A Look Back on my SAP Sapphire 2026 Experience</a></li>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-sapphire-2026-announcements-only/ba-p/14396190">SAP Community: SAP Sapphire 2026 Announcements only</a></li>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sapphire-2026-the-future-of-ux-is-here-are-you-ready-for-an-ai-powered/ba-p/14396240">SAP Community: The Future of UX is Here &ndash; Sapphire 2026</a></li>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/joule-studio-from-business-intent-to-enterprise-ready-ai-agents/ba-p/14395010">SAP Community: Joule Studio: From Business Intent to Enterprise-Ready AI Agents</a></li>
+                </ul>
+            </div>
+
+            <h3>Analysten-Einordnungen: Vertrauen in Produktion und der &bdquo;Undercurrent&ldquo; hinter den Headlines <span class="tag tipp">TIPP</span></h3>
+            <ul>
+                <li>erp.today: <strong>&bdquo;Can SAP's AI Agents Be Trusted in Production ERP Environments?&ldquo;</strong> &ndash; kritisches Q&amp;A zur Produktionsreife. Kernbefund: Phase 2 (Human Monitored) ist 2026 realistisch; vollautonome Produktionsprozesse setzen robuste Audit-Trails und regulatorische Freigabe voraus.</li>
+                <li>allyticstechperspectives.com fasst die Sapphire-Woche als <strong>&bdquo;The Headlines and the Undercurrent&ldquo;</strong> zusammen: Die offizielle Geschichte ist Autonomous Enterprise und 200+ Agenten &ndash; der Undercurrent ist die Frage, ob Kunden mit bestehenden Implementierungsressourcen und IT-Governance-Strukturen das Tempo halten können.</li>
+                <li>Talan: <strong>&bdquo;Top 5 Key Takeaways from SAP Sapphire 2026&ldquo;</strong> &ndash; fokussiert auf Clean Core als KI-Voraussetzung, RISE/GROW-AI-Commitments und Partnerfonds-Nutzung als Einstieg für erste Pilot-Projekte. Geeignete Basis für Beratungs-Einschätzungen ggü. DACH-Kunden.</li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://erp.today/sap-sapphire-2026-autonomous-enterprise-ai-governance-trust/">erp.today: Can SAP's AI Agents Be Trusted in Production ERP Environments?</a></li>
+                    <li><a href="https://allyticstechperspectives.com/sap-sapphire-2026-recap/">allyticstechperspectives.com: SAP Sapphire 2026 Recap &ndash; The Headlines and the Undercurrent</a></li>
+                    <li><a href="https://www.talan.com/americas/en/resources/blogs/top-5-key-takeaways-sap-sapphire-2026">Talan: Top 5 Key Takeaways from SAP Sapphire 2026</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="learning">
+            <div class="section-header green">
+                <span class="section-color-indicator"></span>
+                <h2>Learning &amp; Zertifizierungen</h2>
+            </div>
+
+            <h3>SAP-Zertifizierungen neu gedacht: Praktische Prüfungen, KI-Tools erlaubt <span class="tag neu">NEU</span></h3>
+            <ul>
+                <li>SAP hat auf der Sapphire 2026 die neue Zertifizierungsphilosophie detailliert: <strong>&bdquo;Reimagining Certification in the Age of AI&ldquo;</strong>. Kern: Zertifizierungen werden von Multiple-Choice-Tests zu <strong>performanzbasierten, praxisnahen Open-Book-Assessments</strong> &ndash; KI-Tools sind ausdrücklich erlaubt.</li>
+                <li>Zwei neue Prüfungstypen: (1) <strong>System-based Tasks</strong> &ndash; Kandidaten konfigurieren echte SAP-Sandbox-Systeme, schreiben ABAP-Code oder richten Prozesse ein. (2) <strong>Scenario-based Assessments</strong> &ndash; zeitbegrenzte Rollenspiele mit einem KI-Avatar zum Pitchen von SAP-Lösungen.</li>
+                <li>Timeline: Alle praktischen Prüfungen wurden bis Ende März 2026 vollständig migriert. Prüfungszeit: 2 Stunden (SAP-Portal zeigt ein 24h-Fenster &ndash; die effektive Zeit ist trotzdem 2h). Credly-Badges weiterhin als Nachweis.</li>
+                <li>In der Pipeline: <strong>Advanced AI Architect Certifications</strong> (Q2 2026) und industrie-spezifische KI-Zertifizierungen für Manufacturing, Finance und Retail. Primärer Einstieg für ABAP-Entwickler bleibt der <strong>C_AIG (SAP Certified Generative AI Developer)</strong>.</li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://news.sap.com/2026/05/certification-ai-era-knowledge-capability/">SAP News: Certification in the AI Era</a></li>
+                    <li><a href="https://learning.sap.com/get-certified/reimagining-certification">SAP Learning: Reimagining Certification in the Age of AI</a></li>
+                    <li><a href="https://community.sap.com/t5/sap-learning-blog-posts/sap-certification-update-practical-exams-roll-out-in-2026/ba-p/14317789">SAP Community: SAP Certification update &ndash; Practical exams roll out in 2026</a></li>
+                    <li><a href="https://zequance.ai/sap-generative-ai-developer-certification-c_aig-2026/">Zequance AI: SAP Generative AI Developer Certification (C_AIG 2026)</a></li>
+                </ul>
+            </div>
+
+            <h3>Neuer Lernpfad &bdquo;Autonomous Enterprise&ldquo; und NotebookLM im SAP Learning Hub <span class="tag neu">NEU</span></h3>
+            <ul>
+                <li>SAP Learning bietet jetzt einen dedizierten Lernpfad <strong>&bdquo;Autonomous Enterprise&ldquo;</strong>: <a href="https://learning.sap.com/autonomous-enterprise">learning.sap.com/autonomous-enterprise</a>. Themen: KI als Entscheidungsunterstützung, End-to-End-Workflow-Automatisierung und KI-gestärkte Teams. Geeignet für Business-Stakeholder, nicht nur Entwickler.</li>
+                <li>SAP Learning Hub integriert ausgewählte Funktionen von <strong>Google NotebookLM</strong>: SAP-Lerninhalte in über <strong>80 Sprachen</strong> per Chat abfragen &ndash; Lernen von passiver Konsumtion zu aktiver Interaktion. Deutschsprachige SAP-Materialien sind damit erstmals per KI-Tutor interaktiv nutzbar.</li>
+                <li>Praktischer Einstieg: Die Kursseite <a href="https://learning.sap.com/courses/discovering-sap-business-ai">&bdquo;Discovering SAP Business AI&ldquo;</a> auf SAP Learning gibt einen strukturierten Überblick über alle Business AI-Komponenten &ndash; guter Startpunkt für Teams, die gerade beginnen, KI in SAP-Projekte zu integrieren.</li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://learning.sap.com/autonomous-enterprise">SAP Learning: Autonomous Enterprise Lernpfad</a></li>
+                    <li><a href="https://learning.sap.com/artificial-intelligence">SAP Learning: Artificial Intelligence</a></li>
+                    <li><a href="https://k2university.com/news/sap-sapphire-2026-the-autonomous-enterprise-takes-shape/">K2 University: SAP Sapphire 2026 &ndash; The Autonomous Enterprise Takes Shape</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="video-events">
+            <div class="section-header red">
+                <span class="section-color-indicator"></span>
+                <h2>Video Resources &amp; Events</h2>
+            </div>
+
+            <h3>Sapphire Orlando Keynote-Videos jetzt vollständig on-demand <span class="tag neu">NEU</span></h3>
+            <ul>
+                <li><strong>Global Keynote &bdquo;The Beginning of Better&ldquo;</strong> (vollst. Aufzeichnung, YouTube): Die Hauptkeynote der Sapphire Orlando 2026 &ndash; Christian Klein stellt das Autonomous Enterprise und die SAP Business AI Platform vor. Ca. 90 Minuten, ideal für den vollständigen strategischen Kontext. &rarr; <a href="https://www.youtube.com/watch?v=9aa-etRsaLU">YouTube ansehen</a></li>
+                <li><strong>Keynote Highlights in 14 Minuten</strong>: Die wichtigsten Ankündigungen aus der Global Keynote (Joule neu gedacht, Domain Models, Autonomous Suite) komprimiert. Ideal als Einstieg oder zur internen Weitergabe. &rarr; <a href="https://www.youtube.com/watch?v=wU4FQd6Ps3Q">YouTube ansehen</a></li>
+                <li><strong>Customer Success Keynote: &bdquo;Connected to Win: From Moment to Momentum&ldquo;</strong>: Kundenperspektiven und Erfolgsgeschichten rund um AI-Adoption in der Praxis &ndash; konkrete Referenzbeispiele für Stakeholder-Kommunikation. &rarr; <a href="https://www.youtube.com/watch?v=WpDHkeHIezc">YouTube ansehen</a></li>
+                <li><strong>Post-Keynote Q&amp;A f&uuml;r Medien und Analysten</strong>: Christian Klein und das F&uuml;hrungsteam antworten auf kritische Fragen zu Produktreife, Pricing und Wettbewerb &ndash; besonders aufschlussreich f&uuml;r CIOs, die Stakeholder-Fragen intern beantworten m&uuml;ssen. &rarr; <a href="https://www.youtube.com/watch?v=VznH8IWsiuA">YouTube ansehen</a></li>
+                <li><strong>SAP Sapphire Virtual 2026</strong>: Alle Session-Aufzeichnungen aus Orlando und Madrid werden als On-Demand-Inhalte verf&uuml;gbar gemacht. Registrierung unter <a href="https://www.sap.com/events/sapphire/virtual.html">sap.com/events/sapphire/virtual</a>.</li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=9aa-etRsaLU">YouTube: Global Keynote SAP Sapphire Orlando 2026</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=wU4FQd6Ps3Q">YouTube: Global Keynote Highlights 14 Minuten</a></li>
+                    <li><a href="https://www.youtube.com/watch?v=VznH8IWsiuA">YouTube: SAP Sapphire 2026 Post-Keynote Q&amp;A</a></li>
+                    <li><a href="https://www.sap.com/events/sapphire/virtual.html">SAP Events: Sapphire Virtual 2026 &ndash; On-Demand</a></li>
+                </ul>
+            </div>
+
+            <h3>SAP Sapphire Madrid: Letzter Kongresstag (21. Mai 2026) <span class="tag event">EVENT</span></h3>
+            <ul>
+                <li>Die <strong>SAP Sapphire Madrid 2026</strong> (IFEMA Madrid) geht heute mit dem dritten und letzten Tag zu Ende. Show Floor bis 15:00 Uhr, Registrierung bis 13:00 Uhr. Madrid ist das EMEA-Pendant zu Orlando &ndash; Fokus auf AI- und datentransformationsgetriebene Gesch&auml;ftsprozesse f&uuml;r europ&auml;ische F&uuml;hrungskr&auml;fte.</li>
+                <li>Schwerpunkte: Partnersessions, Solution Demos, Experience Centers f&uuml;r Autonomous Finance und Autonomous Supply Chain, Breakout-Sessions zu Resilienz und KI-gest&uuml;tzter Entscheidungsfindung. Roger Federer sprach als Keynote-Gast &uuml;ber &bdquo;Exzellenz unter Druck&ldquo; &ndash; ein Signal an C-Level-Entscheider, die KI-Transformationsmandate intern durchsetzen m&uuml;ssen.</li>
+                <li>Alle Madrid-Session-Aufzeichnungen werden &uuml;ber <strong>SAP Sapphire Virtual</strong> on-demand zug&auml;nglich gemacht &ndash; auch f&uuml;r Teams, die nicht vor Ort sein konnten.</li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://www.sap.com/events/sapphire/madrid.html">SAP Events: SAP Sapphire Madrid in 2026</a></li>
+                    <li><a href="https://www.sap.com/events/sapphire/madrid/tracks.html">SAP Events: Sapphire Madrid &ndash; Tracks und Sessions</a></li>
+                    <li><a href="https://sapinsider.org/articles/sap-sapphire-2026-ai-agents-industry-workflows-cloud-migration/">SAPinsider: AI Agents, Industry Workflows und Cloud Migration</a></li>
+                </ul>
+            </div>
+
+            <h3>Kommende Termine</h3>
+            <table>
+                <tr>
+                    <th>Datum</th>
+                    <th>Event</th>
+                    <th>Format</th>
+                </tr>
+                <tr>
+                    <td>29. Mai 2026</td>
+                    <td>ADT f&uuml;r VS Code &ndash; Offizieller GA</td>
+                    <td>Software Release</td>
+                </tr>
+                <tr>
+                    <td>Juni 2026</td>
+                    <td>Joule for Developers als BTP-Service (Hub-Service-&Uuml;bergang)</td>
+                    <td>Lizenz-/Architektur-Change</td>
+                </tr>
+                <tr>
+                    <td>Juni 2026</td>
+                    <td>Cohere North im SAP EU AI Cloud verf&uuml;gbar</td>
+                    <td>Modell-GA</td>
+                </tr>
+                <tr>
+                    <td>Q2 2026</td>
+                    <td>ABAP Custom Code Transformation Agent &ndash; GA</td>
+                    <td>Agent-Release</td>
+                </tr>
+                <tr>
+                    <td>2. Aug. 2026</td>
+                    <td>EU AI Act: High-Risk-KI-Pflichten in Kraft</td>
+                    <td>Regulatorischer Termin</td>
+                </tr>
+                <tr>
+                    <td>Sept. 2026</td>
+                    <td>Joule for Developers ABAP &ndash; Ende kostenlose Promotion-Phase</td>
+                    <td>Kommerzieller Termin</td>
+                </tr>
+                <tr>
+                    <td>Ende 2026</td>
+                    <td>Joule Studio Design-Time-Zugang (kostenlos) &ndash; Ende</td>
+                    <td>Kommerzieller Termin</td>
+                </tr>
+            </table>
+        </section>
+
+        <div class="navigation">
+            <a href="index.html">&#8592; Zurück zur Übersicht</a>
+            <a href="2026-05-20.html">&#8592; Vorheriges Briefing (20. Mai)</a>
+        </div>
+    </main>
+
+    <aside class="toc">
+        <h3>Inhalt</h3>
+        <ul>
+            <li><a href="#abap-classic"><span class="toc-dot" style="background:#e67e22;"></span>ABAP Classic AI</a></li>
+            <li><a href="#sap-cloud"><span class="toc-dot" style="background:#3498db;"></span>SAP Cloud AI</a></li>
+            <li><a href="#community"><span class="toc-dot" style="background:#9b59b6;"></span>Community &amp; Social</a></li>
+            <li><a href="#learning"><span class="toc-dot" style="background:#27ae60;"></span>Learning &amp; Certs</a></li>
+            <li><a href="#video-events"><span class="toc-dot" style="background:#c0392b;"></span>Video &amp; Events</a></li>
+        </ul>
+    </aside>
+</div>
+
+<footer>
+    <p>Recherchezeitraum: 20.05.2026 &ndash; 21.05.2026 | <a href="index.html">SAP AI Daily</a> | Automatisch erstellt mit Claude | SAP AI Daily</p>
+</footer>
+
+<script>
+    document.querySelectorAll('.toc a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
