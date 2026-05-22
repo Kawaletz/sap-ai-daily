@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP AI Daily - 22.05.2026 Briefing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f8f9fa; color: #333; line-height: 1.7; }
+        header { background: #1a3a5c; color: white; padding: 40px 20px; border-bottom: 4px solid #e67e22; }
+        header h1 { font-size: 2.2em; margin-bottom: 5px; font-weight: 700; }
+        header .date { font-size: 1em; opacity: 0.85; margin-bottom: 15px; }
+        header .breadcrumb { margin-top: 15px; opacity: 0.9; }
+        header a { color: #fff; text-decoration: none; font-weight: 600; }
+        header a:hover { text-decoration: underline; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 1fr 250px; gap: 30px; }
+        main { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .toc { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 20px; height: fit-content; }
+        .toc h3 { font-size: 0.95em; font-weight: 700; text-transform: uppercase; color: #1a3a5c; margin-bottom: 15px; letter-spacing: 0.5px; }
+        .toc ul { list-style: none; }
+        .toc li { margin-bottom: 10px; font-size: 0.9em; padding-left: 0; }
+        .toc li:before { content: ""; display: none; }
+        .toc .toc-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+        .toc a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        .toc a:hover { color: #1a5a8c; padding-left: 5px; }
+        section { margin-bottom: 50px; }
+        .section-header { display: flex; align-items: center; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid; }
+        .section-header.orange { border-color: #e67e22; }
+        .section-header.blue { border-color: #3498db; }
+        .section-header.purple { border-color: #9b59b6; }
+        .section-header.green { border-color: #27ae60; }
+        .section-header.red { border-color: #c0392b; }
+        .section-header h2 { font-size: 1.8em; margin: 0; font-weight: 700; color: #1a3a5c; }
+        .section-color-indicator { width: 12px; height: 12px; border-radius: 50%; margin-right: 15px; flex-shrink: 0; }
+        .section-header.orange .section-color-indicator { background: #e67e22; }
+        .section-header.blue .section-color-indicator { background: #3498db; }
+        .section-header.purple .section-color-indicator { background: #9b59b6; }
+        .section-header.green .section-color-indicator { background: #27ae60; }
+        .section-header.red .section-color-indicator { background: #c0392b; }
+        h3 { font-size: 1.35em; margin-top: 25px; margin-bottom: 15px; color: #1a3a5c; font-weight: 700; }
+        h3:first-child { margin-top: 0; }
+        ul { list-style: none; margin-bottom: 20px; }
+        li { margin-bottom: 12px; padding-left: 25px; position: relative; line-height: 1.8; }
+        li:before { content: "\2022"; position: absolute; left: 0; color: #e67e22; font-weight: 700; font-size: 1.2em; }
+        strong { font-weight: 700; color: #1a3a5c; }
+        a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        a:hover { color: #1a5a8c; text-decoration: underline; }
+        .sources { font-size: 0.85em; color: #888; margin-top: 8px; padding-left: 0; }
+        .sources li { padding-left: 0; margin-bottom: 5px; }
+        .sources li:before { content: ""; display: none; }
+        .sources a { color: #888; text-decoration: underline; }
+        .sources a:hover { color: #2980b9; }
+        .tag { display: inline-block; padding: 0.15rem 0.5rem; border-radius: 4px; font-size: 0.65rem; font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 0.3rem; vertical-align: middle; }
+        .tag.neu { background: #e8f8f5; color: #1abc9c; border: 1px solid #1abc9c; }
+        .tag.update { background: #fef5e7; color: #e67e22; border: 1px solid #e67e22; }
+        .tag.event { background: #f5eef8; color: #9b59b6; border: 1px solid #9b59b6; }
+        .tag.tipp { background: #eaf2fb; color: #2980b9; border: 1px solid #2980b9; }
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden; }
+        th { background: #1a3a5c; color: white; padding: 15px; text-align: left; font-weight: 700; font-size: 0.95em; }
+        td { padding: 12px 15px; border-bottom: 1px solid #e0e0e0; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: #f5f5f5; }
+        footer { background: #2c3e50; color: white; text-align: center; padding: 25px 20px; margin-top: 60px; font-size: 0.9em; }
+        footer a { color: #e67e22; font-weight: 600; }
+        footer a:hover { text-decoration: underline; }
+        .navigation { display: flex; justify-content: space-between; align-items: center; margin: 30px 0 0 0; padding-top: 20px; border-top: 1px solid #e0e0e0; flex-wrap: wrap; gap: 15px; }
+        .navigation a { display: inline-block; padding: 10px 20px; background: #2980b9; color: white; text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s ease; }
+        .navigation a:hover { background: #1a5a8c; text-decoration: none; }
+        .publication-info { background: #f0f4f8; border-radius: 4px; padding: 15px; margin-bottom: 20px; font-size: 0.9em; color: #666; }
+        @media (max-width: 1024px) { .container { grid-template-columns: 1fr; } .toc { position: relative; top: 0; margin-bottom: 30px; display: none; } }
+        @media (max-width: 768px) { header h1 { font-size: 1.6em; } main { padding: 25px; } .section-header h2 { font-size: 1.4em; } h3 { font-size: 1.15em; } table { font-size: 0.9em; } th, td { padding: 10px; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div class="breadcrumb"><a href="index.html">&#8592; Zur&uuml;ck zur &Uuml;bersicht</a></div>
+        <h1>SAP AI Daily Briefing</h1>
+        <div class="date">22. Mai 2026</div>
+        <div style="font-size: 0.95em; opacity: 0.9; margin-top: 8px;">Vibe-Coding-Welle in ABAP, UI5-Plugins f&uuml;r Claude, Joule Q1-Features im Detail &amp; SAP Business AI f&uuml;r Finanzwesen.</div>
+    </div>
+</header>
+
+<div class="container">
+    <main>
+        <div class="publication-info">
+            Erstellt am 22.05.2026 &middot; Recherchezeitraum: 21.05.2026 &ndash; 22.05.2026 &middot; Schwerpunkte: UI5-Plugins f&uuml;r Claude (SAPUI5/OpenUI5), Vibe-Coding-ABAP-Community-Welle (MCP-Server, Google Antigravity, CAP+Claude Desktop), Joule Q1 2026 vier neue Features (Datei-Upload, Google Drive, Thread-Suche), SAP Business AI f&uuml;r Finanzwesen (Dispute-Resolution-Agent, E-Invoicing-Erkl&auml;rungen), Hannover-Messe-KI-Use-Cases im Detail, YouTube-Tipps &amp; Code-Connect-Event
+        </div>
+
+        <section id="abap-classic">
+            <div class="section-header orange">
+                <span class="section-color-indicator"></span>
+                <h2>ABAP Classic AI</h2>
+            </div>
+
+            <h3>UI5-Plugins f&uuml;r Claude: KI-gest&uuml;tzte Entwicklung f&uuml;r SAPUI5 und OpenUI5 <span class="tag neu">NEU</span></h3>
+            <ul>
+                <li>SAP hat offiziell <strong>UI5 Plugins f&uuml;r Claude</strong> ver&ouml;ffentlicht &ndash; eine Open-Source-Sammlung von Plugins, die Claude Code mit tiefen Kenntnissen des SAPUI5- und OpenUI5-&Ouml;kosystems ausstattet. Das Plugin ist ein Wrapper um den <strong>UI5 MCP Server</strong> und transformiert KI-Agenten in Framework-Experten mit Zugang zu aktueller API-Dokumentation, Linting-Regeln und Project-Context.</li>
+                <li><strong>Drei Kernf&auml;higkeiten:</strong> (1) <em>Project-Scaffolding</em> &ndash; vollst&auml;ndige Projektstruktur nach Best Practices ohne manuelles Setup; (2) <em>Fehlerdiagnose &amp; Auto-Fix</em> &ndash; Claude versteht UI5-Linting-Regeln und korrigiert gem&auml;&szlig; offiziellen Guidelines; (3) <em>API-Dokumentation live</em> &ndash; akkurate, Framework-bewusste Antworten zu Controls, Modules, Events und APIs statt generischer JavaScript-Vorschl&auml;ge.</li>
+                <li>Technisch basiert das Plugin auf dem offiziell von SAP gepflegten Repository <strong>github.com/UI5/plugins-claude</strong>. Es ist auch als <strong>Claude Plugin</strong> direkt unter claude.com/plugins/ui5 abrufbar &ndash; das erste offiziell von SAP publizierte Plugin im Anthropic-&Ouml;kosystem.</li>
+                <li>Community-Anbindung l&auml;uft &uuml;ber den <strong>#ai-Kanal im OpenUI5 Community Slack</strong> und den Stack-Overflow-Tag <code>ui5-plugins-for-coding-agents</code>. F&uuml;r Fiori-Element-Projekte ist das Plugin aktuell die sauberste Methode, Claude ohne manuelle Kontext-F&uuml;tterung UI5-kompetent zu machen.</li>
+            </ul>
+            <div class="sources">
+                <ul>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/introducing-ui5-plugins-for-claude-ai-powered-development-for-sapui5-and/ba-p/14362731" target="_blank">SAP Community: Introducing UI5 Plugins for Claude &ndash; AI-Powered Development for SAPUI5 and OpenUI5</a></li>
+                    <li><a href="https://github.com/UI5/plugins-claude" target="_blank">GitHub: UI5/plugins-claude &ndash; SAPUI5 / OpenUI5 plugin for Claude</a></li>
+                    <li><a href="https://claude.com/plugins/ui5" target="_blank">Anthropic Claude Plugin Hub: ui5</a></li>
+                </ul>
+            </div>
+
+            <h3>Vibe-Coding-Welle in ABAP: Drei neue Community-Beitr&auml;ge im &Uuml;berblick <span class="tag neu">NEU</span></h3>
+            <ul>
+                <li><strong>&bdquo;Installing and extending an ABAP MCP Server by vibe-coding with Claude Code and Google Antigravity&ldquo;</strong> (SAP Community): Schritt-f&uuml;r-Schritt-Anleitung, wie ein bestehender ABAP MCP Server mit Claude Code und dem neuen <strong>Google Antigravity IDE</strong> per Vibe-Coding erweitert wird &ndash; ohne tiefes technisches Vorwissen. Antigravity Agents klonen Repos, installieren MCP-Server und aktualisieren Konfigurationen automatisch.</li>
+                <li><strong>&bdquo;Building an AI Agent for SAP Maintenance using MCP, CAP and Claude Desktop&ldquo;</strong> (SAP Community Technology Blog): Praxisbericht zum Aufbau eines vollst&auml;ndigen Wartungsagenten f&uuml;r SAP-Systeme mit CAP (Cloud Application Programming Model), einem MCP-Server und Claude Desktop &ndash; inkl. Tool-Beschreibungen, HANA-Datenbankanbindung und Routing-Logik. Lehrbuchm&auml;&szlig;ig als Einstieg f&uuml;r eigene Agentic-ABAP-Workflows.</li>
+                <li><strong>&bdquo;Claude Code via MCP: Poor man&apos;s Joule, or a practical tool?&ldquo;</strong> (SAP Community): Ehrlicher Vergleich zwischen der offiziellen Joule-for-Developers-L&ouml;sung und einem selbst aufgesetzten Claude-Code-MCP-Setup. Fazit: F&uuml;r Teams ohne Enterprise-AI-Units ist der MCP-Weg heute schon produktionsreif und eine ernsthafte Alternative zu J4D.</li>
+                <li>Wer den &Uuml;berblick behalten will: <a href="https://abapeur.fr/en/vibe-coding-in-abap-whats-new/" target="_blank">Vibe Coding in ABAP, what&apos;s new?</a> (abapeur.fr) fasst die gesamte Community-Aktivit&auml;t der vergangenen Wochen kompakt zusammen.</li>
+            </ul>
+            <div class="sources">
+                <ul>
+                    <li><a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/installing-and-extending-an-abap-mcp-server-by-vibe-coding-with-claude-code/ba-p/14343600" target="_blank">SAP Community: Installing and extending an ABAP MCP Server by vibe-coding with Claude Code and Google Antigravity</a></li>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-members/building-an-ai-agent-for-sap-maintenance-using-mcp-cap-and-claude-desktop/ba-p/14383338" target="_blank">SAP Community: Building an AI Agent for SAP Maintenance using MCP, CAP and Claude Desktop</a></li>
+                    <li><a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/claude-code-via-mcp-poor-man-s-joule-or-a-practical-tool/ba-p/14344261" target="_blank">SAP Community: Claude Code via MCP &ndash; Poor man&apos;s Joule, or a practical tool?</a></li>
+                    <li><a href="https://abapeur.fr/en/vibe-coding-in-abap-whats-new/" target="_blank">Abapeur.fr: Vibe Coding in ABAP, what&apos;s new?</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="sap-cloud">
+            <div class="section-header blue">
+                <span class="section-color-indicator"></span>
+                <h2>SAP Cloud AI</h2>
+            </div>
+
+            <h3>Joule Q1 2026: Vier neue Features im Detail &ndash; Datei-Upload, Google Drive &amp; Thread-Suche <span class="tag update">UPDATE</span></h3>
+            <ul>
+                <li><strong>Feature 1 &ndash; Datei-Upload bis 10 Dateien:</strong> Endnutzer k&ouml;nnen jetzt bis zu zehn Dateien (PDF, TXT) direkt im Joule-Eingabefeld hochladen und w&auml;hrend des gesamten Dialogs darauf referenzieren (max. 100 Seiten pro Dokument). Spezifikationen, Testpl&auml;ne, Vertr&auml;ge oder Funktionsdesigns k&ouml;nnen direkt in die Konversation eingebracht werden &ndash; Joule generiert kontextbewusste Antworten, die im gesamten Gespr&auml;ch auf diesen Dokumenten verankert bleiben.</li>
+                <li><strong>Feature 2 &ndash; Google Drive Integration:</strong> Joules Document-Grounding-Funktion unterst&uuml;tzt jetzt <strong>nahtlose Google Drive Integration</strong>. F&uuml;r Kunden, die Design-Docs, Architekturentscheidungen oder Projektlieferungen in Google Workspace ablegen, k&ouml;nnen diese Repositories jetzt als Wissensgrundlage f&uuml;r Joule dienen &ndash; ohne manuelle Datei&uuml;bertragungen.</li>
+                <li><strong>Feature 3 &ndash; Thread-&uuml;bergreifende Suche:</strong> Endnutzer k&ouml;nnen jetzt <strong>alle vergangenen Joule-Konversationen durchsuchen</strong>, ohne einzelne Historien manuell zu &ouml;ffnen. Zusammen mit optimierten Startzeiten eine deutliche Alltagsverbesserung f&uuml;r intensiv genutzte Joule-Implementierungen.</li>
+                <li><strong>Feature 4 &ndash; Skalierter Dokument-Ingestion:</strong> Die Pipeline unterst&uuml;tzt jetzt bis zu <strong>8.000 Dokumente pro Pipeline</strong> &ndash; relevant f&uuml;r gro&szlig;e RISE-Kunden, die gesamte Wissensbasen oder regulatorische Dokumentationen als Joule-Grounding nutzen wollen.</li>
+            </ul>
+            <div class="sources">
+                <ul>
+                    <li><a href="https://erp.today/saps-q1-2026-release-four-new-sap-joule-features-erp-leaders-need-to-know/" target="_blank">erp.today: SAP&rsquo;s Q1 2026 Release &ndash; Four New SAP Joule Features ERP Leaders Need to Know</a></li>
+                    <li><a href="https://sapinsider.org/blogs/sap-joule-q1-2026-four-new-features-sap-teams-can-use-today/" target="_blank">SAPinsider: SAP Q1 2026 Release &ndash; Four New Joule Features SAP Teams Can Use Today</a></li>
+                    <li><a href="https://news.sap.com/germany/2026/05/highlights-des-q1-2026-release-joule/" target="_blank">SAP News (DE): Highlights des Q1 2026 Release &ndash; Joule</a></li>
+                </ul>
+            </div>
+
+            <h3>SAP Business AI f&uuml;r Finanzwesen Q1 2026: Dispute-Resolution-Agent &amp; E-Invoicing in Klartext <span class="tag neu">NEU</span></h3>
+            <ul>
+                <li><strong>Dispute Resolution Agent (Beta):</strong> Der neue Agent automatisiert die Ursachenanalyse bei Rechnungsstreitigkeiten. Er scannt Rechnungen, Kundenauftr&auml;ge, Lieferbelege, Preisvereinbarungen und Steuerregeln, identifiziert die Quelle von Abweichungen, erkennt fehlerhafte Buchungen und empfiehlt konforme L&ouml;sungen &ndash; z.&nbsp;B. automatische Gutschriftenerstellung. Die <strong>Bearbeitung von Zahlungshinweisen</strong> reduziert die Dokumentenverarbeitungszeit erheblich.</li>
+                <li><strong>E-Invoicing-Fehler in Klartextsprache:</strong> Joule &uuml;bersetzt komplexe E-Invoicing-Fehlermeldungen jetzt in verst&auml;ndliche Alltagssprache &ndash; Buchhaltungsteams m&uuml;ssen keine technischen Fehlercodes mehr interpretieren. Besonders relevant f&uuml;r Regionen mit Mandatory-E-Invoicing-Anforderungen (Deutschland, S&uuml;deuropa, Lateinamerika).</li>
+                <li><strong>PDF-zu-Sales-Order:</strong> Unstrukturierte Daten wie PDFs k&ouml;nnen jetzt automatisch in Kundenauftr&auml;ge umgewandelt werden. Zus&auml;tzlich erhalten Buchhalter Erkl&auml;rungen in nat&uuml;rlicher Sprache f&uuml;r komplexe Anlageverm&ouml;gen-Berechnungen.</li>
+                <li>Erg&auml;nzend hat SAP die deutschen <strong>&bdquo;Highlights des Q1 2026 Release: SAP Business AI f&uuml;r das Ausgabenmanagement&ldquo;</strong> ver&ouml;ffentlicht &ndash; mit KI-gest&uuml;tzten Funktionen f&uuml;r Source-to-Pay-Prozesse, Lieferantenrisiko-Monitoring und automatisierte Bestelloptimierung.</li>
+            </ul>
+            <div class="sources">
+                <ul>
+                    <li><a href="https://news.sap.com/germany/2026/05/highlights-des-q1-2026-release-sap-business-ai-fuer-das-finanzwesen/" target="_blank">SAP News (DE): Highlights des Q1 2026 Release &ndash; SAP Business AI f&uuml;r das Finanzwesen</a></li>
+                    <li><a href="https://news.sap.com/germany/2026/05/highlights-des-q1-2026-release-sap-business-ai-fuer-das-ausgabenmanagement/" target="_blank">SAP News (DE): Highlights des Q1 2026 Release &ndash; SAP Business AI f&uuml;r das Ausgabenmanagement</a></li>
+                    <li><a href="https://it-onlinemagazin.de/sap-business-ai-im-finanzwesen-vom-automatisieren-zum-gamechanger/" target="_blank">IT-Onlinemagazin: SAP Business AI im Finanzwesen &ndash; Vom Automatisieren zum Gamechanger?</a></li>
+                </ul>
+            </div>
+
+            <h3>Hannover Messe 2026: Vier KI-Use-Cases f&uuml;r Operations im Detail <span class="tag tipp">TIPP</span></h3>
+            <ul>
+                <li>erp.today hat die vier konkreten KI-Use-Cases von SAP auf der Hannover Messe 2026 (April) detailliert aufgeschl&uuml;sselt &ndash; als praktischere Erg&auml;nzung zu den offiziellen SAP-Pressemitteilungen:</li>
+                <li><strong>Production Planning &amp; Operations Agent:</strong> Planer geben Fertigungsauftr&auml;ge per nat&uuml;rlicher Sprache frei; der Agent validiert automatisch Materialverf&uuml;gbarkeit, Kapazit&auml;ten und Terminplanung &ndash; mit Empfehlungen f&uuml;r Alternativkomponenten oder Umplanungen. <em>GA geplant: Q2 2026.</em></li>
+                <li><strong>Field Service Dispatcher Agent:</strong> Verbessert Service-Reaktionsf&auml;higkeit durch automatische Technikerverteilung nach Skills, Standort, Anlagenzustand und Priorit&auml;t. <em>GA geplant: Q2 2026.</em></li>
+                <li><strong>Alert Processing Agent:</strong> Reichert Betriebswarnungen mit historischen Vorf&auml;llen, L&ouml;sungen und Kontextsignalen an &ndash; empfiehlt datenbasierte Massnahmen. <em>GA geplant: Q3 2026.</em></li>
+                <li><strong>Outbound Task Orchestration Agent:</strong> Sch&uuml;tzt Kundenzufriedenheit durch Echtzeit-Erkennung und Behebung von Kommissionierungs- und Verpackungsproblemen in Lagern. <em>GA geplant: Q2 2026.</em></li>
+            </ul>
+            <div class="sources">
+                <ul>
+                    <li><a href="https://erp.today/four-ai-use-cases-sap-unveiled-at-hannover-messe-for-embedded-intelligence-in-operations/" target="_blank">erp.today: Four AI Use Cases SAP Unveiled at Hannover Messe for Embedded Intelligence in Operations</a></li>
+                    <li><a href="https://erp.today/sap-at-hannover-messe-2026-new-ai-agents-push-erp-execution-closer-to-the-edge-of-operations/" target="_blank">erp.today: SAP at Hannover Messe 2026 &ndash; New AI Agents Push ERP Execution Closer to the Edge of Operations</a></li>
+                    <li><a href="https://news.sap.com/2026/04/sap-at-hannover-messe-2026-agentic-ai-resilient-manufacturing/" target="_blank">SAP News: SAP at Hannover Messe 2026 &ndash; Agentic AI for Resilient Manufacturing</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="community">
+            <div class="section-header purple">
+                <span class="section-color-indicator"></span>
+                <h2>Community &amp; Social Media</h2>
+            </div>
+
+            <h3>SAP Community Blog: &bdquo;Unlocking Next-Level Innovation with SAP Business AI Platform&ldquo; <span class="tag neu">NEU</span></h3>
+            <ul>
+                <li>SAP hat einen umfassenden Community-Blog-Post ver&ouml;ffentlicht, der die <strong>SAP Business AI Platform</strong> als technische Grundlage des Autonomous Enterprise erkl&auml;rt &ndash; mit besonderem Fokus auf die Integration von SAP BTP, SAP Business Data Cloud und SAP Business AI zu einem einheitlichen Governance-Rahmen f&uuml;r KI-Agenten.</li>
+                <li><strong>Kernaussage:</strong> Die Plattform l&ouml;st die bisherige Fragmentierung zwischen BTP-Stack, AI Core und Data Cloud. Entwickler bauen, testen und deployen Agenten in einem einheitlichen Environment &ndash; ohne zwischen mehreren Konsolen zu wechseln.</li>
+                <li>F&uuml;r ABAP-Teams: Der Artikel erkl&auml;rt, wie ABAP Cloud Development direkt in die Business AI Platform eingebunden wird &ndash; mit Joule for Developers als Produktivit&auml;tsschicht und Joule Studio als Deployment-Layer f&uuml;r Custom Agents. Gute Basis f&uuml;r interne Stakeholder-Kommunikation.</li>
+            </ul>
+            <div class="sources">
+                <ul>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-sapphire-2026-unlocking-next-level-innovation-to-ai-with-sap-business/ba-p/14390712" target="_blank">SAP Community: SAP Sapphire 2026 &ndash; Unlocking Next-Level Innovation to AI with SAP Business AI Platform</a></li>
+                </ul>
+            </div>
+
+            <h3>Joule Studio 2.0 im Kreuzfeuer: SAVIC-Analyse vs. Webpronews-Kritik <span class="tag tipp">TIPP</span></h3>
+            <ul>
+                <li>SAVIC Technologies hat eine detaillierte Analyse des <strong>Joule Studio 2.0 Managed Agent Builder</strong> ver&ouml;ffentlicht: Business-Analysten und Line-of-Business-Process-Owner k&ouml;nnen damit ohne BTP-Konfiguration oder AI-Core-Provisioning produktionsreife Joule-KI-Agenten bauen, testen und deployen.</li>
+                <li>Kritische Gegenstimme: <strong>Webpronews</strong> hat unter dem Titel <em>&bdquo;SAP Admits Joule Studio Flop, Rushes 2.0 Overhaul with Pro-Code Power and Agent Governance&ldquo;</em> festgehalten, dass Joule Studio 1.0 in der Praxis kaum genutzt wurde. SAP nimmt mit Version 2.0 eine klare Korrektur vor: mehr Pro-Code-Power, bessere Governance, vereinfachtes Onboarding.</li>
+                <li>Einordnung: Die Kombination aus managed Infrastructure (null Setup) und dem <strong>kostenlosen Design-Time-Zugang bis Ende 2026</strong> d&uuml;rfte die Adoption erheblich beschleunigen. Der Webpronews-Artikel ist n&uuml;tzlich, um Kunden-Bedenken gegen&uuml;ber der Produktreife proaktiv zu adressieren.</li>
+            </ul>
+            <div class="sources">
+                <ul>
+                    <li><a href="https://www.savictech.com/insights/sap-joule-studio-2-managed-agent-builder-citizen-developer-2026/" target="_blank">SAVIC Technologies: SAP Joule Studio 2.0 Managed Agent Builder 2026 &ndash; No-Code AI for Enterprises</a></li>
+                    <li><a href="https://www.webpronews.com/sap-admits-joule-studio-flop-rushes-2-0-overhaul-with-pro-code-power-and-agent-governance-at-sapphire-2026/" target="_blank">Webpronews: SAP Admits Joule Studio Flop, Rushes 2.0 Overhaul</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="learning">
+            <div class="section-header green">
+                <span class="section-color-indicator"></span>
+                <h2>Learning &amp; Zertifizierungen</h2>
+            </div>
+
+            <h3>Neues SAP-Zertifizierungsmodell 2026 im Detail: Was Kandidaten wissen m&uuml;ssen <span class="tag update">UPDATE</span></h3>
+            <ul>
+                <li>Ascendient Learning hat einen strukturierten Guide ver&ouml;ffentlicht: <strong>&bdquo;Understanding the New SAP Certification Model: What You Need to Know in 2026&ldquo;</strong>. Alle Pr&uuml;fungen wurden bis Ende M&auml;rz 2026 vollst&auml;ndig auf praktische, systembasierte Assessments umgestellt &ndash; <em>KI-Tools sind ausdr&uuml;cklich erlaubt</em>.</li>
+                <li><strong>Wichtige Pr&uuml;fungszeit-Information:</strong> Das SAP-Portal zeigt ein 24-Stunden-Fenster &ndash; die tats&auml;chliche effektive Pr&uuml;fungszeit betr&auml;gt aber nur <strong>2 Stunden</strong>. Kandidaten sollten sich nicht durch das breitere Zeitfenster in falscher Sicherheit wiegen.</li>
+                <li><strong>C_AIG (SAP Certified Generative AI Developer)</strong> bleibt der prim&auml;re Einstieg f&uuml;r ABAP-Entwickler. Die Pr&uuml;fung deckt SAP Joule, Generative AI Hub und Joule Studio 2.0 mit praktischen Aufgaben in einer AI-Core-Sandbox ab. Credly-Badges weiterhin als Nachweis.</li>
+                <li>In der Pipeline: <strong>Advanced AI Architect Certifications</strong> (Q2 2026) sowie AI-Ethics-&amp;-Governance-Spezialisierungen und industrie-spezifische KI-Zertifizierungen f&uuml;r Manufacturing, Finance und Retail.</li>
+            </ul>
+            <div class="sources">
+                <ul>
+                    <li><a href="https://www.ascendientlearning.com/blog/new-sap-certification-2026" target="_blank">Ascendient Learning: Understanding the New SAP Certification Model &ndash; What You Need to Know in 2026</a></li>
+                    <li><a href="https://theexamquestions.com/blog/sap-ai-machine-learning-certifications-guide" target="_blank">TheExamQuestions: AI and Machine Learning &ndash; New SAP Certifications in 2026</a></li>
+                    <li><a href="https://learning.sap.com/certifications/sap-certified-associate-sap-generative-ai-developer" target="_blank">SAP Learning: SAP Certified &ndash; SAP Generative AI Developer (C_AIG)</a></li>
+                </ul>
+            </div>
+
+            <h3>SAP AI Masterclass: Drittanbieter-Kurse zur C_AIG-Vorbereitung im &Uuml;berblick <span class="tag tipp">TIPP</span></h3>
+            <ul>
+                <li>F&uuml;r Teams ohne SAP-Learning-Hub-Zugang bietet der <strong>SAP AI Masterclass auf Udemy</strong> (SAP Generative AI, Joule, AI Core &amp; BTP) einen strukturierten Einstieg &ndash; aktuell auf den C_AIG-Pr&uuml;fungsinhalt 2026 ausgerichtet und von der Community empfohlen.</li>
+                <li><strong>Zequance AI</strong> bietet einen dedizierten SAP AI Masterclass mit Live-Sessions zur C_AIG-Zertifizierung an &ndash; inkl. Certification-Overview-Sessions zu Pr&uuml;fungsformat, Vorbereitung und Zugang zu Praxis-Systemen. Besonders n&uuml;tzlich f&uuml;r Kandidaten, die das neue Performance-Based-Format noch nicht kennen.</li>
+                <li>Kostenlose Alternative: <strong>IGM Guru</strong> bietet grundlegende SAP AI Trainingskurse online an &ndash; als Einstieg f&uuml;r Einsteiger ohne Vorkenntnisse.</li>
+            </ul>
+            <div class="sources">
+                <ul>
+                    <li><a href="https://www.udemy.com/course/sap-ai-masterclass/" target="_blank">Udemy: SAP AI Masterclass &ndash; SAP Generative AI, Joule, AI Core &amp; BTP</a></li>
+                    <li><a href="https://zequance.ai/sap-ai-training/" target="_blank">Zequance AI: SAP AI Masterclass &amp; Certification Training</a></li>
+                    <li><a href="https://learning.sap.com/artificial-intelligence" target="_blank">SAP Learning: Artificial Intelligence</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="videos">
+            <div class="section-header red">
+                <span class="section-color-indicator"></span>
+                <h2>Video Resources &amp; Events</h2>
+            </div>
+
+            <h3>YouTube-Tipps: ABAP mit Generative AI &amp; KI in SAP ABAP <span class="tag tipp">TIPP</span></h3>
+            <ul>
+                <li><strong>&bdquo;Next Level ABAP with Generative AI&ldquo;</strong> (YouTube, SAP Developers): Praktische Demo, wie Generative AI ABAP-Entwicklung auf das n&auml;chste Level hebt &ndash; von Code-Generierung &uuml;ber Unit-Test-Automatisierung bis hin zu Dokumentations-KI. Empfehlenswert als Einstiegsvideo f&uuml;r ABAP-Kolleg:innen, die noch skeptisch gegen&uuml;ber dem konkreten Mehrwert von KI in ihrer t&auml;glichen Arbeit sind. &rarr; <a href="https://www.youtube.com/watch?v=juPLIubS-ec" target="_blank">YouTube ansehen</a></li>
+                <li><strong>&bdquo;AI in SAP ABAP&ldquo;</strong> (YouTube): Kompakter &Uuml;berblick &uuml;ber den aktuellen Stand von KI-Integration in der ABAP-Entwicklung &ndash; n&uuml;tzlich als internes Awareness-Video f&uuml;r IT-Leitungen oder Entscheider, die den Status quo verstehen wollen, bevor sie Budget f&uuml;r Joule-Piloten genehmigen. &rarr; <a href="https://m.youtube.com/watch?v=hRJmoZch2To" target="_blank">YouTube ansehen</a></li>
+                <li>Der offizielle <strong>SAP Developers YouTube-Kanal</strong> bleibt die wichtigste Anlaufstelle f&uuml;r aktuelle Tutorials zu BTP, AI, ABAP, CAP und Integration. Abonnement empfohlen f&uuml;r kontinuierliches Up-to-Date-Bleiben. &rarr; <a href="https://www.youtube.com/channel/UCNfmelKDrvRmjYwSi9yvrMg" target="_blank">Kanal aufrufen</a></li>
+            </ul>
+            <div class="sources">
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=juPLIubS-ec" target="_blank">YouTube: Next Level ABAP with Generative AI</a></li>
+                    <li><a href="https://m.youtube.com/watch?v=hRJmoZch2To" target="_blank">YouTube: AI in SAP ABAP</a></li>
+                    <li><a href="https://www.youtube.com/channel/UCNfmelKDrvRmjYwSi9yvrMg" target="_blank">YouTube: SAP Developers (offizieller Kanal)</a></li>
+                </ul>
+            </div>
+
+            <h3>Kommende Termine</h3>
+            <table>
+                <tr>
+                    <th>Datum</th>
+                    <th>Event</th>
+                    <th>Format</th>
+                </tr>
+                <tr>
+                    <td>23. Juni 2026</td>
+                    <td>SAP CodeJam Joule Studio &ndash; Hyderabad, Indien (erstes KI-fokussiertes CodeJam Indien)</td>
+                    <td>Pr&auml;senz</td>
+                </tr>
+                <tr>
+                    <td>14.&ndash;16. Juli 2026</td>
+                    <td><a href="https://code-connect.dev/" target="_blank">Code Connect Conferences</a> &ndash; Entwicklerkonferenz mit SAP-AI-Track</td>
+                    <td>Hybrid</td>
+                </tr>
+                <tr>
+                    <td>Q3 2026</td>
+                    <td>Joule Studio 2.0 General Availability (inkl. n8n-Integration)</td>
+                    <td>Online / Release</td>
+                </tr>
+                <tr>
+                    <td>Q3 2026</td>
+                    <td>Logistics Assistant &amp; Asset and Service Assistant GA</td>
+                    <td>Online / Release</td>
+                </tr>
+                <tr>
+                    <td>2. Aug. 2026</td>
+                    <td>EU AI Act: High-Risk-KI-Pflichten greifen vollst&auml;ndig &ndash; Compliance-Deadline f&uuml;r SAP-KI-Deployments in Produktion</td>
+                    <td>Regulatorisch</td>
+                </tr>
+            </table>
+        </section>
+
+        <div class="navigation">
+            <a href="index.html">&#8592; Zur&uuml;ck zur &Uuml;bersicht</a>
+            <a href="2026-05-21.html">&#8592; Vorheriges Briefing (21. Mai)</a>
+        </div>
+    </main>
+
+    <aside class="toc">
+        <h3>Inhalt</h3>
+        <ul>
+            <li><span class="toc-dot" style="background: #e67e22;"></span><a href="#abap-classic">ABAP Classic AI</a></li>
+            <li><span class="toc-dot" style="background: #3498db;"></span><a href="#sap-cloud">SAP Cloud AI</a></li>
+            <li><span class="toc-dot" style="background: #9b59b6;"></span><a href="#community">Community &amp; Social Media</a></li>
+            <li><span class="toc-dot" style="background: #27ae60;"></span><a href="#learning">Learning &amp; Zertifizierungen</a></li>
+            <li><span class="toc-dot" style="background: #c0392b;"></span><a href="#videos">Video Resources &amp; Events</a></li>
+        </ul>
+    </aside>
+</div>
+
+<footer>
+    <p>Recherchezeitraum: 21.05.2026 &ndash; 22.05.2026 | <a href="index.html">SAP AI Daily</a> | Automatisch erstellt mit Claude | SAP AI Daily</p>
+</footer>
+
+<script>
+    document.querySelectorAll('.toc a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
