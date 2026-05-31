@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP AI Daily - 31.05.2026 Briefing</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f8f9fa; color: #333; line-height: 1.7; }
+        header { background: #1a3a5c; color: white; padding: 40px 20px; border-bottom: 4px solid #e67e22; }
+        header h1 { font-size: 2.2em; margin-bottom: 5px; font-weight: 700; }
+        header .date { font-size: 1em; opacity: 0.85; margin-bottom: 15px; }
+        header .breadcrumb { margin-top: 15px; opacity: 0.9; }
+        header a { color: #fff; text-decoration: none; font-weight: 600; }
+        header a:hover { text-decoration: underline; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 1fr 250px; gap: 30px; }
+        main { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .toc { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 20px; height: fit-content; }
+        .toc h3 { font-size: 0.95em; font-weight: 700; text-transform: uppercase; color: #1a3a5c; margin-bottom: 15px; letter-spacing: 0.5px; }
+        .toc ul { list-style: none; }
+        .toc li { margin-bottom: 10px; font-size: 0.9em; padding-left: 0; }
+        .toc li:before { content: ""; display: none; }
+        .toc .toc-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+        .toc a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        .toc a:hover { color: #1a5a8c; padding-left: 5px; }
+        section { margin-bottom: 50px; }
+        .section-header { display: flex; align-items: center; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid; }
+        .section-header.orange { border-color: #e67e22; }
+        .section-header.blue { border-color: #3498db; }
+        .section-header.purple { border-color: #9b59b6; }
+        .section-header.green { border-color: #27ae60; }
+        .section-header.red { border-color: #c0392b; }
+        .section-header h2 { font-size: 1.8em; margin: 0; font-weight: 700; color: #1a3a5c; }
+        .section-color-indicator { width: 12px; height: 12px; border-radius: 50%; margin-right: 15px; flex-shrink: 0; }
+        .section-header.orange .section-color-indicator { background: #e67e22; }
+        .section-header.blue .section-color-indicator { background: #3498db; }
+        .section-header.purple .section-color-indicator { background: #9b59b6; }
+        .section-header.green .section-color-indicator { background: #27ae60; }
+        .section-header.red .section-color-indicator { background: #c0392b; }
+        h3 { font-size: 1.35em; margin-top: 25px; margin-bottom: 15px; color: #1a3a5c; font-weight: 700; }
+        h3:first-child { margin-top: 0; }
+        ul { list-style: none; margin-bottom: 20px; }
+        li { margin-bottom: 12px; padding-left: 25px; position: relative; line-height: 1.8; }
+        li:before { content: "&#x2022;"; position: absolute; left: 0; color: #e67e22; font-weight: 700; font-size: 1.2em; }
+        strong { font-weight: 700; color: #1a3a5c; }
+        a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        a:hover { color: #1a5a8c; text-decoration: underline; }
+        .sources { font-size: 0.85em; color: #888; margin-top: 8px; padding-left: 0; }
+        .sources li { padding-left: 0; margin-bottom: 5px; }
+        .sources li:before { content: ""; display: none; }
+        .sources a { color: #888; text-decoration: underline; }
+        .sources a:hover { color: #2980b9; }
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden; }
+        th { background: #1a3a5c; color: white; padding: 15px; text-align: left; font-weight: 700; font-size: 0.95em; }
+        td { padding: 12px 15px; border-bottom: 1px solid #e0e0e0; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: #f5f5f5; }
+        footer { background: #2c3e50; color: white; text-align: center; padding: 25px 20px; margin-top: 60px; font-size: 0.9em; }
+        footer a { color: #e67e22; font-weight: 600; }
+        .navigation { display: flex; justify-content: space-between; align-items: center; margin: 30px 0 0 0; padding-top: 20px; border-top: 1px solid #e0e0e0; flex-wrap: wrap; gap: 15px; }
+        .navigation a { display: inline-block; padding: 10px 20px; background: #2980b9; color: white; text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s ease; }
+        .navigation a:hover { background: #1a5a8c; text-decoration: none; }
+        .publication-info { background: #f0f4f8; border-radius: 4px; padding: 15px; margin-bottom: 20px; font-size: 0.9em; color: #666; }
+        .tag { display: inline-block; font-size: 0.72em; font-weight: 700; padding: 2px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 6px; vertical-align: middle; color: white; }
+        .tag.neu { background: #1abc9c; }
+        .tag.update { background: #e67e22; }
+        .tag.event { background: #9b59b6; }
+        .tag.tipp { background: #2980b9; }
+        @media (max-width: 1024px) { .container { grid-template-columns: 1fr; } .toc { display: none; } }
+        @media (max-width: 768px) { header h1 { font-size: 1.6em; } main { padding: 25px; } .section-header h2 { font-size: 1.4em; } h3 { font-size: 1.15em; } table { font-size: 0.9em; } th, td { padding: 10px; } }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="breadcrumb"><a href="index.html">&larr; Zur&uuml;ck zur &Uuml;bersicht</a></div>
+        <h1>SAP AI Daily Briefing</h1>
+        <div class="date">31. Mai 2026</div>
+    </header>
+    <div class="container">
+        <main>
+            <div class="publication-info">
+                <strong>Dieses Briefing wurde am 31.05.2026 automatisch erstellt.</strong><br>
+                Recherchezeitraum: 28.05.2026 &ndash; 31.05.2026
+            </div>
+
+            <section id="abap">
+                <div class="section-header orange">
+                    <span class="section-color-indicator"></span>
+                    <h2>ABAP Classic AI</h2>
+                </div>
+
+                <h3>ABAP betritt die Agentic Era: Offizielles SAP-Statement <span class="tag neu">NEU</span></h3>
+                <ul>
+                    <li><strong>SAP Community: &bdquo;Entering the New Era of Agentic AI for ABAP Development&ldquo;</strong> &ndash; Dieser neue offizielle SAP-Blog fasst zusammen, was die Sapphire-Ank&uuml;ndigungen konkret bedeuten: Der ABAP MCP Server wird in Q2 2026 allgemein verf&uuml;gbar (GA) &ndash; offen f&uuml;r beliebige Agenten-Assistenten, Orchestratoren und LLMs. Die ABAP Development Tools-Erweiterung f&uuml;r VS Code erreicht ebenfalls GA in Q2 2026.</li>
+                    <li><strong>Technisches Fundament:</strong> Der ABAP MCP Server baut auf dem ABAP Language Server auf und implementiert das Model Context Protocol &ndash; Cursor, Claude Code, Cline und weitere MCP-kompatible IDEs k&ouml;nnen ABAP-Objekte lesen, erstellen, testen und aktivieren.</li>
+                    <li><strong>Erster ABAP Agent &ndash; Mass S/4 Custom Code Conversion:</strong> Der erste auf diesem Fundament aufbauende Agent identifiziert ATC-Findings bei Custom Code f&uuml;r ECC&rarr;S/4HANA-Migrationen und korrigiert sie im gro&szlig;en Ma&szlig;stab &ndash; mit deterministischen Regeln oder KI-generierten Fixes. SAP zielt auf eine <strong>40% Effizienzsteigerung</strong> bei Custom-Code-Transformation ab.</li>
+                    <li><strong>Sonja Li&eacute;nard im SAP News Interview:</strong> Die SVP und Head of ABAP Platform sagt: &bdquo;Agentic AI wird den Markt grundlegend ver&auml;ndern &ndash; nicht nur erg&auml;nzen.&ldquo; Besonders in der Transformation von Legacy-Applikationen und Custom Extensions auf Cloud-L&ouml;sungen entstehe enormer Mehrwert.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/entering-the-new-era-of-agentic-ai-for-abap-development/ba-p/14394643" target="_blank">SAP Community: Entering the New Era of Agentic AI for ABAP Development</a></li>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/custom-code-migration-to-sap-s-4hana-powered-by-sap-joule-for-developers/ba-p/14329094" target="_blank">SAP Community: Custom Code Migration powered by SAP Joule for Developers</a></li>
+                        <li><a href="https://news.sap.com/2026/05/agentic-ai-will-change-the-market/" target="_blank">SAP News: Interview mit Sonja Li&eacute;nard &ndash; Agentic AI Will Change the Market</a></li>
+                    </ul>
+                </div>
+
+                <h3>Kritische Analyse: &bdquo;SAP hat zwei MCPs &ndash; eines kann man nicht nutzen, eines sollte man nicht&ldquo; <span class="tag tipp">TIPP</span></h3>
+                <ul>
+                    <li><strong>Mario de Felipe auf Medium (Mai 2026):</strong> SAP setzt MCP an zwei sehr unterschiedlichen Stellen ein. MCP 1: Der <em>Integration Suite MCP Gateway</em> (GA Q2 2026) exponiert ausgew&auml;hlte APIs als gehostete MCP-Server &ndash; im Grunde ein weiteres Protokoll neben REST und OData. MCP 2: SAP nutzt intern MCP mit Joule, um auf den SAP Knowledge Graph, Ontologien und Business-Semantiken zuzugreifen &ndash; dieser interne MCP ist f&uuml;r externe Entwickler nicht erreichbar.</li>
+                    <li><strong>Kernkritik:</strong> SAP sollte semantische Modelle, Datenprodukte und analytische Modelle &uuml;ber die MCP-Architektur freigeben, statt nur technische API-Endpunkte. Die &bdquo;Harness Engineering&ldquo;-Chance werde damit verpasst. Pflichtlekt&uuml;re f&uuml;r alle, die MCP-basierte Agenten f&uuml;r SAP bauen &ndash; erkl&auml;rt, warum der Integration Suite MCP Gateway strukturell begrenzt ist.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://medium.com/@mario.defelipe/sap-has-two-mcps-one-you-cant-use-one-you-shouldn-t-445ce6e409b9" target="_blank">Medium (Mario de Felipe): SAP has two MCPs. One you can't use, one you shouldn't.</a></li>
+                    </ul>
+                </div>
+
+                <h3>Claude Code + SAP GUI Scripting: KI-Agent f&uuml;r beliebige SAP-Transaktionen <span class="tag neu">NEU</span></h3>
+                <ul>
+                    <li><strong>Offizieller SAP Community-Beitrag:</strong> &bdquo;Claude Code + Python + SAP GUI Scripting: Your AI Agent for Any SAP Transaction&ldquo; &ndash; Claude Code wird mit Python und dem SAP GUI Scripting Framework kombiniert, um KI-Agenten zu bauen, die beliebige SAP-Transaktionen automatisieren &ndash; ohne MCP-Server, ohne API-Zugang, vollst&auml;ndig modellunabh&auml;ngig.</li>
+                    <li><strong>Besonderheit:</strong> Claude Code steuert SAP &uuml;ber den Windows-Scripting-Layer, analog zu einem menschlichen Anwender. Keine Systemmodifikation, kein SAP-Customizing erforderlich. Ideal f&uuml;r On-Premise-Systeme ohne ADT- oder BTP-Zugang.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/claude-code-python-sap-gui-scripting-your-ai-agent-for-any-sap-transaction/ba-p/14327865" target="_blank">SAP Community: Claude Code + Python + SAP GUI Scripting</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="cloud">
+                <div class="section-header blue">
+                    <span class="section-color-indicator"></span>
+                    <h2>SAP Cloud AI</h2>
+                </div>
+
+                <h3>Joule Work Mobile App: Jetzt verf&uuml;gbar <span class="tag neu">NEU</span></h3>
+                <ul>
+                    <li><strong>SAP Community Blog: &bdquo;Joule Work mobile app is here!&ldquo;</strong> &ndash; Die Joule-Work-App ist die erste mobilf&auml;hige Auspr&auml;gung der neuen Joule-Work-Oberfl&auml;che, die traditionelle SAP-App-Navigation durch einen KI-gesteuerten Konversations-Workspace ersetzt. Statt Fiori-Kacheln und Transaktionen beschreiben Nutzer, was sie erreichen wollen.</li>
+                    <li><strong>Zwei Kernelemente:</strong> (1) <em>Conversations</em> &ndash; KI-Chats mit rollenbasierten Intents und dynamischen Antworttypen. (2) <em>Spaces</em> &ndash; konfigurierbare Dashboards f&uuml;r wiederkehrende Aufgaben. Joule orchestriert im Hintergrund Agenten, Workflows und Daten.</li>
+                    <li><strong>Nahtloses SSO:</strong> Ein zus&auml;tzlicher Community-Blog erkl&auml;rt &bdquo;Seamless Mobile-to-Web Single Sign-On&ldquo; &ndash; Nutzer wechseln direkt aus der mobilen App in Web-SAP-Transaktionen ohne erneute Authentifizierung.</li>
+                    <li><strong>Roadmap:</strong> LiveKit-Voice-Integration ist &uuml;ber Early Adopter Care verf&uuml;gbar (GA H2 2026). Desktop-App und bidirektionale Agent-to-Agent-Kommunikation folgen in Q4 2026.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/joule-work-mobile-app-is-here/ba-p/14394355" target="_blank">SAP Community: Joule Work mobile app is here!</a></li>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/seamless-mobile-to-web-single-sign-on-with-the-joule-work-mobile-app/ba-p/14403817" target="_blank">SAP Community: Seamless Mobile-to-Web SSO mit Joule Work App</a></li>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-ux-update-the-new-joule-work-engagement-layer-experiences/ba-p/14396478" target="_blank">SAP Community: SAP UX Update &ndash; The New Joule Work Engagement Layer</a></li>
+                    </ul>
+                </div>
+
+                <h3>SAP investiert in n8n: Bewertung verdoppelt auf 5,2 Mrd. EUR &ndash; in Joule Studio eingebettet <span class="tag neu">NEU</span></h3>
+                <ul>
+                    <li><strong>Strategisches Investment:</strong> SAP hat am 12. Mai 2026 (Opening Day SAP Sapphire Orlando) eine strategische Beteiligung an <strong>n8n</strong> bekannt gegeben &ndash; Bewertung: <strong>5,2 Milliarden Euro</strong>, mehr als das Doppelte der Vorbewertung. n8n ist eine deutsche Open-Source-Plattform f&uuml;r KI-Workflow-Automatisierung mit &uuml;ber 1.000 Integrationen.</li>
+                    <li><strong>Integration in Joule Studio bis Q3 2026:</strong> Im Rahmen einer mehrj&auml;hrigen kommerziellen Vereinbarung wird n8n nativ in Joule Studio eingebettet. Entwickler erhalten damit einen visuellen Canvas zur Orchestrierung von Multi-Agenten-Workflows direkt im Joule-Studio-Environment.</li>
+                    <li><strong>Praktische Bedeutung:</strong> Visuelle Prozesskonfiguration statt reiner API-Programmierung, nahtloser Zugang zu n8ns &uuml;ber 1.000 Konnektoren (inkl. SAP-Systeme) und ein Governance-Layer, der alle Agent-Aktionen auditierbar macht. n8n: &bdquo;AI right into the process flows they are designed to support.&ldquo;</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://thenextweb.com/news/n8n-sap-joule-studio-workflow-automation" target="_blank">The Next Web: n8n embedded in SAP Joule Studio as AI orchestration layer</a></li>
+                        <li><a href="https://blog.n8n.io/n8n-partners-with-sap-to-bring-visual-ai-workflow-orchestration-to-enterprise/" target="_blank">n8n Blog: n8n Partners with SAP to bring Visual AI Workflow Orchestration</a></li>
+                        <li><a href="https://news.sap.com/2026/05/new-joule-studio-enterprise-scale-agentic-development/" target="_blank">SAP News: Announcing New Joule Studio for Enterprise Scale Agentic Development</a></li>
+                        <li><a href="https://www.savictech.com/insights/sap-build-process-automation-n8n-joule-studio-agentic-workflow-2026/" target="_blank">SAVIC: SAP Invests in n8n &ndash; AI Workflow Automation Inside Joule Studio 2026</a></li>
+                    </ul>
+                </div>
+
+                <h3>SAP AI Agent Hub: GA Q3 2026 &ndash; Governance-Zentrale f&uuml;r alle Agenten <span class="tag update">UPDATE</span></h3>
+                <ul>
+                    <li><strong>SAP AI Agent Hub</strong> (basierend auf SAP LeanIX) wird in <strong>Q3 2026</strong> allgemein verf&uuml;gbar. Er bietet eine einheitliche Konsole zum Entdecken, Verifizieren, Beobachten und Optimieren aller Agenten: SAP-ausgelieferte, Custom-Agenten aus Joule Studio und Drittanbieter-Agenten in verbundenen Systemen.</li>
+                    <li><strong>Erste Joule-Studio-Produktionskunden:</strong> Das Onboarding der ersten Produktionskunden f&uuml;r Joule Studio 2.0 startet im <strong>Juni 2026</strong>. Der Managed-Joule-Studio-Service ist aktuell per Early Adopter Care erreichbar, GA ebenfalls Q3 2026.</li>
+                    <li><strong>EU AI Act-Relevanz:</strong> Der Agent Hub adressiert direkt die Anforderungen zur Nachvollziehbarkeit von KI-Agenten-Aktionen (High-Risk-KI-Pflichten ab 2. August 2026) &ndash; Audit-Trails und Human-Oversight sind integrierte Bestandteile.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://ignitesap.com/sap-ai-agent-hub-and-agent-governance/" target="_blank">IgniteSAP: SAP AI Agent Hub and Agent Governance</a></li>
+                        <li><a href="https://erp.today/sap-business-ai-platform-consolidates-sap-btp-stack-to-solve-enterprise-ai-fragmentation/" target="_blank">erp.today: SAP Business AI Platform Consolidates SAP BTP Stack</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="community">
+                <div class="section-header purple">
+                    <span class="section-color-indicator"></span>
+                    <h2>Community &amp; Social Media</h2>
+                </div>
+
+                <h3>&bdquo;Joule Everywhere&ldquo; &ndash; Community-Breakdown der Sapphire-Ank&uuml;ndigungen <span class="tag neu">NEU</span></h3>
+                <ul>
+                    <li><strong>Detaillierteste Community-Analyse der Sapphire-2026-KI-Ank&uuml;ndigungen:</strong> &bdquo;Joule Everywhere: Breaking Down SAP&rsquo;s Biggest AI Announcements from Sapphire 2026&ldquo; (SAP Community Members Blog, diese Woche) destilliert aus der Pressemitteilungsflut die konkret umsetzbaren Informationen f&uuml;r Entwickler und Berater.</li>
+                    <li><strong>Joule-Portfolio in drei Schichten erkl&auml;rt:</strong> <em>Joule Base</em> (Produktivit&auml;t f&uuml;r jeden SAP-Nutzer), <em>Joule Agents + Studio</em> (Automatisierung ganzer Workflows), <em>Developer &amp; Consultant Products</em> (Beschleunigung der Implementierung). Diese Einteilung ist greifbarer als die offizielle SAP-Marketingsprache.</li>
+                    <li><strong>Joule Work als Paradigmenwechsel:</strong> Statt Fiori-Kacheln und Transaktionen beschreiben Nutzer ihre Ziele &ndash; Joule orchestriert Agenten, Workflows und Daten. Das gesamte SAP-App-Navigationsprinzip wandelt sich damit fundamental.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-members/joule-everywhere-breaking-down-sap-s-biggest-ai-announcements-from-sapphire/ba-p/14404234" target="_blank">SAP Community: Joule Everywhere &ndash; Breaking Down SAP&rsquo;s Biggest AI Announcements from Sapphire 2026</a></li>
+                    </ul>
+                </div>
+
+                <h3>Praxisguide: Claude AI mit SAP Datasphere verbinden via MCP <span class="tag tipp">TIPP</span></h3>
+                <ul>
+                    <li><strong>SAP Community Technology Blog:</strong> &bdquo;Connect Claude AI to SAP Datasphere Using MCP: An Implementation Guide&ldquo; &ndash; erkl&auml;rt, wie ein Python-basierter MCP-Server (FastMCP) zwischen Claude und der SAP Datasphere REST/OData API vermittelt. Drei-Schichten-Architektur: Claude &harr; MCP-Server (Python) &harr; SAP Datasphere APIs.</li>
+                    <li><strong>Aktuelle Einschr&auml;nkung:</strong> Read-only-Betrieb; Write-Back, Modell-Deployment und Space-Konfiguration&auml;nderungen noch nicht unterst&uuml;tzt. Nur Objekte mit &ldquo;Allow Consumption&rdquo;-Flag sind zug&auml;nglich.</li>
+                    <li><strong>Erg&auml;nzung von Mario de Felipe:</strong> Sein SAP-Datasphere-Plugin f&uuml;r Claude Cowork bietet 18 spezialisierte Skills, 35 Referenzdateien und &uuml;ber 33.000 Zeilen Expertenwissen zu Datasphere-Workflows &ndash; auf Medium und GitHub verf&uuml;gbar.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://community.sap.com/t5/technology-blog-posts-by-members/connect-claude-ai-to-sap-datasphere-using-mcp-an-implementation-guide/ba-p/14387720" target="_blank">SAP Community: Connect Claude AI to SAP Datasphere Using MCP</a></li>
+                        <li><a href="https://medium.com/@mario.defelipe/sap-datasphere-plugin-for-claude-cowork-release-blog-336106442ec5" target="_blank">Medium: SAP Datasphere Plugin for Claude Cowork &ndash; Release Blog</a></li>
+                        <li><a href="https://github.com/MarioDeFelipe/sap-datasphere-plugin-for-claude-cowork" target="_blank">GitHub: MarioDeFelipe/sap-datasphere-plugin-for-claude-cowork</a></li>
+                    </ul>
+                </div>
+
+                <h3>ABAPConf 2026 angek&uuml;ndigt: 23. Juni online &amp; in Mannheim <span class="tag event">EVENT</span></h3>
+                <ul>
+                    <li><strong>ABAPConf 2026</strong> findet am <strong>23. Juni 2026</strong> statt &ndash; zum f&uuml;nften Jubil&auml;um als kostenlose Online-Konferenz mit Community-Speakern. Zus&auml;tzlich gibt es eine In-Person-Location in <strong>Mannheim</strong>. Registrierung via Eventbrite.</li>
+                    <li><strong>Erwartete Themen:</strong> ABAP MCP Server in der Praxis, VS-Code-ADT-Erfahrungsberichte, Agentic AI f&uuml;r ABAP-Entwickler, Custom Code Migration Agents. Format garantiert praxisnahen Content jenseits von SAP-Marketing.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://www.eventbrite.de/e/abapconf-2026-online-edition-registration-1984112755663" target="_blank">Eventbrite: ABAPConf 2026 Online Edition &ndash; 23. Juni 2026</a></li>
+                        <li><a href="https://www.eventbrite.de/e/abapconf-2026-mannheim-tickets-1986300441089" target="_blank">Eventbrite: ABAPConf 2026 Mannheim &ndash; 23. Juni 2026</a></li>
+                        <li><a href="https://abapconf.org/" target="_blank">ABAPConf offizielle Website</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="learning">
+                <div class="section-header green">
+                    <span class="section-color-indicator"></span>
+                    <h2>Learning &amp; Zertifizierungen</h2>
+                </div>
+
+                <h3>Interview: Sonja Li&eacute;nard &uuml;ber die Zukunft von ABAP und Agentic AI <span class="tag tipp">TIPP</span></h3>
+                <ul>
+                    <li><strong>SAP News Center:</strong> Interview &bdquo;Agentic AI Will Change the Market&ldquo; mit der SVP und Head of ABAP Platform. Kernbotschaft: Wer die Gesch&auml;ftslogik und den ABAP-Stack versteht, ist besser positioniert als je zuvor &ndash; denn genau dieses Wissen erm&ouml;glicht es, Agenten korrekt zu konfigurieren, testen und validieren.</li>
+                    <li><strong>Konkrete Lernempfehlung:</strong> Li&eacute;nard empfiehlt ABAP-Entwicklern, mit der kostenlosen Testumgebung f&uuml;r Joule for Developers (ABAP Cloud Trial) zu starten und erste Erfahrungen mit dem ABAP MCP Server zu sammeln, bevor die GA-Version produktiv eingesetzt wird.</li>
+                    <li><strong>Podcast-Erweiterung:</strong> YouTube-Podcast-Interview <em>&bdquo;#54 The Future of ABAP &ndash; Sonja Li&eacute;nard zu Gast&ldquo;</em> vertieft die Themen des SAP News-Artikels mit Einblicken in die Entwicklungsstrategie des ABAP-Plattform-Teams.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://news.sap.com/2026/05/agentic-ai-will-change-the-market/" target="_blank">SAP News: Interview Sonja Li&eacute;nard &ndash; Agentic AI Will Change the Market</a></li>
+                        <li><a href="https://www.youtube.com/watch?v=u-ml3eUHlcc" target="_blank">YouTube: #54 The Future of ABAP &ndash; Sonja Li&eacute;nard zu Gast</a></li>
+                    </ul>
+                </div>
+
+                <h3>VNSG ABAP Cloud Developer Day &ndash; 18. Juni 2026 <span class="tag event">EVENT</span></h3>
+                <ul>
+                    <li><strong>VNSG</strong> veranstaltet am <strong>18. Juni 2026</strong> einen ABAP Cloud Developer Day &ndash; organisiert von der Custom Development Focus Group, stattfindend bei Ctac (Niederlande). Schwerpunkte: ABAP Cloud, RAP und aktuelle KI-Integrationen.</li>
+                    <li>Relevant f&uuml;r ABAP-Entwickler in der Benelux-Region, und als Indikator f&uuml;r das gestiegene Community-Interesse an ABAP-Cloud-Themen im DACH-Raum.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://vnsg.nl/VNSGCloud/VNSGCloud/Events/Event/Event_Display.aspx?EventKey=180620263" target="_blank">VNSG: ABAP Cloud Developer Day &ndash; 18. Juni 2026</a></li>
+                    </ul>
+                </div>
+            </section>
+
+            <section id="videos">
+                <div class="section-header red">
+                    <span class="section-color-indicator"></span>
+                    <h2>Video Resources &amp; Events</h2>
+                </div>
+
+                <h3>Podcast-Empfehlung: &bdquo;The Future of ABAP&ldquo; mit Sonja Li&eacute;nard <span class="tag tipp">TIPP</span></h3>
+                <ul>
+                    <li><strong>YouTube: #54 The Future of ABAP &ndash; Sonja Li&eacute;nard zu Gast</strong> &ndash; Eines der informativsten ABAP-AI-Interviews des Jahres. Li&eacute;nard gibt Einblicke in strategische Entscheidungen hinter MCP Server, VS Code Support und der agentic Roadmap &ndash; inkl. ehrlicher Einsch&auml;tzung, welche Szenarien 2026 realistisch sind und welche f&uuml;r 2027+ geplant sind. Pflichtanschauung f&uuml;r ABAP-Entwickler und Architekten.</li>
+                </ul>
+                <div class="sources">
+                    <strong>Quellen:</strong>
+                    <ul>
+                        <li><a href="https://www.youtube.com/watch?v=u-ml3eUHlcc" target="_blank">YouTube: #54 The Future of ABAP &ndash; Sonja Li&eacute;nard zu Gast</a></li>
+                    </ul>
+                </div>
+
+                <h3>Upcoming Events: Juni 2026 &ndash; Dichter Kalender f&uuml;r ABAP-Entwickler <span class="tag event">EVENT</span></h3>
+                <ul>
+                    <li><strong>ABAPConf 2026</strong> &ndash; 23. Juni 2026 (Online + In-Person Mannheim): F&uuml;nftes Jubil&auml;um, kostenlos, Community-Speaker. Registrierung via Eventbrite.</li>
+                    <li><strong>VNSG ABAP Cloud Developer Day</strong> &ndash; 18. Juni 2026 (Ctac, Niederlande): Fokus ABAP Cloud &amp; RAP.</li>
+                    <li><strong>SAP TechEd Berlin 2026</strong> &ndash; 27.&ndash;29. Oktober 2026: Gr&ouml;&szlig;tes ABAP-AI- und Joule-Studio-Hands-on-Event des Jahres. Registrierung voraussichtlich im Sommer.</li>
+                </ul>
+
+                <h3>Terminkalender: KI-relevante Deadlines &amp; Events</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Datum</th>
+                            <th>Event / Milestone</th>
+                            <th>Format</th>
+                            <th>Link</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Juni 2026</td>
+                            <td>Joule Studio 2.0: Erste Produktionskunden</td>
+                            <td>Cloud / EAC</td>
+                            <td><a href="https://news.sap.com/2026/05/new-joule-studio-enterprise-scale-agentic-development/">SAP News</a></td>
+                        </tr>
+                        <tr>
+                            <td>Q2 2026 (bis Ende Juni)</td>
+                            <td>ADT f&uuml;r VS Code &amp; ABAP MCP Server: GA</td>
+                            <td>Online / Download</td>
+                            <td><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/entering-the-new-era-of-agentic-ai-for-abap-development/ba-p/14394643">SAP Community</a></td>
+                        </tr>
+                        <tr>
+                            <td>18. Juni 2026</td>
+                            <td>VNSG ABAP Cloud Developer Day (Niederlande)</td>
+                            <td>In-Person</td>
+                            <td><a href="https://vnsg.nl/VNSGCloud/VNSGCloud/Events/Event/Event_Display.aspx?EventKey=180620263">vnsg.nl</a></td>
+                        </tr>
+                        <tr>
+                            <td>23. Juni 2026</td>
+                            <td>ABAPConf 2026 (Online + Mannheim)</td>
+                            <td>Online &amp; In-Person</td>
+                            <td><a href="https://abapconf.org/">abapconf.org</a></td>
+                        </tr>
+                        <tr>
+                            <td>September 2026</td>
+                            <td>Ende kostenlose Joule-for-Developers-Testphase</td>
+                            <td>Milestone / Lizenz</td>
+                            <td><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/our-2026-roadmap-for-joule-for-developers-abap-ai-capabilities/ba-p/14360358">SAP Roadmap</a></td>
+                        </tr>
+                        <tr>
+                            <td>Q3 2026</td>
+                            <td>SAP AI Agent Hub GA + n8n in Joule Studio</td>
+                            <td>Cloud / Release</td>
+                            <td><a href="https://ignitesap.com/sap-ai-agent-hub-and-agent-governance/">IgniteSAP</a></td>
+                        </tr>
+                        <tr>
+                            <td>2. August 2026</td>
+                            <td>EU AI Act: High-Risk-KI-Pflichten greifen vollst&auml;ndig</td>
+                            <td>Regulatorisch</td>
+                            <td>&ndash;</td>
+                        </tr>
+                        <tr>
+                            <td>27.&ndash;29. Oktober 2026</td>
+                            <td>SAP TechEd Berlin 2026</td>
+                            <td>In-Person &amp; Virtual</td>
+                            <td><a href="https://www.sap.com/teched">sap.com/teched</a></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
+
+            <div class="navigation">
+                <a href="index.html">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
+                <a href="2026-05-27.html">&larr; Vorheriges Briefing (27.05.2026)</a>
+            </div>
+        </main>
+
+        <aside class="toc">
+            <h3>Inhalt</h3>
+            <ul>
+                <li><span class="toc-dot" style="background:#e67e22;"></span><a href="#abap">ABAP Classic AI</a></li>
+                <li><span class="toc-dot" style="background:#3498db;"></span><a href="#cloud">SAP Cloud AI</a></li>
+                <li><span class="toc-dot" style="background:#9b59b6;"></span><a href="#community">Community &amp; Social</a></li>
+                <li><span class="toc-dot" style="background:#27ae60;"></span><a href="#learning">Learning &amp; Zertifizierungen</a></li>
+                <li><span class="toc-dot" style="background:#c0392b;"></span><a href="#videos">Video Resources &amp; Events</a></li>
+            </ul>
+        </aside>
+    </div>
+
+    <footer>
+        Recherchezeitraum: 28.05.2026 &ndash; 31.05.2026 &middot;
+        <a href="index.html">SAP AI Daily</a> &middot;
+        Automatisch erstellt mit Claude | SAP AI Daily
+    </footer>
+
+    <script>
+        document.querySelectorAll('.toc a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) { target.scrollIntoView({ behavior: 'smooth', block: 'start' }); }
+            });
+        });
+    </script>
+</body>
+</html>
