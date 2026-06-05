@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP AI Daily - 05.06.2026 Briefing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f8f9fa; color: #333; line-height: 1.7; }
+        header { background: #1a3a5c; color: white; padding: 40px 20px; border-bottom: 4px solid #e67e22; }
+        header h1 { font-size: 2.2em; margin-bottom: 5px; font-weight: 700; }
+        header .date { font-size: 1em; opacity: 0.85; margin-bottom: 15px; }
+        header .breadcrumb { margin-top: 15px; opacity: 0.9; }
+        header a { color: #fff; text-decoration: none; font-weight: 600; }
+        header a:hover { text-decoration: underline; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 1fr 250px; gap: 30px; }
+        main { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .toc { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 20px; height: fit-content; }
+        .toc h3 { font-size: 0.95em; font-weight: 700; text-transform: uppercase; color: #1a3a5c; margin-bottom: 15px; letter-spacing: 0.5px; }
+        .toc ul { list-style: none; }
+        .toc li { margin-bottom: 10px; font-size: 0.9em; padding-left: 0; }
+        .toc li:before { content: ""; display: none; }
+        .toc .toc-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+        .toc a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        .toc a:hover { color: #1a5a8c; padding-left: 5px; }
+        section { margin-bottom: 50px; }
+        .section-header { display: flex; align-items: center; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid; }
+        .section-header.orange { border-color: #e67e22; }
+        .section-header.blue { border-color: #3498db; }
+        .section-header.purple { border-color: #9b59b6; }
+        .section-header.green { border-color: #27ae60; }
+        .section-header.red { border-color: #c0392b; }
+        .section-header h2 { font-size: 1.8em; margin: 0; font-weight: 700; color: #1a3a5c; }
+        .section-color-indicator { width: 12px; height: 12px; border-radius: 50%; margin-right: 15px; flex-shrink: 0; }
+        .section-header.orange .section-color-indicator { background: #e67e22; }
+        .section-header.blue .section-color-indicator { background: #3498db; }
+        .section-header.purple .section-color-indicator { background: #9b59b6; }
+        .section-header.green .section-color-indicator { background: #27ae60; }
+        .section-header.red .section-color-indicator { background: #c0392b; }
+        h3 { font-size: 1.35em; margin-top: 25px; margin-bottom: 15px; color: #1a3a5c; font-weight: 700; }
+        h3:first-child { margin-top: 0; }
+        ul { list-style: none; margin-bottom: 20px; }
+        li { margin-bottom: 12px; padding-left: 25px; position: relative; line-height: 1.8; }
+        li:before { content: "\2022"; position: absolute; left: 0; color: #e67e22; font-weight: 700; font-size: 1.2em; }
+        strong { font-weight: 700; color: #1a3a5c; }
+        a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        a:hover { color: #1a5a8c; text-decoration: underline; }
+        .sources { font-size: 0.85em; color: #888; margin-top: 8px; padding-left: 0; }
+        .sources li { padding-left: 0; margin-bottom: 5px; }
+        .sources li:before { content: ""; display: none; }
+        .sources a { color: #888; text-decoration: underline; }
+        .sources a:hover { color: #2980b9; }
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden; }
+        th { background: #1a3a5c; color: white; padding: 15px; text-align: left; font-weight: 700; font-size: 0.95em; }
+        td { padding: 12px 15px; border-bottom: 1px solid #e0e0e0; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: #f5f5f5; }
+        footer { background: #2c3e50; color: white; text-align: center; padding: 25px 20px; margin-top: 60px; font-size: 0.9em; }
+        footer a { color: #e67e22; font-weight: 600; }
+        .navigation { display: flex; justify-content: space-between; align-items: center; margin: 30px 0 0 0; padding-top: 20px; border-top: 1px solid #e0e0e0; flex-wrap: wrap; gap: 15px; }
+        .navigation a { display: inline-block; padding: 10px 20px; background: #2980b9; color: white; text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s ease; }
+        .navigation a:hover { background: #1a5a8c; text-decoration: none; }
+        .publication-info { background: #f0f4f8; border-radius: 4px; padding: 15px; margin-bottom: 20px; font-size: 0.9em; color: #666; }
+        .tag { display: inline-block; font-size: 0.72em; font-weight: 700; padding: 2px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 6px; vertical-align: middle; color: white; }
+        .tag.neu { background: #1abc9c; }
+        .tag.update { background: #e67e22; }
+        .tag.event { background: #9b59b6; }
+        .tag.tipp { background: #2980b9; }
+        @media (max-width: 1024px) { .container { grid-template-columns: 1fr; } .toc { display: none; } }
+        @media (max-width: 768px) { header h1 { font-size: 1.6em; } main { padding: 25px; } .section-header h2 { font-size: 1.4em; } h3 { font-size: 1.15em; } table { font-size: 0.9em; } th, td { padding: 10px; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div class="breadcrumb"><a href="index.html">&larr; SAP AI Daily</a> &rsaquo; Briefing 05. Juni 2026</div>
+        <h1>SAP AI Daily Briefing</h1>
+        <div class="date">5. Juni 2026 &mdash; Freitag</div>
+    </div>
+</header>
+
+<div class="container">
+    <main>
+        <div class="publication-info">
+            Dieses Briefing wurde am 05.06.2026 automatisch erstellt. Recherchezeitraum: 01.06.2026 &ndash; 05.06.2026
+        </div>
+
+        <section id="abap-classic">
+            <div class="section-header orange">
+                <span class="section-color-indicator"></span>
+                <h2>ABAP Classic AI</h2>
+            </div>
+
+            <h3>ADT f&uuml;r VS Code ist jetzt live im VS Code Marketplace</h3>
+            <ul>
+                <li>
+                    <span class="tag neu">NEU</span>
+                    <strong>Offizieller SAP-Blog: &bdquo;ABAP Development Tools for Visual Studio Code is now available on the VS Code Marketplace!&ldquo;</strong> &ndash;
+                    Nach Jahren der Ank&uuml;ndigung ist es offiziell: Die SAP-Extension <em>SAPSE.adt-vscode</em> ist jetzt im VS Code Marketplace verf&uuml;gbar &ndash; kostenlos, direkt aus dem Editor installierbar.
+                </li>
+                <li>
+                    <strong>Erstversion-Fokus auf RAP UI-Entwicklung:</strong> Der initiale GA-Scope deckt Full-Stack-Entwicklung f&uuml;r das ABAP RESTful Application Programming Model (RAP) und ABAP Cloud ab. Frontend und Backend einer SAP Fiori/SAPUI5-App k&ouml;nnen jetzt im gleichen Tool entwickelt werden &ndash; ohne Eclipse-Wechsel.
+                </li>
+                <li>
+                    <strong>ABAP MCP Server als integrierter Bestandteil:</strong> Die Extension liefert eine erste Version des ADT MCP Servers mit &ndash; das erm&ouml;glicht es Coding-Agenten wie GitHub Copilot und Amazon Q, ABAP-Objekte direkt zu lesen, zu erstellen und zu aktivieren. Der MCP Server macht die Extension zum Dreh- und Angelpunkt f&uuml;r agentic ABAP-Entwicklung.
+                </li>
+                <li>
+                    <strong>Komplement&auml;rer FAQ-Blog:</strong> SAP hat parallel einen Q&amp;A-Artikel ver&ouml;ffentlicht, der die h&auml;ufigsten Fragen beantwortet: Welche Backends werden unterst&uuml;tzt? Was passiert mit Eclipse? Wann kommen weitere Object Types? Pflichtlekt&uuml;re vor der Installation.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/abap-development-tools-for-visual-studio-code-is-now-available-on-the-vs/ba-p/14402120">SAP Community: ABAP Development Tools for VS Code is now available on the VS Code marketplace!</a></li>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/abap-development-tools-for-visual-studio-code-your-questions-answered/ba-p/14400848">SAP Community: ABAP Development Tools for VS Code: Your Questions Answered</a></li>
+                    <li><a href="https://marketplace.visualstudio.com/items?itemName=SAPSE.adt-vscode">VS Code Marketplace: ABAP Development Tools for VS Code</a></li>
+                </ul>
+            </div>
+
+            <h3>Community-Reaktion: &bdquo;Zero-Config MCP&ldquo; als Durchbruch</h3>
+            <ul>
+                <li>
+                    <span class="tag neu">NEU</span>
+                    <strong>Community-Blog: &bdquo;The Future of ABAP is Here: VS Code ADT, Zero-Config MCP, and AI Co-pilots&ldquo;</strong> &ndash;
+                    Ein Mitglied der SAP Community beschreibt, was die GA-Ver&ouml;ffentlichung konkret bedeutet: Der neue ABAP MCP Server macht komplexe Konfigurationsschritte obsolet. Co-Piloten k&ouml;nnen jetzt sicher echten Code lesen, Abh&auml;ngigkeiten finden und Custom Objects verstehen &ndash; ohne manuelle Kontext-F&uuml;tterung.
+                </li>
+                <li>
+                    <strong>Agentic Workflow in der Praxis:</strong> KI-Agenten k&ouml;nnen ABAP Unit Tests ausf&uuml;hren, ATC-Findings pr&uuml;fen und iterieren, bis der Code kompiliert und alle Checks besteht. Der Artikel beschreibt dies als die wichtigste ABAP-Entwicklungsverbesserung seit der Einf&uuml;hrung von ABAP Cloud.
+                </li>
+                <li>
+                    <strong>LinkedIn-Buzz:</strong> Mehrere Posts auf LinkedIn diskutieren, ob SAP ABAP damit &bdquo;leise Eclipse hinter sich l&auml;sst&ldquo; &ndash; die Diskussion zeigt, wie tiefgreifend der Wandel der ABAP-Entwicklungsumgebung von der Community wahrgenommen wird.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-members/the-future-of-abap-is-here-vs-code-adt-zero-config-mcp-and-ai-co-pilots/ba-p/14408186">SAP Community: The Future of ABAP is Here: VS Code ADT, Zero-Config MCP, and AI Co-pilots</a></li>
+                    <li><a href="https://www.linkedin.com/posts/marianzeis_abap-is-coming-to-vs-code-sap-just-shared-activity-7391510626961084418-yoFz">LinkedIn: Marian Zeis &ndash; ABAP is coming to VS Code</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="sap-cloud">
+            <div class="section-header blue">
+                <span class="section-color-indicator"></span>
+                <h2>SAP Cloud AI</h2>
+            </div>
+
+            <h3>13 Joule HR-Assistenten jetzt allgemein verf&uuml;gbar</h3>
+            <ul>
+                <li>
+                    <span class="tag neu">NEU</span>
+                    <strong>Joule HR-Assistenten erreichen General Availability im Juni 2026:</strong>
+                    P&uuml;nktlich zum angek&uuml;ndigten Termin sind folgende Assistenten jetzt GA: Core HR Assistant, Payroll Assistant, Time Assistant, HR Service Assistant, Compensation Assistant, Recruiting Assistant, Onboarding Assistant, Learning Assistant, Performance and Goals Assistant, Career and Talent Development Assistant, Skills Assistant, HR System Assistant und HR Knowledge Assistant.
+                </li>
+                <li>
+                    <strong>Praktische Bedeutung:</strong> Alle 13 Assistenten sind Teil von SAP SuccessFactors und decken den gesamten Employee Lifecycle ab &ndash; von der Stellenausschreibung &uuml;ber die Einarbeitung bis zur Karriereentwicklung &ndash; und orchestrieren im Hintergrund spezialisierte Agenten.
+                </li>
+                <li>
+                    <strong>Joule Studio 2.0 First Production Customers:</strong> Parallel dazu startet SAP im Juni 2026 das Onboarding der ersten Produktionskunden f&uuml;r Joule Studio 2.0. Die Plattform war bisher nur per Early Adopter Care erreichbar; der GA-Termin ist Q3 2026. Bis Ende 2026 erhalten SAP-Kunden und -Partner kostenlosen Design-Time-Zugang inklusive KI-gest&uuml;tzter Entwicklungsf&auml;higkeiten.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://www.sap.com/topics/events/sapphire/innovation-news-guide-2026">SAP Sapphire Innovation News Guide 2026</a></li>
+                    <li><a href="https://community.sap.com/t5/human-capital-management-blog-posts-by-sap/first-half-2026-release-agentic-ai-in-sap-successfactors-learning/ba-p/14379826">SAP Community: First Half 2026 Release: Agentic AI in SAP SuccessFactors Learning</a></li>
+                    <li><a href="https://news.sap.com/2026/05/new-joule-studio-enterprise-scale-agentic-development/">SAP News: Announcing New Joule Studio for Enterprise Scale Agentic Development</a></li>
+                </ul>
+            </div>
+
+            <h3>Autonome Lieferkette: SAP News-Artikel zu Agentic AI im Supply Chain</h3>
+            <ul>
+                <li>
+                    <span class="tag neu">NEU</span>
+                    <strong>SAP News Center: &bdquo;Autonomous Supply Chain: Why Agentic AI Is Rewriting the Operating Model&ldquo;</strong> &ndash;
+                    Ein neuer Strategieartikel (ver&ouml;ffentlicht Anfang Juni 2026) erkl&auml;rt, warum globale Lieferketten nicht mehr von punktuellen KI-Features, sondern von agentic AI als Betriebsmodell profitieren: Agenten &uuml;bernehmen Lieferanten&uuml;berwachung, Workforce-Orchestrierung, Beschaffungsentscheidungen und Produktionsplanung end-to-end.
+                </li>
+                <li>
+                    <strong>Belastbare Zahlen aus Early-Adopter-Projekten:</strong> 20&ndash;30% Verbesserung der Procurement-Workflow-Effizienz, 55% Reduktion von Ausschuss, 80% weniger fehlerhafte Chargen, 20&ndash;30% Bestandsreduktion bei gleichzeitig 5&ndash;20% niedrigeren Logistikkosten.
+                </li>
+                <li>
+                    <strong>Architektur:</strong> Im Hintergrund orchestriert der SAP AI Agent Hub (GA Q3 2026) alle Supply-Chain-Agenten &ndash; SAP-eigene, Custom-Agenten aus Joule Studio und Drittanbieter-Systeme &ndash; &uuml;ber eine einheitliche Governance-Konsole.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://news.sap.com/2026/06/autonomous-supply-chain-why-agentic-ai-is-rewriting-the-operating-model/">SAP News: Autonomous Supply Chain: Why Agentic AI Is Rewriting the Operating Model</a></li>
+                    <li><a href="https://sapinsider.org/blogs/sap-sapphire-2026-autonomous-enterprise-ai-agents/">SAPinsider: SAP Sapphire 2026 &ndash; The Autonomous Enterprise and AI Agent Guardrails</a></li>
+                </ul>
+            </div>
+
+            <h3>SAP Labs India Startup Studio Cohort 2026: Enterprise AI im Fokus</h3>
+            <ul>
+                <li>
+                    <span class="tag neu">NEU</span>
+                    <strong>SAP Labs India pr&auml;sentiert Startup Studio Cohort 2026</strong> (Ank&uuml;ndigung 3. Juni 2026) &ndash; Das sechsmonatige Accelerator-Programm bringt 16 ausgew&auml;hlte Startups zusammen, die gemeinsam mit SAP-Engineering- und Produktteams an enterprise-ready KI-L&ouml;sungen arbeiten. Zehn Jahre nach Start des Programms liegt der Schwerpunkt klar auf Enterprise AI und agentic Systems.
+                </li>
+                <li>
+                    <strong>Ausgew&auml;hlte Startups 2026 (Auswahl):</strong> ANSCER Robotics (Industrierobotik), Drishya AI (Industrial Intelligence), Quanfluence &amp; QNu Labs (Quantum Computing/Sicherheit), FUSKI AI, SecuAI, Perceptory AI Labs und Pulse Energy. Die Bandbreite zeigt, wie weit SAP den Enterprise-AI-Begriff fasst.
+                </li>
+                <li>
+                    <strong>Go-to-Market-Zugang:</strong> Startups erhalten Zugang zu SAP-F&uuml;hrungskr&auml;ften, Enterprise-Kunden, dem globalen Partnernetzwerk und konkrete Chancen zur kommerziellen Kooperation &ndash; inklusive Integrations-Enablement auf SAP BTP.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://aninews.in/news/business/sap-labs-india-unveils-2026-startup-studio-cohort-focused-on-enterprise-ai-and-deep-tech-innovation20260603101225/">ANI News: SAP Labs India Unveils 2026 Startup Studio Cohort</a></li>
+                    <li><a href="https://www.businessupturn.com/brand-post/sap-labs-india-unveils-2026-startup-studio-cohort-focused-on-enterprise-ai-and-deep-tech-innovation/">Business Upturn: SAP Labs India Startup Studio Cohort 2026</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="community">
+            <div class="section-header purple">
+                <span class="section-color-indicator"></span>
+                <h2>Community &amp; Social Media</h2>
+            </div>
+
+            <h3>SAP Developer News: Sapphire 2026 Special Edition</h3>
+            <ul>
+                <li>
+                    <span class="tag neu">NEU</span>
+                    <strong>SAP Community: &bdquo;SAP Developer News Special Sapphire 2026 Edition&ldquo;</strong> &ndash;
+                    SAP hat eine Sonderausgabe der w&ouml;chentlichen Developer News ver&ouml;ffentlicht, die alle technischen Ank&uuml;ndigungen von SAP Sapphire 2026 f&uuml;r Entwickler kompakt b&uuml;ndelt &ndash; von ADT f&uuml;r VS Code &uuml;ber den ABAP MCP Server bis zu Joule Studio 2.0 und den neuen HR-Assistenten. Direktlinks zu GitHub-Repos und Marketplace-Seiten inklusive.
+                </li>
+                <li>
+                    <strong>Community-Reaktion auf LinkedIn:</strong> Der Post von Marian Zeis (&bdquo;ABAP is coming to VS Code&ldquo;) mit detaillierter technischer Analyse der Ver&ouml;ffentlichung hat besonders hohe Resonanz erzeugt &ndash; ein guter Indikator f&uuml;r die Bedeutung der GA-Ver&ouml;ffentlichung f&uuml;r die ABAP-Entwicklergemeinschaft.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://community.sap.com/t5/developer-news/sap-developer-news-special-sapphire-2026-edition/ba-p/14394740">SAP Community: SAP Developer News Special Sapphire 2026 Edition</a></li>
+                    <li><a href="https://www.linkedin.com/posts/marianzeis_abap-is-coming-to-vs-code-sap-just-shared-activity-7391510626961084418-yoFz">LinkedIn: Marian Zeis &ndash; ABAP is coming to VS Code</a></li>
+                </ul>
+            </div>
+
+            <h3>GitHub: marianfoo/sap-ai-mcp-servers &ndash; Kuratierte MCP-Server-Liste</h3>
+            <ul>
+                <li>
+                    <span class="tag tipp">TIPP</span>
+                    <strong>GitHub Repository: sap-ai-mcp-servers</strong> &ndash;
+                    Marian Foo pflegt eine vollst&auml;ndige, kuratierte Liste aller SAP MCP Server und SAP AI Skills. Das Repository ist f&uuml;r alle relevant, die einen &Uuml;berblick &uuml;ber verf&uuml;gbare MCP-Integrationen im SAP-&Ouml;kosystem ben&ouml;tigen &ndash; von offiziellen SAP-Servern bis hin zu Community-entwickelten L&ouml;sungen. Zentraler Ausgangspunkt f&uuml;r alle, die MCP-basierte Agenten f&uuml;r SAP aufbauen wollen.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://github.com/marianfoo/sap-ai-mcp-servers">GitHub: marianfoo/sap-ai-mcp-servers &ndash; A complete list of SAP MCP Servers and SAP AI Skills</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="learning">
+            <div class="section-header green">
+                <span class="section-color-indicator"></span>
+                <h2>Learning &amp; Zertifizierungen</h2>
+            </div>
+
+            <h3>SAP bringt Agentic AI an Universit&auml;ten &ndash; kostenlose Toolsets</h3>
+            <ul>
+                <li>
+                    <span class="tag neu">NEU</span>
+                    <strong>SAP News Center: &bdquo;From Campus to Career: SAP Empowers Academia to Prepare Students for the Age of Agentic AI&ldquo;</strong> &ndash;
+                    SAP startet im Juni 2026 eine neue Initiative f&uuml;r Hochschulen: Universit&auml;ten erhalten kostenlosen Zugang zu drei zentralen Tools, damit Studierende und Lehrende Agentic AI praktisch erfahren k&ouml;nnen.
+                </li>
+                <li>
+                    <strong>Drei kostenlose Toolsets f&uuml;r Hochschulen:</strong>
+                    (1) <strong>SAP Signavio</strong> &ndash; Process Mining, Modellierung und Process Transformation, damit Studierende Prozesse analysieren und KI-Agenten in Workflows einplanen k&ouml;nnen.
+                    (2) <strong>SAP LeanIX</strong> &ndash; Enterprise Architecture Modeling, verf&uuml;gbar &uuml;ber SAP Learning Hub Student Edition.
+                    (3) <strong>Agent-Building-Umgebung</strong> &ndash; Hands-on Zugang zur Agenten-Konfiguration, entweder als gef&uuml;hrte Demo oder als Live-System.
+                </li>
+                <li>
+                    <strong>Marktkontext:</strong> Gartner prognostiziert, dass bis 2028 mindestens 15% aller t&auml;glichen Arbeitsentscheidungen autonom durch agentic AI getroffen werden &ndash; aktuell faktisch null. Die Nachfrage nach Fachkr&auml;ften, die Agenten bauen und steuern k&ouml;nnen, w&auml;chst schneller als das Angebot.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://news.sap.com/2026/06/sap-academia-prepare-students-agentic-ai/">SAP News: From Campus to Career &ndash; SAP Empowers Academia to Prepare Students for the Age of Agentic AI</a></li>
+                </ul>
+            </div>
+
+            <h3>SAP Certified Backend Developer &ndash; ABAP Cloud: Praxispr&uuml;fung (Beta)</h3>
+            <ul>
+                <li>
+                    <span class="tag update">UPDATE</span>
+                    <strong>Neue Beta-Zertifizierung: &bdquo;SAP Certified &ndash; Backend Developer &ndash; ABAP Cloud&ldquo;</strong> &ndash;
+                    SAP Learning hat eine Beta-Version dieser Zertifizierung als praktische Pr&uuml;fung ver&ouml;ffentlicht. Sie validiert Kenntnisse in ABAP Cloud, dem ABAP RESTful Application Programming Model (RAP) und &ndash; neu &ndash; die effektive Nutzung von Joule for Developers: Code-Generierung, Erkl&auml;rungen und Optimierungen per generativer KI. Passt in SAPs &uuml;bergeordnete Transformation hin zu praktischen Pr&uuml;fungen (Rollout 2026).
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://learning.sap.com/certifications/sap-certified-associate-back-end-developer-abap-cloud">SAP Learning: SAP Certified &ndash; Backend Developer &ndash; ABAP Cloud (Beta)</a></li>
+                    <li><a href="https://learning.sap.com/get-certified/reimagining-certification">SAP Learning: Reimagining Certification in the Age of AI</a></li>
+                </ul>
+            </div>
+
+            <h3>SAP SuccessFactors 1H 2026: Agentic AI im Learning-Modul</h3>
+            <ul>
+                <li>
+                    <span class="tag update">UPDATE</span>
+                    <strong>SAP Community: &bdquo;First Half 2026 Release: Agentic AI in SAP SuccessFactors Learning&ldquo;</strong> &ndash;
+                    Das Learning-Modul von SAP SuccessFactors erh&auml;lt intelligente Q&amp;A-Funktionen: Mitarbeiter stellen Fragen direkt im Lernsystem, und Joule liefert kontextbewusste Antworten, die aus dem eigenen Lerninhalt des Unternehmens gespeist werden &ndash; inklusive relevanter Links und Ressourcen. Keine generischen KI-Antworten, sondern unternehmensspezifisches Wissen.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://community.sap.com/t5/human-capital-management-blog-posts-by-sap/first-half-2026-release-agentic-ai-in-sap-successfactors-learning/ba-p/14379826">SAP Community: First Half 2026 Release: Agentic AI in SAP SuccessFactors Learning</a></li>
+                    <li><a href="https://news.sap.com/2026/04/sap-successfactors-1h-2026-release/">SAP News: SAP SuccessFactors 1H 2026 Release</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="video-events">
+            <div class="section-header red">
+                <span class="section-color-indicator"></span>
+                <h2>Video Resources &amp; Events</h2>
+            </div>
+
+            <h3>Video-Empfehlung: SAP Career Roadmap 2026 &ndash; RAP, BTP &amp; AI</h3>
+            <ul>
+                <li>
+                    <span class="tag tipp">TIPP</span>
+                    <strong>YouTube: &bdquo;SAP Career Roadmap 2026: RAP, BTP &amp; AI (ft. Rudra Pandey)&ldquo;</strong> &ndash;
+                    Ein praktischer Career-Guide f&uuml;r ABAP-Entwickler, die sich fragen, wie sie ihre Skills f&uuml;r die ABAP Cloud- und KI-&Auml;ra positionieren sollen. Diskutiert wird, welche Kombination aus RAP, BTP, ABAP Cloud und AI-Kenntnissen 2026 den gr&ouml;&szlig;ten Marktwert hat &ndash; und warum klassische ABAP-Kenntnisse als Fundament f&uuml;r Agenten-Deployment entscheidend bleiben.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=slV8JsooENs">YouTube: SAP Career Roadmap 2026: RAP, BTP &amp; AI (ft. Rudra Pandey)</a></li>
+                </ul>
+            </div>
+
+            <h3>Upcoming Events: Dichte Agenda im Juni &amp; Oktober</h3>
+            <ul>
+                <li>
+                    <span class="tag event">EVENT</span>
+                    <strong>VNSG ABAP Cloud Developer Day &ndash; 18. Juni 2026</strong> (Ctac, Niederlande): Fokus ABAP Cloud &amp; RAP. In 13 Tagen!
+                </li>
+                <li>
+                    <span class="tag event">EVENT</span>
+                    <strong>ABAPConf 2026 &ndash; 23. Juni 2026</strong> (Online + In-Person Mannheim): F&uuml;nftes Jubil&auml;um, kostenlos, Community-Speaker. Erwartete Themen: ADT f&uuml;r VS Code in der Praxis, ABAP MCP Server Deep Dives, Agentic AI f&uuml;r ABAP. In 18 Tagen &ndash; jetzt anmelden!
+                </li>
+                <li>
+                    <span class="tag event">EVENT</span>
+                    <strong>SAP TechEd Berlin 2026 &ndash; 27.&ndash;29. Oktober 2026</strong>: Registrierung jetzt ge&ouml;ffnet! In-Person &amp; Virtual. Gr&ouml;&szlig;tes ABAP-AI-Hands-on-Event des Jahres mit Fokus auf SAP AI, Joule Studio und SAP Business Data Cloud.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://abapconf.org/">ABAPConf 2026 &ndash; offizielle Website</a></li>
+                    <li><a href="https://www.sap.com/germany/events/2026-10-27-de-online-sap-teched-berlin-and-virtual.html">SAP TechEd Berlin &amp; Virtual 2026</a></li>
+                    <li><a href="https://www.sap.com/events/teched.html">SAP TechEd &ndash; Offizielle Event-Seite</a></li>
+                </ul>
+            </div>
+
+            <h3>Terminkalender: KI-relevante Deadlines &amp; Milestones</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Datum</th>
+                        <th>Event / Milestone</th>
+                        <th>Format</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Juni 2026 (laufend)</td>
+                        <td>13 Joule HR Assistenten GA erreicht</td>
+                        <td>Cloud / Release</td>
+                    </tr>
+                    <tr>
+                        <td>Juni 2026 (laufend)</td>
+                        <td>Joule Studio 2.0: Onboarding erster Produktionskunden</td>
+                        <td>Cloud / EAC</td>
+                    </tr>
+                    <tr>
+                        <td>18. Juni 2026</td>
+                        <td>VNSG ABAP Cloud Developer Day (Niederlande)</td>
+                        <td>In-Person</td>
+                    </tr>
+                    <tr>
+                        <td>23. Juni 2026</td>
+                        <td>ABAPConf 2026 (Online + Mannheim)</td>
+                        <td>Online &amp; In-Person</td>
+                    </tr>
+                    <tr>
+                        <td>September 2026</td>
+                        <td>Ende kostenlose Joule-for-Developers-Testphase</td>
+                        <td>Milestone / Lizenz</td>
+                    </tr>
+                    <tr>
+                        <td>Q3 2026</td>
+                        <td>SAP AI Agent Hub GA + Joule Studio GA</td>
+                        <td>Cloud / Release</td>
+                    </tr>
+                    <tr>
+                        <td>2. August 2026</td>
+                        <td>EU AI Act: High-Risk-KI-Pflichten greifen vollst&auml;ndig</td>
+                        <td>Regulatorisch</td>
+                    </tr>
+                    <tr>
+                        <td>27.&ndash;29. Oktober 2026</td>
+                        <td>SAP TechEd Berlin 2026 (In-Person &amp; Virtual)</td>
+                        <td>In-Person &amp; Online</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="navigation">
+            <a href="index.html">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
+            <a href="2026-05-31.html">&larr; Vorheriges Briefing (31.05.2026)</a>
+        </div>
+    </main>
+
+    <aside class="toc">
+        <h3>Inhalt</h3>
+        <ul>
+            <li><span class="toc-dot" style="background:#e67e22;"></span><a href="#abap-classic">ABAP Classic AI</a></li>
+            <li><span class="toc-dot" style="background:#3498db;"></span><a href="#sap-cloud">SAP Cloud AI</a></li>
+            <li><span class="toc-dot" style="background:#9b59b6;"></span><a href="#community">Community &amp; Social</a></li>
+            <li><span class="toc-dot" style="background:#27ae60;"></span><a href="#learning">Learning &amp; Zertifizierungen</a></li>
+            <li><span class="toc-dot" style="background:#c0392b;"></span><a href="#video-events">Video Resources &amp; Events</a></li>
+        </ul>
+    </aside>
+</div>
+
+<footer>
+    Recherchezeitraum: 01.06.2026 &ndash; 05.06.2026 &middot; <a href="index.html">SAP AI Daily</a> &middot; Automatisch erstellt mit Claude | SAP AI Daily
+</footer>
+
+<script>
+    document.querySelectorAll('.toc a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
