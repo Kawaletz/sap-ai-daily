@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP AI Daily - 10.06.2026 Briefing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f8f9fa; color: #333; line-height: 1.7; }
+        header { background: #1a3a5c; color: white; padding: 40px 20px; border-bottom: 4px solid #e67e22; }
+        header h1 { font-size: 2.2em; margin-bottom: 5px; font-weight: 700; }
+        header .date { font-size: 1em; opacity: 0.85; margin-bottom: 15px; }
+        header .breadcrumb { margin-top: 15px; opacity: 0.9; }
+        header a { color: #fff; text-decoration: none; font-weight: 600; }
+        header a:hover { text-decoration: underline; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 1fr 250px; gap: 30px; }
+        main { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .toc { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 20px; height: fit-content; }
+        .toc h3 { font-size: 0.95em; font-weight: 700; text-transform: uppercase; color: #1a3a5c; margin-bottom: 15px; letter-spacing: 0.5px; }
+        .toc ul { list-style: none; }
+        .toc li { margin-bottom: 10px; font-size: 0.9em; padding-left: 0; }
+        .toc li:before { content: ""; display: none; }
+        .toc .toc-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+        .toc a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        .toc a:hover { color: #1a5a8c; padding-left: 5px; }
+        section { margin-bottom: 50px; }
+        .section-header { display: flex; align-items: center; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid; }
+        .section-header.orange { border-color: #e67e22; }
+        .section-header.blue { border-color: #3498db; }
+        .section-header.purple { border-color: #9b59b6; }
+        .section-header.green { border-color: #27ae60; }
+        .section-header.red { border-color: #c0392b; }
+        .section-header h2 { font-size: 1.8em; margin: 0; font-weight: 700; color: #1a3a5c; }
+        .section-color-indicator { width: 12px; height: 12px; border-radius: 50%; margin-right: 15px; flex-shrink: 0; }
+        .section-header.orange .section-color-indicator { background: #e67e22; }
+        .section-header.blue .section-color-indicator { background: #3498db; }
+        .section-header.purple .section-color-indicator { background: #9b59b6; }
+        .section-header.green .section-color-indicator { background: #27ae60; }
+        .section-header.red .section-color-indicator { background: #c0392b; }
+        h3 { font-size: 1.35em; margin-top: 25px; margin-bottom: 15px; color: #1a3a5c; font-weight: 700; }
+        h3:first-child { margin-top: 0; }
+        ul { list-style: none; margin-bottom: 20px; }
+        li { margin-bottom: 12px; padding-left: 25px; position: relative; line-height: 1.8; }
+        li:before { content: "\2022"; position: absolute; left: 0; color: #e67e22; font-weight: 700; font-size: 1.2em; }
+        strong { font-weight: 700; color: #1a3a5c; }
+        a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        a:hover { color: #1a5a8c; text-decoration: underline; }
+        .sources { font-size: 0.85em; color: #888; margin-top: 8px; padding-left: 0; }
+        .sources li { padding-left: 0; margin-bottom: 5px; }
+        .sources li:before { content: ""; display: none; }
+        .sources a { color: #888; text-decoration: underline; }
+        .sources a:hover { color: #2980b9; }
+        .no-news { color: #888; font-style: italic; }
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden; }
+        th { background: #1a3a5c; color: white; padding: 15px; text-align: left; font-weight: 700; font-size: 0.95em; }
+        td { padding: 12px 15px; border-bottom: 1px solid #e0e0e0; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: #f5f5f5; }
+        footer { background: #2c3e50; color: white; text-align: center; padding: 25px 20px; margin-top: 60px; font-size: 0.9em; }
+        footer a { color: #e67e22; font-weight: 600; }
+        .navigation { display: flex; justify-content: space-between; align-items: center; margin: 30px 0 0 0; padding-top: 20px; border-top: 1px solid #e0e0e0; flex-wrap: wrap; gap: 15px; }
+        .navigation a { display: inline-block; padding: 10px 20px; background: #2980b9; color: white; text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s ease; }
+        .navigation a:hover { background: #1a5a8c; text-decoration: none; }
+        .publication-info { background: #f0f4f8; border-radius: 4px; padding: 15px; margin-bottom: 20px; font-size: 0.9em; color: #666; }
+        .tag { display: inline-block; font-size: 0.72em; font-weight: 700; padding: 2px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 6px; vertical-align: middle; color: white; }
+        .tag.neu { background: #1abc9c; }
+        .tag.update { background: #e67e22; }
+        .tag.event { background: #9b59b6; }
+        .tag.tipp { background: #2980b9; }
+        @media (max-width: 1024px) { .container { grid-template-columns: 1fr; } .toc { display: none; } }
+        @media (max-width: 768px) { header h1 { font-size: 1.6em; } main { padding: 25px; } .section-header h2 { font-size: 1.4em; } h3 { font-size: 1.15em; } table { font-size: 0.9em; } th, td { padding: 10px; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div class="breadcrumb"><a href="index.html">&larr; SAP AI Daily</a> &rsaquo; Briefing 10. Juni 2026</div>
+        <h1>SAP AI Daily Briefing</h1>
+        <div class="date">10. Juni 2026 &mdash; Mittwoch</div>
+    </div>
+</header>
+
+<div class="container">
+    <main>
+        <div class="publication-info">
+            Dieses Briefing wurde am 10.06.2026 automatisch erstellt. Recherchezeitraum: 06.06.2026 &ndash; 10.06.2026
+        </div>
+
+        <section id="abap-classic">
+            <div class="section-header orange">
+                <span class="section-color-indicator"></span>
+                <h2>ABAP Classic AI</h2>
+            </div>
+
+            <h3>SAP BTP ABAP Environment Release 2605: ABAP-Sprache &amp; KI-Tooling erweitert</h3>
+            <ul>
+                <li>
+                    <span class="tag update">UPDATE</span>
+                    <strong>Release 2605 ist ausgeliefert &ndash; mit l&auml;ngst erwarteten Sprachfeatures:</strong>
+                    Der Blog-Post von Nora Klemp fasst das neue Release des SAP BTP ABAP Environment zusammen. Highlight f&uuml;r Entwickler: <em>Boolean-Expressions</em> werden in der ABAP-Sprache jetzt nativ unterst&uuml;tzt &ndash; ein vielfach diskutiertes und gefordertes Feature.
+                </li>
+                <li>
+                    <strong>Migrations- und RAP-Verbesserungen:</strong> In den ABAP Development Tools gibt es jetzt einen Signatur-Vergleich beim Umstieg von DDIC-basierten Views auf CDS View Entities. Im RESTful Application Programming Model wird Draft nun in CDS Table Entities unterst&uuml;tzt, inklusive zweier neuer Feature-Control-Attribute (read-only create und mandatory update).
+                </li>
+                <li>
+                    <strong>Clean-Core-Analyse direkt im ATC:</strong> Eine neue ATC-Variante f&uuml;hrt die Clean-Core-Analyse sowohl in SAP ECC als auch in SAP S/4HANA-Systemen durch &ndash; ein praktisches Werkzeug zur Vorbereitung der KI-gest&uuml;tzten Custom-Code-Transformation. Im Landscape Portal lassen sich mit der Deploy-Product-App gezielt einzelne Produktversionen und Systeme aktualisieren.
+                </li>
+                <li>
+                    <strong>Generative-AI-Neuerungen separat dokumentiert:</strong> Die neuen KI-Features des Release sind in einer eigenen Seite &bdquo;What&rsquo;s New for ABAP Generative AI in ABAP Cloud&ldquo; gelistet &ndash; die zentrale Anlaufstelle, um Joule-for-Developers-Funktionen je Release nachzuvollziehen.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-btp-abap-environment-release-2605/ba-p/14403929">SAP Community: SAP BTP ABAP Environment &ndash; Release 2605</a></li>
+                    <li><a href="https://help.sap.com/whats-new/7a822d3bcaa74f31b98fa315601e9c96?locale=en-US">SAP Help: What&rsquo;s New for SAP BTP ABAP Environment</a></li>
+                    <li><a href="https://help.sap.com/whats-new/4d359a7f8e8248e18f98e85ea0b9d83e?locale=en-US">SAP Help: What&rsquo;s New for ABAP Generative AI in ABAP Cloud</a></li>
+                </ul>
+            </div>
+
+            <h3>abap-ai/mcp: ABAP MCP Server SDK erh&auml;lt Update (9. Juni)</h3>
+            <ul>
+                <li>
+                    <span class="tag neu">NEU</span>
+                    <strong>Native MCP-Server-SDK f&uuml;r ABAP weiter in aktiver Entwicklung:</strong>
+                    Das Open-Source-Projekt <em>abap-ai/mcp</em> auf GitHub wurde am 9. Juni 2026 aktualisiert. Es liefert eine ABAP-native Implementierung des Model Context Protocol &ndash; beschrieben als &bdquo;secure-by-default, enterprise-ready SAP ABAP MCP Server f&uuml;r Entwickler-IDEs, Microsoft Copilot und jeden MCP-Client&ldquo;.
+                </li>
+                <li>
+                    <strong>Technische Eckdaten:</strong> Authentifizierung &uuml;ber BTP OAuth (XSUAA) und Zugriff &uuml;ber die ADT REST API. Die SDK unterst&uuml;tzt die MCP-Spezifikation bis zur Version 2025-11-25 &ndash; eine der aktuellsten MCP-Versionen im SAP-Umfeld.
+                </li>
+                <li>
+                    <strong>Einordnung:</strong> Neben dem mit der VS-Code-Extension ausgelieferten offiziellen ADT MCP Server etabliert sich damit eine Community-getriebene, vollst&auml;ndig in ABAP geschriebene MCP-Variante &ndash; interessant f&uuml;r Teams, die den MCP-Server direkt im eigenen System betreiben m&ouml;chten.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://github.com/abap-ai/mcp">GitHub: abap-ai/mcp &ndash; ABAP MCP (Model Context Protocol) Server SDK</a></li>
+                    <li><a href="https://github.com/abap-ai">GitHub: ABAP-AI Organisation</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="sap-cloud">
+            <div class="section-header blue">
+                <span class="section-color-indicator"></span>
+                <h2>SAP Cloud AI</h2>
+            </div>
+
+            <h3>What&rsquo;s New: Generative AI in ABAP Cloud mit Release 2605</h3>
+            <ul>
+                <li>
+                    <span class="tag update">UPDATE</span>
+                    <strong>Joule for Developers wird konkret &ndash; die KI-Capabilities im &Uuml;berblick:</strong>
+                    Mit Release 2605 dokumentiert SAP die Generative-AI-F&auml;higkeiten im ABAP Cloud separat. Entwickler k&ouml;nnen damit Code, Business Objects, Anwendungslogik, Datenmodelle und Unit-Tests generativ erstellen lassen.
+                </li>
+                <li>
+                    <strong>Erkl&auml;ren statt nur Generieren:</strong> Joule liefert kontextbezogene Code-Erkl&auml;rungen und erzeugt Dokumentation direkt in den ABAP Development Tools &ndash; n&uuml;tzlich beim Verstehen und Migrieren von Legacy-Code.
+                </li>
+                <li>
+                    <strong>Eigene KI-L&ouml;sungen via ABAP AI SDK:</strong> Mit dem ABAP AI SDK lassen sich Custom-AI-Szenarien an f&uuml;hrende LLMs &uuml;ber den Generative AI Hub anbinden &ndash; die Br&uuml;cke zwischen klassischem ABAP und dem BTP-KI-Stack.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://help.sap.com/whats-new/4d359a7f8e8248e18f98e85ea0b9d83e?locale=en-US">SAP Help: What&rsquo;s New for ABAP Generative AI in ABAP Cloud</a></li>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-btp-abap-environment-release-2605/ba-p/14403929">SAP Community: SAP BTP ABAP Environment &ndash; Release 2605</a></li>
+                </ul>
+            </div>
+
+            <h3>June Developer Challenge: &bdquo;CAP Knowledge&ldquo; gestartet</h3>
+            <ul>
+                <li>
+                    <span class="tag event">EVENT</span>
+                    <strong>22 Fragen, 22 Arbeitstage &ndash; ein t&auml;gliches Gehirn-Workout:</strong>
+                    Die Developer Challenge im Juni dreht sich um das SAP Cloud Application Programming Model (CAP). An jedem Arbeitstag wird eine neue Frage ver&ouml;ffentlicht, deren Antwort sich in der CAP-Dokumentation (Capire) finden l&auml;sst.
+                </li>
+                <li>
+                    <strong>Fokus auf Fundament-Wissen:</strong> Ziel ist nicht das schnelle Vibe-Coding, sondern das Verstehen von Begriffen, Konzepten, Sprachkonstrukten und ihrer Einordnung &ndash; laut DJ Adams das Fundament echten Verst&auml;ndnisses. Nach jeder Frage gibt es weiterf&uuml;hrende Lese-Links.
+                </li>
+                <li>
+                    <strong>Warum relevant f&uuml;r KI-Entwickler:</strong> Solides CAP-Wissen ist Voraussetzung, um KI-Agenten und MCP-Server sauber an SAP-Backends anzubinden &ndash; gerade weil viele Agentic-Szenarien auf CAP-Services aufsetzen.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://community.sap.com/t5/sap-cap-blog-posts/june-developer-challenge-cap-knowledge/ba-p/14405157">SAP Community: June Developer Challenge &ndash; CAP Knowledge</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="community">
+            <div class="section-header purple">
+                <span class="section-color-indicator"></span>
+                <h2>Community &amp; Social Media</h2>
+            </div>
+
+            <h3>SAP Developer News vom 4. Juni 2026</h3>
+            <ul>
+                <li>
+                    <span class="tag neu">NEU</span>
+                    <strong>Die w&ouml;chentliche Developer-News-Folge fasst die aktuellen ABAP-Themen kompakt zusammen:</strong>
+                    Behandelt werden die Verf&uuml;gbarkeit von ADT for VS Code im Marketplace, das Release 2605 des SAP BTP ABAP Environment, die June Developer Challenge sowie ein neuer &bdquo;Did You Know?&ldquo;-Tipp.
+                </li>
+                <li>
+                    <strong>MCP-Detail aus erster Hand:</strong> Sheena best&auml;tigt im Beitrag, dass die VS-Code-Extension einen eingebauten MCP-Server mitbringt, der KI-Agenten wie Microsoft Copilot erlaubt, mit ABAP-Entwicklungsobjekten zu interagieren. SAP hat zudem ein GitHub-Tutorial ver&ouml;ffentlicht, das zeigt, wie der ADT MCP Server mit KI-Agenten eine einfache RAP-Anwendung erstellt.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://community.sap.com/t5/developer-news/sap-developer-news-june-4th-2026/ba-p/14411237">SAP Community: SAP Developer News, June 4th, 2026</a></li>
+                    <li><a href="https://github.com/SAP-samples/abap-platform-rap130/tree/main">GitHub: SAP-samples/abap-platform-rap130 &ndash; ADT-MCP-Tutorial</a></li>
+                </ul>
+            </div>
+
+            <h3>Did You Know? #19: Standardize Class Definition mit ABAP Cleaner</h3>
+            <ul>
+                <li>
+                    <span class="tag tipp">TIPP</span>
+                    <strong>Konsistente Klassendefinitionen per Knopfdruck:</strong>
+                    Die neue &bdquo;Did You Know?&ldquo;-Folge stellt die Regel <em>Standardize Class Definition</em> des Open-Source-Tools ABAP Cleaner vor. Sie vereinheitlicht Reihenfolge und Layout von public/private-Sektionen, <em>inheriting from</em>- und <em>create</em>-Angaben &uuml;ber alle Klassendefinitionen hinweg.
+                </li>
+                <li>
+                    <strong>Warum das f&uuml;r KI-Workflows hilft:</strong> Einheitlich formatierter, Clean-Code-konformer ABAP-Code ist leichter von KI-Agenten zu lesen und zu &auml;ndern &ndash; ABAP Cleaner ist damit ein sinnvoller Begleiter f&uuml;r jede agentische ABAP-Pipeline.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://github.com/SAP/abap-cleaner">GitHub: SAP/abap-cleaner</a></li>
+                    <li><a href="https://community.sap.com/t5/developer-news/sap-developer-news-june-4th-2026/ba-p/14411237">SAP Community: SAP Developer News, June 4th, 2026 (DYK #19)</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="learning">
+            <div class="section-header green">
+                <span class="section-color-indicator"></span>
+                <h2>Learning &amp; Zertifizierungen</h2>
+            </div>
+            <p class="no-news">Keine Neuigkeiten seit dem letzten Briefing.</p>
+        </section>
+
+        <section id="video-events">
+            <div class="section-header red">
+                <span class="section-color-indicator"></span>
+                <h2>Video Resources &amp; Events</h2>
+            </div>
+
+            <h3>Video: SAP Developer News (4. Juni 2026)</h3>
+            <ul>
+                <li>
+                    <span class="tag tipp">TIPP</span>
+                    <strong>Knapp f&uuml;nf Minuten ABAP-Update im Videoformat:</strong>
+                    Die aktuelle Developer-News-Folge auf YouTube (&bdquo;ADT for VS Code, SAP BTP ABAP Env 2605, June Dev Challenge, DYK 19&ldquo;) ist die schnellste Art, auf dem Laufenden zu bleiben &ndash; mit Kapitelmarken zu jedem Thema.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://www.youtube.com/watch?v=RMQiC_-XaPQ">YouTube: SAP Developer News &ndash; ADT for VS Code, BTP ABAP Env 2605, June Dev Challenge, DYK 19</a></li>
+                </ul>
+            </div>
+
+            <h3>SAP TechEd Berlin 2026: Early-Bird-Konditionen verf&uuml;gbar</h3>
+            <ul>
+                <li>
+                    <span class="tag event">EVENT</span>
+                    <strong>Premier-Learning-Event der SAP-Community, 27.&ndash;29. Oktober 2026:</strong>
+                    SAP TechEd findet in der Messe Berlin statt, parallel als SAP TechEd Virtual mit Live-Keynotes und Sessions. Schwerpunkt: KI-gest&uuml;tzte Systeme, die Intent in Execution &uuml;bersetzen &ndash; inklusive der angek&uuml;ndigten agentischen ABAP-Entwicklung.
+                </li>
+                <li>
+                    <strong>Aktuelle Sparkonditionen:</strong> F&uuml;r Einzeltickets sind aktuell bis zu 300 EUR Erm&auml;&szlig;igung, f&uuml;r Gruppentickets bis zu 270 EUR Rabatt verf&uuml;gbar &ndash; ein Hinweis, die Registrierung fr&uuml;hzeitig zu pr&uuml;fen.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://www.sap.com/events/teched/berlin.html">SAP TechEd Berlin &ndash; offizielle Event-Seite</a></li>
+                    <li><a href="https://www.sap.com/germany/events/2026-10-27-de-online-sap-teched-berlin-and-virtual.html">SAP TechEd Berlin &amp; Virtual 2026 (DE)</a></li>
+                </ul>
+            </div>
+
+            <h3>Terminkalender: KI-relevante Deadlines &amp; Milestones</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Datum</th>
+                        <th>Event / Milestone</th>
+                        <th>Format</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Juni 2026 (laufend)</td>
+                        <td>June Developer Challenge &bdquo;CAP Knowledge&ldquo; (22 Fragen)</td>
+                        <td>Community / Online</td>
+                    </tr>
+                    <tr>
+                        <td>18. Juni 2026</td>
+                        <td>VNSG ABAP Cloud Developer Day (Niederlande)</td>
+                        <td>In-Person</td>
+                    </tr>
+                    <tr>
+                        <td>23. Juni 2026</td>
+                        <td>ABAPConf 2026 (Online + Mannheim)</td>
+                        <td>Online &amp; In-Person</td>
+                    </tr>
+                    <tr>
+                        <td>September 2026</td>
+                        <td>Ende kostenlose Joule-for-Developers-Testphase</td>
+                        <td>Milestone / Lizenz</td>
+                    </tr>
+                    <tr>
+                        <td>Q3 2026</td>
+                        <td>SAP AI Agent Hub GA + Joule Studio GA</td>
+                        <td>Cloud / Release</td>
+                    </tr>
+                    <tr>
+                        <td>2. August 2026</td>
+                        <td>EU AI Act: High-Risk-KI-Pflichten greifen vollst&auml;ndig</td>
+                        <td>Regulatorisch</td>
+                    </tr>
+                    <tr>
+                        <td>27.&ndash;29. Oktober 2026</td>
+                        <td>SAP TechEd Berlin 2026 (In-Person &amp; Virtual)</td>
+                        <td>In-Person &amp; Online</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="navigation">
+            <a href="index.html">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
+            <a href="2026-06-05.html">&larr; Vorheriges Briefing (05.06.2026)</a>
+        </div>
+    </main>
+
+    <aside class="toc">
+        <h3>Inhalt</h3>
+        <ul>
+            <li><span class="toc-dot" style="background:#e67e22;"></span><a href="#abap-classic">ABAP Classic AI</a></li>
+            <li><span class="toc-dot" style="background:#3498db;"></span><a href="#sap-cloud">SAP Cloud AI</a></li>
+            <li><span class="toc-dot" style="background:#9b59b6;"></span><a href="#community">Community &amp; Social</a></li>
+            <li><span class="toc-dot" style="background:#27ae60;"></span><a href="#learning">Learning &amp; Zertifizierungen</a></li>
+            <li><span class="toc-dot" style="background:#c0392b;"></span><a href="#video-events">Video Resources &amp; Events</a></li>
+        </ul>
+    </aside>
+</div>
+
+<footer>
+    Recherchezeitraum: 06.06.2026 &ndash; 10.06.2026 &middot; <a href="index.html">SAP AI Daily</a> &middot; Automatisch erstellt mit Claude | SAP AI Daily
+</footer>
+
+<script>
+    document.querySelectorAll('.toc a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
