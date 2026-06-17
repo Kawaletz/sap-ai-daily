@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP AI Daily - 17.06.2026 Briefing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f8f9fa; color: #333; line-height: 1.7; }
+        header { background: #1a3a5c; color: white; padding: 40px 20px; border-bottom: 4px solid #e67e22; }
+        header h1 { font-size: 2.2em; margin-bottom: 5px; font-weight: 700; }
+        header .date { font-size: 1em; opacity: 0.85; margin-bottom: 15px; }
+        header .breadcrumb { margin-top: 15px; opacity: 0.9; }
+        header a { color: #fff; text-decoration: none; font-weight: 600; }
+        header a:hover { text-decoration: underline; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 1fr 250px; gap: 30px; }
+        main { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .toc { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 20px; height: fit-content; }
+        .toc h3 { font-size: 0.95em; font-weight: 700; text-transform: uppercase; color: #1a3a5c; margin-bottom: 15px; letter-spacing: 0.5px; }
+        .toc ul { list-style: none; }
+        .toc li { margin-bottom: 10px; font-size: 0.9em; padding-left: 0; }
+        .toc li:before { content: ""; display: none; }
+        .toc .toc-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+        .toc a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        .toc a:hover { color: #1a5a8c; padding-left: 5px; }
+        section { margin-bottom: 50px; }
+        .section-header { display: flex; align-items: center; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid; }
+        .section-header.orange { border-color: #e67e22; }
+        .section-header.blue { border-color: #3498db; }
+        .section-header.purple { border-color: #9b59b6; }
+        .section-header.green { border-color: #27ae60; }
+        .section-header.red { border-color: #c0392b; }
+        .section-header h2 { font-size: 1.8em; margin: 0; font-weight: 700; color: #1a3a5c; }
+        .section-color-indicator { width: 12px; height: 12px; border-radius: 50%; margin-right: 15px; flex-shrink: 0; }
+        .section-header.orange .section-color-indicator { background: #e67e22; }
+        .section-header.blue .section-color-indicator { background: #3498db; }
+        .section-header.purple .section-color-indicator { background: #9b59b6; }
+        .section-header.green .section-color-indicator { background: #27ae60; }
+        .section-header.red .section-color-indicator { background: #c0392b; }
+        h3 { font-size: 1.35em; margin-top: 25px; margin-bottom: 15px; color: #1a3a5c; font-weight: 700; }
+        h3:first-child { margin-top: 0; }
+        ul { list-style: none; margin-bottom: 20px; }
+        li { margin-bottom: 12px; padding-left: 25px; position: relative; line-height: 1.8; }
+        li:before { content: "\2022"; position: absolute; left: 0; color: #e67e22; font-weight: 700; font-size: 1.2em; }
+        strong { font-weight: 700; color: #1a3a5c; }
+        a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        a:hover { color: #1a5a8c; text-decoration: underline; }
+        .sources { font-size: 0.85em; color: #888; margin-top: 8px; padding-left: 0; }
+        .sources li { padding-left: 0; margin-bottom: 5px; }
+        .sources li:before { content: ""; display: none; }
+        .sources a { color: #888; text-decoration: underline; }
+        .sources a:hover { color: #2980b9; }
+        .no-news { color: #888; font-style: italic; }
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden; }
+        th { background: #1a3a5c; color: white; padding: 15px; text-align: left; font-weight: 700; font-size: 0.95em; }
+        td { padding: 12px 15px; border-bottom: 1px solid #e0e0e0; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: #f5f5f5; }
+        footer { background: #2c3e50; color: white; text-align: center; padding: 25px 20px; margin-top: 60px; font-size: 0.9em; }
+        footer a { color: #e67e22; font-weight: 600; }
+        .navigation { display: flex; justify-content: space-between; align-items: center; margin: 30px 0 0 0; padding-top: 20px; border-top: 1px solid #e0e0e0; flex-wrap: wrap; gap: 15px; }
+        .navigation a { display: inline-block; padding: 10px 20px; background: #2980b9; color: white; text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s ease; }
+        .navigation a:hover { background: #1a5a8c; text-decoration: none; }
+        .publication-info { background: #f0f4f8; border-radius: 4px; padding: 15px; margin-bottom: 20px; font-size: 0.9em; color: #666; }
+        .tag { display: inline-block; font-size: 0.72em; font-weight: 700; padding: 2px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 6px; vertical-align: middle; color: white; }
+        .tag.neu { background: #1abc9c; }
+        .tag.update { background: #e67e22; }
+        .tag.event { background: #9b59b6; }
+        .tag.tipp { background: #2980b9; }
+        @media (max-width: 1024px) { .container { grid-template-columns: 1fr; } .toc { display: none; } }
+        @media (max-width: 768px) { header h1 { font-size: 1.6em; } main { padding: 25px; } .section-header h2 { font-size: 1.4em; } h3 { font-size: 1.15em; } table { font-size: 0.9em; } th, td { padding: 10px; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div class="breadcrumb"><a href="index.html">&larr; SAP AI Daily</a> &rsaquo; Briefing 17. Juni 2026</div>
+        <h1>SAP AI Daily Briefing</h1>
+        <div class="date">17. Juni 2026 &mdash; Mittwoch</div>
+    </div>
+</header>
+
+<div class="container">
+    <main>
+        <div class="publication-info">
+            Dieses Briefing wurde am 17.06.2026 automatisch erstellt. Recherchezeitraum: 15.06.2026 &ndash; 17.06.2026
+        </div>
+
+        <section id="abap-classic">
+            <div class="section-header orange">
+                <span class="section-color-indicator"></span>
+                <h2>ABAP Classic AI</h2>
+            </div>
+
+            <h3>S/4HANA Custom Code Migration Agent: Agentische Massenmigration von ECC nach S/4HANA</h3>
+            <ul>
+                <li>
+                    <span class="tag neu">NEU</span>
+                    <strong>Der n&auml;chste Schritt nach den AI-Skills:</strong>
+                    SAP stellt (15. Juni) den <strong>S/4HANA Custom Code Migration Agent</strong> vor &ndash; einen autonomen, kontextbewussten KI-Agenten innerhalb der <em>SAP Joule for Developers, ABAP AI capabilities</em>, der die typische Sequenz eines Custom-Code-Migrationsentwicklers weitgehend selbstst&auml;ndig abarbeitet. Statt vereinzelter AI-Quickfixes &uuml;bernimmt der Agent jetzt die <strong>Massentransformation</strong> ganzer Custom-Code-Pakete von ECC nach SAP S/4HANA &ndash; mit Human-in-the-Loop nur dort, wo eine Entscheidung n&ouml;tig ist.
+                </li>
+                <li>
+                    <strong>So l&auml;uft der agentische Loop:</strong> Der Agent triggert die ATC-Analyse zur S/4HANA-Readiness, interpretiert die Ergebnisse, kategorisiert nach Komplexit&auml;t, f&uuml;hrt zun&auml;chst <strong>deterministische Quick Fixes</strong> als Massenoperation aus und wendet danach <strong>AI-basierte Fixes</strong> an. F&uuml;r jeden AI-Fix wird ein <strong>Confidence Score</strong> berechnet &ndash; nur Fixes mit hohem Score und ohne Syntaxfehler werden automatisch &uuml;bernommen; unsichere Vorschl&auml;ge landen als auskommentierte Kommentare zur manuellen Pr&uuml;fung.
+                </li>
+                <li>
+                    <strong>Transparenz &amp; Kontrolle:</strong> Alle &Auml;nderungen werden in einem einzigen dedizierten Transportauftrag protokolliert, alte Codezeilen bleiben auskommentiert und revertierbar, und die AI-Fixes inkl. Confidence Score werden als CSV f&uuml;r das Review exportiert. Der Agent l&auml;uft im Batch-Modus &ndash; Entwickler aktivieren am Ende nur die ge&auml;nderten Objekte.
+                </li>
+                <li>
+                    <strong>Technische Voraussetzungen:</strong> SAP S/4HANA-Zielsystem ab Release 2021 (Private Cloud/On-Prem, On-Prem-Verf&uuml;gbarkeit unter speziellen RISE-Vertragsbedingungen), Entitlement f&uuml;r Joule for Developers ABAP AI, ADT for Eclipse <strong>Version 3.60</strong> mit aktiviertem ADT MCP Server sowie ein AI-Assistant (GitHub Copilot oder Amazon Q). Custom Instructions/Rules werden gem&auml;&szlig; SAP-Notes 3751537 (Copilot) bzw. 3751829 (Amazon Q) erg&auml;nzt.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/s-4hana-custom-code-migration-agent-accelerating-ecc-to-sap-s-4hana/ba-p/14418929">SAP Community: S/4HANA Custom Code Migration Agent &ndash; Accelerating ECC to SAP S/4HANA Transformation with Agentic AI</a></li>
+                    <li><a href="https://youtu.be/3KZK8sLn_ZY">YouTube: Joule for developers, ABAP AI capabilities &ndash; S/4HANA Custom Code Migration Agent</a></li>
+                    <li><a href="https://me.sap.com/notes/3751537">SAP Note 3751537 (Custom Instructions f&uuml;r GitHub Copilot)</a></li>
+                    <li><a href="https://me.sap.com/notes/3751829">SAP Note 3751829 (Rules f&uuml;r Amazon Q)</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="sap-cloud">
+            <div class="section-header blue">
+                <span class="section-color-indicator"></span>
+                <h2>SAP Cloud AI</h2>
+            </div>
+
+            <h3>Praxis-Serie abgeschlossen: Procurement-Agent f&uuml;r S/4HANA Cloud Private Edition mit Joule Studio</h3>
+            <ul>
+                <li>
+                    <span class="tag tipp">TIPP</span>
+                    <strong>Vom Prompt zur Bestellanforderung:</strong>
+                    Die dreiteilige SAP-Blog-Serie zum Bau eines <strong>Procurement-Agenten</strong> ist mit Teil&nbsp;3 komplett. Der Use Case zeigt, wie sich in <strong>Joule Studio</strong> (Low-Code im SAP Build Suite) ein Custom-Agent modellieren l&auml;sst, der in <strong>SAP S/4HANA Cloud Private Edition</strong> aus einem einzigen nat&uuml;rlichsprachlichen Prompt eine Bestellanforderung (Purchase Requisition) erzeugt.
+                </li>
+                <li>
+                    <strong>Roter Faden der Serie:</strong> Teil&nbsp;1 legt das Agenten-Design und die Anbindung an S/4HANA PCE, Teil&nbsp;2 die Custom-Skill-Logik und Teil&nbsp;3 die finale Orchestrierung und das Testing offen &ndash; ein nachvollziehbares Referenzbeispiel f&uuml;r alle, die agentische Prozesse in der Private Edition bauen wollen.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/building-a-procurement-agent-for-sap-s-4hana-cloud-private-edition-with-sap/ba-p/14405200">SAP Community: Building a Procurement Agent &hellip; with SAP Joule Studio &ndash; Part 1</a></li>
+                    <li><a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/building-a-procurement-agent-for-sap-s-4hana-cloud-private-edition-with-sap/ba-p/14412096">SAP Community: &hellip; Part 2</a></li>
+                    <li><a href="https://community.sap.com/t5/enterprise-resource-planning-blog-posts-by-sap/building-a-procurement-agent-for-sap-s-4hana-cloud-private-edition-with-sap/ba-p/14417781">SAP Community: &hellip; Part 3 (Finale)</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="community">
+            <div class="section-header purple">
+                <span class="section-color-indicator"></span>
+                <h2>Community &amp; Social Media</h2>
+            </div>
+
+            <h3>Erfahrungsbericht: C_AIG &bdquo;SAP Generative AI Developer&ldquo;-Examen &ndash; Tipps zur System-Pr&uuml;fung</h3>
+            <ul>
+                <li>
+                    <span class="tag tipp">TIPP</span>
+                    <strong>Bestanden im f&uuml;nften Anlauf:</strong>
+                    Ein Community-Mitglied schildert (17. Juni), wie es das <strong>C_AIG SAP Certified Generative AI Developer</strong>-Examen (Course Version 2604) bestand &ndash; nach vier Fehlversuchen mit 0 % wegen der strengen Submission-Regeln. Der Beitrag fokussiert bewusst nicht das Prompt-Design, sondern den oft untersch&auml;tzten <strong>Abgabeprozess im SAP AI Launchpad</strong>.
+                </li>
+                <li>
+                    <strong>Die teuersten UI-Fallen:</strong> Templates m&uuml;ssen zwingend <em>innerhalb des Orchestration-Scenarios</em> gespeichert werden; der Template-Name (<code>feedback-analyzer-CERT####</code>) ist case-sensitive und exakt einzuhalten; System-/User-/Assistant-Bl&ouml;cke werden manuell &uuml;ber den +-Button angelegt; Variablen brauchen die Syntax <code>{{?variable_name}}</code> mit Fragezeichen; und die Versionsnummern m&uuml;ssen pro Task penibel stimmen. Praktisch: <strong>SAP Joule for Consultants</strong> steht im Open-Book-Examen kostenlos als Hilfe bereit.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-members/c-aig-sap-generative-ai-developer-exam-tips-for-the-system-based-assessment/ba-p/14420654">SAP Community: C_AIG SAP Generative AI Developer Exam &ndash; Tips for the System-Based Assessment</a></li>
+                </ul>
+            </div>
+
+            <h3>SAP Community Voice: KI-Lernangebote, Experten-Tipps und Juni-Events</h3>
+            <ul>
+                <li>
+                    <span class="tag neu">NEU</span>
+                    <strong>Redaktioneller Wochen&uuml;berblick:</strong>
+                    Die neue Ausgabe von <em>SAP Community Voice</em> (17. Juni) b&uuml;ndelt die aktuellen Highlights &ndash; allen voran den frisch vorgestellten S/4HANA Custom Code Migration Agent &ndash; sowie KI-Lernchancen, Experten-Tipps und die dichte Agenda anstehender Juni-Events. Ein guter Einstiegspunkt, um die Woche im SAP-&Ouml;kosystem zu sortieren.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://community.sap.com/t5/what-s-new/sap-community-voice-ai-learning-opportunities-tips-from-sap-experts-and/ba-p/14420757">SAP Community: SAP Community Voice &ndash; AI Learning Opportunities, Tips from SAP experts and Upcoming June Events!</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="learning">
+            <div class="section-header green">
+                <span class="section-color-indicator"></span>
+                <h2>Learning &amp; Zertifizierungen</h2>
+            </div>
+
+            <h3>Live-Serie &bdquo;Get Certified&ldquo;: gef&uuml;hrt zur Zertifizierung SAP Generative AI Developer</h3>
+            <ul>
+                <li>
+                    <span class="tag event">EVENT</span>
+                    <strong>Strukturierter Weg zum C_AIG:</strong>
+                    SAP k&uuml;ndigt (17. Juni) eine neue Live-&bdquo;Get Certified&ldquo;-Serie an, die Schritt f&uuml;r Schritt auf die Zertifizierung <strong>SAP Certified &ndash; SAP Generative AI Developer</strong> vorbereitet. Nach einer Kickoff-Session folgen fokussierte Content-Reviews mit echten Demos zu Prompt-Design, LLM-Grundlagen und Hands-on-Arbeit im <strong>SAP Generative AI Hub</strong> &ndash; abgerundet von einer Wrap-up-Session kurz vor der Pr&uuml;fung.
+                </li>
+                <li>
+                    <strong>F&uuml;r wen:</strong> SAP positioniert die GenAI-Zertifizierung als festen Bestandteil des Partner-Werkzeugkastens. Der Live-Charakter gibt direkten Zugang zu Experten, die Fragen in Echtzeit beantworten &ndash; hilfreich, um Theorie und reale Projektszenarien zu verbinden. Anmeldung &uuml;ber SAP Learning.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/get-certified-sap-certified-sap-generative-ai-developer/ba-p/14420165">SAP Community: Get Certified &ndash; SAP Certified SAP Generative AI Developer</a></li>
+                    <li><a href="https://learning.sap.com/live-sessions/get-certified-sap-certified-sap-generative-ai-developer">SAP Learning: Get Certified &ndash; SAP Certified SAP Generative AI Developer (Live Sessions)</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="video-events">
+            <div class="section-header red">
+                <span class="section-color-indicator"></span>
+                <h2>Video Resources &amp; Events</h2>
+            </div>
+
+            <h3>Video: S/4HANA Custom Code Migration Agent in Aktion</h3>
+            <ul>
+                <li>
+                    <span class="tag tipp">TIPP</span>
+                    <strong>Agentischer Migrations-Loop zum Zusehen:</strong>
+                    Begleitend zum neuen Migrations-Agenten ver&ouml;ffentlicht SAP ein YouTube-Video, das den kompletten Ablauf zeigt &ndash; vom Prompt &bdquo;Migrate package &lt;name&gt;&hellip;&ldquo; &uuml;ber die ATC-Readiness-Pr&uuml;fung und die deterministischen Quick Fixes bis zu den AI-basierten Fixes mit Confidence Score. Ideal, um die Human-in-the-Loop-Best&auml;tigungen und das Batch-Verhalten vor dem eigenen Setup einmal real zu sehen.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://youtu.be/3KZK8sLn_ZY">YouTube: ABAP Cloud &ndash; Joule for developers, ABAP AI capabilities: S/4HANA Custom Code Migration Agent</a></li>
+                </ul>
+            </div>
+
+            <h3>Diese Woche im Kalender: CAP Roundtable (heute), VNSG &amp; ABAPConf</h3>
+            <ul>
+                <li>
+                    <span class="tag event">EVENT</span>
+                    <strong>Dichte Event-Woche:</strong>
+                    Heute (17. Juni) findet der <strong>CAP Customer Roundtable</strong> online statt, am 18. Juni folgt der <strong>VNSG ABAP Cloud Developer Day</strong> in den Niederlanden, und am 23. Juni laufen parallel die <strong>ABAPConf 2026</strong> (5. Ausgabe, online &amp; Mannheim) sowie ein <strong>SAP CodeJam f&uuml;r Joule Studio</strong> in Hyderabad. Den Wochenabschluss bildet der <strong>SAP Inside Track Chennai</strong> am 27. Juni. Details siehe Terminkalender.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/sap-cloud-application-programming-model-cap-customer-roundtable-june-2026/ba-p/14409654">SAP Community: CAP Customer Roundtable June 2026</a></li>
+                    <li><a href="https://abapconf.org/">ABAPConf 2026 (23. Juni 2026)</a></li>
+                    <li><a href="https://community.sap.com/t5/chennai-blog-posts/sap-inside-track-chennai-2026-save-the-date/ba-p/14416437">SAP Community: SAP Inside Track Chennai 2026 &ndash; Save the Date (27. Juni)</a></li>
+                </ul>
+            </div>
+
+            <h3>Terminkalender: KI-relevante Deadlines &amp; Milestones</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Datum</th>
+                        <th>Event / Milestone</th>
+                        <th>Format</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Juni 2026 (laufend)</td>
+                        <td>June Developer Challenge &bdquo;CAP Knowledge&ldquo;</td>
+                        <td>Community / Online</td>
+                    </tr>
+                    <tr>
+                        <td>17. Juni 2026</td>
+                        <td>CAP Customer Roundtable (2. Runde 2026)</td>
+                        <td>Online</td>
+                    </tr>
+                    <tr>
+                        <td>18. Juni 2026</td>
+                        <td>VNSG ABAP Cloud Developer Day (Niederlande)</td>
+                        <td>In-Person</td>
+                    </tr>
+                    <tr>
+                        <td>23. Juni 2026</td>
+                        <td>ABAPConf 2026 (Online + Mannheim)</td>
+                        <td>Online &amp; In-Person</td>
+                    </tr>
+                    <tr>
+                        <td>23. Juni 2026</td>
+                        <td>SAP CodeJam f&uuml;r Joule Studio (Hyderabad)</td>
+                        <td>In-Person</td>
+                    </tr>
+                    <tr>
+                        <td>27. Juni 2026</td>
+                        <td>SAP Inside Track Chennai</td>
+                        <td>In-Person</td>
+                    </tr>
+                    <tr>
+                        <td>25. Juli 2026</td>
+                        <td>SAP Inside Track Columbus</td>
+                        <td>In-Person</td>
+                    </tr>
+                    <tr>
+                        <td>2. August 2026</td>
+                        <td>EU AI Act: High-Risk-KI-Pflichten greifen vollst&auml;ndig</td>
+                        <td>Regulatorisch</td>
+                    </tr>
+                    <tr>
+                        <td>September 2026</td>
+                        <td>Ende kostenlose Joule-for-Developers-Testphase (AI Units)</td>
+                        <td>Milestone / Lizenz</td>
+                    </tr>
+                    <tr>
+                        <td>18.&ndash;19. September 2026</td>
+                        <td>SAP CodeJam &amp; Inside Track Weinheim</td>
+                        <td>In-Person</td>
+                    </tr>
+                    <tr>
+                        <td>Q3 2026</td>
+                        <td>SAP AI Agent Hub GA + Joule Studio 2.0 Rollout</td>
+                        <td>Cloud / Release</td>
+                    </tr>
+                    <tr>
+                        <td>27.&ndash;29. Oktober 2026</td>
+                        <td>SAP TechEd Berlin 2026 (In-Person &amp; Virtual)</td>
+                        <td>In-Person &amp; Online</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="navigation">
+            <a href="index.html">&larr; Zur&uuml;ck zur &Uuml;bersicht</a>
+            <a href="2026-06-15.html">&larr; Vorheriges Briefing (15.06.2026)</a>
+        </div>
+    </main>
+
+    <aside class="toc">
+        <h3>Inhalt</h3>
+        <ul>
+            <li><span class="toc-dot" style="background:#e67e22;"></span><a href="#abap-classic">ABAP Classic AI</a></li>
+            <li><span class="toc-dot" style="background:#3498db;"></span><a href="#sap-cloud">SAP Cloud AI</a></li>
+            <li><span class="toc-dot" style="background:#9b59b6;"></span><a href="#community">Community &amp; Social</a></li>
+            <li><span class="toc-dot" style="background:#27ae60;"></span><a href="#learning">Learning &amp; Zertifizierungen</a></li>
+            <li><span class="toc-dot" style="background:#c0392b;"></span><a href="#video-events">Video Resources &amp; Events</a></li>
+        </ul>
+    </aside>
+</div>
+
+<footer>
+    Recherchezeitraum: 15.06.2026 &ndash; 17.06.2026 &middot; <a href="index.html">SAP AI Daily</a> &middot; Automatisch erstellt mit Claude | SAP AI Daily
+</footer>
+
+<script>
+    document.querySelectorAll('.toc a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
