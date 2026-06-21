@@ -1,0 +1,456 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP AI Daily - 21.06.2026 Briefing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f8f9fa; color: #333; line-height: 1.7; }
+        header { background: #1a3a5c; color: white; padding: 40px 20px; border-bottom: 4px solid #e67e22; }
+        header h1 { font-size: 2.2em; margin-bottom: 5px; font-weight: 700; }
+        header .date { font-size: 1em; opacity: 0.85; margin-bottom: 15px; }
+        header .breadcrumb { margin-top: 15px; opacity: 0.9; }
+        header a { color: #fff; text-decoration: none; font-weight: 600; }
+        header a:hover { text-decoration: underline; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 1fr 250px; gap: 30px; }
+        main { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .toc { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 20px; height: fit-content; }
+        .toc h3 { font-size: 0.95em; font-weight: 700; text-transform: uppercase; color: #1a3a5c; margin-bottom: 15px; letter-spacing: 0.5px; }
+        .toc ul { list-style: none; }
+        .toc li { margin-bottom: 10px; font-size: 0.9em; padding-left: 0; }
+        .toc li:before { content: ""; display: none; }
+        .toc .toc-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+        .toc a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        .toc a:hover { color: #1a5a8c; padding-left: 5px; }
+        section { margin-bottom: 50px; }
+        .section-header { display: flex; align-items: center; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid; }
+        .section-header.orange { border-color: #e67e22; }
+        .section-header.blue { border-color: #3498db; }
+        .section-header.purple { border-color: #9b59b6; }
+        .section-header.green { border-color: #27ae60; }
+        .section-header.red { border-color: #c0392b; }
+        .section-header h2 { font-size: 1.8em; margin: 0; font-weight: 700; color: #1a3a5c; }
+        .section-color-indicator { width: 12px; height: 12px; border-radius: 50%; margin-right: 15px; flex-shrink: 0; }
+        .section-header.orange .section-color-indicator { background: #e67e22; }
+        .section-header.blue .section-color-indicator { background: #3498db; }
+        .section-header.purple .section-color-indicator { background: #9b59b6; }
+        .section-header.green .section-color-indicator { background: #27ae60; }
+        .section-header.red .section-color-indicator { background: #c0392b; }
+        h3 { font-size: 1.35em; margin-top: 25px; margin-bottom: 15px; color: #1a3a5c; font-weight: 700; }
+        h3:first-child { margin-top: 0; }
+        ul { list-style: none; margin-bottom: 20px; }
+        li { margin-bottom: 12px; padding-left: 25px; position: relative; line-height: 1.8; }
+        li:before { content: "\2022"; position: absolute; left: 0; color: #e67e22; font-weight: 700; font-size: 1.2em; }
+        strong { font-weight: 700; color: #1a3a5c; }
+        a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        a:hover { color: #1a5a8c; text-decoration: underline; }
+        .sources { font-size: 0.85em; color: #888; margin-top: 8px; padding-left: 0; }
+        .sources li { padding-left: 0; margin-bottom: 5px; }
+        .sources li:before { content: ""; display: none; }
+        .sources a { color: #888; text-decoration: underline; }
+        .sources a:hover { color: #2980b9; }
+        .no-news { color: #888; font-style: italic; }
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden; }
+        th { background: #1a3a5c; color: white; padding: 15px; text-align: left; font-weight: 700; font-size: 0.95em; }
+        td { padding: 12px 15px; border-bottom: 1px solid #e0e0e0; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: #f5f5f5; }
+        footer { background: #2c3e50; color: white; text-align: center; padding: 25px 20px; margin-top: 60px; font-size: 0.9em; }
+        footer a { color: #e67e22; font-weight: 600; }
+        .navigation { display: flex; justify-content: space-between; align-items: center; margin: 30px 0 0 0; padding-top: 20px; border-top: 1px solid #e0e0e0; flex-wrap: wrap; gap: 15px; }
+        .navigation a { display: inline-block; padding: 10px 20px; background: #2980b9; color: white; text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s ease; }
+        .navigation a:hover { background: #1a5a8c; text-decoration: none; }
+        .publication-info { background: #f0f4f8; border-radius: 4px; padding: 15px; margin-bottom: 20px; font-size: 0.9em; color: #666; }
+        .tag { display: inline-block; font-size: 0.72em; font-weight: 700; padding: 2px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 6px; vertical-align: middle; color: white; }
+        .tag.neu { background: #1abc9c; }
+        .tag.update { background: #e67e22; }
+        .tag.event { background: #9b59b6; }
+        .tag.tipp { background: #2980b9; }
+        @media (max-width: 1024px) { .container { grid-template-columns: 1fr; } .toc { display: none; } }
+        @media (max-width: 768px) { header h1 { font-size: 1.6em; } main { padding: 25px; } .section-header h2 { font-size: 1.4em; } h3 { font-size: 1.15em; } table { font-size: 0.9em; } th, td { padding: 10px; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div class="breadcrumb"><a href="index.html">&larr; SAP AI Daily</a> &rsaquo; Briefing 21. Juni 2026</div>
+        <h1>SAP AI Daily Briefing</h1>
+        <div class="date">21. Juni 2026 &mdash; Sonntag</div>
+    </div>
+</header>
+
+<div class="container">
+    <main>
+        <div class="publication-info">
+            Dieses Briefing wurde am 21.06.2026 automatisch erstellt. Recherchezeitraum: 20.06.2026 &ndash; 21.06.2026
+        </div>
+
+        <!-- ABAP Classic AI -->
+        <section id="abap-classic">
+            <div class="section-header orange">
+                <div class="section-color-indicator"></div>
+                <h2>ABAP Classic AI</h2>
+            </div>
+
+            <h3>Claude AI fuer RFC-only / SAProuter-Systeme &ndash; auch ECC R/3 <span class="tag neu">NEU</span></h3>
+            <ul>
+                <li>
+                    <strong>Das Problem vieler On-Premise-Systeme:</strong> Viele produktive SAP-Umgebungen sind ausschliesslich ueber SAProuter erreichbar und erlauben zwar native SAP NI-Verbindungen (DIAG, RFC/Gateway), blockieren aber den direkten HTTP-Zugang zum ICM. Damit schlaegt die HTTP-basierte Verbindung von AI-Assistenten wie Claude oder GitHub Copilot ueber den ABAP MCP Server fehl &ndash; auch wenn Eclipse ADT problemlos funktioniert.
+                </li>
+                <li>
+                    <strong>Die Community-Loesung &ndash; ADT-RFC-Bridge:</strong> Der Community-Entwickler <a href="https://github.com/enricoandreoli/adt-rfc-bridge" target="_blank">enricoandreoli/adt-rfc-bridge</a> veroeffentlichte ein kleines Python-Tool, das dieses Gap schliesst: eine lokale HTTP-zu-RFC-Bridge, die ADT-HTTP-Anfragen auf <em>localhost</em> entgegennimmt und ueber RFC via PyRFC durch den SAP-Standard-Funktionsbaustein <strong>SADT_REST_RFC_ENDPOINT</strong> tunnelt. Damit koennen alle HTTP-only-ADT-Clients (inklusive vsp/Vibing-Steampunk) mit RFC-only-Systemen kommunizieren.
+                </li>
+                <li>
+                    <strong>Praxisrelevanz:</strong> Besonders fuer ABAP-Entwickler, die noch auf klassischen ECC R/3-Systemen arbeiten, oeffnet dieser Ansatz den Weg zu KI-gestuetzter ABAP-Entwicklung ohne Umstieg auf S/4HANA oder Cloud &ndash; ein wichtiger Schritt zur breiteren Adoption von AI-Coding-Assistenten in realen Unternehmenslandschaften. Der Blog-Post beschreibt detailliert Installation, Konfiguration und Troubleshooting.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://community.sap.com/t5/abap-blog-posts/using-claude-for-sap-abap-development-on-rfc-only-saprouter-systems-even/ba-p/14414381" target="_blank">SAP Community: Using Claude for SAP ABAP development on RFC-only / SAProuter systems (even ECC R/3)</a></li>
+                    <li><a href="https://github.com/enricoandreoli/adt-rfc-bridge" target="_blank">GitHub: enricoandreoli/adt-rfc-bridge &ndash; HTTP-to-RFC Bridge via PyRFC</a></li>
+                </ul>
+            </div>
+
+            <h3>ABAP AI Hub Service: Technische Architektur der GA-Releases <span class="tag update">UPDATE</span></h3>
+            <ul>
+                <li>
+                    <strong>Neuer Ansatz &ndash; Side-by-Side statt On-Stack:</strong> Ein neuer SAP-Blog-Post (ba-p/14417633) erlautert die jetzt GA verfuegbare technische Architektur des <strong>ABAP AI Hub Service</strong>. Anders als bisherige On-Stack-Integrationen laeuft der Hub Service <em>neben</em> dem ABAP-System auf SAP BTP. Er kombiniert Authentifizierung, Lizenzpruefung, Zugang zu SAP BTP AI Core und anwendungsfall-spezifische Businesslogik in einem einzigen Dienst.
+                </li>
+                <li>
+                    <strong>Release-unabhaengig:</strong> Der Hub-Service-Ansatz macht die ABAP AI Capabilities erstmals weitgehend release-unabhaengig. Neue KI-Faehigkeiten werden zentral im Hub bereitgestellt und stehen sofort fuer alle angebundenen Systeme zur Verfuegung &ndash; ein Paradigmenwechsel gegenueber klassischen Add-on-Upgrades auf dem Stack.
+                </li>
+                <li>
+                    <strong>Verfuegbarkeit:</strong> Der ABAP AI Hub Service ist fuer SAP BTP ABAP Environment, SAP S/4HANA Cloud Public Edition und SAP S/4HANA Cloud Private Edition (ab Release 2021) verfuegbar. Die agentischen Faehigkeiten inkl. S/4HANA Custom Code Migration Agent sind damit offiziell GA.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://community.sap.com/t5/artificial-intelligence-blogs-posts/sap-joule-for-developers-abap-ai-capabilities-including-agentic/ba-p/14417633" target="_blank">SAP Community: SAP Joule for Developers, ABAP AI capabilities including agentic capabilities is now available!</a></li>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/abap-ai-chapter-3-we-go-agentic/ba-p/14391469" target="_blank">SAP Community: ABAP AI &ndash; Chapter 3: We go agentic!</a></li>
+                    <li><a href="https://discovery-center.cloud.sap/ai-feature/795cf9fa-d0cc-42b0-a3d7-52e8067e847d/" target="_blank">SAP Discovery Center: Joule for Developers ABAP AI Capabilities (S/4HANA Cloud Private Edition)</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SAP Cloud AI -->
+        <section id="sap-cloud">
+            <div class="section-header blue">
+                <div class="section-color-indicator"></div>
+                <h2>SAP Cloud AI</h2>
+            </div>
+
+            <h3>SAP AI-Native North Star Architecture &ndash; Technisches Fundament des Autonomous Enterprise <span class="tag neu">NEU</span></h3>
+            <ul>
+                <li>
+                    <strong>Was ist die North Star Architecture?</strong> SAP veroeffentlichte im Juni 2026 auf dem SAP News Center die vollstaendige technische Beschreibung seiner <strong>AI-Native North Star Architecture</strong> &ndash; den Zielzustand, auf den SAP seine gesamte Produktstrategie ausrichtet. Es geht nicht mehr darum, KI auf bestehende Applikationen aufzusetzen, sondern um ein grundlegend neu gedachtes Unternehmens-Oekosystem, in dem Intelligenz, Kontext und Ausfuehrung in einer kontinuierlichen Schleife zusammenwirken.
+                </li>
+                <li>
+                    <strong>Vier Schichten, neu gedacht:</strong>
+                    <ul style="margin-top: 10px;">
+                        <li><strong>Foundation Layer</strong> (System of Context): SAP Business Data Cloud + SAP Knowledge Graph liefern semantisch angereicherte, unternehmensweite Geschaeftsdaten als KI-Kontext.</li>
+                        <li><strong>Process Layer</strong> (System of Agents): Applikationen werden zu &ldquo;Capability Providern&rdquo;, die stabile APIs, Events und Daten fuer Agenten exponieren &ndash; auch fuer externe Partner-Agenten ueber einen governed Gateway.</li>
+                        <li><strong>UX Layer</strong> (Intent-driven): Joule wird zur zentralen Interaktionsschicht. 50+ domaenenspezifische Joule-Assistenten orchestrieren 200+ spezialisierte Agenten fuer End-to-End-Prozesse.</li>
+                        <li><strong>Platform Layer</strong> (Runtime fuer Enterprise Agents): Liefert Runtime, Sandbox, Observability und Governance, um zustandslose KI-Modelle in verlassliche Unternehmensagenten zu verwandeln.</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Relevanz fuer ABAP-Entwickler:</strong> Die North Star Architecture definiert den strategischen Rahmen, in dem ABAP-Systeme im Process Layer als Capability Provider fungieren &ndash; mit Clean Core als Voraussetzung. Das Dokument ist als Living Document oeffentlich auf dem <a href="https://architecture.learning.sap.com/docs/ai-native-north-star-architecture" target="_blank">SAP Architecture Center</a> verfuegbar und wird kontinuierlich aktualisiert.
+                </li>
+                <li>
+                    <strong>Messbare Ergebnisse:</strong> SAP COO Sebastian Steinhaeuser nannte auf dem SAP Sapphire 2026 Takeda als Referenzkunden: bis zu 10&nbsp;% Produktivitaetsgewinn, 25&nbsp;% weniger Revenue-Loss durch Stock-outs, 5&nbsp;% Reduzierung von Sicherheitsbestaenden &ndash; durch autonome Fertigungssteuerung.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://news.sap.com/2026/06/sap-ai-native-north-star-architecture-technical-backbone-autonomous-enterprise/" target="_blank">SAP News Center: SAP's AI-Native North Star Architecture: Technical Backbone of the Autonomous Enterprise</a></li>
+                    <li><a href="https://architecture.learning.sap.com/docs/ai-native-north-star-architecture" target="_blank">SAP Architecture Center: AI-native North Star Architecture (vollstaendiges Dokument)</a></li>
+                    <li><a href="https://futurumgroup.com/insights/can-saps-ai-native-north-star-architecture-redefine-the-autonomous-enterprise/" target="_blank">Futurum Group: Can SAP's AI-Native North Star Architecture Redefine the Autonomous Enterprise?</a></li>
+                </ul>
+            </div>
+
+            <h3>SAP-RPT-1.5 Roadmap: Tabular AI mit Retrieval-Augmented Prediction <span class="tag update">UPDATE</span></h3>
+            <ul>
+                <li>
+                    <strong>SAPs eigenes Foundation Model fuer Tabellendaten:</strong> Das SAP Relational Pretrained Transformer Modell <strong>SAP-RPT-1.5</strong> befindet sich auf dem Weg zur GA in H2 2026. Eine neue Faehigkeit steht in den Startloechern: <strong>Retrieval-Augmented Prediction (RAP)</strong> &ndash; ein Mechanismus, bei dem SAP-RPT-1.5 kundeneigene Datensaetze als Kontext abruft, um Vorhersagen fuer Unternehmensszenarien mit grossen Datenmengen erheblich zu verbessern.
+                </li>
+                <li>
+                    <strong>Zeitplan:</strong> Das SAP-RPT Playground-Upgrade auf Version 1.5 ist fuer September 2026 geplant. Die GA der Retrieval-Augmented Prediction-Funktion folgt in Q3 2026. Fuer Entwickler, die praediktive Szenarien (z.&nbsp;B. Nachfrageprognose, Lieferketten-Optimierung) in den Generative AI Hub oder ABAP-Anwendungen integrieren wollen, ist RAP eine der spannendsten Neuheiten des Jahres.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://www.sap.com/products/artificial-intelligence/sap-rpt.html" target="_blank">SAP.com: SAP-RPT-1.5 &ndash; Relational Pretrained Transformer Model</a></li>
+                    <li><a href="https://news.sap.com/2026/04/sap-business-ai-release-highlights-q1-2026/" target="_blank">SAP News Center: SAP Business AI Release Highlights Q1 2026</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Community & Social -->
+        <section id="community">
+            <div class="section-header purple">
+                <div class="section-color-indicator"></div>
+                <h2>Community &amp; Social Media</h2>
+            </div>
+
+            <h3>ABAPConf 2026 &ndash; MORGEN! Live-Stream-Infos &amp; Last-Minute-Tipps <span class="tag event">EVENT</span></h3>
+            <ul>
+                <li>
+                    <strong>Countdown: Noch 1 Tag!</strong> Die <a href="https://abapconf.org/abapconf2026/sessions/key/" target="_blank">ABAPConf 2026</a> feiert morgen, am <strong>23. Juni 2026</strong>, ihr 5-jaehriges Jubilaeum. Der kostenlose Live-Stream startet ab <strong>08:50 Uhr MESZ</strong> auf dem <a href="https://www.youtube.com/@abapconf" target="_blank">YouTube-Kanal @abapconf</a> &ndash; keine Anmeldung erforderlich.
+                </li>
+                <li>
+                    <strong>Top-Picks fuer AI-Daily-Leser (Uhrzeiten MESZ):</strong>
+                    <ul style="margin-top: 10px;">
+                        <li><strong>10:30&nbsp;Uhr</strong> &ndash; SAP-Keynote: &ldquo;ABAP Cloud&rdquo; (Jens Weiler &amp; Andre Fischer)</li>
+                        <li><strong>14:05&nbsp;Uhr</strong> &ndash; Session V3: &ldquo;AI-powered Full-Stack Development with SAP&rsquo;s MCP servers for ABAP &amp; SAP Fiori&rdquo; (Christoph Gollmick) &ndash; Direkte Praxissession zum MCP-Server-Einsatz</li>
+                        <li><strong>16:15&nbsp;Uhr</strong> &ndash; Lightning Talk V5: &ldquo;Back to ABAP: How Vibe Coding Brought a Lapsed Developer Back to Life&rdquo; (Holger Bruchelt)</li>
+                        <li><strong>17:05&nbsp;Uhr</strong> &ndash; Abschluss-Keynote: Karl Kessler &ndash; &ldquo;What a ride!&rdquo;</li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>Onsite Mannheim:</strong> Kurzfristige Tickets fuer den Onsite-Track in Mannheim sind noch ueber Eventbrite verfuegbar. Track 3 bietet zusaetzliche Meet-the-Experts-Sessions mit Nova Intelligence und SAP.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://abapconf.org/abapconf2026/sessions/key/" target="_blank">ABAPConf 2026 &ndash; Vollstaendige Session-Uebersicht</a></li>
+                    <li><a href="https://www.youtube.com/@abapconf" target="_blank">YouTube: @abapconf (Live-Stream morgen ab 08:50 Uhr MESZ)</a></li>
+                    <li><a href="https://www.eventbrite.de/e/abapconf-2026-mannheim-tickets-1986300441089" target="_blank">Eventbrite: ABAPConf 2026 Mannheim (Onsite-Tickets)</a></li>
+                </ul>
+            </div>
+
+            <h3>June Developer Challenge &ndash; CAP Knowledge: Zweite Woche gestartet <span class="tag update">UPDATE</span></h3>
+            <ul>
+                <li>
+                    <strong>Aufholchance nutzen:</strong> Die <a href="https://community.sap.com/t5/sap-cap-blog-posts/june-developer-challenge-cap-knowledge/ba-p/14405157" target="_blank">June Developer Challenge &ldquo;CAP Knowledge&rdquo;</a> laeuft weiter &ndash; insgesamt 22 Aufgaben ueber alle Werktage des Monats. Wer die ersten fuenf Tasks (01: Common Types &amp; Aspects, 02: Common Reuse Types, 03: @mandatory-Annotationen, 04: Namespaces &amp; Contexts, 05: Portable Functions) noch nicht eingereicht hat: alle bisherigen Tasks bleiben offen.
+                </li>
+                <li>
+                    <strong>Zwischen-Analysebericht verfuegbar:</strong> Der Analysebericht zu den ersten Einreichungen zeigt, welche Konzepte Teilnehmenden besonders schwerfallen &ndash; relevant fuer alle, die CAP-Wissen als Grundlage fuer AI-Workflows aufbauen und verstehen wollen, wo KI-generierte CAP-Artefakte am kritischsten reviewt werden muessen.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://community.sap.com/t5/sap-cap-blog-posts/june-developer-challenge-cap-knowledge/ba-p/14405157" target="_blank">SAP Community: June Developer Challenge &ndash; CAP Knowledge! (Hauptseite)</a></li>
+                    <li><a href="https://community.sap.com/t5/sap-cap-blog-posts/june-developer-challenge-cap-knowledge-analysis/bc-p/14421379" target="_blank">SAP Community: June Developer Challenge &ndash; CAP Knowledge &ndash; Analysis</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Learning & Zertifizierungen -->
+        <section id="learning">
+            <div class="section-header green">
+                <div class="section-color-indicator"></div>
+                <h2>Learning &amp; Zertifizierungen</h2>
+            </div>
+
+            <h3>SAP Architecture Center: AI-Native North Star als Lernressource <span class="tag tipp">TIPP</span></h3>
+            <ul>
+                <li>
+                    <strong>Offizielle Dokumentation als Lernpfad:</strong> Das neu veroeffentlichte <a href="https://architecture.learning.sap.com/docs/ai-native-north-star-architecture" target="_blank">SAP Architecture Center &ndash; AI-native North Star Architecture</a> ist mehr als ein strategisches Whitepaper. Es enthaelt ausfuehrliche Abschnitte zu Foundation Layer, Process Layer, UX Layer und Platform Layer &ndash; inklusive konkreter Implementierungsempfehlungen fuer ABAP-Entwickler, Enterprise-Architekten und SAP-Partner.
+                </li>
+                <li>
+                    <strong>Besonders wertvoll:</strong> Der Abschnitt &ldquo;Architecting for the Quantum Era&rdquo; adressiert die technologische Langfrist-Ausrichtung. Als Living Document regelmaessig aktualisiert &ndash; ein dauerhaft relevanter Referenzpunkt fuer alle, die SAP-Architekturen zukunftssicher gestalten wollen.
+                </li>
+                <li>
+                    <strong>Kombinierter Lernpfad:</strong> Gemeinsam mit dem Blog-Post &ldquo;Entering the New Era of Agentic AI for ABAP Development&rdquo; und dem Roadmap-Post &ldquo;Our 2026 Roadmap for Joule for Developers ABAP AI Capabilities&rdquo; ergibt sich ein vollstaendiges Bild der SAP-AI-Roadmap fuer 2026/2027.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://architecture.learning.sap.com/docs/ai-native-north-star-architecture" target="_blank">SAP Architecture Center: AI-native North Star Architecture</a></li>
+                    <li><a href="https://architecture.learning.sap.com/docs/ai-native-north-star-architecture/vision" target="_blank">SAP Architecture Center: AI-Native North Star &ndash; Vision</a></li>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/entering-the-new-era-of-agentic-ai-for-abap-development/ba-p/14394643" target="_blank">SAP Community: Entering the New Era of Agentic AI for ABAP Development</a></li>
+                </ul>
+            </div>
+
+            <h3>AI Units-Deadline: Kostenlose Joule-Testphase endet September 2026 <span class="tag tipp">TIPP</span></h3>
+            <ul>
+                <li>
+                    <strong>Jetzt planen:</strong> Die kostenlose Testphase fuer SAP Joule for Developers, ABAP AI Capabilities laeuft <strong>Ende September 2026</strong> aus. Ab dann gilt das konsumbasierte Modell mit <strong>AI Units</strong>. Wer aktive ABAP-AI-Projekte betreibt oder die C_AIG-Zertifizierung mit Hands-on-Uebungen plant, sollte jetzt das Lizenzmodell evaluieren und ggf. AI-Unit-Kontingente ueber <a href="https://me.sap.com" target="_blank">SAP for Me</a> planen.
+                </li>
+                <li>
+                    <strong>Pakete im Ueberblick:</strong> Joule for Developers ABAP AI ist im <strong>Joule Premium Package</strong> enthalten oder als separate Lizenz erhaeltlich. Die detaillierte Feature-Zuordnung zu Paketen findet sich im SAP Discovery Center. Das Preismodell basiert rein auf Verbrauch (AI Units) &ndash; geeignet fuer dynamische agentische KI-Workloads.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://discovery-center.cloud.sap/ai-feature/7f373198-9a41-4416-9eed-bdfca445d37a" target="_blank">SAP Discovery Center: SAP BTP ABAP Environment &ndash; Joule for Developers ABAP AI Capabilities</a></li>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/our-2026-roadmap-for-joule-for-developers-abap-ai-capabilities/ba-p/14360358" target="_blank">SAP Community: 2026 Roadmap &ndash; Joule for Developers ABAP AI Capabilities</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Video Resources & Events -->
+        <section id="video">
+            <div class="section-header red">
+                <div class="section-color-indicator"></div>
+                <h2>Video Resources &amp; Events</h2>
+            </div>
+
+            <h3>ABAPConf 2026 Live-Stream &ndash; Morgen ab 08:50 Uhr auf YouTube <span class="tag event">EVENT</span></h3>
+            <ul>
+                <li>
+                    <strong>Kostenlos &amp; ohne Anmeldung:</strong> Die ABAPConf 2026 streamt am 23. Juni ab 08:50 Uhr MESZ live auf <a href="https://www.youtube.com/@abapconf" target="_blank">@abapconf auf YouTube</a>. Kein Account erforderlich. Die Aufzeichnungen bleiben danach dauerhaft auf demselben Kanal abrufbar &ndash; ideal zum Nachschauen einzelner Sessions.
+                </li>
+                <li>
+                    <strong>Auch fuer SAP AI Daily Leser interessant:</strong> Die Session V3 (14:05 Uhr) zum MCP-Server-Einsatz fuer Full-Stack ABAP-Entwicklung verspricht konkrete Demo-Inhalte, die direkt im eigenen Workflow einsetzbar sein werden. Wer sich fuer Vibe Coding oder agentic ABAP-Entwicklung interessiert, sollte V5 und die Karl-Kessler-Keynote nicht verpassen.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://www.youtube.com/@abapconf" target="_blank">YouTube: @abapconf &ndash; Live-Stream ABAPConf 2026 (23. Juni, ab 08:50 Uhr MESZ)</a></li>
+                    <li><a href="https://abapconf.org/abapconf2026/sessions/key/" target="_blank">ABAPConf 2026 &ndash; Vollstaendige Session-Uebersicht</a></li>
+                </ul>
+            </div>
+
+            <h3>CodeJam: Getting Started with Generative AI Hub &ndash; Lissabon <span class="tag event">EVENT</span></h3>
+            <ul>
+                <li>
+                    <strong>Hands-on RAG in Portugal:</strong> Am <strong>24. Juni 2026</strong> (09:30&ndash;15:30 Uhr Ortszeit) findet in <strong>Lissabon, Portugal</strong> (Gastgeber: Nagarro) der SAP CodeJam &ldquo;Getting Started with Generative AI Hub on SAP AI Core&rdquo; statt. Im Mittelpunkt steht der praktische Aufbau eines Retrieval-Augmented Generation (RAG)-Use-Cases.
+                </li>
+                <li>
+                    <strong>Lerninhalte:</strong> Deployment eines LLM und des Orchestration Service auf SAP AI Core, Abfragen via SAP AI Launchpad und Python SDK, Erstellung von Embeddings fuer verbesserte RAG-Responses, Aufbau eines eigenen Chatbots mit Gedaechtnis (memory). Alle Uebungsmaterialien sind open source auf GitHub verfuegbar.
+                </li>
+                <li>
+                    <strong>Format:</strong> Kostenlos, in Englisch, Laptop mit Netzteil erforderlich. Anmeldung ueber die SAP Community.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://community.sap.com/t5/sap-codejam/getting-started-with-generative-ai-hub-on-sap-ai-core-lisboa-portugal/ev-p/14370793" target="_blank">SAP Community CodeJam: Getting Started with Generative AI Hub on SAP AI Core (Lisboa, Portugal, 24. Juni)</a></li>
+                    <li><a href="https://github.com/SAP-samples/generative-ai-codejam" target="_blank">GitHub: SAP-samples/generative-ai-codejam &ndash; Uebungsmaterial</a></li>
+                </ul>
+            </div>
+
+            <!-- Terminkalender -->
+            <h3>Terminkalender: KI-relevante Deadlines &amp; Milestones</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Datum</th>
+                        <th>Event / Milestone</th>
+                        <th>Format</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>23. Juni 2026</strong></td>
+                        <td>ABAPConf 2026 &ndash; Online (kostenlos, @abapconf ab 08:50h MESZ) + Onsite Mannheim; KI-Session V3: MCP &amp; SAP Fiori</td>
+                        <td>Hybrid (YouTube + Onsite)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>24. Juni 2026</strong></td>
+                        <td>SAP CodeJam &ldquo;Getting Started with Generative AI Hub on SAP AI Core&rdquo; &ndash; Lissabon, Portugal (Nagarro)</td>
+                        <td>In-Person / CodeJam</td>
+                    </tr>
+                    <tr>
+                        <td><strong>25. Juni 2026</strong></td>
+                        <td>CodeJam &ldquo;ABAP AI Capabilities in SAP Joule for Developers&rdquo; &ndash; Hyderabad (Indien)</td>
+                        <td>In-Person / CodeJam</td>
+                    </tr>
+                    <tr>
+                        <td><strong>27. Juni 2026</strong></td>
+                        <td>SAP Inside Track Chennai 2026</td>
+                        <td>Onsite / Community</td>
+                    </tr>
+                    <tr>
+                        <td><strong>30. Juni 2026</strong></td>
+                        <td>Act2Adopt AI Joule &ndash; Partner-Briefing MEE (Anmeldefrist: 22. Juli 2026)</td>
+                        <td>Online / Partner</td>
+                    </tr>
+                    <tr>
+                        <td><strong>15. Juli 2026</strong></td>
+                        <td>reCAP (un)conference 2026 &ndash; St. Leon-Rot; Agenda mit KI-Topic-Corners online</td>
+                        <td>Hybrid (Onsite + Live-Stream)</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Ende September 2026</strong></td>
+                        <td>Ende der kostenlosen Joule-for-Developers-Testphase (AI Units Promotion laeuft aus)</td>
+                        <td>Milestone / Lizenz</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Q3 2026</strong></td>
+                        <td>SAP-RPT-1.5 GA + Retrieval-Augmented Prediction (RAP) im Generative AI Hub</td>
+                        <td>Product Milestone</td>
+                    </tr>
+                    <tr>
+                        <td><strong>27.&ndash;29. Oktober 2026</strong></td>
+                        <td>SAP TechEd Berlin 2026 (In-Person &amp; Virtual)</td>
+                        <td>In-Person &amp; Online</td>
+                    </tr>
+                    <tr>
+                        <td><strong>25. Dez. 2026</strong></td>
+                        <td>CodeJam &ldquo;ABAP AI Capabilities in SAP Joule for Developers&rdquo; &ndash; Philadelphia (USA)</td>
+                        <td>In-Person / CodeJam</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <!-- Navigation -->
+        <div class="navigation">
+            <a href="index.html">&larr; Zurueck zur Uebersicht</a>
+            <a href="2026-06-20.html">&larr; Vorheriges Briefing (20.06.2026)</a>
+        </div>
+    </main>
+
+    <!-- TOC Sidebar -->
+    <aside class="toc">
+        <h3>Inhalt</h3>
+        <ul>
+            <li>
+                <span class="toc-dot" style="background: #e67e22;"></span>
+                <a href="#abap-classic">ABAP Classic AI</a>
+            </li>
+            <li>
+                <span class="toc-dot" style="background: #3498db;"></span>
+                <a href="#sap-cloud">SAP Cloud AI</a>
+            </li>
+            <li>
+                <span class="toc-dot" style="background: #9b59b6;"></span>
+                <a href="#community">Community &amp; Social</a>
+            </li>
+            <li>
+                <span class="toc-dot" style="background: #27ae60;"></span>
+                <a href="#learning">Learning &amp; Zertifizierungen</a>
+            </li>
+            <li>
+                <span class="toc-dot" style="background: #c0392b;"></span>
+                <a href="#video">Video Resources &amp; Events</a>
+            </li>
+        </ul>
+    </aside>
+</div>
+
+<footer>
+    Recherchezeitraum: 20.06.2026 &ndash; 21.06.2026 &middot;
+    <a href="index.html">SAP AI Daily</a>
+    &middot; Automatisch erstellt mit Claude | SAP AI Daily
+</footer>
+
+<script>
+    document.querySelectorAll('.toc a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
