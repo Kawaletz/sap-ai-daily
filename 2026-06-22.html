@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SAP AI Daily - 22.06.2026 Briefing</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Inter', sans-serif; background: #f8f9fa; color: #333; line-height: 1.7; }
+        header { background: #1a3a5c; color: white; padding: 40px 20px; border-bottom: 4px solid #e67e22; }
+        header h1 { font-size: 2.2em; margin-bottom: 5px; font-weight: 700; }
+        header .date { font-size: 1em; opacity: 0.85; margin-bottom: 15px; }
+        header .breadcrumb { margin-top: 15px; opacity: 0.9; }
+        header a { color: #fff; text-decoration: none; font-weight: 600; }
+        header a:hover { text-decoration: underline; }
+        .container { max-width: 1200px; margin: 0 auto; padding: 40px 20px; display: grid; grid-template-columns: 1fr 250px; gap: 30px; }
+        main { background: white; padding: 40px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .toc { background: white; padding: 25px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); position: sticky; top: 20px; height: fit-content; }
+        .toc h3 { font-size: 0.95em; font-weight: 700; text-transform: uppercase; color: #1a3a5c; margin-bottom: 15px; letter-spacing: 0.5px; }
+        .toc ul { list-style: none; }
+        .toc li { margin-bottom: 10px; font-size: 0.9em; padding-left: 0; }
+        .toc li:before { content: ""; display: none; }
+        .toc .toc-dot { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 8px; vertical-align: middle; }
+        .toc a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        .toc a:hover { color: #1a5a8c; padding-left: 5px; }
+        section { margin-bottom: 50px; }
+        .section-header { display: flex; align-items: center; margin-bottom: 25px; padding-bottom: 15px; border-bottom: 3px solid; }
+        .section-header.orange { border-color: #e67e22; }
+        .section-header.blue { border-color: #3498db; }
+        .section-header.purple { border-color: #9b59b6; }
+        .section-header.green { border-color: #27ae60; }
+        .section-header.red { border-color: #c0392b; }
+        .section-header h2 { font-size: 1.8em; margin: 0; font-weight: 700; color: #1a3a5c; }
+        .section-color-indicator { width: 12px; height: 12px; border-radius: 50%; margin-right: 15px; flex-shrink: 0; }
+        .section-header.orange .section-color-indicator { background: #e67e22; }
+        .section-header.blue .section-color-indicator { background: #3498db; }
+        .section-header.purple .section-color-indicator { background: #9b59b6; }
+        .section-header.green .section-color-indicator { background: #27ae60; }
+        .section-header.red .section-color-indicator { background: #c0392b; }
+        h3 { font-size: 1.35em; margin-top: 25px; margin-bottom: 15px; color: #1a3a5c; font-weight: 700; }
+        h3:first-child { margin-top: 0; }
+        ul { list-style: none; margin-bottom: 20px; }
+        li { margin-bottom: 12px; padding-left: 25px; position: relative; line-height: 1.8; }
+        li:before { content: "\2022"; position: absolute; left: 0; color: #e67e22; font-weight: 700; font-size: 1.2em; }
+        strong { font-weight: 700; color: #1a3a5c; }
+        a { color: #2980b9; text-decoration: none; font-weight: 500; transition: all 0.3s ease; }
+        a:hover { color: #1a5a8c; text-decoration: underline; }
+        .sources { font-size: 0.85em; color: #888; margin-top: 8px; padding-left: 0; }
+        .sources li { padding-left: 0; margin-bottom: 5px; }
+        .sources li:before { content: ""; display: none; }
+        .sources a { color: #888; text-decoration: underline; }
+        .sources a:hover { color: #2980b9; }
+        .no-news { color: #888; font-style: italic; }
+        table { width: 100%; border-collapse: collapse; margin: 25px 0; background: white; box-shadow: 0 1px 3px rgba(0,0,0,0.1); border-radius: 4px; overflow: hidden; }
+        th { background: #1a3a5c; color: white; padding: 15px; text-align: left; font-weight: 700; font-size: 0.95em; }
+        td { padding: 12px 15px; border-bottom: 1px solid #e0e0e0; }
+        tr:last-child td { border-bottom: none; }
+        tr:hover { background: #f5f5f5; }
+        footer { background: #2c3e50; color: white; text-align: center; padding: 25px 20px; margin-top: 60px; font-size: 0.9em; }
+        footer a { color: #e67e22; font-weight: 600; }
+        .navigation { display: flex; justify-content: space-between; align-items: center; margin: 30px 0 0 0; padding-top: 20px; border-top: 1px solid #e0e0e0; flex-wrap: wrap; gap: 15px; }
+        .navigation a { display: inline-block; padding: 10px 20px; background: #2980b9; color: white; text-decoration: none; border-radius: 4px; font-weight: 600; transition: all 0.3s ease; }
+        .navigation a:hover { background: #1a5a8c; text-decoration: none; }
+        .publication-info { background: #f0f4f8; border-radius: 4px; padding: 15px; margin-bottom: 20px; font-size: 0.9em; color: #666; }
+        .tag { display: inline-block; font-size: 0.72em; font-weight: 700; padding: 2px 8px; border-radius: 3px; text-transform: uppercase; letter-spacing: 0.5px; margin-right: 6px; vertical-align: middle; color: white; }
+        .tag.neu { background: #1abc9c; }
+        .tag.update { background: #e67e22; }
+        .tag.event { background: #9b59b6; }
+        .tag.tipp { background: #2980b9; }
+        @media (max-width: 1024px) { .container { grid-template-columns: 1fr; } .toc { display: none; } }
+        @media (max-width: 768px) { header h1 { font-size: 1.6em; } main { padding: 25px; } .section-header h2 { font-size: 1.4em; } h3 { font-size: 1.15em; } table { font-size: 0.9em; } th, td { padding: 10px; } }
+    </style>
+</head>
+<body>
+
+<header>
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div class="breadcrumb"><a href="index.html">&larr; SAP AI Daily</a> &rsaquo; Briefing 22. Juni 2026</div>
+        <h1>SAP AI Daily Briefing</h1>
+        <div class="date">22. Juni 2026 &mdash; Montag</div>
+    </div>
+</header>
+
+<div class="container">
+    <main>
+        <div class="publication-info">
+            Dieses Briefing wurde am 22.06.2026 automatisch erstellt. Recherchezeitraum: 21.06.2026 &ndash; 22.06.2026
+        </div>
+
+        <!-- ABAP Classic AI -->
+        <section id="abap-classic">
+            <div class="section-header orange">
+                <div class="section-color-indicator"></div>
+                <h2>ABAP Classic AI</h2>
+            </div>
+
+            <h3>&bdquo;The Future of ABAP is Here&ldquo;: VS Code ADT, Zero-Config MCP &amp; AI Co-pilots <span class="tag neu">NEU</span></h3>
+            <ul>
+                <li>
+                    <strong>Community-Erfahrungsbericht jetzt verbreitet:</strong> Ein viel geteilter Community-Blog-Post fasst zusammen, was die GA-Releases von <strong>ADT for VS Code</strong> und dem <strong>ABAP MCP Server</strong> in der Praxis bedeuten. Der Autor beschreibt den Einstieg: Extension aus dem Marketplace installieren, Zero-Config-MCP einrichten und sofort <strong>GitHub Copilot, Claude</strong> oder <strong>Amazon Q</strong> als ABAP-Co-Pilot im Editor nutzen.
+                </li>
+                <li>
+                    <strong>Zero-Config MCP:</strong> Der <strong>ABAP MCP Server erfordert keine separate Konfiguration</strong> &ndash; er wird automatisch durch die VS Code Extension bereitgestellt und gibt dem AI-Assistenten direkten Zugriff auf ABAP-Objekte, den Language Server, Unit-Test-Generierung und Code-Erklaerungen.
+                </li>
+                <li>
+                    <strong>Was AI Co-pilots heute koennen:</strong> RAP-Service-Scaffolding, Unit-Test-Generierung, Code-Erklaerung, Clean-Core-Audits, Legacy-Migration von klassischem ABAP auf ABAP Cloud. Deployment, Package-Zuordnung und Transport-Management bleiben weiterhin manuell.
+                </li>
+                <li>
+                    <strong>Kuerzester Einstiegspfad:</strong> Extension installieren &rarr; ABAP-System verbinden &rarr; GitHub Copilot aktivieren &rarr; loslegen. Der Post ist damit der praegnanteste Getting-Started-Guide fuer ABAP AI Co-pilots derzeit.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-members/the-future-of-abap-is-here-vs-code-adt-zero-config-mcp-and-ai-co-pilots/ba-p/14408186" target="_blank">SAP Community: The Future of ABAP is Here: VS Code ADT, Zero-Config MCP, and AI Co-pilots</a></li>
+                    <li><a href="https://marketplace.visualstudio.com/items?itemName=SAPSE.vscode-abap-adt" target="_blank">VS Code Marketplace: ABAP Development Tools for Visual Studio Code</a></li>
+                    <li><a href="https://community.sap.com/t5/technology-blog-posts-by-sap/entering-the-new-era-of-agentic-ai-for-abap-development/ba-p/14394643" target="_blank">SAP Community: Entering the New Era of Agentic AI for ABAP Development</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- SAP Cloud AI -->
+        <section id="sap-cloud">
+            <div class="section-header blue">
+                <div class="section-color-indicator"></div>
+                <h2>SAP Cloud AI</h2>
+            </div>
+
+            <h3>Joule Work: KI-Workspace mit Web, Desktop, Mobile &amp; Voice &ndash; erste Kunden onboarden <span class="tag neu">NEU</span></h3>
+            <ul>
+                <li>
+                    <strong>Was ist Joule Work?</strong> SAP stellte auf dem Sapphire 2026 <strong>Joule Work</strong> vor &ndash; ein eigenstaendiges KI-Workspace-Produkt vergleichbar mit Claude oder Gemini, aber vollstaendig ins SAP-Oekosystem eingebettet. Mitarbeiter beschreiben in natuerlicher Sprache ihr Ziel, und Joule Work koordiniert automatisch die zustaendigen <strong>Joule Assistants und Agents</strong>.
+                </li>
+                <li>
+                    <strong>Vier Zugangskanale:</strong> Verfuegbar als <strong>Web Client</strong>, <strong>Desktop App</strong> (mit lokalem Zugriff auf Dateien, E-Mails und Dokumente), <strong>Mobile App</strong> sowie als Integration in <strong>Microsoft Teams</strong> und <strong>Slack</strong>. SAP-Aufgaben lassen sich dort erledigen, wo man ohnehin arbeitet.
+                </li>
+                <li>
+                    <strong>Voice-Unterstuetzung via LiveKit:</strong> SAP kuendigte eine Partnerschaft mit <strong>LiveKit</strong> fuer Echtzeit-Voice-Capabilities in Joule an. Damit wird Joule Work auch in Produktionsumgebungen und Feldarbeit nutzbar, wo Tastatureingaben unpraktisch sind.
+                </li>
+                <li>
+                    <strong>Offene Protokolle:</strong> Joule Work unterstuetzt <strong>MCP (Model Context Protocol)</strong> und <strong>A2A (Agent2Agent Protocol)</strong> fuer die Integration mit Drittanbieter-Tools und externen Agenten &ndash; auch ABAP-MCP-Server-basierte Workflows sind damit in Zukunft denkbar.
+                </li>
+                <li>
+                    <strong>Verfuegbarkeit:</strong> Seit Mai 2026 im <strong>SAP Early Adopter Care</strong>-Programm; erste Produktionskunden onboarden im Juni 2026. General Availability geplant fuer <strong>H2 2026</strong>.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://www.techzine.eu/news/collaboration/141304/sap-launches-joule-work-an-ai-chatbot-that-turns-questions-into-action/" target="_blank">Techzine: SAP launches Joule Work &ndash; an AI-chatbot that turns questions into action</a></li>
+                    <li><a href="https://www.sap.com/products/artificial-intelligence/joule-work.html" target="_blank">SAP.com: Joule Work &ndash; Offizielles Produktblatt</a></li>
+                    <li><a href="https://news.sap.com/2026/05/sap-sapphire-sap-unveils-autonomous-enterprise/" target="_blank">SAP News Center: SAP Unveils the Autonomous Enterprise (Sapphire 2026)</a></li>
+                </ul>
+            </div>
+
+            <h3>Joule in SAP for Me: KI-gesteuerte Anlaufstelle fuer SAP-Kunden &ndash; Rollout laeuft <span class="tag update">UPDATE</span></h3>
+            <ul>
+                <li>
+                    <strong>Portal wird zum KI-Agenten:</strong> SAP rollt <strong>Joule in SAP for Me</strong> aus &ndash; eine tiefe Joule-Integration im meistgenutzten SAP-Kundenportal. IT-Administratoren und Consultants koennen in natuerlicher Sprache fragen, anstatt durch Menues zu navigieren.
+                </li>
+                <li>
+                    <strong>Agentic Case Resolution:</strong> Neue <strong>KI-gestuetzte Fallbearbeitung</strong> im Support-Workflow: eingehende Anfragen werden automatisch analysiert, Duplikate erkannt, Routing-Empfehlungen generiert und Antworten vorformuliert.
+                </li>
+                <li>
+                    <strong>Rollout und Kosten:</strong> Phasenweiser Rollout seit Mai 2026, fuer bestehende SAP-Kunden <strong>ohne Aufpreis</strong>, keine separaten AI-Units noetig.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://news.sap.com/2026/06/sap-launches-joule-in-sap-for-me/" target="_blank">SAP News Center: SAP Launches Joule in SAP for Me</a></li>
+                    <li><a href="https://help.sap.com/docs/joule/capabilities-guide/what-s-new-for-joule" target="_blank">SAP Help Portal: What's New for Joule</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Community & Social Media -->
+        <section id="community">
+            <div class="section-header purple">
+                <div class="section-color-indicator"></div>
+                <h2>Community &amp; Social Media</h2>
+            </div>
+
+            <h3>SAP Inside Track Chennai 2026: Sponsoren bestaetigt, Anmeldung offen &ndash; 27. Juni <span class="tag event">EVENT</span></h3>
+            <ul>
+                <li>
+                    <strong>Termin bestaetigt:</strong> Der <strong>SAP Inside Track Chennai 2026</strong> findet am <strong>27. Juni 2026</strong> statt. Das community-getriebene Event richtet sich an SAP-Enthusiasten der Region Chennai und folgt nur vier Tage nach der ABAPConf.
+                </li>
+                <li>
+                    <strong>Sponsoren:</strong> Als Sponsoren wurden <strong>Kannanware</strong> und <strong>BCS Business Core Solutions</strong> bestaetigt.
+                </li>
+                <li>
+                    <strong>Speaker gesucht:</strong> Das Team sucht noch Sprecher zu Themen wie ABAP AI, MCP, VS Code ADT oder Joule. Registrierung als Speaker ueber Eventbrite moeglich.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://community.sap.com/t5/chennai-blog-posts/bg-p/chennaiblog-board/label-name/sap%20inside%20track%20chennai" target="_blank">SAP Community: SAP Inside Track Chennai Blog Posts</a></li>
+                    <li><a href="https://in.linkedin.com/company/sap-inside-track-chennai" target="_blank">LinkedIn: SAP Inside Track Chennai</a></li>
+                </ul>
+            </div>
+
+            <h3>ABAPConf 2026: Vorabend-Erinnerung &ndash; Morgen 08:50 Uhr MESZ live auf YouTube <span class="tag event">EVENT</span></h3>
+            <ul>
+                <li>
+                    Die <strong>ABAPConf 2026</strong> startet morgen, <strong>23. Juni</strong>, ab 08:50 Uhr MESZ live auf <a href="https://www.youtube.com/@abapconf" target="_blank">@abapconf</a>. KI-Session: <strong>V3 &bdquo;AI-powered Full-Stack Development with SAP's MCP servers&ldquo;</strong> (14:05 Uhr). Kein Account noetig, kostenloser Stream.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://abapconf.org/abapconf2026/" target="_blank">ABAPConf 2026 &ndash; Offizielle Seite</a></li>
+                    <li><a href="https://www.youtube.com/@abapconf" target="_blank">YouTube: @abapconf</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Learning & Zertifizierungen -->
+        <section id="learning">
+            <div class="section-header green">
+                <div class="section-color-indicator"></div>
+                <h2>Learning &amp; Zertifizierungen</h2>
+            </div>
+
+            <h3>CAP cds 10: Major Release am 26. Juni &ndash; Breaking Changes jetzt pruefen <span class="tag update">UPDATE</span></h3>
+            <ul>
+                <li>
+                    <strong>Was kommt am 26. Juni:</strong> <strong>CAP cds 10</strong> ist das naechste Major Release des SAP Cloud Application Programming Model (Node.js). SAP empfiehlt, die Kompatibilitaet schon jetzt zu pruefen &ndash; besonders fuer Projekte mit externen Bibliotheken oder spezifischen SQLite-Konfigurationen.
+                </li>
+                <li>
+                    <strong>Breaking Change #1 &ndash; Node.js 22 Minimum:</strong> CAP cds 10 setzt <strong>Node.js 22</strong> voraus (empfohlen: Node.js 24 LTS). Wer noch auf Node.js 18 oder 20 laeuft, muss zuerst die Runtime aktualisieren &ndash; relevant auch fuer BTP-Laufzeitumgebungen.
+                </li>
+                <li>
+                    <strong>Breaking Change #2 &ndash; Nativer SQLite-Treiber als Default:</strong> <strong>node:sqlite</strong> (Node's eingebauter Treiber) wird zum Standard. Wer bisher <code>better-sqlite3</code> oder <code>sql.js</code> nutzte, muss diese als explizite Dependency eintragen.
+                </li>
+                <li>
+                    <strong>Breaking Change #3 &ndash; Fetch API statt Axios:</strong> Alle Abhaengigkeiten von Drittanbieter-HTTP-Bibliotheken wurden durch <strong>Node's native Fetch API</strong> ersetzt &ndash; in allen Paketen, inklusive Remote-Service-Proxies und CLI. Wer Axios-Instanzen ueberschrieben hat, muss das anpassen.
+                </li>
+                <li>
+                    <strong>Neue Plugins:</strong> <strong>@cap-js/print</strong> (GA) fuer SAP Print Service-Integration und <strong>@cap-js/process</strong> (Beta) fuer SAP Build Process Automation &ndash; interessant fuer KI-gestuetzte Prozessautomatisierung auf BTP.
+                </li>
+                <li>
+                    <strong>Handlungsempfehlung:</strong> Kompatibilitaet jetzt mit <code>cds build</code> testen. Die offizielle Migrations-Dokumentation erscheint mit dem Release am 26. Juni.
+                </li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://cap.cloud.sap/docs/releases/2026/next" target="_blank">CAP Release Notes Vorschau (capire)</a></li>
+                    <li><a href="https://cap.cloud.sap/docs/releases/schedule" target="_blank">CAP Release Schedule &ndash; Major Versions &amp; Node.js Lifecycle</a></li>
+                    <li><a href="https://cap.cloud.sap/docs/releases/2026/changelog" target="_blank">CAP Changelog 2026</a></li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Video Resources & Events -->
+        <section id="video">
+            <div class="section-header red">
+                <div class="section-color-indicator"></div>
+                <h2>Video Resources &amp; Events</h2>
+            </div>
+
+            <h3>ABAPConf 2026 &ndash; MORGEN live! Session-Highlights auf einen Blick <span class="tag event">EVENT</span></h3>
+            <ul>
+                <li><strong>Start:</strong> Dienstag, 23. Juni 2026, 08:50 Uhr MESZ (06:50 UTC)</li>
+                <li><strong>Stream:</strong> Kostenlos auf <a href="https://www.youtube.com/@abapconf" target="_blank">YouTube @abapconf</a> &ndash; kein Account, keine Anmeldung noetig</li>
+                <li><strong>KI-Highlight:</strong> 14:05 Uhr &ndash; Session V3 &bdquo;AI-powered Full-Stack Development with SAP's MCP servers for ABAP &amp; SAP Fiori&ldquo; (Christoph Gollmick)</li>
+                <li><strong>Keynotes:</strong> 09:00 Uhr &ndash; &bdquo;ABAPConf: 5 years later&ldquo;; 10:30 Uhr &ndash; SAP-Keynote &bdquo;ABAP Cloud&ldquo; (Jens Weiler &amp; Andre Fischer); 17:05 Uhr &ndash; Karl Kessler &bdquo;What a ride!&ldquo;</li>
+                <li><strong>Aufzeichnungen</strong> bleiben dauerhaft auf dem @abapconf YouTube-Kanal abrufbar</li>
+            </ul>
+            <div class="sources">
+                Quellen:
+                <ul>
+                    <li><a href="https://www.youtube.com/@abapconf" target="_blank">YouTube: @abapconf &ndash; Live-Stream ABAPConf 2026</a></li>
+                    <li><a href="https://abapconf.org/abapconf2026/" target="_blank">ABAPConf 2026 &ndash; Offizielle Website</a></li>
+                    <li><a href="https://www.eventbrite.de/e/abapconf-2026-online-edition-registration-1984112755663" target="_blank">Eventbrite: ABAPConf 2026 Online Edition (kostenlos)</a></li>
+                </ul>
+            </div>
+
+            <h3>Terminkalender: KI-relevante Deadlines &amp; Milestones</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Datum</th>
+                        <th>Event / Deadline</th>
+                        <th>Relevanz</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>23. Juni 2026</strong></td>
+                        <td>ABAPConf 2026 (Online + Mannheim)</td>
+                        <td>Live-Stream ab 08:50 Uhr MESZ auf @abapconf; Session V3: MCP + SAP Fiori AI</td>
+                    </tr>
+                    <tr>
+                        <td><strong>24. Juni 2026</strong></td>
+                        <td>CodeJam &bdquo;ABAP AI Capabilities&ldquo; &ndash; Lissabon</td>
+                        <td>Hands-on-Workshop zu Joule for Developers ABAP AI Capabilities</td>
+                    </tr>
+                    <tr>
+                        <td><strong>26. Juni 2026</strong></td>
+                        <td>CAP cds 10 Release</td>
+                        <td>Major Release: Node.js 22 Minimum, nativer SQLite, Fetch API statt Axios</td>
+                    </tr>
+                    <tr>
+                        <td><strong>27. Juni 2026</strong></td>
+                        <td>SAP Inside Track Chennai 2026</td>
+                        <td>Community-Event in Chennai; Sponsoren: Kannanware, BCS; Speaker noch gesucht</td>
+                    </tr>
+                    <tr>
+                        <td><strong>30. Juni 2026</strong></td>
+                        <td>Act2Adopt AI Joule &ndash; Partner-Briefing (MEE Q3)</td>
+                        <td>SAP-Partner-Webinar zu Joule-Adoption; Registrierung ueber SAP Events</td>
+                    </tr>
+                    <tr>
+                        <td><strong>15. Juli 2026</strong></td>
+                        <td>reCAP (un)conference 2026</td>
+                        <td>Community-Event rund um CAP &amp; AI; Agenda online mit KI-Topic-Corners</td>
+                    </tr>
+                    <tr>
+                        <td><strong>September 2026</strong></td>
+                        <td>Ende kostenlose Joule-for-Developers-Testphase</td>
+                        <td>Ab Oktober: konsumbasiertes AI-Units-Modell &ndash; jetzt Lizenzplanung starten</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <div class="navigation">
+            <a href="index.html">&larr; Zurueck zur Uebersicht</a>
+            <a href="2026-06-21.html">&larr; Vorheriges Briefing (21.06.2026)</a>
+        </div>
+    </main>
+
+    <aside class="toc">
+        <h3>Inhalt</h3>
+        <ul>
+            <li>
+                <span class="toc-dot" style="background:#e67e22;"></span>
+                <a href="#abap-classic">ABAP Classic AI</a>
+            </li>
+            <li>
+                <span class="toc-dot" style="background:#3498db;"></span>
+                <a href="#sap-cloud">SAP Cloud AI</a>
+            </li>
+            <li>
+                <span class="toc-dot" style="background:#9b59b6;"></span>
+                <a href="#community">Community &amp; Social</a>
+            </li>
+            <li>
+                <span class="toc-dot" style="background:#27ae60;"></span>
+                <a href="#learning">Learning &amp; Zertifizierungen</a>
+            </li>
+            <li>
+                <span class="toc-dot" style="background:#c0392b;"></span>
+                <a href="#video">Video Resources &amp; Events</a>
+            </li>
+        </ul>
+    </aside>
+</div>
+
+<footer>
+    Recherchezeitraum: 21.06.2026 &ndash; 22.06.2026 &middot; SAP AI Daily &middot; Automatisch erstellt mit Claude | SAP AI Daily
+</footer>
+
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+</script>
+
+</body>
+</html>
